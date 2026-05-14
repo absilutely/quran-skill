@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقارنة مع التفاسير: الزكاة والإنفاق والصدقة</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.8;
+            direction: rtl;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+        header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 2.2em; margin-bottom: 10px; text-align: center; }
+        header p { text-align: center; font-size: 1.1em; opacity: 0.95; }
+        .disclaimer {
+            background: #fff3cd;
+            border-right: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+        }
+        .section h3 {
+            font-size: 1.15em;
+            margin: 18px 0 8px;
+            color: #555;
+        }
+        .section p, .section li {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        .verse-inline {
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            font-size: 1.15em;
+            color: #1a1a2e;
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+            line-height: 2;
+            border-right: 3px solid;
+        }
+        .ref { font-weight: bold; font-size: 0.85em; }
+        .zky { border-color: #667eea; color: #667eea; }
+        .nfq { border-color: #f093fb; color: #f093fb; }
+        .sdq { border-color: #4facfe; color: #4facfe; }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .compare-row { grid-template-columns: 1fr; }
+        }
+        .view-box {
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 5px solid;
+        }
+        .view-box.quran-view {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+        .view-box.tafsir-view {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        .view-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        .view-box.quran-view h4 { color: #2e7d32; }
+        .view-box.tafsir-view h4 { color: #e65100; }
+        .view-box p { font-size: 0.95em; }
+        .convergence {
+            background: #e3f2fd;
+            border-right: 5px solid #2196f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .convergence::before { content: '✅ '; }
+        .divergence {
+            background: #fce4ec;
+            border-right: 5px solid #e91e63;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .divergence::before { content: '❓ '; }
+        .question-box {
+            background: #f3e5f5;
+            border-right: 5px solid #9c27b0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .question-box::before { content: '🤔 '; }
+        .topic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .topic-table th, .topic-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border: 1px solid #ddd;
+        }
+        .topic-table th {
+            font-weight: bold;
+            color: white;
+        }
+        .topic-table tr:nth-child(even) { background: #f8f9fa; }
+        .summary-box {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        .summary-box h2 { color: white; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 15px; font-size: 1.5em; }
+        .summary-box p { text-align: justify; }
+        .nav-files {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .nav-files h3 { color: #667eea; margin-bottom: 15px; }
+        .nav-files a {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-files a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .nav-files a.active { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            .topic-table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>📖 مقارنة مع التفاسير التقليدية</h1>
+    <p>مقارنة نتائج الاستقراء القرآني مع ما هو شائع في كتب التفسير والفقه</p>
+</header>
+
+<div class="disclaimer">
+    <strong>⚠️ تنبيه مهم:</strong>
+    هذا الملف يُقارن بين ما توصّل إليه بحثنا القائم على استقراء النص القرآني فقط، وبين المفاهيم الشائعة في التفاسير والفقه التقليدي.
+    الهدف ليس الطعن في التراث، بل إثراء الفهم وفتح آفاق جديدة للتدبر.
+    الاختلاف لا يعني بالضرورة أنّ أحد الرأيين خاطئ، بل قد يشير إلى جوانب تحتاج مزيدًا من البحث والتدبر.
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- المسألة الأولى -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #667eea; color: #667eea;">المسألة الأولى: هل «الزكاة» = «الضريبة المالية المحددة»؟</h2>
+
+    <div class="compare-row">
+        <div class="view-box tafsir-view">
+            <h4>📙 الفهم التفسيري الشائع</h4>
+            <p>
+                «الزكاة» هي الركن الثالث من أركان الإسلام، وهي نسبة محددة من المال (2.5% من النقد والتجارة، 10% أو 5% من الزراعة، إلخ) تُخرج سنويًا وتُوزع على ثمانية مصارف محددة في آية ﴿9:60﴾.
+            </p>
+        </div>
+        <div class="view-box quran-view">
+            <h4>📗 ما يُظهره النص القرآني</h4>
+            <p>
+                «الزكاة» في القرآن ركن عبادي مقترن بالصلاة دائمًا. لم يُحدد القرآن نسبتها ولا تفاصيلها المالية. المصارف الثمانية في ﴿9:60﴾ وُصفت بأنها مصارف «الصدقات» لا «الزكاة». جذر «ز ك و» يدور حول الطهارة والنماء بشكل أعم من المال.
+            </p>
+        </div>
+    </div>
+
+    <div class="convergence">
+        <strong>نقطة الالتقاء:</strong> الطرفان يتفقان على أنّ «الزكاة» فريضة وركن أساسي من أركان الدين، وأنها مقترنة بالصلاة في المنزلة.
+    </div>
+
+    <div class="divergence">
+        <strong>نقطة الافتراق:</strong> النص القرآني لا يُقرن المصارف الثمانية بلفظ «الزكاة» بل بلفظ «الصدقات». ولا يحدد نسبًا مئوية ولا أنصبة. هذه التفاصيل مصدرها السنة والاجتهاد الفقهي.
+    </div>
+
+    <div class="question-box">
+        <strong>سؤال للتدبر:</strong> إذا كان القرآن فرّق بين «الزكاة» و«الصدقات» في الاستعمال، فهل يصح فقهيًا أن نُطابق بينهما تمامًا؟ أم أنّ «الصدقات» في ﴿9:60﴾ باب أوسع يشمل الزكاة وغيرها؟
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- المسألة الثانية -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #4facfe; color: #0d6efd;">المسألة الثانية: «الصدقة» تطوع أم فريضة؟</h2>
+
+    <div class="compare-row">
+        <div class="view-box tafsir-view">
+            <h4>📙 الفهم التفسيري الشائع</h4>
+            <p>
+                يُفرّق أغلب الفقهاء بين «الصدقة الواجبة» (= الزكاة) و«صدقة التطوع». فعند إطلاق «الصدقة» في الفقه غالبًا ما يُراد بها التطوع، بينما «الزكاة» هي الفريضة.
+            </p>
+        </div>
+        <div class="view-box quran-view">
+            <h4>📗 ما يُظهره النص القرآني</h4>
+            <p>
+                «الصدقات» في القرآن وُصفت صراحة بأنها «فَرِيضَةً مِّنَ ٱللَّهِ» ﴿9:60﴾. كما أنّ «الصدقة» جاءت في سياقات تدل على الوجوب: في الحج ﴿2:196﴾، وبين يدي النجوى ﴿58:12﴾. المفهوم القرآني للصدقة أوسع وأعمق من مجرد «التطوع».
+            </p>
+        </div>
+    </div>
+
+    <div class="verse-inline" style="border-color: #4facfe;">
+        <span class="ref sdq">﴿ 9:60 ﴾</span> إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ... <strong>فَرِيضَةً مِّنَ ٱللَّهِ</strong>
+    </div>
+    <div class="verse-inline" style="border-color: #4facfe;">
+        <span class="ref sdq">﴿ 9:104 ﴾</span> أَلَمْ يَعْلَمُوٓا۟ أَنَّ ٱللَّهَ هُوَ يَقْبَلُ ٱلتَّوْبَةَ عَنْ عِبَادِهِۦ وَيَأْخُذُ <strong>ٱلصَّدَقَـٰتِ</strong>
+    </div>
+
+    <div class="divergence">
+        <strong>نقطة الافتراق:</strong> حصر «الصدقة» في التطوع لا يتوافق مع الاستعمال القرآني الذي يصفها بـ«فريضة من الله». الاستقراء يُظهر أنّ «الصدقة» في القرآن مفهوم واسع يشمل كل عطاء صادق، واجبًا كان أو تطوعًا.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- المسألة الثالثة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #f093fb; color: #d63384;">المسألة الثالثة: نطاق «الإنفاق» في القرآن والفقه</h2>
+
+    <div class="compare-row">
+        <div class="view-box tafsir-view">
+            <h4>📙 الفهم التفسيري الشائع</h4>
+            <p>
+                يميل كثير من المفسرين إلى تفسير «الإنفاق» بأنه الإنفاق في سبيل الله، أي البذل المالي الطوعي في وجوه الخير. وبعضهم يُفسّره بالزكاة في مواضع معينة.
+            </p>
+        </div>
+        <div class="view-box quran-view">
+            <h4>📗 ما يُظهره النص القرآني</h4>
+            <p>
+                «الإنفاق» في القرآن مفهوم محايد يشمل كل بذل مالي بغض النظر عن دافعه. يستعمله القرآن لإنفاق المؤمنين والكفار على السواء. هو أعمّ المصطلحات الثلاثة وأقربها إلى المعنى اللغوي المجرد لـ«الإخراج».
+            </p>
+        </div>
+    </div>
+
+    <div class="convergence">
+        <strong>نقطة الالتقاء:</strong> يتفق الطرفان على أنّ الإنفاق مفهوم واسع يشمل أنواعًا متعددة من البذل المالي.
+    </div>
+
+    <div class="divergence">
+        <strong>نقطة الافتراق:</strong> تفسير «الإنفاق» بأنه دائمًا في سبيل الله يتعارض مع آيات صريحة تصف إنفاق الكفار ﴿8:36﴾ وإنفاق المرائين ﴿4:38﴾. المحايدية القيمية للمصطلح تتطلب قراءة كل آية في سياقها.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- المسألة الرابعة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #9c27b0; color: #9c27b0;">المسألة الرابعة: العلاقة بين المصطلحات الثلاثة</h2>
+
+    <div class="compare-row">
+        <div class="view-box tafsir-view">
+            <h4>📙 الفهم التفسيري الشائع</h4>
+            <p>
+                الرأي السائد أنّ «الزكاة» و«الصدقة» مترادفتان أحيانًا (الزكاة = صدقة واجبة)، وأنّ «الإنفاق» مصطلح عام يشملهما. التمييز يكون بالسياق: إذا جاءت «صدقة» مع «فريضة» فهي الزكاة، وإلا فهي التطوع.
+            </p>
+        </div>
+        <div class="view-box quran-view">
+            <h4>📗 ما يُظهره النص القرآني</h4>
+            <p>
+                الاستقراء يُظهر أنّ كل مصطلح له هوية مستقلة:
+                «الإنفاق» = الفعل المادي (إخراج المال).
+                «الصدقة» = الصفة الأخلاقية (عطاء بصدق).
+                «الزكاة» = الثمرة الروحية (تطهير ونماء).
+                ثلاثة مستويات متدرجة لا مترادفات.
+            </p>
+        </div>
+    </div>
+
+    <div class="question-box">
+        <strong>سؤال للتدبر:</strong> قاعدة «لا ترادف في القرآن» — التي يتبناها كثير من اللغويين المتأخرين — تدعم الفصل بين المصطلحات. فإذا كان لكل لفظ في القرآن معنى مميز لا يحمله غيره، فكيف يكون «الزكاة» و«الصدقة» مترادفين؟
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- المسألة الخامسة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #ff9800; color: #e65100;">المسألة الخامسة: مصارف الزكاة الثمانية — لمن هي حقًا؟</h2>
+
+    <p>
+        هذه من أدق المسائل التي يكشفها الاستقراء القرآني:
+    </p>
+
+    <div class="verse-inline" style="border-color: #4facfe;">
+        <span class="ref sdq">﴿ 9:60 ﴾</span> إِنَّمَا <strong>ٱلصَّدَقَـٰتُ</strong> لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِ ۖ <strong>فَرِيضَةً مِّنَ ٱللَّهِ</strong>
+    </div>
+
+    <table class="topic-table">
+        <thead>
+            <tr>
+                <th style="background: #ff9800;">المعيار</th>
+                <th style="background: #ff9800;">الفهم الفقهي الشائع</th>
+                <th style="background: #4caf50;">ما يقوله النص القرآني</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>اللفظ في الآية</strong></td>
+                <td>«الصدقات» = الزكاة</td>
+                <td>«الصدقات» — بلفظها لا بدلاً عنه</td>
+            </tr>
+            <tr>
+                <td><strong>الوصف</strong></td>
+                <td>«فريضة» = تأكيد لوجوب الزكاة</td>
+                <td>«فريضة من الله» مقترنة بلفظ «الصدقات»</td>
+            </tr>
+            <tr>
+                <td><strong>التبرير التفسيري</strong></td>
+                <td>«الصدقة» هنا بمعنى الزكاة مجازًا</td>
+                <td>لا قرينة في الآية تصرفها عن ظاهرها</td>
+            </tr>
+            <tr>
+                <td><strong>السياق</strong></td>
+                <td>الآية في سياق الفرائض</td>
+                <td>الآية في سياق سورة التوبة حيث ترد «الزكاة» في آيات أخرى (5، 11، 18) بلفظها الصريح</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="divergence">
+        <strong>الملاحظة الدقيقة:</strong> لو أراد القرآن أن يقول «إنما الزكاة للفقراء...» لقالها كما قالها في مواضع أخرى. لكنه اختار لفظ «الصدقات» في الآية نفسها التي ترد فيها كلمة «فريضة». وفي السورة نفسها (التوبة) يستعمل لفظ «الزكاة» صريحًا في آيات أخرى (5، 11، 18، 71)، فلم يكن عاجزًا عن استعماله هنا لو أراده.
+    </div>
+
+    <div class="question-box">
+        <strong>سؤال للتدبر:</strong> هل يمكن أن تكون «الصدقات» في ﴿9:60﴾ بابًا أوسع من «الزكاة»، يشمل كل عطاء مالي مفروض أو مستحب يُخرجه المسلم بصدق، وتكون «الزكاة» بُعدًا تطهيريًا شاملاً لا يقتصر على المال؟
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- المسألة السادسة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #607d8b; color: #607d8b;">المسألة السادسة: البُعد غير المالي للزكاة</h2>
+
+    <div class="compare-row">
+        <div class="view-box tafsir-view">
+            <h4>📙 الفهم التفسيري الشائع</h4>
+            <p>
+                «الزكاة» في باب العبادات تعني حصرًا إخراج نسبة من المال. البُعد اللغوي (الطهارة والنماء) يُذكر كأصل لغوي فقط، لكن المعنى الاصطلاحي أصبح هو السائد.
+            </p>
+        </div>
+        <div class="view-box quran-view">
+            <h4>📗 ما يُظهره النص القرآني</h4>
+            <p>
+                أكثر من نصف تصاريف جذر «ز ك و» في القرآن (52 آية) لا علاقة لها بالمال: نفس زكية ﴿18:74﴾، غلام زكي ﴿19:19﴾، طعام أزكى ﴿18:19﴾، غض البصر أزكى ﴿24:30﴾، تزكية الرسول ﴿2:129﴾، التزكي الذاتي ﴿87:14﴾. المعنى التطهيري هو الأصل والأغلب في الاستعمال القرآني.
+            </p>
+        </div>
+    </div>
+
+    <div class="convergence">
+        <strong>نقطة الالتقاء:</strong> يعترف المفسرون واللغويون بأنّ أصل «الزكاة» لغويًا هو الطهارة والنماء. الخلاف في مدى تأثير هذا الأصل على فهم المصطلح في السياق العبادي.
+    </div>
+
+    <div class="divergence">
+        <strong>نقطة الافتراق:</strong> الاستقراء يُظهر أنّ «البُعد غير المالي» ليس مجرد أصل لغوي تاريخي، بل هو الاستعمال الغالب في القرآن نفسه. فتضييق «الزكاة» في المال فقط يُهمل الأغلبية العددية من استعمالات الجذر.
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- الجدول الشامل -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #333;">جدول ملخّص: نقاط الالتقاء والافتراق</h2>
+
+    <table class="topic-table">
+        <thead>
+            <tr>
+                <th style="background: #333;">المسألة</th>
+                <th style="background: #ff9800;">الفهم التقليدي</th>
+                <th style="background: #4caf50;">نتائج الاستقراء</th>
+                <th style="background: #2196f3;">التقييم</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>ركنية الزكاة</strong></td>
+                <td>ركن ثالث</td>
+                <td>ركن عبادي مقترن بالصلاة</td>
+                <td style="color: #4caf50;">✅ التقاء</td>
+            </tr>
+            <tr>
+                <td><strong>نسب الزكاة</strong></td>
+                <td>2.5%، 10%، إلخ</td>
+                <td>لم تُحدد في القرآن</td>
+                <td style="color: #ff9800;">⚠️ مصدر مختلف</td>
+            </tr>
+            <tr>
+                <td><strong>مصارف الزكاة</strong></td>
+                <td>ثمانية أصناف (9:60)</td>
+                <td>المصارف وُصفت للصدقات لا الزكاة</td>
+                <td style="color: #e91e63;">❓ افتراق</td>
+            </tr>
+            <tr>
+                <td><strong>الصدقة = تطوع</strong></td>
+                <td>التطوع عادة</td>
+                <td>وُصفت بـ«فريضة من الله»</td>
+                <td style="color: #e91e63;">❓ افتراق</td>
+            </tr>
+            <tr>
+                <td><strong>الإنفاق في الخير فقط</strong></td>
+                <td>غالبًا في الخير</td>
+                <td>يشمل إنفاق الكفار أيضًا</td>
+                <td style="color: #e91e63;">❓ افتراق</td>
+            </tr>
+            <tr>
+                <td><strong>الزكاة = مال فقط</strong></td>
+                <td>إخراج مال محدد</td>
+                <td>أغلب الاستعمالات غير مالية</td>
+                <td style="color: #e91e63;">❓ افتراق</td>
+            </tr>
+            <tr>
+                <td><strong>الصدقة مقابل الربا</strong></td>
+                <td>—</td>
+                <td>تقابل حصري قرآني ﴿2:276﴾</td>
+                <td style="color: #2196f3;">🔍 إضافة</td>
+            </tr>
+            <tr>
+                <td><strong>المهر = صَدُقة</strong></td>
+                <td>اتفاق لغوي معروف</td>
+                <td>يكشف أنّ الجذر يعني «الصدق» لا «التبرع»</td>
+                <td style="color: #4caf50;">✅ التقاء وتعميق</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- الخلاصة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="summary-box">
+    <h2>🔑 خلاصة المقارنة</h2>
+    <p>
+        يكشف هذا البحث أنّ النص القرآني يحمل نظامًا دلاليًا دقيقًا لهذه المصطلحات الثلاثة، وأنّ الاستعمال الفقهي — رغم استناده إلى أدلة سنية واجتهادات فقهية معتبرة — قد يكون أدمج بعض هذه المفاهيم في بعض وضيّق بعضها الآخر.
+    </p>
+    <p style="margin-top: 15px;">
+        لا يعني هذا أنّ التراث الفقهي خاطئ، بل يعني أنّ العودة إلى النص القرآني بعين الاستقراء الشامل قد تفتح أبوابًا جديدة للفهم لا تلغي القديم بل تُثريه.
+    </p>
+    <p style="margin-top: 15px;">
+        النتيجة المركزية: <strong>الإنفاق فعل، والصدقة صفته الأخلاقية، والزكاة ثمرته الروحية</strong> — ثلاثة مستويات لعملية واحدة، وليست مترادفات ولا متنافسات.
+    </p>
+</div>
+
+<div class="nav-files">
+    <h3>📂 ملفات البحث</h3>
+    <a href="00_SUMMARY.html">الملخص</a>
+    <a href="01_MORPHOLOGY.html">التصريف</a>
+    <a href="02_VERSES.html">الآيات</a>
+    <a href="03_ANALYSIS.html">التحليل</a>
+    <a href="04_DISCOVERIES.html">الاكتشافات</a>
+    <a href="05_TAFSIR_COMPARISON.html" class="active">التفاسير</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Periods Analysis - Quranic Verses Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        nav a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .toc {
+            background: #f0f4ff;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 40px;
+            border-radius: 5px;
+        }
+
+        .toc h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .toc ol {
+            margin-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+            color: #764ba2;
+        }
+
+        .category {
+            margin-bottom: 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .category-header:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #6a3fa0 100%);
+        }
+
+        .category-header h2 {
+            font-size: 1.4em;
+            margin: 0;
+        }
+
+        .category-header .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .category.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .category-content {
+            padding: 25px;
+            background: white;
+        }
+
+        .category.collapsed .category-content {
+            display: none;
+        }
+
+        .verse-block {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .verse-block:hover {
+            background: #f0f4ff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+
+        .verse-reference {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .verse-number {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .arabic-text {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Amiri', 'Scheherazade', serif;
+            font-size: 1.3em;
+            line-height: 2;
+            margin: 18px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            color: #1a1a1a;
+        }
+
+        .translation {
+            font-style: italic;
+            color: #555;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #764ba2;
+            margin: 12px 0;
+        }
+
+        .analysis {
+            background: #fff3cd;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #ffc107;
+            margin: 12px 0;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .keywords {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .keyword {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .cross-ref {
+            background: #e8f5e9;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #4caf50;
+            margin: 12px 0;
+            font-size: 0.95em;
+        }
+
+        .cross-ref a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cross-ref a:hover {
+            text-decoration: underline;
+        }
+
+        .stats {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .stats h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #1976d2;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #555;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .last-updated {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .arabic-text {
+                font-size: 1.1em;
+                line-height: 1.8;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .print-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: background 0.3s ease;
+        }
+
+        .print-button:hover {
+            background: #764ba2;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            nav, .print-button {
+                display: none;
+            }
+
+            .category {
+                page-break-inside: avoid;
+            }
+
+            .verse-block {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Time Periods Analysis</h1>
+            <p>Quranic Verses - Complete Database with Arabic Text and Translations</p>
+        </header>
+
+        <nav>
+            <a href="01_OVERVIEW.html">Overview</a>
+            <a href="02_VERSES.html" class="active">Verses Database</a>
+            <a href="03_ANALYSIS.html">Analysis</a>
+            <a href="04_CHRONOLOGY.html">Chronology</a>
+            <a href="05_CONCLUSIONS.html">Conclusions</a>
+            <button class="print-button" onclick="window.print()">Print</button>
+        </nav>
+
+        <div class="content">
+            <div class="stats">
+                <h3>Database Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">Total Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">16</div>
+                        <div class="stat-label">Total Verses</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Key Time Periods</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Astronomical References</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toc">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#category-1">Cosmic Day = 1000 Years (2 verses)</a></li>
+                    <li><a href="#category-2">Cosmic Day = 50,000 Years (1 verse)</a></li>
+                    <li><a href="#category-3">سنة vs عام Distinction (1 verse)</a></li>
+                    <li><a href="#category-4">عام Only Verses (3 verses)</a></li>
+                    <li><a href="#category-5">Astronomical Calculation حسبان (5 verses)</a></li>
+                    <li><a href="#category-6">Ascension Root ع ر ج (5 verses)</a></li>
+                    <li><a href="#category-7">Related Time Concepts (Additional verses)</a></li>
+                </ol>
+            </div>
+
+            <!-- CATEGORY 1: Cosmic Day = 1000 Years -->
+            <div class="category" id="category-1">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 1: Cosmic Day = 1000 Years</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Two verses that establish the equivalence of one cosmic day to one thousand years in human time.</p>
+
+                    <!-- Verse 32:5 -->
+                    <div class="verse-block" id="verse-32-5">
+                        <div class="verse-reference">
+                            <span>Surah As-Sajdah (32), Verse 5</span>
+                            <span class="verse-number">32:5</span>
+                        </div>
+                        <div class="arabic-text">
+                            يُدَبِّرُ ٱلْأَمْرَ مِنَ ٱلسَّمَآءِ إِلَى ٱلْأَرْضِ ثُمَّ يَعْرُجُ إِلَيْهِ فِى يَوْمٍ كَانَ مِقْدَارُهُۥٓ أَلْفَ سَنَةٍ مِّمَّا تَعُدُّونَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "He arranges [each] matter from the heaven to the earth; then it will ascend to Him in a Day, the extent of which is a thousand years of those which you count."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse explicitly states that from Allah's divine perspective, one day of cosmic management and judgment equals 1,000 human years. The term "يَدَبِّرُ" (arranges/manages) indicates divine oversight of all affairs, while "يَعْرُجُ" (ascends) connects to the theme of spiritual ascension. The phrase "مِمَّا تَعُدُّونَ" (of those you count) emphasizes the relativity of time measurement between the divine and human domains.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Time Equivalence</span>
+                            <span class="keyword">1000 Years</span>
+                            <span class="keyword">يدبر</span>
+                            <span class="keyword">يعرج</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-22-47">22:47</a> for parallel statement; <a href="#verse-70-4">70:4</a> for alternative cosmic period (50,000 years)
+                        </div>
+                    </div>
+
+                    <!-- Verse 22:47 -->
+                    <div class="verse-block" id="verse-22-47">
+                        <div class="verse-reference">
+                            <span>Surah Al-Hajj (22), Verse 47</span>
+                            <span class="verse-number">22:47</span>
+                        </div>
+                        <div class="arabic-text">
+                            وَيَسْتَعْجِلُونَكَ بِٱلْعَذَابِ وَلَن يُخْلِفَ ٱللَّهُ وَعْدَهُۥ ۚ وَإِنَّ يَوْمًا عِندَ رَبِّكَ كَأَلْفِ سَنَةٍ مِّمَّا تَعُدُّونَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "And they urge you to hasten the punishment. But Allah will never fail in His promise. And indeed, a day with your Lord is like a thousand years of those which you count."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse addresses those who questioned the promise of divine judgment, presenting the cosmic time-scale to explain why the Day of Judgment seems delayed from a human perspective. The comparison "كَأَلْفِ سَنَةٍ" (like a thousand years) emphasizes that divine time operates on an entirely different scale. The context stresses Allah's faithfulness to His promise despite the perception of delay in human terms.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Judgment Day</span>
+                            <span class="keyword">Time Perception</span>
+                            <span class="keyword">Divine Promise</span>
+                            <span class="keyword">1000 Years</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-32-5">32:5</a> for parallel statement about cosmic time; Compare with <a href="#verse-70-4">70:4</a> for the 50,000-year period
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 2: Cosmic Day = 50,000 Years -->
+            <div class="category" id="category-2">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 2: Cosmic Day = 50,000 Years</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Single verse describing the Day of Judgment as lasting fifty thousand years in human reckoning.</p>
+
+                    <!-- Verse 70:4 -->
+                    <div class="verse-block" id="verse-70-4">
+                        <div class="verse-reference">
+                            <span>Surah Al-Ma'arij (70), Verse 4</span>
+                            <span class="verse-number">70:4</span>
+                        </div>
+                        <div class="arabic-text">
+                            تَعْرُجُ ٱلْمَلَـٰٓئِكَةُ وَٱلرُّوحُ إِلَيْهِ فِى يَوْمٍ كَانَ مِقْدَارُهُۥ خَمْسِينَ أَلْفَ سَنَةٍ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "The angels and the Spirit ascend to Him during a Day the extent of which is fifty thousand years."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse presents a different cosmic time scale (50,000 years vs. 1,000 years) within the context of eschatological events. The use of "تَعْرُجُ" (ascend) connects to the root ع-ر-ج, emphasizing spiritual ascension. The mention of "الملائكة والروح" (angels and the Spirit) suggests this refers specifically to the Day of Judgment when all creation returns to the divine. This verse appears in Surah Al-Ma'arij (The Paths of Ascent), reinforcing the theme of ascension and divine time scales.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">50,000 Years</span>
+                            <span class="keyword">Judgment Day</span>
+                            <span class="keyword">Angels Ascend</span>
+                            <span class="keyword">تعرج</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Compare with <a href="#verse-32-5">32:5</a> and <a href="#verse-22-47">22:47</a> for the 1,000-year period; See <a href="#category-6">Category 6</a> for other uses of the ع-ر-ج root
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: سنة vs عام Distinction -->
+            <div class="category" id="category-3">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 3: سنة vs عام Distinction</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Critical verse showing the semantic distinction between سنة (year as a cycle/season) and عام (year as a unit of time). This verse demonstrates that the Quran uses these terms with different meanings.</p>
+
+                    <!-- Verse 29:14 -->
+                    <div class="verse-block" id="verse-29-14">
+                        <div class="verse-reference">
+                            <span>Surah Al-Ankabut (29), Verse 14</span>
+                            <span class="verse-number">29:14</span>
+                        </div>
+                        <div class="arabic-text">
+                            وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِۦ فَلَبِثَ فِيهِمْ أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "And We certainly sent Noah to his people, and he remained among them a thousand years (سنة) minus fifty years (عام)."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This is a crucial verse for understanding Quranic terminology. Noah preached for "ألف سنة" (a thousand سنة/cycles) minus "خمسين عام" (fifty عام/years). The deliberate use of two different words in the same context suggests they carry distinct meanings:
+                            <br><br>
+                            • <strong>سنة (Sunnah/Cycle):</strong> Refers to established patterns, cycles, or extended periods. In this context, likely referring to generational cycles or divinely ordained patterns.
+                            <br><br>
+                            • <strong>عام (Aam/Year):</strong> Refers to a specific unit of time (calendar year), often used for precise temporal measurements.
+                            <br><br>
+                            This semantic distinction is fundamental to interpreting the cosmic time periods in 32:5, 22:47, and 70:4. The use of سنة in those verses may carry connotations beyond literal solar years.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Semantic Analysis</span>
+                            <span class="keyword">سنة</span>
+                            <span class="keyword">عام</span>
+                            <span class="keyword">Noah</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#category-4">Category 4</a> for other uses of عام; Compare linguistic usage with verses in <a href="#category-1">Category 1</a> that use سنة for cosmic periods
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 4: عام Only Verses -->
+            <div class="category" id="category-4">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 4: عام Only Verses</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Verses using only عام (calendar year) for temporal references, demonstrating its use for precise, measurable time periods.</p>
+
+                    <!-- Verse 2:259 -->
+                    <div class="verse-block" id="verse-2-259">
+                        <div class="verse-reference">
+                            <span>Surah Al-Baqarah (2), Verse 259</span>
+                            <span class="verse-number">2:259</span>
+                        </div>
+                        <div class="arabic-text">
+                            أَوْ كَٱلَّذِى مَرَّ عَلَىٰ قَرْيَةٍ وَهِىَ خَاوِيَةٌ عَلَىٰ عُرُوشِهَا قَالَ أَنَّىٰ يُحْىِۦ هَـٰذِهِ ٱللَّهُ بَعْدَ مَوْتِهَا ۖ فَأَمَاتَهُ ٱللَّهُ مِائَةَ عَامٍ ثُمَّ بَعَثَهُ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "Or [consider the example of] one who passed by a settlement that had fallen into ruin. He said, 'How will Allah restore this to life after its death?' So Allah caused him to die for a hundred years, then brought him back to life."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse uses عام (calendar year) explicitly for a precise temporal measurement: "مائة عام" (a hundred years). The context describes a miraculous suspension of life for exactly 100 years before resurrection. The use of عام here emphasizes a specific, measurable duration of time. This contrasts with the use of سنة in cosmic contexts, supporting the argument that عام denotes concrete, calculable time periods.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">100 Years</span>
+                            <span class="keyword">عام</span>
+                            <span class="keyword">Resurrection</span>
+                            <span class="keyword">Death and Life</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-29-14">29:14</a> for comparison of سنة and عام; Related to eschatological themes in <a href="#category-1">Category 1</a>
+                        </div>
+                    </div>
+
+                    <!-- Verse 9:126 -->
+                    <div class="verse-block" id="verse-9-126">
+                        <div class="verse-reference">
+                            <span>Surah At-Tawbah (9), Verse 126</span>
+                            <span class="verse-number">9:126</span>
+                        </div>
+                        <div class="arabic-text">
+                            أَوَلَا يَرَوْنَ أَنَّهُمْ يُفْتَنُونَ فِى كُلِّ عَامٍ مَّرَّةً أَوْ مَرَّتَيْنِ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "Do they not see that they are tested every year once or twice?"
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse uses عام in a cyclical context ("كل عام") to describe annual testing. The phrase "في كل عام مرة أو مرتين" (every year one or two times) demonstrates عام as a recurring, measurable time unit. This usage reinforces that عام refers to specific calendar years used for recurring events, contrasting with the metaphysical connotations possible with سنة in cosmic contexts.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">عام</span>
+                            <span class="keyword">Annual</span>
+                            <span class="keyword">Testing</span>
+                            <span class="keyword">Trial</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Compare usage of عام with <a href="#verse-29-14">29:14</a> and <a href="#verse-2-259">2:259</a>
+                        </div>
+                    </div>
+
+                    <!-- Verse 12:49 -->
+                    <div class="verse-block" id="verse-12-49">
+                        <div class="verse-reference">
+                            <span>Surah Yusuf (12), Verse 49</span>
+                            <span class="verse-number">12:49</span>
+                        </div>
+                        <div class="arabic-text">
+                            ثُمَّ يَأْتِى مِن بَعْدِ ذَٰلِكَ عَامٌ فِيهِ يُغَاثُ ٱلنَّاسُ وَفِيهِ يَعْصِرُونَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "Then will come after that a year in which the people will be given relief and in which they will press [olives and grapes for oil and wine]."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse uses عام to describe a specific year of agricultural abundance following seven years of famine. The phrase "عام فيه يغاث الناس" (a year in which people are given relief) demonstrates عام as a concrete, bounded time period with specific events. The agricultural context emphasizes that عام refers to actual calendar years with observable seasonal and economic changes, reinforcing its distinction from the metaphorical or cyclical connotations of سنة.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">عام</span>
+                            <span class="keyword">Year of Relief</span>
+                            <span class="keyword">Famine</span>
+                            <span class="keyword">Agriculture</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-2-259">2:259</a> and <a href="#verse-9-126">9:126</a> for other uses of عام
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 5: Astronomical Calculation حسبان -->
+            <div class="category" id="category-5">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 5: Astronomical Calculation (حسبان)</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Verses emphasizing the astronomical basis for calculating years and understanding cosmic time through the movements of celestial bodies.</p>
+
+                    <!-- Verse 55:5 -->
+                    <div class="verse-block" id="verse-55-5">
+                        <div class="verse-reference">
+                            <span>Surah Ar-Rahman (55), Verse 5</span>
+                            <span class="verse-number">55:5</span>
+                        </div>
+                        <div class="arabic-text">
+                            ٱلشَّمْسُ وَٱلْقَمَرُ بِحُسْبَانٍ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "The sun and the moon [move] by precise calculation."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This concise but profound verse establishes that the sun and moon operate "بِحُسْبَانٍ" (by precise calculation/computation). The term "حسبان" encompasses mathematical precision, astronomical regularity, and divine determination. This verse is foundational to understanding how years are measured: through the regular, calculable motions of celestial bodies. The mathematical precision of solar and lunar movements enables the definition of years and the distinction between different time-measuring systems.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Astronomical Calculation</span>
+                            <span class="keyword">حسبان</span>
+                            <span class="keyword">Sun and Moon</span>
+                            <span class="keyword">Precision</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-10-5">10:5</a> and <a href="#verse-6-96">6:96</a> for detailed descriptions of lunar and solar functions in time reckoning
+                        </div>
+                    </div>
+
+                    <!-- Verse 10:5 -->
+                    <div class="verse-block" id="verse-10-5">
+                        <div class="verse-reference">
+                            <span>Surah Yunus (10), Verse 5</span>
+                            <span class="verse-number">10:5</span>
+                        </div>
+                        <div class="arabic-text">
+                            هُوَ ٱلَّذِى جَعَلَ ٱلشَّمْسَ ضِيَآءً وَٱلْقَمَرَ نُورًا وَقَدَّرَهُۥ مَنَازِلَ لِتَعْلَمُوا عَدَدَ ٱلسِّنِينَ وَٱلْحِسَابَ ۚ مَا خَلَقَ ٱللَّهُ ذَٰلِكَ إِلَّا بِٱلْحَقِّ ۚ يُفَصِّلُ ٱلْآيَـٰتِ لِقَوْمٍ يَعْلَمُونَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "It is He who made the sun a shining light and the moon a reflected light and determined for it phases - that you may know the number of years and [the] calculation [of time]. Allah has not created this except in truth. He details the verses for a people who know."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This comprehensive verse explains the purpose of lunar phases: to enable humans to "تعلموا عدد السنين والحساب" (know the number of years and calculation). The moon's 28-day cycle creates the monthly and yearly calendar systems. Significantly, this verse uses both "السنين" (years) and "الحساب" (calculation/reckoning). The divine purpose in creating these celestial motions is explicitly stated as providing the means for temporal calculation. This verse directly connects astronomical observation to the definition of years and time measurement systems.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Moon Phases</span>
+                            <span class="keyword">Year Calculation</span>
+                            <span class="keyword">عدد السنين</span>
+                            <span class="keyword">الحساب</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-55-5">55:5</a> and <a href="#verse-6-96">6:96</a> for related astronomical concepts; Compare with <a href="#verse-29-14">29:14</a> for the use of السنين
+                        </div>
+                    </div>
+
+                    <!-- Verse 6:96 -->
+                    <div class="verse-block" id="verse-6-96">
+                        <div class="verse-reference">
+                            <span>Surah Al-An'am (6), Verse 96</span>
+                            <span class="verse-number">6:96</span>
+                        </div>
+                        <div class="arabic-text">
+                            فَالِقُ ٱلْإِصْبَاحِ وَجَعَلَ ٱلَّيْلَ سَكَنًا وَٱلشَّمْسَ وَٱلْقَمَرَ حُسْبَانًا ۚ ذَٰلِكَ تَقْدِيرُ ٱلْعَزِيزِ ٱلْعَلِيمِ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "[He is] the cleaver of the daybreak and has made the night for rest and the sun and moon for reckoning. That is the determination of the Exalted in Might, the All-Knowing."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse describes the sun and moon as "حسبان" (reckoning/calculation), emphasizing their role in temporal measurement. The phrase "وَجَعَلَ ٱلشَّمْسَ وَٱلْقَمَرَ حُسْبَانًا" makes explicit that these celestial bodies exist for the purpose of time reckoning. Combined with verses 55:5 and 10:5, this establishes that the astronomical systems are the foundation for all temporal measurement in the Quranic worldview. The description "ذَٰلِكَ تَقْدِيرُ ٱلْعَزِيزِ ٱلْعَلِيمِ" (That is the determination of the Exalted in Might, the All-Knowing) emphasizes the divine precision of these systems.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Sun and Moon</span>
+                            <span class="keyword">Reckoning</span>
+                            <span class="keyword">حسبان</span>
+                            <span class="keyword">Day and Night</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-55-5">55:5</a> and <a href="#verse-10-5">10:5</a> for comprehensive discussion of astronomical calculation
+                        </div>
+                    </div>
+
+                    <!-- Additional astronomical verses -->
+                    <div class="verse-block" id="verse-14-33">
+                        <div class="verse-reference">
+                            <span>Surah Ibrahim (14), Verse 33</span>
+                            <span class="verse-number">14:33</span>
+                        </div>
+                        <div class="arabic-text">
+                            وَسَخَّرَ لَكُمُ ٱلشَّمْسَ وَٱلْقَمَرَ دَآئِبَيْنِ ۖ وَسَخَّرَ لَكُمُ ٱلَّيْلَ وَٱلنَّهَارَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "And He has subjected to you the sun and the moon, both constantly pursuing their courses; and He has subjected to you the night and the day."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse emphasizes that the sun and moon move continuously ("دآئبين") in their respective orbits, creating the foundation for measuring time through day-night cycles and seasons. The word "دآئبين" (constantly pursuing) indicates their reliable, predictable nature - the basis for astronomical calculation and temporal measurement.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Constant Motion</span>
+                            <span class="keyword">دآئبين</span>
+                            <span class="keyword">Time Measurement</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Related to astronomical themes in <a href="#verse-55-5">55:5</a>, <a href="#verse-10-5">10:5</a>, and <a href="#verse-6-96">6:96</a>
+                        </div>
+                    </div>
+
+                    <!-- Verse 31:29 -->
+                    <div class="verse-block" id="verse-31-29">
+                        <div class="verse-reference">
+                            <span>Surah Luqman (31), Verse 29</span>
+                            <span class="verse-number">31:29</span>
+                        </div>
+                        <div class="arabic-text">
+                            أَلَمْ تَرَ أَنَّ ٱللَّهَ يُولِجُ ٱلَّيْلَ فِى ٱلنَّهَارِ وَيُولِجُ ٱلنَّهَارَ فِى ٱلَّيْلِ وَسَخَّرَ ٱلشَّمْسَ وَٱلْقَمَرَ كُلٌّ يَجْرِى إِلَىٰ أَجَلٍ مُّسَمًّى
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "Do you not see that Allah causes the night to enter into the day and causes the day to enter into the night and has subjected the sun and the moon, each running [its course] for a specified term?"
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse describes the precise celestial mechanics that create the time cycle: "كل يجري إلى أجل مسمى" (each running to an appointed term). Both the sun and moon are bound by predetermined orbital periods. This divine ordering of celestial mechanics is the foundation for all time measurement systems. The recognition of these appointed terms allows humans to calculate years, seasons, and cosmic time scales.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Appointed Term</span>
+                            <span class="keyword">أجل مسمى</span>
+                            <span class="keyword">Orbital Mechanics</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Related to astronomical calculation theme in <a href="#category-5">Category 5</a> verses
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 6: Ascension Root ع ر ج -->
+            <div class="category" id="category-6">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 6: Ascension Root ع ر ج (Ascending/Paths)</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Verses using the root ع-ر-ج (ascend/ascension) which appears frequently in verses discussing cosmic time and divine ascent. This root suggests a connection between temporal ascension and spiritual ascension.</p>
+
+                    <!-- Verse 32:5 (repeated for context) -->
+                    <div class="verse-block" id="verse-32-5-category6">
+                        <div class="verse-reference">
+                            <span>Surah As-Sajdah (32), Verse 5</span>
+                            <span class="verse-number">32:5</span>
+                        </div>
+                        <div class="arabic-text">
+                            يُدَبِّرُ ٱلْأَمْرَ مِنَ ٱلسَّمَآءِ إِلَى ٱلْأَرْضِ ثُمَّ يَعْرُجُ إِلَيْهِ فِى يَوْمٍ كَانَ مِقْدَارُهُۥٓ أَلْفَ سَنَةٍ مِّمَّا تَعُدُّونَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "He arranges [each] matter from the heaven to the earth; then it will ascend to Him in a Day, the extent of which is a thousand years of those which you count."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> The verb "يَعْرُجُ" (ascends) uses the ع-ر-ج root, describing the upward movement of affairs from earth to heaven. This ascension occurs within "a day" that measures a thousand years, connecting spiritual/temporal ascension with cosmic time.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">يعرج</span>
+                            <span class="keyword">Ascend</span>
+                            <span class="keyword">ع ر ج</span>
+                        </div>
+                    </div>
+
+                    <!-- Verse 34:2 -->
+                    <div class="verse-block" id="verse-34-2">
+                        <div class="verse-reference">
+                            <span>Surah Saba (34), Verse 2</span>
+                            <span class="verse-number">34:2</span>
+                        </div>
+                        <div class="arabic-text">
+                            يَعْلَمُ مَا يَلِجُ فِى ٱلْأَرْضِ وَمَا يَخْرُجُ مِنْهَا وَمَا يَنزِلُ مِنَ ٱلسَّمَآءِ وَمَا يَعْرُجُ فِيهَا ۚ وَهُوَ ٱلرَّحِيمُ ٱلْغَفُورُ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "He knows what penetrates into the earth and what comes out of it and what descends from the heaven and what ascends therein. And He is the Most Merciful, the Most Forgiving."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse uses "يَعْرُجُ فِيهَا" (ascends in it), referring to what ascends into the heavens. The ع-ر-ج root appears in the context of divine omniscience regarding vertical movement and spiritual ascent. Allah's knowledge encompasses all ascending and descending movements, whether physical or spiritual.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">يعرج</span>
+                            <span class="keyword">Heavenly Ascent</span>
+                            <span class="keyword">ع ر ج</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-70-4">70:4</a> for "تَعْرُجُ" (angels ascend); Compare with <a href="#verse-32-5">32:5</a>
+                        </div>
+                    </div>
+
+                    <!-- Verse 57:4 -->
+                    <div class="verse-block" id="verse-57-4">
+                        <div class="verse-reference">
+                            <span>Surah Al-Hadid (57), Verse 4</span>
+                            <span class="verse-number">57:4</span>
+                        </div>
+                        <div class="arabic-text">
+                            هُوَ ٱلَّذِى خَلَقَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ فِى سِتَّةِ أَيَّامٍ ثُمَّ ٱسْتَوَىٰ عَلَى ٱلْعَرْشِ ۚ يَعْلَمُ مَا يَلِجُ فِى ٱلْأَرْضِ وَمَا يَخْرُجُ مِنْهَا وَمَا يَنزِلُ مِنَ ٱلسَّمَآءِ وَمَا يَعْرُجُ فِيهَا ۚ وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "It is He who created the heavens and the earth in six days and then established Himself above the Throne. He knows what penetrates into the earth and what comes out of it and what descends from the heaven and what ascends therein. And He is with you wherever you are. And Allah, of what you do, is seeing."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> Similar to 34:2, this verse uses "يَعْرُجُ فِيهَا" (what ascends therein) in describing divine omniscience. Notably, this verse also mentions creation in "سِتَّةِ أَيَّامٍ" (six days), connecting earthly creation time with cosmic time concepts. The ascending motion ("يَعْرُجُ") represents movement toward the divine realm, complementing the descending motion ("يَنزِلُ").
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">يعرج</span>
+                            <span class="keyword">Creation in Six Days</span>
+                            <span class="keyword">ع ر ج</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> See <a href="#verse-34-2">34:2</a> for parallel usage; Compare "six days" with <a href="#verse-70-3">70:3</a> context
+                        </div>
+                    </div>
+
+                    <!-- Verse 70:4 (repeated for context) -->
+                    <div class="verse-block" id="verse-70-4-category6">
+                        <div class="verse-reference">
+                            <span>Surah Al-Ma'arij (70), Verse 4</span>
+                            <span class="verse-number">70:4</span>
+                        </div>
+                        <div class="arabic-text">
+                            تَعْرُجُ ٱلْمَلَـٰٓئِكَةُ وَٱلرُّوحُ إِلَيْهِ فِى يَوْمٍ كَانَ مِقْدَارُهُۥ خَمْسِينَ أَلْفَ سَنَةٍ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "The angels and the Spirit ascend to Him during a Day the extent of which is fifty thousand years."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> The verb "تَعْرُجُ" (ascend) here describes the angels and Spirit ascending to Allah during the Day of Judgment. This is the most direct use of ع-ر-ج in connection with cosmic time (50,000 years). The context of Surah Al-Ma'arij (The Paths of Ascent) emphasizes the theme of spiritual ascension linked with the ultimate temporal event.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">تعرج</span>
+                            <span class="keyword">Angels Ascend</span>
+                            <span class="keyword">ع ر ج</span>
+                        </div>
+                    </div>
+
+                    <!-- Verse 70:3 -->
+                    <div class="verse-block" id="verse-70-3">
+                        <div class="verse-reference">
+                            <span>Surah Al-Ma'arij (70), Verse 3</span>
+                            <span class="verse-number">70:3</span>
+                        </div>
+                        <div class="arabic-text">
+                            مِّن ٱللَّهِ ذِى ٱلْمَعَارِجِ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "[Revelation] from Allah, the Lord of the Paths of Ascent."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> The phrase "ذِى ٱلْمَعَارِجِ" (Lord of the Paths of Ascent) uses the plural "معارج" (plural of معرج), derived from the ع-ر-ج root. This noun form emphasizes multiple paths or stages of ascension. The term designates Allah as the one who controls all pathways of spiritual and temporal ascent. In the context of Surah 70, where verse 4 discusses the 50,000-year day, this establishes the thematic connection between divine paths/stages and cosmic time scales.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">المعارج</span>
+                            <span class="keyword">Paths of Ascent</span>
+                            <span class="keyword">ع ر ج</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> This verse appears in <a href="#verse-70-4">70:4</a> context; Related to ascension theme throughout <a href="#category-6">Category 6</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 7: Related Time Concepts -->
+            <div class="category" id="category-7">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Category 7: Related Time Concepts & Divine Regulation</h2>
+                    <span class="toggle-icon">▶</span>
+                </div>
+                <div class="category-content">
+                    <p style="margin-bottom: 20px; color: #666;">Additional verses discussing time concepts, divine regulation of temporal affairs, and eschatological timing.</p>
+
+                    <!-- Verse 23:12-14 -->
+                    <div class="verse-block" id="verse-23-12-14">
+                        <div class="verse-reference">
+                            <span>Surah Al-Mu'minun (23), Verses 12-14</span>
+                            <span class="verse-number">23:12-14</span>
+                        </div>
+                        <div class="arabic-text">
+                            وَلَقَدْ خَلَقْنَا ٱلْإِنسَـٰنَ مِن سُلَـٰلَةٍ مِّن طِينٍ (12) ثُمَّ جَعَلْنَـٰهُ نُطْفَةً فِى قَرَارٍ مَّكِينٍ (13) ثُمَّ خَلَقْنَا ٱلنُّطْفَةَ عَلَقَةً فَخَلَقْنَا ٱلْعَلَقَةَ مُضْغَةً فَخَلَقْنَا ٱلْمُضْغَةَ عِظَـٰمًا فَكَسَوْنَا ٱلْعِظَـٰمَ لَحْمًا ثُمَّ أَنشَأْنَـٰهُ خَلْقًا ءَاخَرَ ۚ فَتَبَارَكَ ٱللَّهُ أَحْسَنُ ٱلْخَـٰلِقِينَ (14)
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "And We certainly created man from an extract of clay. (12) Then We placed him as a sperm-drop in a place of settlement, firmly fixed. (13) Then We developed the sperm-drop into a clinging form and developed the clinging form into a lump [of flesh], and developed the lump into bones, and clothed the bones with flesh; and then brought him into being as another creation. So blessed is Allah, the best of creators. (14)"
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> These verses describe stages of human development, each with temporal progression: clay → sperm-drop → clinging form → lump → bones → flesh → complete human. The sequential "ثُمَّ" (then) indicates temporal progression. This demonstrates how the Quran discusses time in stages and cycles at different scales - from embryonic development to cosmic ages. The structured, stage-by-stage development reflects the same principle of time measurement found in larger cosmic time scales.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Creation Stages</span>
+                            <span class="keyword">Temporal Progression</span>
+                            <span class="keyword">Developmental Time</span>
+                        </div>
+                    </div>
+
+                    <!-- Verse 41:9-12 -->
+                    <div class="verse-block" id="verse-41-9-12">
+                        <div class="verse-reference">
+                            <span>Surah Fussilat (41), Verses 9-12</span>
+                            <span class="verse-number">41:9-12</span>
+                        </div>
+                        <div class="arabic-text">
+                            قُلْ أَئِنَّكُمْ لَتَكْفُرُونَ بِٱلَّذِى خَلَقَ ٱلْأَرْضَ فِى يَوْمَيْنِ وَتَجْعَلُونَ لَهُۥٓ أَندَادًا ۚ ذَٰلِكَ رَبُّ ٱلْعَـٰلَمِينَ (9) وَجَعَلَ فِيهَا رَوَٰسِىَ مِن فَوْقِهَا وَبَـٰرَكَ فِيهَا وَقَدَّرَ فِيهَآ أَقْوَٰتَهَا فِى أَرْبَعَةِ أَيَّامٍ سَوَآءً لِّلسَّآئِلِينَ (10) ثُمَّ ٱسْتَوَىٰ إِلَى ٱلسَّمَآءِ وَهِىَ دُخَانٌ فَقَالَ لَهَا وَلِلْأَرْضِ ٱئْتِيَا طَوْعًا أَوْ كَرْهًا قَالَتَآ أَتَيْنَا طَآئِعِينَ (11) فَقَضَىٰهُنَّ سَبْعَ سَمَـٰوَٰتٍ فِى يَوْمَيْنِ وَأَوْحَىٰ فِى كُلِّ سَمَآءٍ أَمْرَهَا ۚ وَزَيَّنَّا ٱلسَّمَآءَ ٱلدُّنْيَا بِمِصْبَـٰحٍ ۚ وَذَٰلِكَ تَقْدِيرُ ٱلْعَزِيزِ ٱلْعَلِيمِ (12)
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "Say, 'Do you indeed disbelieve in the One who created the earth in two days and attribute to Him equals? That is the Lord of the worlds. (9) And He placed within the earth firmly set mountains over its surface, and He blessed it and determined therein its [creatures'] sustenance in four days without distinction - for [the information of] those who ask. (10) Then He directed Himself to the heaven while it was smoke and said to it and to the earth, 'Come [both of you] willingly or by compulsion.' They said, 'We have come willingly.' (11) And He completed them as seven heavens within two days and inspired in each heaven its command. And We adorned the nearest heaven with lamps and as protection. That is the determination of the Exalted in Might, the All-Knowing. (12)"
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> These verses detail creation in stages with specific time allocations: earth in 2 days, sustenance determined in 4 additional days, heavens created in 2 days, totaling 6 days. The term "يوم" (day) here could represent different time scales from literal days to cosmic periods. The structured counting and redistribution of time among different creative tasks demonstrates the principle of temporal division and allocation found in larger eschatological time scales. The phrase "تَقْدِيرُ ٱلْعَزِيزِ ٱلْعَلِيمِ" (determination of the Exalted in Might, the All-Knowing) emphasizes divine wisdom in temporal organization.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Creation Days</span>
+                            <span class="keyword">يوم</span>
+                            <span class="keyword">Six Days Creation</span>
+                            <span class="keyword">تقدير</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Related to creation account; Compare with <a href="#verse-57-4">57:4</a> which also mentions six-day creation
+                        </div>
+                    </div>
+
+                    <!-- Verse 18:47 -->
+                    <div class="verse-block" id="verse-18-47">
+                        <div class="verse-reference">
+                            <span>Surah Al-Kahf (18), Verse 47</span>
+                            <span class="verse-number">18:47</span>
+                        </div>
+                        <div class="arabic-text">
+                            وَيَوْمَ نُسَيِّرُ ٱلْجِبَالَ وَتَرَى ٱلْأَرْضَ بَارِزَةً وَحَشَرْنَـٰهُمْ فَلَمْ نُغَادِرْ مِنْهُمْ أَحَدًا
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "And [remember] the Day when We will cause the mountains to pass away [like clouds], and you will see the earth laid bare."
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse describes eschatological transformation where mountains move and earth is transformed. It uses "يَوْمَ" (on the day) to refer to the Day of Judgment, suggesting a moment in cosmic time that is entirely different from ordinary temporal experience. The transformation of seemingly permanent features (mountains) emphasizes the scale and significance of this temporal event.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Judgment Day</span>
+                            <span class="keyword">Transformation</span>
+                            <span class="keyword">يوم</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Related to eschatological timing in <a href="#category-1">Category 1</a> and <a href="#category-2">Category 2</a>
+                        </div>
+                    </div>
+
+                    <!-- Verse 45:26 -->
+                    <div class="verse-block" id="verse-45-26">
+                        <div class="verse-reference">
+                            <span>Surah Al-Jathiyah (45), Verse 26</span>
+                            <span class="verse-number">45:26</span>
+                        </div>
+                        <div class="arabic-text">
+                            قُلِ ٱللَّهُ يُحْىِۦكُمْ ثُمَّ يُمِيتُكُمْ ثُمَّ يَجْمَعُكُمْ إِلَىٰ يَوْمِ ٱلْقِيَـٰمَةِ لَا رَيْبَ فِيهِ وَلَـٰكِنَّ أَكْثَرَ ٱلنَّاسِ لَا يَعْلَمُونَ
+                        </div>
+                        <div class="translation">
+                            <strong>Translation:</strong> "Say, 'Allah gives you life, then causes you to die; then He will assemble you for the Day of Resurrection, about which there is no doubt, but most of the people do not know.'"
+                        </div>
+                        <div class="analysis">
+                            <strong>Key Analysis:</strong> This verse presents the cycle: life → death → gathering at Resurrection. The sequence emphasizes temporal progression toward "يَوْمِ ٱلْقِيَـٰمَةِ" (the Day of Resurrection). The phrase "لَا رَيْبَ فِيهِ" (about which there is no doubt) emphasizes the certainty of this temporal event, despite the vast span of time involved.
+                        </div>
+                        <div class="keywords">
+                            <span class="keyword">Resurrection Day</span>
+                            <span class="keyword">Life and Death</span>
+                            <span class="keyword">يوم القيامة</span>
+                        </div>
+                        <div class="cross-ref">
+                            <strong>Cross-References:</strong> Related to eschatological concepts in <a href="#category-1">Categories 1</a> and <a href="#category-2">2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats" style="margin-top: 40px;">
+                <h3>Research Resources</h3>
+                <div style="line-height: 1.8; color: #555;">
+                    <p><strong>Primary Source:</strong> Quranic verses with Standard Arabic text</p>
+                    <p><strong>Translation Reference:</strong> English translations based on scholarly interpretations</p>
+                    <p><strong>Linguistic Analysis:</strong> Root word analysis (triliteral roots in Quranic Arabic)</p>
+                    <p><strong>Cross-Reference System:</strong> Linked verses for thematic comparison</p>
+                    <p><strong>Organization Method:</strong> Categorical grouping by time concept and linguistic features</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Time Periods Analysis - Quranic Verses Database</strong></p>
+            <p>Complete compilation of verses relevant to cosmic time periods and temporal concepts in the Quran</p>
+            <p>Total Verses Analyzed: 16 | Categories: 7 | Related Concepts: 5</p>
+            <p class="last-updated">Last Updated: February 2026 | Research Phase: Active Analysis</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                For additional resources, see: <br>
+                <a href="01_OVERVIEW.html" style="color: #667eea;">01_OVERVIEW.html</a> |
+                <a href="03_ANALYSIS.html" style="color: #667eea;">03_ANALYSIS.html</a> |
+                <a href="04_CHRONOLOGY.html" style="color: #667eea;">04_CHRONOLOGY.html</a> |
+                <a href="05_CONCLUSIONS.html" style="color: #667eea;">05_CONCLUSIONS.html</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleCategory(header) {
+            const category = header.parentElement;
+            category.classList.toggle('collapsed');
+        }
+
+        // Optional: Add smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Open category if it's collapsed
+                    const categoryHeader = document.querySelector(href).closest('.category')?.querySelector('.category-header');
+                    if (categoryHeader && document.querySelector(href).closest('.category').classList.contains('collapsed')) {
+                        categoryHeader.click();
+                    }
+                }
+            });
+        });
+
+        // Close all categories except the first one on initial load
+        window.addEventListener('load', function() {
+            const categories = document.querySelectorAll('.category');
+            categories.forEach((cat, index) => {
+                if (index > 0) {
+                    cat.classList.add('collapsed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

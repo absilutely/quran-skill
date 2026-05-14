@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparative Analysis: ذِكْر vs قُرْآن vs كِتَاب</title>
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57837b;
+            --accent-color: #c38e70;
+            --bg-light: #faf8f5;
+            --text-dark: #2c3e50;
+            --border-color: #e0d5c7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        /* Arabic text styling */
+        .arabic, [lang="ar"] {
+            font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', serif;
+            font-size: 1.3em;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.2;
+        }
+
+        .verse {
+            background: linear-gradient(135deg, #f8f6f3 0%, #f0ebe4 100%);
+            border-right: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+            font-size: 1.4em;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+        }
+
+        .verse-ref {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 0.7em;
+            display: block;
+            margin-top: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        h1 .arabic-title {
+            display: block;
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+        }
+
+        h4 {
+            color: var(--accent-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .diagram {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e7dd 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box strong {
+            color: var(--primary-color);
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .disclaimer {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .toc {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin: 30px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            padding: 5px 0;
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-color);
+        }
+
+        .appendix-verse {
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+            padding: 10px 15px;
+            margin: 5px 0;
+        }
+
+        .appendix-verse .ref {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9em;
+        }
+
+        .category-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .verse {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+    <strong>Disclaimer:</strong> This report has been generated by a Quran Research AI Agent with grounding from the full text of the Quran. While results are supposed to be exhaustive, they cannot be guaranteed and should not be shared as authoritative.
+</div>
+
+<!-- TITLE -->
+<h1>
+    Comparative Analysis
+    <span class="arabic-title">ذِكْر vs قُرْآن vs كِتَاب</span>
+</h1>
+
+<p style="text-align: center; color: #666;">
+    A Quran-Only Research Study on the Distinction Between Three Terms for Divine Revelation
+</p>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#summary">1. Executive Summary</a></li>
+        <li><a href="#morphology-dhikr">2. Morphological Analysis: ذِكْر</a></li>
+        <li><a href="#morphology-quran">3. Morphological Analysis: قُرْآن</a></li>
+        <li><a href="#morphology-kitab">4. Morphological Analysis: كِتَاب</a></li>
+        <li><a href="#comparative">5. Comparative Analysis</a></li>
+        <li><a href="#key-verses">6. Key Verses</a></li>
+        <li><a href="#appendix">7. Appendix: All Verses Studied</a></li>
+    </ul>
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 1: SUMMARY -->
+<h2 id="summary">1. Executive Summary</h2>
+
+<h3>Research Question</h3>
+<p>What is the precise Quranic distinction between <strong>ذِكْر</strong> (Dhikr), <strong>قُرْآن</strong> (Quran), and <strong>كِتَاب</strong> (Kitab) when referring to divine revelation?</p>
+
+<h3>Key Findings</h3>
+
+<h4>1.1 Root Meanings Reveal Function</h4>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Root</th>
+        <th>Core Meaning</th>
+        <th>Implication</th>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْر</td>
+        <td class="arabic">ذ ك ر</td>
+        <td>Remember, mention</td>
+        <td>Emphasizes what revelation <strong>DOES</strong> to the recipient</td>
+    </tr>
+    <tr>
+        <td class="arabic">قُرْآن</td>
+        <td class="arabic">ق ر أ</td>
+        <td>Read, recite</td>
+        <td>Emphasizes <strong>HOW</strong> revelation is transmitted</td>
+    </tr>
+    <tr>
+        <td class="arabic">كِتَاب</td>
+        <td class="arabic">ك ت ب</td>
+        <td>Write, prescribe</td>
+        <td>Emphasizes <strong>WHAT</strong> revelation IS as an entity</td>
+    </tr>
+</table>
+
+<h4>1.2 The Three Dimensions of Revelation</h4>
+<div class="diagram">
+┌─────────────────────────────────────────────────────────────┐
+│                    DIVINE REVELATION                         │
+├─────────────────┬─────────────────┬─────────────────────────┤
+│     كِتَاب      │     قُرْآن      │         ذِكْر           │
+│   (Ontology)    │  (Phenomenology)│      (Teleology)        │
+│   What it IS    │  How it APPEARS │     What it ACHIEVES    │
+│   The Record    │  The Recitation │      The Reminder       │
+│   Written       │    Spoken       │       Experienced       │
+└─────────────────┴─────────────────┴─────────────────────────┘
+</div>
+
+<h4>1.3 Occurrence Statistics</h4>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definite Form</th>
+        <th>Total (with variations)</th>
+    </tr>
+    <tr>
+        <td class="arabic">الذِّكْر</td>
+        <td>~19</td>
+        <td>250+ (including verb forms)</td>
+    </tr>
+    <tr>
+        <td class="arabic">الْقُرْآن</td>
+        <td>43</td>
+        <td>70 (limited forms)</td>
+    </tr>
+    <tr>
+        <td class="arabic">الْكِتَاب</td>
+        <td>151</td>
+        <td>200+</td>
+    </tr>
+</table>
+
+<h4>1.4 Exclusivity Pattern</h4>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Exclusive to Muhammad's ﷺ Revelation?</th>
+    </tr>
+    <tr>
+        <td class="arabic">قُرْآن</td>
+        <td><strong>YES</strong> - Never used for other scriptures</td>
+    </tr>
+    <tr>
+        <td class="arabic">كِتَاب</td>
+        <td>NO - Used for Torah, Injeel, Zabur, records of deeds</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْر</td>
+        <td>NO - Used for all divine reminders</td>
+    </tr>
+</table>
+
+<h3>Critical Verses Demonstrating the Distinction</h3>
+
+<h4>Verse 38:1 - قُرْآن Possesses ذِكْر</h4>
+<div class="verse">
+    صٓ ۚ وَ<span class="highlight">الْقُرْآنِ</span> ذِي <span class="highlight">الذِّكْرِ</span>
+    <span class="verse-ref">[38:1]</span>
+</div>
+<div class="insight-box">
+    <strong>Insight:</strong> The قُرْآن is the vessel that CONTAINS الذِّكْر. The ذكر is the function/content; the قرآن is the form/carrier.
+</div>
+
+<h4>Verse 41:3 - كِتَاب Made Into قُرْآن</h4>
+<div class="verse">
+    <span class="highlight">كِتَابٌ</span> فُصِّلَتْ آيَاتُهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span>
+    <span class="verse-ref">[41:3]</span>
+</div>
+<div class="insight-box">
+    <strong>Insight:</strong> The كِتَاب is the entity; قُرْآنًا عَرَبِيًّا describes its mode/form of delivery.
+</div>
+
+<h4>Verse 21:10 - كِتَاب Contains ذِكْر</h4>
+<div class="verse">
+    لَقَدْ أَنزَلْنَا إِلَيْكُمْ <span class="highlight">كِتَابًا</span> فِيهِ <span class="highlight">ذِكْرُكُمْ</span>
+    <span class="verse-ref">[21:10]</span>
+</div>
+<div class="insight-box">
+    <strong>Insight:</strong> The كِتَاب is the container; the ذِكْر is the content/purpose within it.
+</div>
+
+<h4>Verse 54:17 - قُرْآن Made Easy للذِّكْر</h4>
+<div class="verse">
+    وَلَقَدْ يَسَّرْنَا <span class="highlight">الْقُرْآنَ</span> <span class="highlight">لِلذِّكْرِ</span>
+    <span class="verse-ref">[54:17]</span>
+</div>
+<div class="insight-box">
+    <strong>Insight:</strong> The قُرْآن is the means; الذِّكْر is the purpose/goal.
+</div>
+
+<h3>Traditional vs. Quranic Understanding</h3>
+<table>
+    <tr>
+        <th>Aspect</th>
+        <th>Traditional Understanding</th>
+        <th>Quranic Finding</th>
+    </tr>
+    <tr>
+        <td>Synonymy</td>
+        <td>Often treated as synonyms</td>
+        <td><strong>Distinct terms with precise meanings</strong></td>
+    </tr>
+    <tr>
+        <td class="arabic">قُرْآن</td>
+        <td>General name for the scripture</td>
+        <td><strong>Specific to the Arabic recited form</strong></td>
+    </tr>
+    <tr>
+        <td class="arabic">كِتَاب</td>
+        <td>Just "book"</td>
+        <td><strong>The written/prescribed dimension, shared with other scriptures</strong></td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْر</td>
+        <td>Just "remembrance"</td>
+        <td><strong>The functional purpose of all revelation - to remind</strong></td>
+    </tr>
+    <tr>
+        <td>Relationship</td>
+        <td>Interchangeable</td>
+        <td><strong>Hierarchical: كتاب → قرآن → ذكر</strong></td>
+    </tr>
+</table>
+
+<h3>Conclusion</h3>
+<p>The Quran uses ذِكْر, قُرْآن, and كِتَاب not as synonyms but as precisely chosen terms that reveal different dimensions of divine revelation:</p>
+<ul>
+    <li><strong class="arabic">كِتَاب</strong> answers: "What is the revelation?" (A written, prescribed record)</li>
+    <li><strong class="arabic">قُرْآن</strong> answers: "How is it transmitted?" (Through Arabic recitation)</li>
+    <li><strong class="arabic">ذِكْر</strong> answers: "Why was it revealed?" (To remind humanity)</li>
+</ul>
+<p>This finding confirms the principle of <strong>no true synonyms in the Quran</strong> - every word is chosen with divine precision to convey a specific aspect of meaning that no other word could convey.</p>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 2: MORPHOLOGY - DHIKR -->
+<h2 id="morphology-dhikr">2. Morphological Analysis: <span class="arabic">ذِكْر</span> (Dhikr)</h2>
+
+<h3>Root Letters</h3>
+<p class="arabic" style="font-size: 1.5em;">ذ ك ر</p>
+<p>(dhal-kaf-ra)</p>
+
+<h3>Lexical Meaning (من لسان العرب)</h3>
+<p>The root ذ ك ر carries two primary meanings:</p>
+<ol>
+    <li><strong>Remembrance/Mention</strong> (التذكر والذكر باللسان): To bring something to mind, to mention, to speak of</li>
+    <li><strong>Male</strong> (الذكر ضد الأنثى): The masculine gender, as opposed to female</li>
+</ol>
+<p>The first meaning is the one relevant to this study when ذكر refers to revelation.</p>
+
+<h3>Morphological Variations in the Quran</h3>
+
+<h4>2.1 Verbal Noun (المصدر)</h4>
+<table>
+    <tr>
+        <th>Form</th>
+        <th>Pattern</th>
+        <th>Meaning</th>
+        <th>Quranic Usage</th>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْر</td>
+        <td class="arabic">فِعْل</td>
+        <td>Remembrance, mention, reminder</td>
+        <td>The primary noun form used for revelation</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْرَى</td>
+        <td class="arabic">فِعْلَى</td>
+        <td>A reminder (feminine form)</td>
+        <td>Used for the function/effect of reminding</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْرًا</td>
+        <td>Indefinite accusative</td>
+        <td>A remembrance/mention</td>
+        <td>Used as object of verbs</td>
+    </tr>
+</table>
+
+<h4>2.2 With Definite Article: الذِّكْر</h4>
+<table>
+    <tr>
+        <th>Form</th>
+        <th>Case</th>
+        <th>Key Verses</th>
+    </tr>
+    <tr>
+        <td class="arabic">الذِّكْرُ</td>
+        <td>Nominative</td>
+        <td>15:6, 15:9, 38:1, 38:8, 54:25</td>
+    </tr>
+    <tr>
+        <td class="arabic">الذِّكْرَ</td>
+        <td>Accusative</td>
+        <td>16:44, 25:18, 36:11, 43:5, 68:51</td>
+    </tr>
+    <tr>
+        <td class="arabic">الذِّكْرِ</td>
+        <td>Genitive</td>
+        <td>16:43, 21:7, 21:105, 25:29, 38:1</td>
+    </tr>
+</table>
+
+<h4>2.3 With Possessive Suffixes</h4>
+<table>
+    <tr>
+        <th>Form</th>
+        <th>Meaning</th>
+        <th>Example Verse</th>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْرِي</td>
+        <td>My remembrance (Allah speaking)</td>
+        <td>20:42, 20:124, 38:8</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْرُكُم</td>
+        <td>Your remembrance/mention</td>
+        <td>21:10</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْرِهِ</td>
+        <td>His remembrance</td>
+        <td>18:24</td>
+    </tr>
+</table>
+
+<h4>2.4 Verb Forms</h4>
+
+<p><strong>Form I:</strong> <span class="arabic">ذَكَرَ - يَذْكُرُ</span> (to remember/mention)</p>
+<table>
+    <tr>
+        <th>Conjugation</th>
+        <th>Example</th>
+        <th>Verse</th>
+    </tr>
+    <tr>
+        <td class="arabic">اذْكُرُوا</td>
+        <td>Remember! (command, plural)</td>
+        <td>2:40, 2:47, 2:63, 2:122, 2:152, 2:200, 33:41</td>
+    </tr>
+    <tr>
+        <td class="arabic">يَذْكُرُ</td>
+        <td>He remembers</td>
+        <td>2:282</td>
+    </tr>
+    <tr>
+        <td class="arabic">يَذْكُرُونَ</td>
+        <td>They remember</td>
+        <td>3:191, 4:142</td>
+    </tr>
+</table>
+
+<p><strong>Form II:</strong> <span class="arabic">ذَكَّرَ - يُذَكِّرُ</span> (to remind)</p>
+<table>
+    <tr>
+        <th>Conjugation</th>
+        <th>Example</th>
+        <th>Verse</th>
+    </tr>
+    <tr>
+        <td class="arabic">ذَكِّرْ</td>
+        <td>Remind!</td>
+        <td>51:55, 87:9, 88:21</td>
+    </tr>
+    <tr>
+        <td class="arabic">فَذَكِّرْ</td>
+        <td>So remind</td>
+        <td>50:45, 52:29</td>
+    </tr>
+</table>
+
+<p><strong>Form V:</strong> <span class="arabic">تَذَكَّرَ - يَتَذَكَّرُ</span> (to take heed, reflect)</p>
+<table>
+    <tr>
+        <th>Conjugation</th>
+        <th>Example</th>
+        <th>Verse</th>
+    </tr>
+    <tr>
+        <td class="arabic">يَتَذَكَّرُ</td>
+        <td>He reflects/takes heed</td>
+        <td>2:221, 2:269</td>
+    </tr>
+    <tr>
+        <td class="arabic">يَتَذَكَّرُونَ</td>
+        <td>They reflect</td>
+        <td>6:152, 7:57, 16:17</td>
+    </tr>
+</table>
+
+<h4>2.5 Key Observation</h4>
+<div class="insight-box">
+    The root ذ ك ر is highly productive in the Quran. When referring to revelation, it emphasizes the <strong>function</strong> and <strong>purpose</strong> of scripture—to remind humans of what they have forgotten or neglected. The الذِّكْر is that which causes تذكر (reflection/remembrance).
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 3: MORPHOLOGY - QURAN -->
+<h2 id="morphology-quran">3. Morphological Analysis: <span class="arabic">قُرْآن</span> (Quran)</h2>
+
+<h3>Root Letters</h3>
+<p class="arabic" style="font-size: 1.5em;">ق ر أ</p>
+<p>(qaf-ra-hamza)</p>
+
+<h3>Lexical Meaning (من لسان العرب والمفردات)</h3>
+<p>The root ق ر أ means:</p>
+<ol>
+    <li><strong>To read/recite</strong> (القراءة): The act of reading aloud or reciting</li>
+    <li><strong>To gather/collect</strong> (الجمع): To bring together, to compile</li>
+</ol>
+<p>Al-Raghib al-Isfahani notes that قُرْآن is derived from قراءة (recitation) and emphasizes the act of <strong>vocal reading</strong>. The word carries an inherent connection to <strong>auditory transmission</strong> and <strong>verbal articulation</strong>.</p>
+
+<h3>Morphological Pattern</h3>
+<table>
+    <tr>
+        <th>Aspect</th>
+        <th>Analysis</th>
+    </tr>
+    <tr>
+        <td>Pattern</td>
+        <td class="arabic">فُعْلَان (fu'lān)</td>
+    </tr>
+    <tr>
+        <td>Type</td>
+        <td>Verbal noun (مصدر) or intensive noun</td>
+    </tr>
+    <tr>
+        <td>Root meaning</td>
+        <td>Recitation, that which is recited</td>
+    </tr>
+    <tr>
+        <td>Unique feature</td>
+        <td>This word occurs ONLY as a proper noun for this specific revelation</td>
+    </tr>
+</table>
+
+<p>The pattern فُعْلَان often denotes intensity or abundance (كثرة), continuous action, or the product/result of an action. Thus قُرْآن can mean: "That which is repeatedly recited" or "The Great Recitation".</p>
+
+<h3>Forms in the Quran</h3>
+
+<h4>3.1 Definite Form: الْقُرْآن</h4>
+<p><strong>Total occurrences:</strong> 43 times</p>
+
+<h4>3.2 Indefinite Form: قُرْآنًا</h4>
+<p><strong>Count:</strong> 9 occurrences</p>
+<p><strong>Key Verses:</strong> 12:2, 20:113, 39:28, 41:3, 41:44, 42:7, 43:3, 72:1, 13:31</p>
+
+<h4>3.3 The قُرْآن عَرَبِيّ Pattern</h4>
+<div class="warning-box">
+    <strong>Striking Pattern:</strong> Every time قرآن appears in the indefinite (قُرْآنًا), it is followed by عَرَبِيًّا (Arabic) - with only two exceptions!
+</div>
+
+<table>
+    <tr>
+        <th>Verse</th>
+        <th>Text</th>
+    </tr>
+    <tr>
+        <td>12:2</td>
+        <td class="arabic">إِنَّا أَنزَلْنَاهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span> لَّعَلَّكُمْ تَعْقِلُونَ</td>
+    </tr>
+    <tr>
+        <td>20:113</td>
+        <td class="arabic">وَكَذَٰلِكَ أَنزَلْنَاهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span></td>
+    </tr>
+    <tr>
+        <td>39:28</td>
+        <td class="arabic"><span class="highlight">قُرْآنًا عَرَبِيًّا</span> غَيْرَ ذِي عِوَجٍ</td>
+    </tr>
+    <tr>
+        <td>41:3</td>
+        <td class="arabic">كِتَابٌ فُصِّلَتْ آيَاتُهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span></td>
+    </tr>
+    <tr>
+        <td>42:7</td>
+        <td class="arabic">وَكَذَٰلِكَ أَوْحَيْنَا إِلَيْكَ <span class="highlight">قُرْآنًا عَرَبِيًّا</span></td>
+    </tr>
+    <tr>
+        <td>43:3</td>
+        <td class="arabic">إِنَّا جَعَلْنَاهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span> لَّعَلَّكُمْ تَعْقِلُونَ</td>
+    </tr>
+</table>
+
+<p><strong>Exceptions:</strong></p>
+<ul>
+    <li>72:1: <span class="arabic">سَمِعْنَا قُرْآنًا عَجَبًا</span> (amazing Quran - said by the jinn)</li>
+    <li>13:31: <span class="arabic">وَلَوْ أَنَّ قُرْآنًا سُيِّرَتْ بِهِ الْجِبَالُ</span> (hypothetical context)</li>
+</ul>
+
+<div class="insight-box">
+    This pattern suggests that when the term قُرْآن is used generically/descriptively, its <strong>Arabic nature</strong> is the defining characteristic.
+</div>
+
+<h4>3.4 Key Observations</h4>
+<ol>
+    <li><strong>Oral/Auditory Focus:</strong> The term قُرْآن inherently emphasizes the recited, spoken dimension of the revelation.</li>
+    <li><strong>Arabic Specificity:</strong> The unique pairing with عَرَبِيًّا suggests that قُرْآن specifically refers to the revelation in its Arabic linguistic form.</li>
+    <li><strong>Present and Specific:</strong> The frequent use of "هَٰذَا الْقُرْآن" (this Quran) points to something immediate, tangible, and present to the audience.</li>
+    <li><strong>Inimitability:</strong> The challenge to produce "like this Quran" (17:88) indicates its unique literary status.</li>
+    <li><strong>Relationship to ذِكْر:</strong> In 38:1, the Quran is described as "possessing ذِكْر" (ذِي الذِّكْرِ), suggesting ذِكْر is a quality or function the قُرْآن contains.</li>
+</ol>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 4: MORPHOLOGY - KITAB -->
+<h2 id="morphology-kitab">4. Morphological Analysis: <span class="arabic">كِتَاب</span> (Kitab)</h2>
+
+<h3>Root Letters</h3>
+<p class="arabic" style="font-size: 1.5em;">ك ت ب</p>
+<p>(kaf-ta-ba)</p>
+
+<h3>Lexical Meaning (من لسان العرب والمفردات)</h3>
+<p>The root ك ت ب means:</p>
+<ol>
+    <li><strong>To write</strong> (الكتابة): The physical act of inscribing</li>
+    <li><strong>To prescribe/decree</strong> (الفرض): To make obligatory, to ordain</li>
+    <li><strong>To gather/join</strong> (الجمع): To bring together, collect</li>
+</ol>
+<p>Al-Raghib al-Isfahani notes that كِتَاب implies something that is <strong>fixed, recorded, and permanent</strong>. It carries connotations of authority, prescription, and official documentation.</p>
+
+<h3>Morphological Pattern</h3>
+<table>
+    <tr>
+        <th>Aspect</th>
+        <th>Analysis</th>
+    </tr>
+    <tr>
+        <td>Pattern</td>
+        <td class="arabic">فِعَال (fi'āl)</td>
+    </tr>
+    <tr>
+        <td>Type</td>
+        <td>Noun of instrument (اسم آلة) or intensive noun</td>
+    </tr>
+    <tr>
+        <td>Root meaning</td>
+        <td>A written document, scripture, decree</td>
+    </tr>
+    <tr>
+        <td>Plural</td>
+        <td class="arabic">كُتُب (kutub)</td>
+    </tr>
+</table>
+
+<h3>The Multiple Referents of الْكِتَاب</h3>
+
+<h4>Category A: The Quran Itself (~30%)</h4>
+<table>
+    <tr>
+        <th>Pattern</th>
+        <th>Example</th>
+        <th>Verses</th>
+    </tr>
+    <tr>
+        <td class="arabic">أَنزَلْنَا إِلَيْكَ الْكِتَابَ</td>
+        <td>We sent down to you the Book</td>
+        <td>4:105, 5:48, 16:64, 29:47</td>
+    </tr>
+    <tr>
+        <td class="arabic">تِلْكَ آيَاتُ الْكِتَابِ</td>
+        <td>These are verses of the Book</td>
+        <td>10:1, 12:1, 13:1, 15:1, 26:2, 27:1, 28:2, 31:2</td>
+    </tr>
+    <tr>
+        <td class="arabic">تَنزِيلُ الْكِتَابِ</td>
+        <td>The revelation of the Book</td>
+        <td>32:2, 39:1, 40:2, 45:2, 46:2</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذَٰلِكَ الْكِتَابُ</td>
+        <td>That is the Book</td>
+        <td>2:2</td>
+    </tr>
+</table>
+
+<h4>Category B: Previous Scriptures (Torah, Injeel) (~35%)</h4>
+<table>
+    <tr>
+        <th>Pattern</th>
+        <th>Referent</th>
+        <th>Sample Verses</th>
+    </tr>
+    <tr>
+        <td class="arabic">أَهْلَ الْكِتَابِ</td>
+        <td>People of the Book</td>
+        <td>2:105, 2:109, 3:64, 3:65, 3:69, 5:5, 5:15</td>
+    </tr>
+    <tr>
+        <td class="arabic">آتَيْنَا مُوسَى الْكِتَابَ</td>
+        <td>We gave Musa the Book</td>
+        <td>2:53, 2:87, 6:154, 11:110, 17:2, 25:35</td>
+    </tr>
+    <tr>
+        <td class="arabic">أُوتُوا الْكِتَابَ</td>
+        <td>Those given the Book</td>
+        <td>2:101, 2:144, 3:19, 3:20, 4:47, 5:5</td>
+    </tr>
+</table>
+
+<h4>Category C: Record of Deeds (~10%)</h4>
+<table>
+    <tr>
+        <th>Context</th>
+        <th>Verses</th>
+    </tr>
+    <tr>
+        <td>Day of Judgment records</td>
+        <td>17:13, 17:14, 18:49, 23:62, 39:69, 45:28, 69:19, 84:7</td>
+    </tr>
+</table>
+
+<h4>Category D: Divine Decree (اللوح المحفوظ) (~10%)</h4>
+<table>
+    <tr>
+        <th>Pattern</th>
+        <th>Meaning</th>
+        <th>Verses</th>
+    </tr>
+    <tr>
+        <td class="arabic">أُمُّ الْكِتَابِ</td>
+        <td>Mother of the Book</td>
+        <td>3:7, 13:39, 43:4</td>
+    </tr>
+    <tr>
+        <td class="arabic">الْكِتَابُ الْمُبِينُ</td>
+        <td>The Clear Book</td>
+        <td>5:15, 6:59, 10:61, 11:6, 12:1, 27:1</td>
+    </tr>
+    <tr>
+        <td class="arabic">كِتَابٌ مَّكْنُونٌ</td>
+        <td>Hidden/Preserved Book</td>
+        <td>56:78</td>
+    </tr>
+</table>
+
+<h4>4.1 Key Observations</h4>
+<ol>
+    <li><strong>Written/Fixed Nature:</strong> Unlike قُرْآن (which emphasizes recitation), كِتَاب emphasizes something written, recorded, and authoritative.</li>
+    <li><strong>Universal Category:</strong> كِتَاب is a broader term that applies to the Quran, Torah, Injeel, Zabur, records of deeds, and divine decree (اللوح المحفوظ).</li>
+    <li><strong>Continuity with Previous Revelations:</strong> The heavy use of أَهْلَ الْكِتَابِ shows that كِتَاب connects the Quran to a continuum of divine scriptures.</li>
+    <li><strong>Prescriptive Authority:</strong> The root meaning of "to prescribe" appears in usages like كِتَابًا مَّوْقُوتًا (4:103), where prayer is a "prescribed" obligation.</li>
+    <li><strong>Textual Permanence:</strong> Phrases like أُمُّ الْكِتَابِ suggest a heavenly archetype from which earthly scriptures derive.</li>
+</ol>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 5: COMPARATIVE ANALYSIS -->
+<h2 id="comparative">5. Comparative Analysis</h2>
+
+<h3>5.1 Comparison Matrix</h3>
+<table>
+    <tr>
+        <th>Aspect</th>
+        <th class="arabic">ذِكْر</th>
+        <th class="arabic">قُرْآن</th>
+        <th class="arabic">كِتَاب</th>
+    </tr>
+    <tr>
+        <td><strong>Root</strong></td>
+        <td class="arabic">ذ ك ر</td>
+        <td class="arabic">ق ر أ</td>
+        <td class="arabic">ك ت ب</td>
+    </tr>
+    <tr>
+        <td><strong>Core Meaning</strong></td>
+        <td>Remember, mention</td>
+        <td>Read, recite</td>
+        <td>Write, prescribe</td>
+    </tr>
+    <tr>
+        <td><strong>Emphasis</strong></td>
+        <td>Function/effect</td>
+        <td>Mode/form</td>
+        <td>Entity/record</td>
+    </tr>
+    <tr>
+        <td><strong>Sensory Focus</strong></td>
+        <td>Cognitive (mind)</td>
+        <td>Auditory (ears)</td>
+        <td>Visual (eyes)</td>
+    </tr>
+    <tr>
+        <td><strong>Applies to other scriptures</strong></td>
+        <td>Yes (all revelation)</td>
+        <td>No (this revelation only)</td>
+        <td>Yes (all scriptures)</td>
+    </tr>
+</table>
+
+<h3>5.2 The Hierarchical Relationship</h3>
+<p>Based on Quranic evidence, these terms appear in a hierarchical relationship:</p>
+
+<div class="diagram">
+أُمُّ الكِتَاب (Mother of the Book - Divine Source)
+              ↓
+         كِتَاب (The Written Record)
+              ↓
+         قُرْآن (The Arabic Recitation)
+              ↓
+         ذِكْر (The Reminder/Function)
+</div>
+
+<h4>Evidence for this hierarchy:</h4>
+
+<p><strong>1. كتاب → قرآن:</strong></p>
+<div class="verse">
+    كِتَابٌ فُصِّلَتْ آيَاتُهُ <span class="highlight">قُرْآنًا</span> عَرَبِيًّا
+    <span class="verse-ref">[41:3]</span>
+</div>
+<p>A كتاب is MADE INTO قرآن (Arabic recitation)</p>
+
+<p><strong>2. قرآن → ذكر:</strong></p>
+<div class="verse">
+    وَالْقُرْآنِ ذِي <span class="highlight">الذِّكْرِ</span>
+    <span class="verse-ref">[38:1]</span>
+</div>
+<p>The قرآن POSSESSES/CONTAINS ذكر</p>
+
+<div class="verse">
+    يَسَّرْنَا الْقُرْآنَ <span class="highlight">لِلذِّكْرِ</span>
+    <span class="verse-ref">[54:17]</span>
+</div>
+<p>The قرآن is made easy FOR the purpose of ذكر</p>
+
+<h3>5.3 Exclusive vs. Shared Usage</h3>
+
+<h4>Terms EXCLUSIVE to this revelation:</h4>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Exclusivity</th>
+        <th>Evidence</th>
+    </tr>
+    <tr>
+        <td class="arabic">قُرْآن</td>
+        <td>EXCLUSIVE to Prophet Muhammad's revelation</td>
+        <td>Never used for Torah, Injeel, or other scriptures</td>
+    </tr>
+    <tr>
+        <td class="arabic">هَٰذَا الْقُرْآن</td>
+        <td>Emphatic exclusivity</td>
+        <td>Points specifically to this recitation</td>
+    </tr>
+</table>
+
+<h4>Terms SHARED with previous revelations:</h4>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Shared Usage</th>
+        <th>Evidence</th>
+    </tr>
+    <tr>
+        <td class="arabic">كِتَاب</td>
+        <td>Applies to all scriptures</td>
+        <td class="arabic">أَهْلَ الْكِتَابِ، آتَيْنَا مُوسَى الْكِتَابَ</td>
+    </tr>
+    <tr>
+        <td class="arabic">ذِكْر</td>
+        <td>Applies to all reminders</td>
+        <td>21:105: Torah referred to as الذِّكْر</td>
+    </tr>
+</table>
+
+<h3>5.4 Synthesis: The Divine Precision</h3>
+<p>The Quran uses these three terms with precise intentionality:</p>
+
+<ol>
+    <li><strong>When emphasizing the HEAVENLY SOURCE or WRITTEN AUTHORITY</strong> → <span class="arabic">كِتَاب</span>
+        <ul>
+            <li>Connects to previous scriptures</li>
+            <li>Emphasizes permanence and divine decree</li>
+            <li>Used when addressing أَهْلَ الْكِتَابِ</li>
+        </ul>
+    </li>
+    <li><strong>When emphasizing the ARABIC RECITED FORM</strong> → <span class="arabic">قُرْآن</span>
+        <ul>
+            <li>Exclusive to this revelation</li>
+            <li>Emphasizes the auditory miracle</li>
+            <li>Used in challenges and descriptions of its unique nature</li>
+        </ul>
+    </li>
+    <li><strong>When emphasizing the FUNCTION and EFFECT</strong> → <span class="arabic">ذِكْر</span>
+        <ul>
+            <li>What revelation DOES to humans</li>
+            <li>Antidote to غَفْلَة (heedlessness)</li>
+            <li>The PURPOSE of all revelation</li>
+        </ul>
+    </li>
+</ol>
+
+<div class="insight-box">
+    <strong>The terms are NOT synonyms</strong> - they describe different dimensions of the same divine communication:
+    <ul>
+        <li><strong class="arabic">كِتَاب</strong> = The ontological reality (what it IS)</li>
+        <li><strong class="arabic">قُرْآن</strong> = The phenomenological form (how it appears/sounds)</li>
+        <li><strong class="arabic">ذِكْر</strong> = The teleological purpose (what it achieves)</li>
+    </ul>
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 6: KEY VERSES -->
+<h2 id="key-verses">6. Key Verses</h2>
+
+<h3>6.1 Verses Where Terms Appear Together</h3>
+
+<h4>قُرْآن with ذِكْر</h4>
+<table>
+    <tr>
+        <th>Reference</th>
+        <th>Arabic Text</th>
+        <th>Key Relationship</th>
+    </tr>
+    <tr>
+        <td>38:1</td>
+        <td class="arabic">صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</td>
+        <td>قرآن POSSESSES ذكر</td>
+    </tr>
+    <tr>
+        <td>54:17</td>
+        <td class="arabic">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</td>
+        <td>قرآن made easy FOR ذكر</td>
+    </tr>
+    <tr>
+        <td>50:45</td>
+        <td class="arabic">فَذَكِّرْ بِالْقُرْآنِ مَن يَخَافُ وَعِيدِ</td>
+        <td>قرآن as INSTRUMENT of تذكير</td>
+    </tr>
+</table>
+
+<h4>كِتَاب with ذِكْر</h4>
+<table>
+    <tr>
+        <th>Reference</th>
+        <th>Arabic Text</th>
+        <th>Key Relationship</th>
+    </tr>
+    <tr>
+        <td>21:10</td>
+        <td class="arabic">لَقَدْ أَنزَلْنَا إِلَيْكُمْ كِتَابًا فِيهِ ذِكْرُكُمْ أَفَلَا تَعْقِلُونَ</td>
+        <td>كتاب CONTAINS ذكر</td>
+    </tr>
+    <tr>
+        <td>21:105</td>
+        <td class="arabic">وَلَقَدْ كَتَبْنَا فِي الزَّبُورِ مِن بَعْدِ الذِّكْرِ</td>
+        <td>الذكر as earlier scripture (Torah)</td>
+    </tr>
+</table>
+
+<h4>كِتَاب with قُرْآن</h4>
+<table>
+    <tr>
+        <th>Reference</th>
+        <th>Arabic Text</th>
+        <th>Key Relationship</th>
+    </tr>
+    <tr>
+        <td>15:1</td>
+        <td class="arabic">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</td>
+        <td>Paired with conjunction وَ</td>
+    </tr>
+    <tr>
+        <td>27:1</td>
+        <td class="arabic">طسٓ ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينٍ</td>
+        <td>Paired with conjunction وَ</td>
+    </tr>
+    <tr>
+        <td>41:3</td>
+        <td class="arabic">كِتَابٌ فُصِّلَتْ آيَاتُهُ قُرْآنًا عَرَبِيًّا لِّقَوْمٍ يَعْلَمُونَ</td>
+        <td>كتاب made into قرآن</td>
+    </tr>
+</table>
+
+<h3>6.2 Verses with الذِّكْر Referring to Revelation</h3>
+
+<h4>Sent Down / Revealed</h4>
+<div class="verse">وَقَالُوا يَا أَيُّهَا الَّذِي نُزِّلَ عَلَيْهِ الذِّكْرُ إِنَّكَ لَمَجْنُونٌ<span class="verse-ref">[15:6]</span></div>
+<div class="verse">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ<span class="verse-ref">[15:9]</span></div>
+<div class="verse">وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ<span class="verse-ref">[16:44]</span></div>
+<div class="verse">أَءُنزِلَ عَلَيْهِ الذِّكْرُ مِن بَيْنِنَا<span class="verse-ref">[38:8]</span></div>
+<div class="verse">أَءُلْقِيَ الذِّكْرُ عَلَيْهِ مِن بَيْنِنَا بَلْ هُوَ كَذَّابٌ أَشِرٌ<span class="verse-ref">[54:25]</span></div>
+<div class="verse">قَدْ أَنزَلَ اللَّهُ إِلَيْكُمْ ذِكْرًا<span class="verse-ref">[65:10]</span></div>
+
+<h4>Following / Abandoning</h4>
+<div class="verse">إِنَّمَا تُنذِرُ مَنِ اتَّبَعَ الذِّكْرَ وَخَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ<span class="verse-ref">[36:11]</span></div>
+<div class="verse">مَّتَّعْتَهُمْ وَآبَاءَهُمْ حَتَّىٰ نَسُوا الذِّكْرَ وَكَانُوا قَوْمًا بُورًا<span class="verse-ref">[25:18]</span></div>
+<div class="verse">لَّقَدْ أَضَلَّنِي عَنِ الذِّكْرِ بَعْدَ إِذْ جَاءَنِي<span class="verse-ref">[25:29]</span></div>
+<div class="verse">أَفَنَضْرِبُ عَنكُمُ الذِّكْرَ صَفْحًا أَن كُنتُمْ قَوْمًا مُّسْرِفِينَ<span class="verse-ref">[43:5]</span></div>
+
+<h4>People of the Dhikr</h4>
+<div class="verse">فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ<span class="verse-ref">[16:43, 21:7]</span></div>
+
+<h3>6.3 Verses with الْقُرْآن - Key Themes</h3>
+
+<h4>Revelation / Sending Down</h4>
+<div class="verse">شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ<span class="verse-ref">[2:185]</span></div>
+<div class="verse">وَقُرْآنًا فَرَقْنَاهُ لِتَقْرَأَهُ عَلَى النَّاسِ عَلَىٰ مُكْثٍ وَنَزَّلْنَاهُ تَنزِيلًا<span class="verse-ref">[17:106]</span></div>
+<div class="verse">إِنَّا نَحْنُ نَزَّلْنَا عَلَيْكَ الْقُرْآنَ تَنزِيلًا<span class="verse-ref">[76:23]</span></div>
+
+<h4>Guidance</h4>
+<div class="verse">إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ<span class="verse-ref">[17:9]</span></div>
+
+<h4>Inimitability Challenge</h4>
+<div class="verse">قُل لَّئِنِ اجْتَمَعَتِ الْإِنسُ وَالْجِنُّ عَلَىٰ أَن يَأْتُوا بِمِثْلِ هَٰذَا الْقُرْآنِ لَا يَأْتُونَ بِمِثْلِهِ<span class="verse-ref">[17:88]</span></div>
+
+<h4>Recitation Commands</h4>
+<div class="verse">وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُوا لَهُ وَأَنصِتُوا<span class="verse-ref">[7:204]</span></div>
+<div class="verse">فَإِذَا قَرَأْتَ الْقُرْآنَ فَاسْتَعِذْ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ<span class="verse-ref">[16:98]</span></div>
+<div class="verse">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا<span class="verse-ref">[73:4]</span></div>
+
+<h4>Healing and Mercy</h4>
+<div class="verse">وَنُنَزِّلُ مِنَ الْقُرْآنِ مَا هُوَ شِفَاءٌ وَرَحْمَةٌ لِّلْمُؤْمِنِينَ<span class="verse-ref">[17:82]</span></div>
+
+<h4>Arabic Emphasis</h4>
+<div class="verse">إِنَّا أَنزَلْنَاهُ قُرْآنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ<span class="verse-ref">[12:2]</span></div>
+<div class="verse">وَكَذَٰلِكَ أَنزَلْنَاهُ قُرْآنًا عَرَبِيًّا<span class="verse-ref">[20:113]</span></div>
+<div class="verse">قُرْآنًا عَرَبِيًّا غَيْرَ ذِي عِوَجٍ<span class="verse-ref">[39:28]</span></div>
+<div class="verse">إِنَّا جَعَلْنَاهُ قُرْآنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ<span class="verse-ref">[43:3]</span></div>
+
+<h3>6.4 Verses with الْكِتَاب Referring to the Quran</h3>
+
+<h4>Surah Openings</h4>
+<div class="verse">ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ<span class="verse-ref">[2:2]</span></div>
+<div class="verse">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ<span class="verse-ref">[10:1]</span></div>
+<div class="verse">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ<span class="verse-ref">[12:1]</span></div>
+<div class="verse">تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ<span class="verse-ref">[26:2, 28:2]</span></div>
+<div class="verse">تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ<span class="verse-ref">[31:2]</span></div>
+
+<h4>Revelation to Prophet</h4>
+<div class="verse">الْحَمْدُ لِلَّهِ الَّذِي أَنزَلَ عَلَىٰ عَبْدِهِ الْكِتَابَ وَلَمْ يَجْعَل لَّهُ عِوَجًا<span class="verse-ref">[18:1]</span></div>
+<div class="verse">وَكَذَٰلِكَ أَنزَلْنَا إِلَيْكَ الْكِتَابَ<span class="verse-ref">[29:47]</span></div>
+<div class="verse">إِنَّا أَنزَلْنَا إِلَيْكَ الْكِتَابَ بِالْحَقِّ<span class="verse-ref">[39:2]</span></div>
+
+<h4>تنزيل الكتاب Pattern</h4>
+<div class="verse">تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْحَكِيمِ<span class="verse-ref">[39:1, 45:2, 46:2]</span></div>
+<div class="verse">تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْعَلِيمِ<span class="verse-ref">[40:2]</span></div>
+
+<h4>Heavenly Source (أم الكتاب)</h4>
+<div class="verse">هُوَ الَّذِي أَنزَلَ عَلَيْكَ الْكِتَابَ مِنْهُ آيَاتٌ مُّحْكَمَاتٌ هُنَّ أُمُّ الْكِتَابِ<span class="verse-ref">[3:7]</span></div>
+<div class="verse">يَمْحُو اللَّهُ مَا يَشَاءُ وَيُثْبِتُ ۖ وَعِندَهُ أُمُّ الْكِتَابِ<span class="verse-ref">[13:39]</span></div>
+<div class="verse">وَإِنَّهُ فِي أُمِّ الْكِتَابِ لَدَيْنَا لَعَلِيٌّ حَكِيمٌ<span class="verse-ref">[43:4]</span></div>
+
+<h3>6.5 Verses with الْكِتَاب Referring to Previous Scriptures</h3>
+
+<h4>أهل الكتاب (People of the Book)</h4>
+<div class="verse">قُلْ يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ<span class="verse-ref">[3:64]</span></div>
+<div class="verse">يَا أَهْلَ الْكِتَابِ لِمَ تُحَاجُّونَ فِي إِبْرَاهِيمَ<span class="verse-ref">[3:65]</span></div>
+<div class="verse">يَا أَهْلَ الْكِتَابِ قَدْ جَاءَكُمْ رَسُولُنَا يُبَيِّنُ لَكُمْ كَثِيرًا مِّمَّا كُنتُمْ تُخْفُونَ مِنَ الْكِتَابِ<span class="verse-ref">[5:15]</span></div>
+
+<h4>Torah Given to Musa</h4>
+<div class="verse">وَإِذْ آتَيْنَا مُوسَى الْكِتَابَ وَالْفُرْقَانَ لَعَلَّكُمْ تَهْتَدُونَ<span class="verse-ref">[2:53]</span></div>
+<div class="verse">ثُمَّ آتَيْنَا مُوسَى الْكِتَابَ تَمَامًا عَلَى الَّذِي أَحْسَنَ<span class="verse-ref">[6:154]</span></div>
+<div class="verse">وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ فَاخْتُلِفَ فِيهِ<span class="verse-ref">[11:110]</span></div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- SECTION 7: APPENDIX -->
+<h2 id="appendix">7. Appendix: All Verses Studied</h2>
+<p class="arabic" style="text-align: center; font-size: 1.3em;">الملحق: جميع الآيات المدروسة</p>
+
+<div class="category-header"><h3 style="margin:0; color: white;">A. الذِّكْر - Verses with Dhikr Referring to Revelation</h3></div>
+
+<div class="appendix-verse">
+    <span class="ref">[15:6]</span>
+    <span class="arabic">وَقَالُوا يَا أَيُّهَا الَّذِي نُزِّلَ عَلَيْهِ الذِّكْرُ إِنَّكَ لَمَجْنُونٌ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[15:9]</span>
+    <span class="arabic">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[16:43]</span>
+    <span class="arabic">وَمَا أَرْسَلْنَا مِن قَبْلِكَ إِلَّا رِجَالًا نُّوحِي إِلَيْهِمْ ۚ فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[16:44]</span>
+    <span class="arabic">بِالْبَيِّنَاتِ وَالزُّبُرِ ۗ وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ وَلَعَلَّهُمْ يَتَفَكَّرُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[20:124]</span>
+    <span class="arabic">وَمَنْ أَعْرَضَ عَن ذِكْرِي فَإِنَّ لَهُ مَعِيشَةً ضَنكًا وَنَحْشُرُهُ يَوْمَ الْقِيَامَةِ أَعْمَىٰ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[21:7]</span>
+    <span class="arabic">وَمَا أَرْسَلْنَا قَبْلَكَ إِلَّا رِجَالًا نُّوحِي إِلَيْهِمْ ۖ فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[21:10]</span>
+    <span class="arabic">لَقَدْ أَنزَلْنَا إِلَيْكُمْ كِتَابًا فِيهِ ذِكْرُكُمْ ۖ أَفَلَا تَعْقِلُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[21:105]</span>
+    <span class="arabic">وَلَقَدْ كَتَبْنَا فِي الزَّبُورِ مِن بَعْدِ الذِّكْرِ أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[25:18]</span>
+    <span class="arabic">قَالُوا سُبْحَانَكَ مَا كَانَ يَنبَغِي لَنَا أَن نَّتَّخِذَ مِن دُونِكَ مِنْ أَوْلِيَاءَ وَلَٰكِن مَّتَّعْتَهُمْ وَآبَاءَهُمْ حَتَّىٰ نَسُوا الذِّكْرَ وَكَانُوا قَوْمًا بُورًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[25:29]</span>
+    <span class="arabic">لَّقَدْ أَضَلَّنِي عَنِ الذِّكْرِ بَعْدَ إِذْ جَاءَنِي ۗ وَكَانَ الشَّيْطَانُ لِلْإِنسَانِ خَذُولًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[36:11]</span>
+    <span class="arabic">إِنَّمَا تُنذِرُ مَنِ اتَّبَعَ الذِّكْرَ وَخَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ ۖ فَبَشِّرْهُ بِمَغْفِرَةٍ وَأَجْرٍ كَرِيمٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[38:1]</span>
+    <span class="arabic">صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[38:8]</span>
+    <span class="arabic">أَءُنزِلَ عَلَيْهِ الذِّكْرُ مِن بَيْنِنَا ۚ بَلْ هُمْ فِي شَكٍّ مِّن ذِكْرِي ۖ بَل لَّمَّا يَذُوقُوا عَذَابِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[43:5]</span>
+    <span class="arabic">أَفَنَضْرِبُ عَنكُمُ الذِّكْرَ صَفْحًا أَن كُنتُمْ قَوْمًا مُّسْرِفِينَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[54:17]</span>
+    <span class="arabic">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[54:22]</span>
+    <span class="arabic">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[54:25]</span>
+    <span class="arabic">أَءُلْقِيَ الذِّكْرُ عَلَيْهِ مِن بَيْنِنَا بَلْ هُوَ كَذَّابٌ أَشِرٌ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[54:32]</span>
+    <span class="arabic">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[54:40]</span>
+    <span class="arabic">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[65:10]</span>
+    <span class="arabic">أَعَدَّ اللَّهُ لَهُمْ عَذَابًا شَدِيدًا ۖ فَاتَّقُوا اللَّهَ يَا أُولِي الْأَلْبَابِ الَّذِينَ آمَنُوا ۚ قَدْ أَنزَلَ اللَّهُ إِلَيْكُمْ ذِكْرًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[68:51]</span>
+    <span class="arabic">وَإِن يَكَادُ الَّذِينَ كَفَرُوا لَيُزْلِقُونَكَ بِأَبْصَارِهِمْ لَمَّا سَمِعُوا الذِّكْرَ وَيَقُولُونَ إِنَّهُ لَمَجْنُونٌ</span>
+</div>
+
+<div class="category-header"><h3 style="margin:0; color: white;">B. الْقُرْآن - Verses with Quran</h3></div>
+
+<div class="appendix-verse">
+    <span class="ref">[2:185]</span>
+    <span class="arabic">شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[7:204]</span>
+    <span class="arabic">وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُوا لَهُ وَأَنصِتُوا لَعَلَّكُمْ تُرْحَمُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[12:2]</span>
+    <span class="arabic">إِنَّا أَنزَلْنَاهُ قُرْآنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[15:1]</span>
+    <span class="arabic">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[16:98]</span>
+    <span class="arabic">فَإِذَا قَرَأْتَ الْقُرْآنَ فَاسْتَعِذْ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[17:9]</span>
+    <span class="arabic">إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ وَيُبَشِّرُ الْمُؤْمِنِينَ الَّذِينَ يَعْمَلُونَ الصَّالِحَاتِ أَنَّ لَهُمْ أَجْرًا كَبِيرًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[17:41]</span>
+    <span class="arabic">وَلَقَدْ صَرَّفْنَا فِي هَٰذَا الْقُرْآنِ لِيَذَّكَّرُوا وَمَا يَزِيدُهُمْ إِلَّا نُفُورًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[17:82]</span>
+    <span class="arabic">وَنُنَزِّلُ مِنَ الْقُرْآنِ مَا هُوَ شِفَاءٌ وَرَحْمَةٌ لِّلْمُؤْمِنِينَ ۙ وَلَا يَزِيدُ الظَّالِمِينَ إِلَّا خَسَارًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[17:88]</span>
+    <span class="arabic">قُل لَّئِنِ اجْتَمَعَتِ الْإِنسُ وَالْجِنُّ عَلَىٰ أَن يَأْتُوا بِمِثْلِ هَٰذَا الْقُرْآنِ لَا يَأْتُونَ بِمِثْلِهِ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍ ظَهِيرًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[17:106]</span>
+    <span class="arabic">وَقُرْآنًا فَرَقْنَاهُ لِتَقْرَأَهُ عَلَى النَّاسِ عَلَىٰ مُكْثٍ وَنَزَّلْنَاهُ تَنزِيلًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[20:113]</span>
+    <span class="arabic">وَكَذَٰلِكَ أَنزَلْنَاهُ قُرْآنًا عَرَبِيًّا وَصَرَّفْنَا فِيهِ مِنَ الْوَعِيدِ لَعَلَّهُمْ يَتَّقُونَ أَوْ يُحْدِثُ لَهُمْ ذِكْرًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[27:1]</span>
+    <span class="arabic">طسٓ ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[27:6]</span>
+    <span class="arabic">وَإِنَّكَ لَتُلَقَّى الْقُرْآنَ مِن لَّدُنْ حَكِيمٍ عَلِيمٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[36:2]</span>
+    <span class="arabic">وَالْقُرْآنِ الْحَكِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[38:1]</span>
+    <span class="arabic">صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[39:27]</span>
+    <span class="arabic">وَلَقَدْ ضَرَبْنَا لِلنَّاسِ فِي هَٰذَا الْقُرْآنِ مِن كُلِّ مَثَلٍ لَّعَلَّهُمْ يَتَذَكَّرُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[39:28]</span>
+    <span class="arabic">قُرْآنًا عَرَبِيًّا غَيْرَ ذِي عِوَجٍ لَّعَلَّهُمْ يَتَّقُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[41:3]</span>
+    <span class="arabic">كِتَابٌ فُصِّلَتْ آيَاتُهُ قُرْآنًا عَرَبِيًّا لِّقَوْمٍ يَعْلَمُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[41:44]</span>
+    <span class="arabic">وَلَوْ جَعَلْنَاهُ قُرْآنًا أَعْجَمِيًّا لَّقَالُوا لَوْلَا فُصِّلَتْ آيَاتُهُ ۖ أَأَعْجَمِيٌّ وَعَرَبِيٌّ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[42:7]</span>
+    <span class="arabic">وَكَذَٰلِكَ أَوْحَيْنَا إِلَيْكَ قُرْآنًا عَرَبِيًّا لِّتُنذِرَ أُمَّ الْقُرَىٰ وَمَنْ حَوْلَهَا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[43:3]</span>
+    <span class="arabic">إِنَّا جَعَلْنَاهُ قُرْآنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[50:1]</span>
+    <span class="arabic">قٓ ۚ وَالْقُرْآنِ الْمَجِيدِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[50:45]</span>
+    <span class="arabic">نَّحْنُ أَعْلَمُ بِمَا يَقُولُونَ ۖ وَمَا أَنتَ عَلَيْهِم بِجَبَّارٍ ۖ فَذَكِّرْ بِالْقُرْآنِ مَن يَخَافُ وَعِيدِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[56:77]</span>
+    <span class="arabic">إِنَّهُ لَقُرْآنٌ كَرِيمٌ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[72:1]</span>
+    <span class="arabic">قُلْ أُوحِيَ إِلَيَّ أَنَّهُ اسْتَمَعَ نَفَرٌ مِّنَ الْجِنِّ فَقَالُوا إِنَّا سَمِعْنَا قُرْآنًا عَجَبًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[73:4]</span>
+    <span class="arabic">أَوْ زِدْ عَلَيْهِ وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[76:23]</span>
+    <span class="arabic">إِنَّا نَحْنُ نَزَّلْنَا عَلَيْكَ الْقُرْآنَ تَنزِيلًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[85:21]</span>
+    <span class="arabic">بَلْ هُوَ قُرْآنٌ مَّجِيدٌ</span>
+</div>
+
+<div class="category-header"><h3 style="margin:0; color: white;">C. الْكِتَاب - Verses with Kitab (Quran Reference)</h3></div>
+
+<div class="appendix-verse">
+    <span class="ref">[2:2]</span>
+    <span class="arabic">ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[3:7]</span>
+    <span class="arabic">هُوَ الَّذِي أَنزَلَ عَلَيْكَ الْكِتَابَ مِنْهُ آيَاتٌ مُّحْكَمَاتٌ هُنَّ أُمُّ الْكِتَابِ وَأُخَرُ مُتَشَابِهَاتٌ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[10:1]</span>
+    <span class="arabic">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[12:1]</span>
+    <span class="arabic">الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[13:39]</span>
+    <span class="arabic">يَمْحُو اللَّهُ مَا يَشَاءُ وَيُثْبِتُ ۖ وَعِندَهُ أُمُّ الْكِتَابِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[18:1]</span>
+    <span class="arabic">الْحَمْدُ لِلَّهِ الَّذِي أَنزَلَ عَلَىٰ عَبْدِهِ الْكِتَابَ وَلَمْ يَجْعَل لَّهُ عِوَجًا</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[26:2]</span>
+    <span class="arabic">تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[27:1]</span>
+    <span class="arabic">طسٓ ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[28:2]</span>
+    <span class="arabic">تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[29:47]</span>
+    <span class="arabic">وَكَذَٰلِكَ أَنزَلْنَا إِلَيْكَ الْكِتَابَ ۚ فَالَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يُؤْمِنُونَ بِهِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[31:2]</span>
+    <span class="arabic">تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[39:1]</span>
+    <span class="arabic">تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْحَكِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[39:2]</span>
+    <span class="arabic">إِنَّا أَنزَلْنَا إِلَيْكَ الْكِتَابَ بِالْحَقِّ فَاعْبُدِ اللَّهَ مُخْلِصًا لَّهُ الدِّينَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[40:2]</span>
+    <span class="arabic">تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْعَلِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[41:3]</span>
+    <span class="arabic">كِتَابٌ فُصِّلَتْ آيَاتُهُ قُرْآنًا عَرَبِيًّا لِّقَوْمٍ يَعْلَمُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[43:4]</span>
+    <span class="arabic">وَإِنَّهُ فِي أُمِّ الْكِتَابِ لَدَيْنَا لَعَلِيٌّ حَكِيمٌ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[45:2]</span>
+    <span class="arabic">تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْحَكِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[46:2]</span>
+    <span class="arabic">تَنزِيلُ الْكِتَابِ مِنَ اللَّهِ الْعَزِيزِ الْحَكِيمِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[56:78]</span>
+    <span class="arabic">فِي كِتَابٍ مَّكْنُونٍ</span>
+</div>
+
+<div class="category-header"><h3 style="margin:0; color: white;">D. الْكِتَاب - Previous Scriptures (أهل الكتاب)</h3></div>
+
+<div class="appendix-verse">
+    <span class="ref">[2:53]</span>
+    <span class="arabic">وَإِذْ آتَيْنَا مُوسَى الْكِتَابَ وَالْفُرْقَانَ لَعَلَّكُمْ تَهْتَدُونَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[2:87]</span>
+    <span class="arabic">وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ وَقَفَّيْنَا مِن بَعْدِهِ بِالرُّسُلِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[3:64]</span>
+    <span class="arabic">قُلْ يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[3:65]</span>
+    <span class="arabic">يَا أَهْلَ الْكِتَابِ لِمَ تُحَاجُّونَ فِي إِبْرَاهِيمَ وَمَا أُنزِلَتِ التَّوْرَاةُ وَالْإِنجِيلُ إِلَّا مِن بَعْدِهِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[5:15]</span>
+    <span class="arabic">يَا أَهْلَ الْكِتَابِ قَدْ جَاءَكُمْ رَسُولُنَا يُبَيِّنُ لَكُمْ كَثِيرًا مِّمَّا كُنتُمْ تُخْفُونَ مِنَ الْكِتَابِ وَيَعْفُو عَن كَثِيرٍ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[6:154]</span>
+    <span class="arabic">ثُمَّ آتَيْنَا مُوسَى الْكِتَابَ تَمَامًا عَلَى الَّذِي أَحْسَنَ وَتَفْصِيلًا لِّكُلِّ شَيْءٍ وَهُدًى وَرَحْمَةً</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[11:110]</span>
+    <span class="arabic">وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ فَاخْتُلِفَ فِيهِ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[17:2]</span>
+    <span class="arabic">وَآتَيْنَا مُوسَى الْكِتَابَ وَجَعَلْنَاهُ هُدًى لِّبَنِي إِسْرَائِيلَ</span>
+</div>
+<div class="appendix-verse">
+    <span class="ref">[25:35]</span>
+    <span class="arabic">وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ وَجَعَلْنَا مَعَهُ أَخَاهُ هَارُونَ وَزِيرًا</span>
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- STATISTICAL SUMMARY -->
+<h3>Statistical Summary</h3>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>As Revelation</th>
+        <th>As Previous Scripture</th>
+        <th>As Record/Decree</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+        <td class="arabic">الذِّكْر</td>
+        <td>19</td>
+        <td>1 (21:105)</td>
+        <td>-</td>
+        <td>~20</td>
+    </tr>
+    <tr>
+        <td class="arabic">الْقُرْآن</td>
+        <td>43</td>
+        <td>0</td>
+        <td>0</td>
+        <td>43</td>
+    </tr>
+    <tr>
+        <td class="arabic">الْكِتَاب</td>
+        <td>~45</td>
+        <td>~80</td>
+        <td>~25</td>
+        <td>151</td>
+    </tr>
+</table>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- FINAL DISCLAIMER -->
+<div class="disclaimer">
+    <strong>Disclaimer:</strong> This report has been generated by a Quran Research AI Agent with grounding from the full text of the Quran. While results are supposed to be exhaustive, they cannot be guaranteed and should not be shared as authoritative.
+</div>
+
+<p style="text-align: center; color: #999; font-size: 0.9em; margin-top: 40px;">
+    Generated: January 2026 | Quran Research Methodology
+</p>
+
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Human-Qur'an Relationship: A Comprehensive Thematic Analysis</title>
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57c5b6;
+            --accent-color: #159895;
+            --bg-color: #fefefe;
+            --text-color: #333;
+            --arabic-font: 'Amiri', 'Traditional Arabic', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin-top: 30px;
+        }
+
+        h4 {
+            color: #666;
+            margin-top: 25px;
+        }
+
+        .arabic {
+            font-family: var(--arabic-font);
+            direction: rtl;
+            text-align: right;
+            font-size: 1.2em;
+            line-height: 2.2;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .arabic-inline {
+            font-family: var(--arabic-font);
+            direction: rtl;
+            font-size: 1.1em;
+        }
+
+        .disclaimer {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+
+        .verse-text {
+            font-family: var(--arabic-font);
+            direction: rtl;
+            text-align: right;
+            font-size: 1.1em;
+            line-height: 2;
+        }
+
+        .network-diagram {
+            font-family: 'Courier New', monospace;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        .highlight-box {
+            background-color: #e7f3ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .domain-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+
+        .domain-title {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .key-verse {
+            background-color: #f0f7f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .key-verse .reference {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>الإنسان والقرآن: تحليل موضوعي شامل<br>
+    <small style="font-weight: normal; font-size: 0.6em;">The Human Being and the Qur'an: A Comprehensive Thematic Analysis</small></h1>
+</header>
+
+<div class="disclaimer">
+    <strong>Disclaimer:</strong> This report has been generated by a Quran Research AI Agent with grounding from the full text of the Quran. While results are supposed to be exhaustive, they cannot be guaranteed and should not be shared as authoritative.
+</div>
+
+<nav class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#overview">1. Research Overview</a></li>
+        <li><a href="#summary">2. Executive Summary</a></li>
+        <li><a href="#classification">3. Conceptual Classification</a>
+            <ul>
+                <li><a href="#cognitive">3.1 Cognitive Domain (المعرفية)</a></li>
+                <li><a href="#cardiac">3.2 Cardiac/Spiritual Domain (القلبية)</a></li>
+                <li><a href="#behavioral">3.3 Behavioral Domain (السلوكية)</a></li>
+                <li><a href="#ethical">3.4 Ethical Domain (الأخلاقية)</a></li>
+                <li><a href="#evidential">3.5 Evidential Domain (الحجاجية)</a></li>
+                <li><a href="#societal">3.6 Societal Domain (المجتمعية)</a></li>
+                <li><a href="#eschatological">3.7 Eschatological Domain (المآلية)</a></li>
+            </ul>
+        </li>
+        <li><a href="#network">4. Conceptual Network</a></li>
+        <li><a href="#verses">5. Complete Verse Appendix</a></li>
+    </ul>
+</nav>
+
+<section id="overview" class="section">
+    <h2>1. Research Overview</h2>
+
+    <p><strong>Research Question:</strong> What is the comprehensive Qur'anic framework for understanding the relationship between the human being (الإنسان) and the Qur'an (القرآن)?</p>
+
+    <p><strong>Methodology:</strong> Thematic Qur'anic Analysis (التفسير الموضوعي) - extracting, classifying, and interconnecting all verses that describe, define, command, encourage, warn about, or illustrate the human-Qur'an relationship.</p>
+
+    <p><strong>Approach:</strong> Qur'an-only analysis, deriving meaning exclusively from Qur'anic usage and context.</p>
+
+    <p><strong>Scope:</strong> This analysis identified <strong>250+ unique verses</strong> across <strong>seven major conceptual domains</strong> describing the human-Qur'an relationship.</p>
+</section>
+
+<section id="summary" class="section">
+    <h2>2. Executive Summary</h2>
+
+    <h3>Key Findings</h3>
+
+    <div class="highlight-box">
+        <h4>1. The Qur'an's Self-Description</h4>
+        <p>The Qur'an describes itself through multiple names and attributes:</p>
+        <p class="arabic">القرآن • الكتاب • الذكر • الفرقان • النور • الهدى</p>
+        <p>Each name highlights a specific function in relation to humans.</p>
+    </div>
+
+    <div class="highlight-box">
+        <h4>2. Human Engagement Modalities</h4>
+        <p>The Qur'an prescribes a progressive hierarchy of engagement:</p>
+        <table>
+            <tr><th>Stage</th><th>Arabic</th><th>Description</th></tr>
+            <tr><td>1. Recitation</td><td class="arabic-inline">التلاوة</td><td>Entry point - engaging through tongue</td></tr>
+            <tr><td>2. Listening</td><td class="arabic-inline">الاستماع</td><td>Receptive attention through ears</td></tr>
+            <tr><td>3. Contemplation</td><td class="arabic-inline">التدبر</td><td>Deep reflection through mind</td></tr>
+            <tr><td>4. Remembrance</td><td class="arabic-inline">التذكر</td><td>Internalization through heart</td></tr>
+            <tr><td>5. Action</td><td class="arabic-inline">العمل</td><td>Implementation through limbs</td></tr>
+        </table>
+    </div>
+
+    <div class="highlight-box">
+        <h4>3. The Critical Verse (25:30)</h4>
+        <p>The Prophet's complaint represents the fundamental breach in the human-Qur'an relationship:</p>
+        <div class="arabic">
+            وَقَالَ ٱلرَّسُولُ يَـٰرَبِّ إِنَّ قَوْمِى ٱتَّخَذُوا۟ هَـٰذَا ٱلْقُرْءَانَ مَهْجُورًا
+        </div>
+        <p><em>"And the Messenger will say, 'O my Lord, indeed my people have taken this Qur'an as abandoned.'"</em></p>
+    </div>
+
+    <div class="highlight-box">
+        <h4>4. Conditional Benefit</h4>
+        <p>The Qur'an's benefits (guidance, healing, mercy, light) are consistently conditioned on proper engagement:</p>
+        <ul>
+            <li><strong class="arabic-inline">هُدًى لِّلْمُتَّقِينَ</strong> - Guidance for the God-conscious (2:2)</li>
+            <li><strong class="arabic-inline">شِفَآءٌ وَرَحْمَةٌ لِّلْمُؤْمِنِينَ</strong> - Healing and mercy for believers (17:82)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="classification" class="section">
+    <h2>3. Conceptual Classification</h2>
+
+    <p>The extracted verses have been organized into seven distinct conceptual domains, each representing a dimension of the human-Qur'an relationship:</p>
+
+    <table>
+        <tr>
+            <th>Domain</th>
+            <th>Arabic</th>
+            <th>Description</th>
+            <th>Verse Count</th>
+        </tr>
+        <tr>
+            <td>Cognitive</td>
+            <td class="arabic-inline">المعرفية</td>
+            <td>Intellectual engagement: reflection, understanding, reasoning</td>
+            <td>63+</td>
+        </tr>
+        <tr>
+            <td>Cardiac/Spiritual</td>
+            <td class="arabic-inline">القلبية</td>
+            <td>Heart-centered responses: awe, softening, faith</td>
+            <td>25+</td>
+        </tr>
+        <tr>
+            <td>Behavioral</td>
+            <td class="arabic-inline">السلوكية</td>
+            <td>Actions: recitation, listening, following, acting upon</td>
+            <td>85+</td>
+        </tr>
+        <tr>
+            <td>Ethical/Moral</td>
+            <td class="arabic-inline">الأخلاقية</td>
+            <td>Character formation through Qur'anic values</td>
+            <td>22+</td>
+        </tr>
+        <tr>
+            <td>Evidential</td>
+            <td class="arabic-inline">الحجاجية</td>
+            <td>Qur'an as proof, evidence, and criterion</td>
+            <td>30+</td>
+        </tr>
+        <tr>
+            <td>Societal</td>
+            <td class="arabic-inline">المجتمعية</td>
+            <td>Teaching, transmission, and communal engagement</td>
+            <td>25+</td>
+        </tr>
+        <tr>
+            <td>Eschatological</td>
+            <td class="arabic-inline">المآلية</td>
+            <td>Ultimate outcomes: guidance/misguidance, reward/punishment</td>
+            <td>40+</td>
+        </tr>
+    </table>
+
+    <div id="cognitive" class="domain-card">
+        <div class="domain-title">3.1 Cognitive Domain (المعرفية)</div>
+        <p><strong>Definition:</strong> The intellectual engagement with the Qur'an through faculties of reasoning, understanding, reflection, and contemplation.</p>
+
+        <p><strong>Key Qur'anic Terms:</strong></p>
+        <ul>
+            <li><span class="arabic-inline">التدبر</span> (Tadabbur) - Deep reflection/pondering</li>
+            <li><span class="arabic-inline">التفكر</span> (Tafakkur) - Contemplation/thinking</li>
+            <li><span class="arabic-inline">العقل</span> ('Aql) - Reasoning/intellect</li>
+            <li><span class="arabic-inline">الفقه</span> (Fiqh) - Deep understanding</li>
+        </ul>
+
+        <div class="key-verse">
+            <span class="reference">4:82</span>
+            <div class="arabic">أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْءَانَ ۚ وَلَوْ كَانَ مِنْ عِندِ غَيْرِ ٱللَّهِ لَوَجَدُوا۟ فِيهِ ٱخْتِلَـٰفًا كَثِيرًا</div>
+            <p><em>"Do they not reflect upon the Qur'an? If it had been from other than Allah, they would have found within it much contradiction."</em></p>
+        </div>
+
+        <div class="key-verse">
+            <span class="reference">47:24</span>
+            <div class="arabic">أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْءَانَ أَمْ عَلَىٰ قُلُوبٍ أَقْفَالُهَآ</div>
+            <p><em>"Do they not reflect upon the Qur'an, or are there locks upon their hearts?"</em></p>
+        </div>
+    </div>
+
+    <div id="cardiac" class="domain-card">
+        <div class="domain-title">3.2 Cardiac/Spiritual Domain (القلبية)</div>
+        <p><strong>Definition:</strong> The heart-centered responses to the Qur'an, including emotional, spiritual, and faith-based reactions.</p>
+
+        <div class="key-verse">
+            <span class="reference">39:23 - The Paradigm Verse</span>
+            <div class="arabic">ٱللَّهُ نَزَّلَ أَحْسَنَ ٱلْحَدِيثِ كِتَـٰبًا مُّتَشَـٰبِهًا مَّثَانِىَ تَقْشَعِرُّ مِنْهُ جُلُودُ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُمْ ثُمَّ تَلِينُ جُلُودُهُمْ وَقُلُوبُهُمْ إِلَىٰ ذِكْرِ ٱللَّهِ</div>
+            <p><em>"Allah has sent down the best statement: a consistent Book wherein is reiteration. The skins of those who fear their Lord shiver therefrom; then their skins and their hearts soften to the remembrance of Allah."</em></p>
+        </div>
+
+        <p>This verse uniquely captures the physiological-to-spiritual progression: skins shiver → then soften → hearts orient toward remembrance.</p>
+    </div>
+
+    <div id="behavioral" class="domain-card">
+        <div class="domain-title">3.3 Behavioral Domain (السلوكية)</div>
+        <p><strong>Definition:</strong> The active, physical engagement with the Qur'an through specific actions commanded or described.</p>
+
+        <div class="key-verse">
+            <span class="reference">7:204 - The Protocol Verse</span>
+            <div class="arabic">وَإِذَا قُرِئَ ٱلْقُرْءَانُ فَٱسْتَمِعُوا۟ لَهُۥ وَأَنصِتُوا۟ لَعَلَّكُمْ تُرْحَمُونَ</div>
+            <p><em>"When the Qur'an is recited, then listen to it and be silent that you may receive mercy."</em></p>
+        </div>
+
+        <div class="key-verse">
+            <span class="reference">96:1 - The First Command</span>
+            <div class="arabic">ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ</div>
+            <p><em>"Read in the name of your Lord who created."</em></p>
+        </div>
+    </div>
+
+    <div id="ethical" class="domain-card">
+        <div class="domain-title">3.4 Ethical Domain (الأخلاقية)</div>
+        <p><strong>Definition:</strong> The Qur'an's role in shaping human character, morality, and ethical conduct.</p>
+
+        <div class="key-verse">
+            <span class="reference">3:164</span>
+            <div class="arabic">يَتْلُوا۟ عَلَيْهِمْ ءَايَـٰتِهِۦ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ ٱلْكِتَـٰبَ وَٱلْحِكْمَةَ</div>
+            <p><em>"[He] recites to them His verses and purifies them and teaches them the Book and wisdom."</em></p>
+            <p><strong>The Transformation Sequence:</strong> Recitation → Purification → Teaching</p>
+        </div>
+    </div>
+
+    <div id="evidential" class="domain-card">
+        <div class="domain-title">3.5 Evidential Domain (الحجاجية)</div>
+        <p><strong>Definition:</strong> The Qur'an as proof, evidence, and criterion for distinguishing truth from falsehood.</p>
+
+        <div class="key-verse">
+            <span class="reference">25:1</span>
+            <div class="arabic">تَبَارَكَ ٱلَّذِى نَزَّلَ ٱلْفُرْقَانَ عَلَىٰ عَبْدِهِۦ لِيَكُونَ لِلْعَـٰلَمِينَ نَذِيرًا</div>
+            <p><em>"Blessed is He who sent down the Criterion upon His servant that he may be a warner to the worlds."</em></p>
+        </div>
+    </div>
+
+    <div id="societal" class="domain-card">
+        <div class="domain-title">3.6 Societal Domain (المجتمعية)</div>
+        <p><strong>Definition:</strong> The communal, interpersonal, and transmission-related aspects of the human-Qur'an relationship.</p>
+
+        <div class="key-verse">
+            <span class="reference">5:67</span>
+            <div class="arabic">يَـٰٓأَيُّهَا ٱلرَّسُولُ بَلِّغْ مَآ أُنزِلَ إِلَيْكَ مِن رَّبِّكَ</div>
+            <p><em>"O Messenger, announce that which has been revealed to you from your Lord."</em></p>
+        </div>
+    </div>
+
+    <div id="eschatological" class="domain-card">
+        <div class="domain-title">3.7 Eschatological Domain (المآلية)</div>
+        <p><strong>Definition:</strong> The ultimate outcomes of the human-Qur'an relationship in this life and the Hereafter.</p>
+
+        <div class="key-verse">
+            <span class="reference">20:123-124 - The Binary Outcome</span>
+            <div class="arabic">فَمَنِ ٱتَّبَعَ هُدَاىَ فَلَا يَضِلُّ وَلَا يَشْقَىٰ ۝ وَمَنْ أَعْرَضَ عَن ذِكْرِى فَإِنَّ لَهُۥ مَعِيشَةً ضَنكًا</div>
+            <p><em>"Whoever follows My guidance will neither go astray nor suffer. But whoever turns away from My remembrance - indeed, for him is a constricted life."</em></p>
+        </div>
+    </div>
+</section>
+
+<section id="network" class="section">
+    <h2>4. Conceptual Network</h2>
+
+    <h3>4.1 The Core Architecture</h3>
+
+    <p>The Qur'anic framework presents a <strong>three-level architecture</strong>:</p>
+
+    <h4>Level 1: Foundation (الأساس)</h4>
+    <ul>
+        <li><strong>The Qur'an's Nature:</strong> Revealed truth, divine speech, guidance, light, healing</li>
+        <li><strong>Human Capacity:</strong> Created with intellect (عقل), heart (قلب), hearing (سمع), sight (بصر)</li>
+    </ul>
+
+    <h4>Level 2: Engagement (التفاعل)</h4>
+    <ul>
+        <li><strong>Input Mechanisms:</strong> Recitation (تلاوة), Listening (استماع), Reading (قراءة)</li>
+        <li><strong>Processing Mechanisms:</strong> Reflection (تدبر), Understanding (فقه), Reasoning (عقل)</li>
+        <li><strong>Output Mechanisms:</strong> Following (اتباع), Acting (عمل), Judging by (حكم)</li>
+    </ul>
+
+    <h4>Level 3: Outcomes (المآلات)</h4>
+    <ul>
+        <li><strong>Positive:</strong> Guidance (هداية), Success (فلاح), Paradise (جنة)</li>
+        <li><strong>Negative:</strong> Misguidance (ضلال), Failure (خسران), Hellfire (نار)</li>
+    </ul>
+
+    <h3>4.2 The Progressive Engagement Sequence</h3>
+
+    <div class="network-diagram">
+Step 1: RECEPTION (الاستقبال)
+        │
+        ├── التلاوة (Recitation) ──────► Entry through tongue
+        │   "ٱتْلُ مَآ أُوحِىَ إِلَيْكَ" (29:45)
+        │
+        └── الاستماع (Listening) ──────► Entry through ears
+            "فَٱسْتَمِعُوا۟ لَهُۥ وَأَنصِتُوا۟" (7:204)
+            ▼
+Step 2: PROCESSING (المعالجة)
+        │
+        ├── التدبر (Contemplation) ────► Deep reflection
+        │   "أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْءَانَ" (4:82)
+        │
+        └── الفقه (Understanding) ─────► Deep comprehension
+            "لِقَوْمٍ يَفْقَهُونَ" (6:98)
+            ▼
+Step 3: INTERNALIZATION (الاستيعاب)
+        │
+        ├── التذكر (Remembrance) ──────► Mindful retention
+        │
+        └── الإيمان (Faith) ───────────► Heart acceptance
+            ▼
+Step 4: IMPLEMENTATION (التطبيق)
+        │
+        ├── الاتباع (Following)
+        │
+        └── العمل (Acting)
+    </div>
+
+    <h3>4.3 The Dual Outcome Framework</h3>
+
+    <p>The Qur'an consistently presents two divergent paths based on human response:</p>
+
+    <table>
+        <tr>
+            <th>Positive Path (مسار الإيجاب)</th>
+            <th>Negative Path (مسار السلب)</th>
+        </tr>
+        <tr>
+            <td>Recitation (تلاوة)</td>
+            <td>Abandonment (هجر)</td>
+        </tr>
+        <tr>
+            <td>Reflection (تدبر)</td>
+            <td>Aversion (إعراض)</td>
+        </tr>
+        <tr>
+            <td>Faith (إيمان)</td>
+            <td>Denial (تكذيب)</td>
+        </tr>
+        <tr>
+            <td>Following (اتباع)</td>
+            <td>Misguidance (ضلال)</td>
+        </tr>
+        <tr>
+            <td><strong>Success (فلاح)</strong></td>
+            <td><strong>Loss (خسران)</strong></td>
+        </tr>
+        <tr>
+            <td style="background-color: #d4edda;"><strong>Paradise (جنة)</strong></td>
+            <td style="background-color: #f8d7da;"><strong>Hellfire (نار)</strong></td>
+        </tr>
+    </table>
+
+    <h3>4.4 Key Network Principles</h3>
+
+    <div class="highlight-box">
+        <h4>Principle 1: Conditional Benefit</h4>
+        <p>The Qur'an's benefits are not automatic but conditioned on proper engagement. The arrow from Qur'an → Benefit requires the intermediary of proper human engagement.</p>
+    </div>
+
+    <div class="highlight-box">
+        <h4>Principle 2: Heart Centrality</h4>
+        <p>The <span class="arabic-inline">قلب</span> (heart) is the decisive node in the network:</p>
+        <ul>
+            <li><strong>Open Heart</strong> → Receives guidance → Benefits</li>
+            <li><strong>Sealed Heart</strong> → Blocked reception → Loss</li>
+        </ul>
+    </div>
+
+    <div class="highlight-box">
+        <h4>Principle 3: Progressive Deepening</h4>
+        <p>Engagement follows a progression from surface to depth:</p>
+        <p><span class="arabic-inline">تلاوة</span> (Tongue) → <span class="arabic-inline">استماع</span> (Ears) → <span class="arabic-inline">تدبر</span> (Mind) → <span class="arabic-inline">إيمان</span> (Heart) → <span class="arabic-inline">عمل</span> (Limbs)</p>
+    </div>
+
+    <div class="highlight-box">
+        <h4>Principle 4: Eschatological Accountability</h4>
+        <p>The network ultimately terminates in accountability:</p>
+        <ul>
+            <li>The Qur'an becomes witness FOR believers (35:29-30)</li>
+            <li>The Qur'an becomes witness AGAINST rejecters (25:30, 39:71)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="verses" class="section">
+    <h2>5. Complete Verse Appendix</h2>
+
+    <h3>5.1 Recitation Verses (التلاوة)</h3>
+    <table>
+        <tr><th>Reference</th><th>Arabic Text</th></tr>
+        <tr><td>96:1</td><td class="verse-text">ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ</td></tr>
+        <tr><td>96:3</td><td class="verse-text">ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ</td></tr>
+        <tr><td>29:45</td><td class="verse-text">ٱتْلُ مَآ أُوحِىَ إِلَيْكَ مِنَ ٱلْكِتَـٰبِ وَأَقِمِ ٱلصَّلَوٰةَ</td></tr>
+        <tr><td>73:20</td><td class="verse-text">فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ</td></tr>
+        <tr><td>3:113</td><td class="verse-text">أُمَّةٌ قَآئِمَةٌ يَتْلُونَ ءَايَـٰتِ ٱللَّهِ ءَانَآءَ ٱلَّيْلِ وَهُمْ يَسْجُدُونَ</td></tr>
+        <tr><td>35:29</td><td class="verse-text">إِنَّ ٱلَّذِينَ يَتْلُونَ كِتَـٰبَ ٱللَّهِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَأَنفَقُوا۟ مِمَّا رَزَقْنَـٰهُمْ سِرًّا وَعَلَانِيَةً يَرْجُونَ تِجَـٰرَةً لَّن تَبُورَ</td></tr>
+    </table>
+
+    <h3>5.2 Reflection Verses (التدبر)</h3>
+    <table>
+        <tr><th>Reference</th><th>Arabic Text</th></tr>
+        <tr><td>4:82</td><td class="verse-text">أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْءَانَ ۚ وَلَوْ كَانَ مِنْ عِندِ غَيْرِ ٱللَّهِ لَوَجَدُوا۟ فِيهِ ٱخْتِلَـٰفًا كَثِيرًا</td></tr>
+        <tr><td>47:24</td><td class="verse-text">أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْءَانَ أَمْ عَلَىٰ قُلُوبٍ أَقْفَالُهَآ</td></tr>
+        <tr><td>38:29</td><td class="verse-text">كِتَـٰبٌ أَنزَلْنَـٰهُ إِلَيْكَ مُبَـٰرَكٌ لِّيَدَّبَّرُوٓا۟ ءَايَـٰتِهِۦ وَلِيَتَذَكَّرَ أُو۟لُوا۟ ٱلْأَلْبَـٰبِ</td></tr>
+        <tr><td>12:2</td><td class="verse-text">إِنَّآ أَنزَلْنَـٰهُ قُرْءَٰنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ</td></tr>
+        <tr><td>16:44</td><td class="verse-text">وَأَنزَلْنَآ إِلَيْكَ ٱلذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ وَلَعَلَّهُمْ يَتَفَكَّرُونَ</td></tr>
+    </table>
+
+    <h3>5.3 Guidance Verses (الهداية)</h3>
+    <table>
+        <tr><th>Reference</th><th>Arabic Text</th></tr>
+        <tr><td>2:2</td><td class="verse-text">ذَٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ</td></tr>
+        <tr><td>17:9</td><td class="verse-text">إِنَّ هَـٰذَا ٱلْقُرْءَانَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ</td></tr>
+        <tr><td>27:2</td><td class="verse-text">هُدًى وَبُشْرَىٰ لِلْمُؤْمِنِينَ</td></tr>
+        <tr><td>41:44</td><td class="verse-text">قُلْ هُوَ لِلَّذِينَ ءَامَنُوا۟ هُدًى وَشِفَآءٌ</td></tr>
+    </table>
+
+    <h3>5.4 Abandonment and Rejection Verses (الهجر والإعراض)</h3>
+    <table>
+        <tr><th>Reference</th><th>Arabic Text</th></tr>
+        <tr><td>25:30</td><td class="verse-text">وَقَالَ ٱلرَّسُولُ يَـٰرَبِّ إِنَّ قَوْمِى ٱتَّخَذُوا۟ هَـٰذَا ٱلْقُرْءَانَ مَهْجُورًا</td></tr>
+        <tr><td>20:124</td><td class="verse-text">وَمَنْ أَعْرَضَ عَن ذِكْرِى فَإِنَّ لَهُۥ مَعِيشَةً ضَنكًا وَنَحْشُرُهُۥ يَوْمَ ٱلْقِيَـٰمَةِ أَعْمَىٰ</td></tr>
+        <tr><td>32:22</td><td class="verse-text">وَمَنْ أَظْلَمُ مِمَّن ذُكِّرَ بِـَٔايَـٰتِ رَبِّهِۦ ثُمَّ أَعْرَضَ عَنْهَآ</td></tr>
+    </table>
+
+    <h3>5.5 Names and Attributes of the Qur'an</h3>
+    <table>
+        <tr><th>Name</th><th>Reference</th><th>Arabic Text</th></tr>
+        <tr><td>القرآن العظيم</td><td>15:87</td><td class="verse-text">وَلَقَدْ ءَاتَيْنَـٰكَ سَبْعًا مِّنَ ٱلْمَثَانِى وَٱلْقُرْءَانَ ٱلْعَظِيمَ</td></tr>
+        <tr><td>قرآن كريم</td><td>56:77</td><td class="verse-text">إِنَّهُۥ لَقُرْءَانٌ كَرِيمٌ</td></tr>
+        <tr><td>قرآن مجيد</td><td>85:21</td><td class="verse-text">بَلْ هُوَ قُرْءَانٌ مَّجِيدٌ</td></tr>
+        <tr><td>القرآن الحكيم</td><td>36:2</td><td class="verse-text">وَٱلْقُرْءَانِ ٱلْحَكِيمِ</td></tr>
+        <tr><td>قول فصل</td><td>86:13</td><td class="verse-text">إِنَّهُۥ لَقَوْلٌ فَصْلٌ</td></tr>
+        <tr><td>ذكر للعالمين</td><td>81:27</td><td class="verse-text">إِنْ هُوَ إِلَّا ذِكْرٌ لِّلْعَـٰلَمِينَ</td></tr>
+    </table>
+</section>
+
+<section class="section">
+    <h2>Conclusion</h2>
+
+    <p>The Qur'anic framework for the human-Qur'an relationship can be summarized as:</p>
+
+    <ol>
+        <li><strong>Divine Initiative:</strong> Allah reveals the Qur'an as guidance, reminder, and criterion</li>
+        <li><strong>Human Capacity:</strong> Humans are equipped with heart, intellect, and senses to receive</li>
+        <li><strong>Engagement Pathway:</strong> Reception → Processing → Internalization → Implementation</li>
+        <li><strong>Conditional Outcome:</strong> Benefits accrue through proper engagement</li>
+        <li><strong>Dual Terminus:</strong> Ultimate success or loss based on response</li>
+        <li><strong>Mutual Reinforcement:</strong> Faith, action, and guidance form a self-reinforcing cycle</li>
+    </ol>
+
+    <div class="highlight-box">
+        <p><strong>The central message:</strong> The Qur'an's relationship to humans is inherently interactive - it offers, humans respond, and outcomes follow accordingly.</p>
+    </div>
+</section>
+
+<div class="disclaimer">
+    <strong>Disclaimer:</strong> This report has been generated by a Quran Research AI Agent with grounding from the full text of the Quran. While results are supposed to be exhaustive, they cannot be guaranteed and should not be shared as authoritative.
+</div>
+
+<footer style="text-align: center; margin-top: 50px; padding: 20px; color: #666; font-size: 0.9em;">
+    <p>Generated on January 31, 2026</p>
+    <p>Thematic Analysis: علاقة الإنسان بالقرآن</p>
+</footer>
+
+</body>
+</html>

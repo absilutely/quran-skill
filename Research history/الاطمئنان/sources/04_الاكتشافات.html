@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الاكتشافات — الاطمئنان (ط م أ ن)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Amiri', serif; background: #f9f6f0; color: #2c2c2c; line-height: 1.9; padding: 30px; max-width: 960px; margin: 0 auto; }
+  .disclaimer { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px 18px; margin-bottom: 25px; font-size: 0.88rem; color: #664d03; }
+  nav { background: #1a5f7a; padding: 12px 18px; border-radius: 8px; margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { color: #e0f0f5; text-decoration: none; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; transition: background 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.2); }
+  h1 { color: #1a5f7a; font-size: 1.8rem; margin-bottom: 8px; border-bottom: 3px solid #1a5f7a; padding-bottom: 10px; }
+  h2 { color: #1a5f7a; font-size: 1.4rem; margin: 30px 0 15px; padding: 8px 14px; background: #e8f4f8; border-radius: 6px; border-right: 4px solid #1a5f7a; }
+  h3 { color: #2980b9; font-size: 1.15rem; margin: 20px 0 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  th { background: #1a5f7a; color: white; padding: 10px 12px; font-weight: 700; text-align: right; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; text-align: right; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  .verse-ref { background: #e8f4f8; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; color: #1a5f7a; white-space: nowrap; }
+  .note { background: #f0f8ff; border-right: 3px solid #2980b9; padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 0.95rem; }
+  .discovery-card { background: white; border-radius: 10px; padding: 18px; margin: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.07); border-right: 4px solid #8e44ad; }
+  .discovery-card.synonym { border-right-color: #2980b9; }
+  .discovery-card.antonym { border-right-color: #e74c3c; }
+  .discovery-card.coupled { border-right-color: #27ae60; }
+  .discovery-card.causal { border-right-color: #f39c12; }
+  .discovery-card.definition { border-right-color: #1a5f7a; }
+  .discovery-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .discovery-card.synonym .discovery-title { color: #2980b9; }
+  .discovery-card.antonym .discovery-title { color: #e74c3c; }
+  .discovery-card.coupled .discovery-title { color: #27ae60; }
+  .discovery-card.causal .discovery-title { color: #f39c12; }
+  .discovery-card.definition .discovery-title { color: #1a5f7a; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.8rem; margin-left: 6px; }
+  .tag-synonym { background: #ebf5fb; color: #2980b9; }
+  .tag-antonym { background: #fdedec; color: #e74c3c; }
+  .tag-coupled { background: #eafaf1; color: #27ae60; }
+  .tag-causal { background: #fef9e7; color: #f39c12; }
+  .tag-definition { background: #e8f4f8; color: #1a5f7a; }
+  .priority { font-size: 0.85rem; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-top: 8px; }
+  .priority-high { background: #e74c3c; color: white; }
+  .priority-medium { background: #f39c12; color: white; }
+  .priority-low { background: #95a5a6; color: white; }
+  .section-intro { background: #f5eef8; padding: 12px 16px; border-radius: 6px; margin-bottom: 15px; font-size: 0.95rem; border-right: 3px solid #8e44ad; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي مع تأصيل من النص الكامل للقرآن الكريم. رغم أن النتائج مصممة لتكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+<nav>
+  <a href="00_الملخص.html">الملخص</a>
+  <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+  <a href="02_الآيات.html">الآيات</a>
+  <a href="03_التحليل.html">التحليل</a>
+  <a href="04_الاكتشافات.html" class="active">الاكتشافات</a>
+  <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a>
+</nav>
+
+<h1>الاكتشافات — الاطمئنان</h1>
+<div class="section-intro">هذه الصفحة توثّق الكلمات والمفاهيم التي اكتُشفت أثناء بحث جذر (ط م أ ن) في القرآن. كل اكتشاف يمثل فرصة بحثية مستقبلية يمكن تفعيلها لتعميق الفهم.</div>
+
+<!-- ===== المرادفات المحتملة ===== -->
+<h2 id="synonyms">١. المرادفات المحتملة — كلمات ذات معنى ظاهري قريب</h2>
+
+<div class="discovery-card synonym">
+  <div class="discovery-title">سكينة (س ك ن) <span class="tag tag-synonym">مرادف محتمل</span></div>
+  <p><strong>المعنى الظاهري:</strong> السكون والهدوء النفسي</p>
+  <p><strong>الفرق المحتمل:</strong> السكينة في القرآن تأتي كـ<strong>هبة إلهية مُنزَلة</strong> («أنزل السكينة»)، بينما الاطمئنان يصف <strong>حالة القلب الناتجة</strong>. السكينة هي السبب والاطمئنان هو الأثر في بعض السياقات.</p>
+  <p><strong>الشاهد:</strong> «هُوَ ٱلَّذِىٓ أَنزَلَ ٱلسَّكِينَةَ فِى قُلُوبِ ٱلْمُؤْمِنِينَ» (الفتح ٤٨:٤) — لم يقل «أنزل الاطمئنان».</p>
+  <p><strong>سؤال بحثي:</strong> هل السكينة والاطمئنان وجهان لحالة واحدة أم مرحلتان مختلفتان؟</p>
+  <span class="priority priority-high">أولوية عالية — بحث مقارن مقترح</span>
+</div>
+
+<div class="discovery-card synonym">
+  <div class="discovery-title">أمن / أمان (أ م ن) <span class="tag tag-synonym">مرادف محتمل</span></div>
+  <p><strong>المعنى الظاهري:</strong> غياب الخوف والشعور بالأمان</p>
+  <p><strong>الفرق المحتمل:</strong> الأمن يصف <strong>غياب التهديد الخارجي</strong>، بينما الاطمئنان يصف <strong>الاستقرار الداخلي</strong>. لاحظ في ١٦:١١٢: «آمنة مطمئنة» — صفتان متتاليتان مختلفتان.</p>
+  <p><strong>ملاحظة:</strong> تم بحث جذر (أ م ن) سابقًا في دراسة «الإيمان». العلاقة بين الإيمان والاطمئنان موثّقة في <a href="03_التحليل.html#iman-relation">التحليل السياقي §٢</a>.</p>
+  <span class="priority priority-medium">أولوية متوسطة — مبحوث جزئيًا</span>
+</div>
+
+<div class="discovery-card synonym">
+  <div class="discovery-title">رضا (ر ض ي) <span class="tag tag-synonym">مرادف محتمل</span></div>
+  <p><strong>المعنى الظاهري:</strong> القبول والارتياح النفسي</p>
+  <p><strong>الفرق المحتمل:</strong> الرضا في القرآن يصف <strong>موقفًا ذهنيًا وإراديًا</strong> (القبول الواعي)، بينما الاطمئنان حالة <strong>عاطفية وجودية</strong> (السكون بعد القلق). لاحظ أن النفس المطمئنة وُصفت بأنها «راضية مرضية» (٨٩:٢٨) — مما يعني أن الاطمئنان والرضا صفتان <strong>متكاملتان لا مترادفتان</strong>.</p>
+  <span class="priority priority-high">أولوية عالية — بحث مقارن مقترح</span>
+</div>
+
+<!-- ===== الأضداد ===== -->
+<h2 id="antonyms">٢. الأضداد — كلمات تساعد في تحديد حدود المعنى</h2>
+
+<div class="discovery-card antonym">
+  <div class="discovery-title">خوف (خ و ف) <span class="tag tag-antonym">ضد مباشر</span></div>
+  <p><strong>الدليل القرآني:</strong> «فإذا اطمأننتم فأقيموا الصلاة» (<a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a>) — في سياق صلاة الخوف. والقرية المطمئنة عُوقبت بـ «لباس الخوف» (<a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a>).</p>
+  <p><strong>العلاقة:</strong> الخوف هو الحالة التي يزيلها الاطمئنان. الاطمئنان = ما بعد الخوف.</p>
+  <span class="priority priority-medium">أولوية متوسطة</span>
+</div>
+
+<div class="discovery-card antonym">
+  <div class="discovery-title">انقلاب (ق ل ب) <span class="tag tag-antonym">ضد سياقي</span></div>
+  <p><strong>الدليل القرآني:</strong> «فإن أصابه خير اطمأنّ به وإن أصابته فتنة <strong>انقلب</strong> على وجهه» (<a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a>)</p>
+  <p><strong>العلاقة:</strong> الانقلاب = تحوّل مفاجئ وعدم ثبات. يكشف أن الاطمئنان الحقيقي = <strong>ثبات لا يتأثر بتغيّر الظروف</strong>.</p>
+  <span class="priority priority-low">أولوية منخفضة</span>
+</div>
+
+<div class="discovery-card antonym">
+  <div class="discovery-title">غفلة (غ ف ل) <span class="tag tag-antonym">ضد سياقي</span></div>
+  <p><strong>الدليل القرآني:</strong> «وَٱطْمَأَنُّوا۟ بِهَا وَٱلَّذِينَ هُمْ عَنْ ءَايَـٰتِنَا <strong>غَـٰفِلُونَ</strong>» (<a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a>)</p>
+  <p><strong>العلاقة:</strong> الاطمئنان بالدنيا يقترن بالغفلة — مما يكشف أن الاطمئنان الحقيقي (بالله) يجب أن يكون حالة <strong>يقظة واعية</strong> وليس سباتًا.</p>
+  <span class="priority priority-medium">أولوية متوسطة</span>
+</div>
+
+<div class="discovery-card antonym">
+  <div class="discovery-title">شرح الصدر بالكفر <span class="tag tag-antonym">ضد مقابل</span></div>
+  <p><strong>الدليل القرآني:</strong> «وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ وَلَـٰكِن مَّن <strong>شَرَحَ بِٱلْكُفْرِ صَدْرًا</strong>» (<a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a>)</p>
+  <p><strong>العلاقة:</strong> المقابلة بين «مطمئنّ بالإيمان» و«شرح بالكفر صدرًا» تكشف أن الاطمئنان ≠ انشراح. الانشراح للكفر = انفتاح وقبول طوعي. الاطمئنان بالإيمان = سكون وثبات.</p>
+  <span class="priority priority-high">أولوية عالية — بحث مقارن بين شرح وطمأن</span>
+</div>
+
+<!-- ===== الكلمات المقترنة ===== -->
+<h2 id="coupled">٣. الكلمات المقترنة — كلمات تظهر مع الاطمئنان بشكل متكرر</h2>
+
+<div class="discovery-card coupled">
+  <div class="discovery-title">ذكر الله (ذ ك ر) <span class="tag tag-coupled">اقتران سببي</span></div>
+  <p><strong>نسبة الاقتران:</strong> مباشر في ١٣:٢٨ (مرتين)، وضمنيًا في معظم الآيات الإيجابية</p>
+  <p><strong>الملاحظة:</strong> «بذكر الله تطمئنّ القلوب» — ذكر الله هو <strong>السبب الحصري</strong> المعلن لاطمئنان القلوب في القرآن.</p>
+  <p><strong>سؤال بحثي:</strong> ما هو «الذكر» بالضبط في القرآن؟ هل هو التسبيح فقط أم كل ما يذكّر بالله؟</p>
+  <span class="priority priority-high">أولوية عالية — بحث مقارن مقترح</span>
+</div>
+
+<div class="discovery-card coupled">
+  <div class="discovery-title">قلب / قلوب (ق ل ب) <span class="tag tag-coupled">اقتران بنيوي</span></div>
+  <p><strong>نسبة الاقتران:</strong> ٧ من ١٣ ورودًا (٥٤٪)</p>
+  <p><strong>الملاحظة:</strong> القلب هو المحل الرئيسي للاطمئنان. هل القلب في القرآن = العضو الجسدي أم مركز الوعي والإدراك؟ فهم «القلب» القرآني ضروري لفهم الاطمئنان.</p>
+  <span class="priority priority-high">أولوية عالية — بحث موضوعي مقترح</span>
+</div>
+
+<div class="discovery-card coupled">
+  <div class="discovery-title">بشرى (ب ش ر) <span class="tag tag-coupled">اقتران سياقي</span></div>
+  <p><strong>نسبة الاقتران:</strong> ٢ من ١٣ ورودًا (١٥٪) — في ٣:١٢٦ و٨:١٠</p>
+  <p><strong>الملاحظة:</strong> «إلا بشرى ولتطمئنّ» — البشرى تسبق الاطمئنان. النمط: خبر سارّ من الله → اطمئنان القلب.</p>
+  <span class="priority priority-low">أولوية منخفضة</span>
+</div>
+
+<div class="discovery-card coupled">
+  <div class="discovery-title">نفس (ن ف س) <span class="tag tag-coupled">اقتران في أعلى مرتبة</span></div>
+  <p><strong>نسبة الاقتران:</strong> ١ من ١٣ ورودًا — لكنه الذروة (٨٩:٢٧)</p>
+  <p><strong>الملاحظة:</strong> «النفس المطمئنة» هي النموذج الأعلى. بينما القلب هو محل الاطمئنان في المراحل الوسطى، النفس بأكملها تصبح مطمئنة في الذروة.</p>
+  <p><strong>سؤال بحثي:</strong> ما الفرق القرآني بين القلب والنفس؟ وما مراتب النفس في القرآن (أمّارة، لوّامة، مطمئنة)؟</p>
+  <span class="priority priority-high">أولوية عالية — بحث موضوعي مقترح</span>
+</div>
+
+<!-- ===== العلاقات السببية ===== -->
+<h2 id="causal">٤. العلاقات السببية المكتشفة</h2>
+
+<div class="discovery-card causal">
+  <div class="discovery-title">الإيمان → الاطمئنان <span class="tag tag-causal">سبب → نتيجة</span></div>
+  <p><strong>الأدلة:</strong> ٢:٢٦٠ (إبراهيم مؤمن يطلب اطمئنانًا إضافيًا)، ١٣:٢٨ (آمنوا ثم تطمئنّ)، ١٦:١٠٦ (مطمئنّ بالإيمان).</p>
+  <p><strong>الخلاصة:</strong> الإيمان شرط سابق للاطمئنان الحقيقي.</p>
+</div>
+
+<div class="discovery-card causal">
+  <div class="discovery-title">ذكر الله → اطمئنان القلب <span class="tag tag-causal">سبب → نتيجة</span></div>
+  <p><strong>الدليل:</strong> ١٣:٢٨ — علاقة سببية صريحة: «بذكر الله تطمئنّ القلوب».</p>
+</div>
+
+<div class="discovery-card causal">
+  <div class="discovery-title">رؤية الآيات → اطمئنان القلب <span class="tag tag-causal">سبب → نتيجة</span></div>
+  <p><strong>الأدلة:</strong> ٢:٢٦٠ (رؤية إحياء الطيور)، ٥:١١٣ (رؤية المائدة)، ٣:١٢٦ و٨:١٠ (رؤية نصر الله).</p>
+  <p><strong>الخلاصة:</strong> المشاهدة الحسية لقدرة الله تُحدث اطمئنانًا فوق الإيمان الغيبي.</p>
+</div>
+
+<div class="discovery-card causal">
+  <div class="discovery-title">الاطمئنان بالدنيا → غفلة وخسران <span class="tag tag-causal">سبب سلبي → نتيجة سلبية</span></div>
+  <p><strong>الأدلة:</strong> ١٠:٧ (غافلون)، ٢٢:١١ (خسر الدنيا والآخرة)، ١٦:١١٢ (جوع وخوف).</p>
+  <p><strong>الخلاصة:</strong> الاطمئنان بغير الله يؤدي حتمًا إلى نتائج سلبية.</p>
+</div>
+
+<!-- ===== تعريفات قرآنية ===== -->
+<h2 id="definitions">٥. تعريفات قرآنية ضمنية</h2>
+
+<div class="discovery-card definition">
+  <div class="discovery-title">القرآن يعرّف الاطمئنان من خلال: <span class="tag tag-definition">تعريف ضمني</span></div>
+  <table>
+    <tr><th>ما يكشفه القرآن</th><th>الدليل</th></tr>
+    <tr>
+      <td>الاطمئنان = سكون القلب بعد سؤال أو قلق</td>
+      <td>٢:٢٦٠ — إبراهيم سأل ثم اطمأنّ</td>
+    </tr>
+    <tr>
+      <td>الاطمئنان = ثبات داخلي لا يتأثر بالإكراه الخارجي</td>
+      <td>١٦:١٠٦ — مطمئنّ رغم الإكراه</td>
+    </tr>
+    <tr>
+      <td>الاطمئنان = حالة يُحدثها ذكر الله حصريًا</td>
+      <td>١٣:٢٨ — بذكر الله تطمئنّ القلوب</td>
+    </tr>
+    <tr>
+      <td>الاطمئنان الحقيقي = صفة ملازمة للنفس ترضى بها الله</td>
+      <td>٨٩:٢٧–٢٨ — النفس المطمئنة راضية مرضية</td>
+    </tr>
+    <tr>
+      <td>الاطمئنان ≠ الأمن (حالتان مختلفتان متتاليتان)</td>
+      <td>١٦:١١٢ — «آمنة مطمئنة» صفتان منفصلتان</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ===== جدول ملخص الاكتشافات ===== -->
+<h2 id="queue">٦. طابور البحث المستقبلي</h2>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>الموضوع</th>
+    <th>النوع</th>
+    <th>الأولوية</th>
+    <th>السبب</th>
+  </tr>
+  <tr>
+    <td>١</td>
+    <td>سكينة (س ك ن) — مقارنة مع اطمئنان</td>
+    <td>مرادف</td>
+    <td><span class="priority priority-high">عالية</span></td>
+    <td>أقرب مرادف ظاهري — كلاهما يصف سكون القلب</td>
+  </tr>
+  <tr>
+    <td>٢</td>
+    <td>رضا (ر ض ي) — مقارنة مع اطمئنان</td>
+    <td>مرادف</td>
+    <td><span class="priority priority-high">عالية</span></td>
+    <td>٨٩:٢٧–٢٨ تجمعهما — هل هما مرحلتان أم صفتان متوازيتان؟</td>
+  </tr>
+  <tr>
+    <td>٣</td>
+    <td>ذكر (ذ ك ر) — السبب الحصري للاطمئنان</td>
+    <td>اقتران سببي</td>
+    <td><span class="priority priority-high">عالية</span></td>
+    <td>فهم الذكر ضروري لفهم كيف يتحقق الاطمئنان</td>
+  </tr>
+  <tr>
+    <td>٤</td>
+    <td>قلب (ق ل ب) — محل الاطمئنان</td>
+    <td>اقتران بنيوي</td>
+    <td><span class="priority priority-high">عالية</span></td>
+    <td>القلب في ٥٨٪ من الآيات — ما هو القلب القرآني؟</td>
+  </tr>
+  <tr>
+    <td>٥</td>
+    <td>نفس (ن ف س) — مراتب النفس</td>
+    <td>اقتران</td>
+    <td><span class="priority priority-high">عالية</span></td>
+    <td>النفس المطمئنة أعلى المراتب — ما المراتب الأخرى؟</td>
+  </tr>
+  <tr>
+    <td>٦</td>
+    <td>شرح (ش ر ح) — ضد الاطمئنان أم نظيره؟</td>
+    <td>ضد</td>
+    <td><span class="priority priority-high">عالية</span></td>
+    <td>١٦:١٠٦ — شرح بالكفر مقابل اطمئنان بالإيمان</td>
+  </tr>
+  <tr>
+    <td>٧</td>
+    <td>خوف (خ و ف)</td>
+    <td>ضد</td>
+    <td><span class="priority priority-medium">متوسطة</span></td>
+    <td>ضد مباشر في ٤:١٠٣ و١٦:١١٢</td>
+  </tr>
+  <tr>
+    <td>٨</td>
+    <td>غفلة (غ ف ل)</td>
+    <td>ضد</td>
+    <td><span class="priority priority-medium">متوسطة</span></td>
+    <td>مقترنة بالاطمئنان السلبي في ١٠:٧</td>
+  </tr>
+</table>
+
+<div class="disclaimer" style="margin-top: 30px;">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي. النتائج غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+</body>
+</html>

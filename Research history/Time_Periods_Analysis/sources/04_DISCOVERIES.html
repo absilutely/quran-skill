@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovered Terms for Further Research - Quranic Time Periods Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Header */
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav h2 {
+            color: #ecf0f1;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: flex-start;
+            direction: rtl;
+        }
+
+        nav a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #34495e;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+            color: #ffffff;
+        }
+
+        nav a.active {
+            background-color: #27ae60;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Main heading */
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: right;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            text-align: right;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        /* Section headings */
+        h2 {
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            text-align: right;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        table thead {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        table th {
+            padding: 12px;
+            text-align: right;
+            font-weight: bold;
+            border: 1px solid #2c3e50;
+        }
+
+        table td {
+            padding: 12px;
+            border: 1px solid #bdc3c7;
+            text-align: right;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        table tbody tr:hover {
+            background-color: #d5dbdb;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Arabic text styling */
+        .arabic {
+            font-family: 'Traditional Arabic', 'Arial Unicode MS', serif;
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            color: #e74c3c;
+            font-weight: bold;
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+
+        /* List styling */
+        ol, ul {
+            margin: 15px 0;
+            padding-right: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .subsection {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-right: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .subsection h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .subsection ul {
+            list-style-type: circle;
+        }
+
+        .research-queue {
+            background-color: #fff3cd;
+            padding: 15px;
+            margin: 20px 0;
+            border-right: 4px solid #ffc107;
+            border-radius: 4px;
+        }
+
+        .research-queue ol {
+            margin-bottom: 0;
+        }
+
+        .research-queue li {
+            margin-bottom: 12px;
+        }
+
+        .priority {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+
+        .priority-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .priority-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .priority-low {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Integration findings box */
+        .integration-box {
+            background-color: #d5f4e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-right: 4px solid #27ae60;
+            border-radius: 4px;
+        }
+
+        .integration-box ul {
+            list-style-type: square;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #bdc3c7;
+            text-align: right;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Header -->
+        <nav>
+            <h2>ملفات المصادر - Quranic Time Periods Research</h2>
+            <ul>
+                <li><a href="01_TIME_RATIOS.html">Time Ratios Overview</a></li>
+                <li><a href="02_ETYMOLOGICAL_ROOTS.html">Etymological Analysis</a></li>
+                <li><a href="03_DIMENSIONAL_CONNECTIONS.html">Dimensional Connections</a></li>
+                <li><a href="04_DISCOVERIES.html" class="active">Discoveries</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <h1>Discovered Terms for Further Research</h1>
+        <p class="subtitle">An analysis of key Quranic terms requiring deeper investigation in the context of time periods</p>
+
+        <!-- Section 1: Discovered Terms -->
+        <h2>Section 1: Discovered Terms for Further Research</h2>
+        <p style="text-align: right; margin-bottom: 15px;">
+            The following table identifies key terms that emerged during the analysis of Quranic time references,
+            organized by their relationship type and research importance.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Expansion Type</th>
+                    <th>Discovered Term</th>
+                    <th>Source Verse</th>
+                    <th>Reason for Research</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Synonym</td>
+                    <td><span class="arabic">يَوْم</span> (day)</td>
+                    <td><span class="verse-reference">22:47, 32:5, 70:4</span></td>
+                    <td>Central unit in all time ratios</td>
+                </tr>
+                <tr>
+                    <td>Coupled Word</td>
+                    <td><span class="arabic">الْأَمْر</span> (the command)</td>
+                    <td><span class="verse-reference">32:5</span></td>
+                    <td>What exactly descends and ascends?</td>
+                </tr>
+                <tr>
+                    <td>Coupled Word</td>
+                    <td><span class="arabic">الرُّوح</span> (the Spirit)</td>
+                    <td><span class="verse-reference">70:4</span></td>
+                    <td>Why mentioned separately from angels?</td>
+                </tr>
+                <tr>
+                    <td>Related Concept</td>
+                    <td><span class="arabic">السَّمَاء / السَّمَاوَات</span> (Heaven/Heavens)</td>
+                    <td><span class="verse-reference">32:5</span></td>
+                    <td>Heaven as origin point</td>
+                </tr>
+                <tr>
+                    <td>Related Concept</td>
+                    <td><span class="arabic">الْحِسَاب</span> (the Reckoning)</td>
+                    <td><span class="verse-reference">Multiple</span></td>
+                    <td>Day of Reckoning connection</td>
+                </tr>
+                <tr>
+                    <td>Antonym</td>
+                    <td><span class="arabic">عَجِلَ</span> (hasten)</td>
+                    <td><span class="verse-reference">Various</span></td>
+                    <td>Contrast with divine time scale</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 2: Potential Research Directions -->
+        <h2>Section 2: Potential Research Directions</h2>
+
+        <div class="subsection">
+            <h4>1. <span class="arabic">يَوْم</span> (Day) Analysis</h4>
+            <ul>
+                <li>Is "day" in these verses a 24-hour period or symbolic?</li>
+                <li>How does Quran use <span class="arabic">يوم</span> in other contexts?</li>
+                <li>Connection to <span class="arabic">يوم القيامة</span> (Day of Resurrection), <span class="arabic">يوم الدين</span> (Day of Judgment)</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h4>2. <span class="arabic">الْأَمْر</span> (The Command) Research</h4>
+            <ul>
+                <li>Root <span class="arabic">أ م ر</span> - all variations and derivatives</li>
+                <li>What is this "command" that travels cosmically?</li>
+                <li>Connection to <span class="arabic">كُن فَيَكُون</span> (Be, and it is) - the creative command</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h4>3. Speed and Distance Implications</h4>
+            <ul>
+                <li>If <span class="arabic">يوم</span> = literal day and <span class="arabic">سنة</span> = lunar year</li>
+                <li>What speed would be implied for cosmic travel?</li>
+                <li>Connection to modern physics (speed of light, relativity)</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h4>4. <span class="arabic">الرُّوح</span> (The Spirit) Investigation</h4>
+            <ul>
+                <li>Why mentioned separately from angels in verse 70:4?</li>
+                <li>Root <span class="arabic">ر و ح</span> - all variations and meanings</li>
+                <li>Different from <span class="arabic">أرواح</span> (souls)? Hierarchical distinction?</li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Integration Findings -->
+        <h2>Section 3: Integration Findings</h2>
+        <p style="text-align: right; margin-bottom: 15px;">
+            How discovered terms might connect and provide deeper understanding:
+        </p>
+
+        <div class="integration-box">
+            <ul>
+                <li>
+                    <strong>The 1:1000 ratio</strong> may relate to cosmic administration and the governance of creation
+                    over vast timescales, with <span class="arabic">الْأَمْر</span> (the Command) as the mechanism
+                </li>
+                <li>
+                    <strong>The 1:50,000 ratio</strong> may relate to Judgment Day travel, where
+                    <span class="arabic">الرُّوح</span> (the Spirit) or angel entities traverse between realms
+                </li>
+                <li>
+                    <strong>The <span class="arabic">سنة</span>/عام distinction</strong> unlocks understanding of calculated versus
+                    experienced time - lunar vs. solar, terrestrial vs. celestial perspectives
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Research Priority Queue -->
+        <h2>Section 4: Research Priority Queue</h2>
+        <p style="text-align: right; margin-bottom: 15px;">
+            Prioritized order for investigating discovered terms:
+        </p>
+
+        <div class="research-queue">
+            <ol>
+                <li>
+                    <span class="arabic">يَوْم</span> (Day)
+                    <span class="priority priority-high">HIGH PRIORITY</span>
+                    <p style="margin-top: 5px; margin-right: 0; font-size: 0.95em;">Central to understanding all time calculations and ratios; appears in all three key verses</p>
+                </li>
+                <li>
+                    <span class="arabic">الْأَمْر</span> (The Command)
+                    <span class="priority priority-medium">MEDIUM PRIORITY</span>
+                    <p style="margin-top: 5px; margin-right: 0; font-size: 0.95em;">Explains the subject of cosmic travel and divine administration; key to verse 32:5</p>
+                </li>
+                <li>
+                    <span class="arabic">الرُّوح</span> (The Spirit)
+                    <span class="priority priority-medium">MEDIUM PRIORITY</span>
+                    <p style="margin-top: 5px; margin-right: 0; font-size: 0.95em;">Explains the travelers or agents in cosmic time; provides context for verse 70:4</p>
+                </li>
+                <li>
+                    Scientific Correlation &amp; Tafsir Comparison
+                    <span class="priority priority-low">SECONDARY</span>
+                    <p style="margin-top: 5px; margin-right: 0; font-size: 0.95em;">To be addressed after etymological and contextual research is consolidated</p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Quranic Time Periods Analysis - Sources Directory<br>
+                Part of comprehensive research on divine time scales in the Quran<br>
+                Document: 04_DISCOVERIES.html | Last Updated: 2026-02-01
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

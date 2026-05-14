@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دراسة مقارنة: ذِكْر vs قُرْآن vs كِتَاب</title>
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57837b;
+            --accent-color: #c38e70;
+            --bg-light: #faf8f5;
+            --text-dark: #2c3e50;
+            --border-color: #e0d5c7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', serif;
+            line-height: 2.2;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            font-size: 1.2em;
+        }
+
+        .verse {
+            background: linear-gradient(135deg, #f8f6f3 0%, #f0ebe4 100%);
+            border-right: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 8px 0 0 8px;
+            font-size: 1.3em;
+            line-height: 2.4;
+        }
+
+        .verse-ref {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 0.8em;
+            display: block;
+            margin-top: 8px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-right: 4px solid var(--accent-color);
+            padding-right: 15px;
+            margin-top: 40px;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+
+        h4 {
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .diagram {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            text-align: center;
+            overflow-x: auto;
+            direction: ltr;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e7dd 100%);
+            border-right: 4px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .disclaimer {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .toc {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin: 30px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-right: 0;
+        }
+
+        .toc li {
+            padding: 5px 0;
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-color);
+        }
+
+        .appendix-verse {
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+            padding: 10px 15px;
+            margin: 5px 0;
+        }
+
+        .category-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        ul, ol {
+            padding-right: 20px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .verse {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- إخلاء المسؤولية -->
+<div class="disclaimer">
+    <strong>تنبيه:</strong> تم إنشاء هذا التقرير بواسطة وكيل بحث قرآني ذكي مع الاستناد إلى النص الكامل للقرآن الكريم. على الرغم من أن النتائج يُفترض أن تكون شاملة، إلا أنها لا يمكن ضمانها ولا ينبغي مشاركتها كمصدر موثوق.
+</div>
+
+<!-- العنوان -->
+<h1>دراسة مقارنة<br>ذِكْر — قُرْآن — كِتَاب</h1>
+
+<p style="text-align: center; color: #666;">
+    دراسة قرآنية بحتة حول التمييز بين ثلاثة مصطلحات للوحي الإلهي
+</p>
+
+<!-- فهرس المحتويات -->
+<div class="toc">
+    <h2>فهرس المحتويات</h2>
+    <ul>
+        <li><a href="#summary">١. الملخص التنفيذي</a></li>
+        <li><a href="#morphology-dhikr">٢. التحليل الصرفي: ذِكْر</a></li>
+        <li><a href="#morphology-quran">٣. التحليل الصرفي: قُرْآن</a></li>
+        <li><a href="#morphology-kitab">٤. التحليل الصرفي: كِتَاب</a></li>
+        <li><a href="#comparative">٥. التحليل المقارن</a></li>
+        <li><a href="#key-verses">٦. الآيات الرئيسية</a></li>
+        <li><a href="#appendix">٧. الملحق: جميع الآيات المدروسة</a></li>
+    </ul>
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم الأول: الملخص -->
+<h2 id="summary">١. الملخص التنفيذي</h2>
+
+<h3>سؤال البحث</h3>
+<p>ما هو التمييز القرآني الدقيق بين <strong>ذِكْر</strong> و<strong>قُرْآن</strong> و<strong>كِتَاب</strong> عند الإشارة إلى الوحي الإلهي؟</p>
+
+<h3>النتائج الرئيسية</h3>
+
+<h4>١.١ المعاني الجذرية تكشف الوظيفة</h4>
+<table>
+    <tr>
+        <th>المصطلح</th>
+        <th>الجذر</th>
+        <th>المعنى الأساسي</th>
+        <th>الدلالة</th>
+    </tr>
+    <tr>
+        <td>ذِكْر</td>
+        <td>ذ ك ر</td>
+        <td>التذكر، الذكر</td>
+        <td>يركز على ما <strong>يَفعله</strong> الوحي بالمتلقي</td>
+    </tr>
+    <tr>
+        <td>قُرْآن</td>
+        <td>ق ر أ</td>
+        <td>القراءة، التلاوة</td>
+        <td>يركز على <strong>كيفية</strong> نقل الوحي</td>
+    </tr>
+    <tr>
+        <td>كِتَاب</td>
+        <td>ك ت ب</td>
+        <td>الكتابة، الفرض</td>
+        <td>يركز على <strong>ماهية</strong> الوحي ككيان</td>
+    </tr>
+</table>
+
+<h4>١.٢ الأبعاد الثلاثة للوحي</h4>
+<div class="diagram">
+┌─────────────────────────────────────────────────────────────┐
+│                      الوحي الإلهي                            │
+├─────────────────┬─────────────────┬─────────────────────────┤
+│     كِتَاب      │     قُرْآن      │         ذِكْر           │
+│   (الوجود)      │   (الظهور)      │       (الغاية)          │
+│   ما هو         │  كيف يظهر       │     ما يحققه            │
+│   السجل        │   التلاوة       │      التذكير            │
+│   مكتوب        │    منطوق        │       مُعاش             │
+└─────────────────┴─────────────────┴─────────────────────────┘
+</div>
+
+<h4>١.٣ إحصائيات الورود</h4>
+<table>
+    <tr>
+        <th>المصطلح</th>
+        <th>الصيغة المعرفة</th>
+        <th>الإجمالي (مع التصريفات)</th>
+    </tr>
+    <tr>
+        <td>الذِّكْر</td>
+        <td>~١٩</td>
+        <td>+٢٥٠ (شاملة الأفعال)</td>
+    </tr>
+    <tr>
+        <td>الْقُرْآن</td>
+        <td>٤٣</td>
+        <td>٧٠ (صيغ محدودة)</td>
+    </tr>
+    <tr>
+        <td>الْكِتَاب</td>
+        <td>١٥١</td>
+        <td>+٢٠٠</td>
+    </tr>
+</table>
+
+<h4>١.٤ نمط الحصرية</h4>
+<table>
+    <tr>
+        <th>المصطلح</th>
+        <th>هل هو حصري لوحي محمد ﷺ؟</th>
+    </tr>
+    <tr>
+        <td>قُرْآن</td>
+        <td><strong>نعم</strong> - لا يُستخدم أبداً للكتب السماوية الأخرى</td>
+    </tr>
+    <tr>
+        <td>كِتَاب</td>
+        <td>لا - يُستخدم للتوراة والإنجيل والزبور وسجلات الأعمال</td>
+    </tr>
+    <tr>
+        <td>ذِكْر</td>
+        <td>لا - يُستخدم لجميع التذكيرات الإلهية</td>
+    </tr>
+</table>
+
+<h3>آيات محورية توضح التمييز</h3>
+
+<h4>آية ٣٨:١ - القُرْآن يمتلك الذِّكْر</h4>
+<div class="verse">
+    صٓ ۚ وَ<span class="highlight">الْقُرْآنِ</span> ذِي <span class="highlight">الذِّكْرِ</span>
+    <span class="verse-ref">[٣٨:١]</span>
+</div>
+<div class="insight-box">
+    <strong>الاستنتاج:</strong> القُرْآن هو الوعاء الذي يَحتوي الذِّكْر. الذِّكْر هو الوظيفة/المحتوى؛ والقُرْآن هو الشكل/الحامل.
+</div>
+
+<h4>آية ٤١:٣ - الكِتَاب يُصاغ قُرْآناً</h4>
+<div class="verse">
+    <span class="highlight">كِتَابٌ</span> فُصِّلَتْ آيَاتُهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span>
+    <span class="verse-ref">[٤١:٣]</span>
+</div>
+<div class="insight-box">
+    <strong>الاستنتاج:</strong> الكِتَاب هو الكيان؛ وقُرْآنًا عَرَبِيًّا يصف طريقة/شكل إيصاله.
+</div>
+
+<h4>آية ٢١:١٠ - الكِتَاب يحتوي الذِّكْر</h4>
+<div class="verse">
+    لَقَدْ أَنزَلْنَا إِلَيْكُمْ <span class="highlight">كِتَابًا</span> فِيهِ <span class="highlight">ذِكْرُكُمْ</span>
+    <span class="verse-ref">[٢١:١٠]</span>
+</div>
+<div class="insight-box">
+    <strong>الاستنتاج:</strong> الكِتَاب هو الوعاء؛ والذِّكْر هو المحتوى/الغاية بداخله.
+</div>
+
+<h4>آية ٥٤:١٧ - القُرْآن مُيسَّر للذِّكْر</h4>
+<div class="verse">
+    وَلَقَدْ يَسَّرْنَا <span class="highlight">الْقُرْآنَ</span> <span class="highlight">لِلذِّكْرِ</span>
+    <span class="verse-ref">[٥٤:١٧]</span>
+</div>
+<div class="insight-box">
+    <strong>الاستنتاج:</strong> القُرْآن هو الوسيلة؛ والذِّكْر هو الهدف/الغاية.
+</div>
+
+<h3>الفهم التقليدي مقابل الفهم القرآني</h3>
+<table>
+    <tr>
+        <th>الجانب</th>
+        <th>الفهم التقليدي</th>
+        <th>النتيجة القرآنية</th>
+    </tr>
+    <tr>
+        <td>الترادف</td>
+        <td>غالباً تُعامل كمترادفات</td>
+        <td><strong>مصطلحات متمايزة بمعانٍ دقيقة</strong></td>
+    </tr>
+    <tr>
+        <td>قُرْآن</td>
+        <td>اسم عام للكتاب المقدس</td>
+        <td><strong>خاص بالصيغة العربية المتلوة</strong></td>
+    </tr>
+    <tr>
+        <td>كِتَاب</td>
+        <td>مجرد "كتاب"</td>
+        <td><strong>البعد المكتوب/المفروض، مشترك مع الكتب السابقة</strong></td>
+    </tr>
+    <tr>
+        <td>ذِكْر</td>
+        <td>مجرد "تذكرة"</td>
+        <td><strong>الغاية الوظيفية لكل الوحي - التذكير</strong></td>
+    </tr>
+    <tr>
+        <td>العلاقة</td>
+        <td>قابلة للتبادل</td>
+        <td><strong>تراتبية: كتاب ← قرآن ← ذكر</strong></td>
+    </tr>
+</table>
+
+<h3>الخلاصة</h3>
+<p>يستخدم القرآن ذِكْر وقُرْآن وكِتَاب ليس كمترادفات بل كمصطلحات مختارة بدقة تكشف أبعاداً مختلفة للوحي الإلهي:</p>
+<ul>
+    <li><strong>كِتَاب</strong> يجيب على: "ما هو الوحي؟" (سجل مكتوب ومفروض)</li>
+    <li><strong>قُرْآن</strong> يجيب على: "كيف يُنقل؟" (من خلال التلاوة العربية)</li>
+    <li><strong>ذِكْر</strong> يجيب على: "لماذا أُنزل؟" (لتذكير البشرية)</li>
+</ul>
+<p>هذه النتيجة تؤكد مبدأ <strong>عدم وجود ترادف حقيقي في القرآن</strong> - كل كلمة مختارة بدقة إلهية لنقل جانب محدد من المعنى لا يمكن لأي كلمة أخرى نقله.</p>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم الثاني: التحليل الصرفي - ذكر -->
+<h2 id="morphology-dhikr">٢. التحليل الصرفي: ذِكْر</h2>
+
+<h3>الحروف الجذرية</h3>
+<p style="font-size: 1.5em; text-align: center;">ذ ك ر</p>
+
+<h3>المعنى المعجمي (من لسان العرب)</h3>
+<p>يحمل الجذر ذ ك ر معنيين أساسيين:</p>
+<ol>
+    <li><strong>التذكر والذكر باللسان:</strong> استحضار الشيء في الذهن أو ذكره</li>
+    <li><strong>الذَّكَر ضد الأنثى:</strong> الجنس المذكر</li>
+</ol>
+<p>المعنى الأول هو المتعلق بهذه الدراسة عندما يشير الذكر إلى الوحي.</p>
+
+<h3>التصريفات الصرفية في القرآن</h3>
+
+<h4>٢.١ المصدر</h4>
+<table>
+    <tr>
+        <th>الصيغة</th>
+        <th>الوزن</th>
+        <th>المعنى</th>
+        <th>الاستخدام القرآني</th>
+    </tr>
+    <tr>
+        <td>ذِكْر</td>
+        <td>فِعْل</td>
+        <td>التذكر، الذكر، التذكير</td>
+        <td>الصيغة الاسمية الرئيسية للوحي</td>
+    </tr>
+    <tr>
+        <td>ذِكْرَى</td>
+        <td>فِعْلَى</td>
+        <td>تذكرة (صيغة مؤنثة)</td>
+        <td>تُستخدم لوظيفة/أثر التذكير</td>
+    </tr>
+    <tr>
+        <td>ذِكْرًا</td>
+        <td>منصوب نكرة</td>
+        <td>تذكرة/ذكر</td>
+        <td>تُستخدم كمفعول للأفعال</td>
+    </tr>
+</table>
+
+<h4>٢.٢ مع أل التعريف: الذِّكْر</h4>
+<table>
+    <tr>
+        <th>الصيغة</th>
+        <th>الحالة الإعرابية</th>
+        <th>آيات رئيسية</th>
+    </tr>
+    <tr>
+        <td>الذِّكْرُ</td>
+        <td>مرفوع</td>
+        <td>١٥:٦، ١٥:٩، ٣٨:١، ٣٨:٨، ٥٤:٢٥</td>
+    </tr>
+    <tr>
+        <td>الذِّكْرَ</td>
+        <td>منصوب</td>
+        <td>١٦:٤٤، ٢٥:١٨، ٣٦:١١، ٤٣:٥، ٦٨:٥١</td>
+    </tr>
+    <tr>
+        <td>الذِّكْرِ</td>
+        <td>مجرور</td>
+        <td>١٦:٤٣، ٢١:٧، ٢١:١٠٥، ٢٥:٢٩، ٣٨:١</td>
+    </tr>
+</table>
+
+<h4>٢.٣ مع الضمائر المتصلة</h4>
+<table>
+    <tr>
+        <th>الصيغة</th>
+        <th>المعنى</th>
+        <th>أمثلة من الآيات</th>
+    </tr>
+    <tr>
+        <td>ذِكْرِي</td>
+        <td>ذكري (الله يتكلم)</td>
+        <td>٢٠:٤٢، ٢٠:١٢٤، ٣٨:٨</td>
+    </tr>
+    <tr>
+        <td>ذِكْرُكُم</td>
+        <td>ذكركم/تذكيركم</td>
+        <td>٢١:١٠</td>
+    </tr>
+    <tr>
+        <td>ذِكْرِهِ</td>
+        <td>ذكره</td>
+        <td>١٨:٢٤</td>
+    </tr>
+</table>
+
+<h4>٢.٤ الصيغ الفعلية</h4>
+
+<p><strong>الفعل الثلاثي:</strong> ذَكَرَ - يَذْكُرُ (يتذكر/يذكر)</p>
+<table>
+    <tr>
+        <th>التصريف</th>
+        <th>المثال</th>
+        <th>الآية</th>
+    </tr>
+    <tr>
+        <td>اذْكُرُوا</td>
+        <td>اذكروا! (أمر للجمع)</td>
+        <td>٢:٤٠، ٢:٤٧، ٢:٦٣، ٢:١٢٢، ٢:١٥٢، ٣٣:٤١</td>
+    </tr>
+    <tr>
+        <td>يَذْكُرُ</td>
+        <td>يتذكر</td>
+        <td>٢:٢٨٢</td>
+    </tr>
+    <tr>
+        <td>يَذْكُرُونَ</td>
+        <td>يتذكرون</td>
+        <td>٣:١٩١، ٤:١٤٢</td>
+    </tr>
+</table>
+
+<p><strong>الفعل المزيد (فَعَّلَ):</strong> ذَكَّرَ - يُذَكِّرُ (يُذَكِّر)</p>
+<table>
+    <tr>
+        <th>التصريف</th>
+        <th>المثال</th>
+        <th>الآية</th>
+    </tr>
+    <tr>
+        <td>ذَكِّرْ</td>
+        <td>ذَكِّرْ!</td>
+        <td>٥١:٥٥، ٨٧:٩، ٨٨:٢١</td>
+    </tr>
+    <tr>
+        <td>فَذَكِّرْ</td>
+        <td>فَذَكِّرْ</td>
+        <td>٥٠:٤٥، ٥٢:٢٩</td>
+    </tr>
+</table>
+
+<p><strong>الفعل المزيد (تَفَعَّلَ):</strong> تَذَكَّرَ - يَتَذَكَّرُ (يتدبر، يتأمل)</p>
+<table>
+    <tr>
+        <th>التصريف</th>
+        <th>المثال</th>
+        <th>الآية</th>
+    </tr>
+    <tr>
+        <td>يَتَذَكَّرُ</td>
+        <td>يتأمل/يتدبر</td>
+        <td>٢:٢٢١، ٢:٢٦٩</td>
+    </tr>
+    <tr>
+        <td>يَتَذَكَّرُونَ</td>
+        <td>يتأملون</td>
+        <td>٦:١٥٢، ٧:٥٧، ١٦:١٧</td>
+    </tr>
+</table>
+
+<div class="insight-box">
+    الجذر ذ ك ر غزير الإنتاج في القرآن. عند الإشارة إلى الوحي، يُركز على <strong>وظيفة</strong> و<strong>غاية</strong> الكتاب المقدس - تذكير الناس بما نسوه أو أهملوه. الذِّكْر هو ما يُحدث التَّذَكُّر.
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم الثالث: التحليل الصرفي - قرآن -->
+<h2 id="morphology-quran">٣. التحليل الصرفي: قُرْآن</h2>
+
+<h3>الحروف الجذرية</h3>
+<p style="font-size: 1.5em; text-align: center;">ق ر أ</p>
+
+<h3>المعنى المعجمي (من لسان العرب والمفردات)</h3>
+<p>الجذر ق ر أ يعني:</p>
+<ol>
+    <li><strong>القراءة/التلاوة:</strong> فعل القراءة جهراً أو التلاوة</li>
+    <li><strong>الجمع:</strong> الضم والتجميع</li>
+</ol>
+<p>يُشير الراغب الأصفهاني إلى أن قُرْآن مشتق من قراءة ويُركز على فعل <strong>القراءة الجهرية</strong>. الكلمة تحمل ارتباطاً جوهرياً بـ<strong>النقل السمعي</strong> و<strong>النطق اللفظي</strong>.</p>
+
+<h3>الوزن الصرفي</h3>
+<table>
+    <tr>
+        <th>الجانب</th>
+        <th>التحليل</th>
+    </tr>
+    <tr>
+        <td>الوزن</td>
+        <td>فُعْلَان</td>
+    </tr>
+    <tr>
+        <td>النوع</td>
+        <td>مصدر أو اسم مبالغة</td>
+    </tr>
+    <tr>
+        <td>المعنى الجذري</td>
+        <td>التلاوة، ما يُتلى</td>
+    </tr>
+    <tr>
+        <td>الميزة الفريدة</td>
+        <td>هذه الكلمة تظهر فقط كعلم لهذا الوحي المحدد</td>
+    </tr>
+</table>
+
+<p>الوزن فُعْلَان غالباً يدل على الكثرة أو الفعل المستمر أو نتيجة الفعل. وبذلك يمكن أن يعني قُرْآن: "ما يُتلى مراراً" أو "التلاوة العظيمة".</p>
+
+<h3>الصيغ في القرآن</h3>
+
+<h4>٣.١ الصيغة المعرفة: الْقُرْآن</h4>
+<p><strong>إجمالي الورود:</strong> ٤٣ مرة</p>
+
+<h4>٣.٢ الصيغة النكرة: قُرْآنًا</h4>
+<p><strong>العدد:</strong> ٩ مرات</p>
+<p><strong>آيات رئيسية:</strong> ١٢:٢، ٢٠:١١٣، ٣٩:٢٨، ٤١:٣، ٤١:٤٤، ٤٢:٧، ٤٣:٣، ٧٢:١، ١٣:٣١</p>
+
+<h4>٣.٣ نمط قُرْآن عَرَبِيّ</h4>
+<div class="warning-box">
+    <strong>نمط لافت:</strong> في كل مرة يظهر فيها قرآن بصيغة النكرة (قُرْآنًا)، يليه عَرَبِيًّا - مع استثناءين فقط!
+</div>
+
+<table>
+    <tr>
+        <th>الآية</th>
+        <th>النص</th>
+    </tr>
+    <tr>
+        <td>١٢:٢</td>
+        <td>إِنَّا أَنزَلْنَاهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span> لَّعَلَّكُمْ تَعْقِلُونَ</td>
+    </tr>
+    <tr>
+        <td>٢٠:١١٣</td>
+        <td>وَكَذَٰلِكَ أَنزَلْنَاهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span></td>
+    </tr>
+    <tr>
+        <td>٣٩:٢٨</td>
+        <td><span class="highlight">قُرْآنًا عَرَبِيًّا</span> غَيْرَ ذِي عِوَجٍ</td>
+    </tr>
+    <tr>
+        <td>٤١:٣</td>
+        <td>كِتَابٌ فُصِّلَتْ آيَاتُهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span></td>
+    </tr>
+    <tr>
+        <td>٤٢:٧</td>
+        <td>وَكَذَٰلِكَ أَوْحَيْنَا إِلَيْكَ <span class="highlight">قُرْآنًا عَرَبِيًّا</span></td>
+    </tr>
+    <tr>
+        <td>٤٣:٣</td>
+        <td>إِنَّا جَعَلْنَاهُ <span class="highlight">قُرْآنًا عَرَبِيًّا</span> لَّعَلَّكُمْ تَعْقِلُونَ</td>
+    </tr>
+</table>
+
+<p><strong>الاستثناءات:</strong></p>
+<ul>
+    <li>٧٢:١: سَمِعْنَا قُرْآنًا عَجَبًا (قرآن عجيب - على لسان الجن)</li>
+    <li>١٣:٣١: وَلَوْ أَنَّ قُرْآنًا سُيِّرَتْ بِهِ الْجِبَالُ (سياق افتراضي)</li>
+</ul>
+
+<div class="insight-box">
+    هذا النمط يُشير إلى أنه عندما يُستخدم مصطلح قُرْآن بشكل وصفي/عام، فإن <strong>طبيعته العربية</strong> هي السمة المميزة.
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم الرابع: التحليل الصرفي - كتاب -->
+<h2 id="morphology-kitab">٤. التحليل الصرفي: كِتَاب</h2>
+
+<h3>الحروف الجذرية</h3>
+<p style="font-size: 1.5em; text-align: center;">ك ت ب</p>
+
+<h3>المعنى المعجمي (من لسان العرب والمفردات)</h3>
+<p>الجذر ك ت ب يعني:</p>
+<ol>
+    <li><strong>الكتابة:</strong> فعل التدوين المادي</li>
+    <li><strong>الفرض/القضاء:</strong> الإلزام، الإيجاب</li>
+    <li><strong>الجمع/الضم:</strong> التجميع</li>
+</ol>
+<p>يُشير الراغب الأصفهاني إلى أن كِتَاب يدل على شيء <strong>ثابت ومسجل ودائم</strong>. يحمل دلالات السلطة والفرض والتوثيق الرسمي.</p>
+
+<h3>الوزن الصرفي</h3>
+<table>
+    <tr>
+        <th>الجانب</th>
+        <th>التحليل</th>
+    </tr>
+    <tr>
+        <td>الوزن</td>
+        <td>فِعَال</td>
+    </tr>
+    <tr>
+        <td>النوع</td>
+        <td>اسم آلة أو اسم مبالغة</td>
+    </tr>
+    <tr>
+        <td>المعنى الجذري</td>
+        <td>وثيقة مكتوبة، كتاب مقدس، قضاء</td>
+    </tr>
+    <tr>
+        <td>الجمع</td>
+        <td>كُتُب</td>
+    </tr>
+</table>
+
+<h3>المراجع المتعددة لـ الْكِتَاب</h3>
+
+<h4>الفئة أ: القرآن نفسه (~٣٠٪)</h4>
+<table>
+    <tr>
+        <th>النمط</th>
+        <th>المثال</th>
+        <th>الآيات</th>
+    </tr>
+    <tr>
+        <td>أَنزَلْنَا إِلَيْكَ الْكِتَابَ</td>
+        <td>أنزلنا إليك الكتاب</td>
+        <td>٤:١٠٥، ٥:٤٨، ١٦:٦٤، ٢٩:٤٧</td>
+    </tr>
+    <tr>
+        <td>تِلْكَ آيَاتُ الْكِتَابِ</td>
+        <td>تلك آيات الكتاب</td>
+        <td>١٠:١، ١٢:١، ١٣:١، ١٥:١، ٢٦:٢، ٢٧:١، ٢٨:٢، ٣١:٢</td>
+    </tr>
+    <tr>
+        <td>تَنزِيلُ الْكِتَابِ</td>
+        <td>تنزيل الكتاب</td>
+        <td>٣٢:٢، ٣٩:١، ٤٠:٢، ٤٥:٢، ٤٦:٢</td>
+    </tr>
+</table>
+
+<h4>الفئة ب: الكتب السماوية السابقة (التوراة، الإنجيل) (~٣٥٪)</h4>
+<table>
+    <tr>
+        <th>النمط</th>
+        <th>المرجع</th>
+        <th>آيات نموذجية</th>
+    </tr>
+    <tr>
+        <td>أَهْلَ الْكِتَابِ</td>
+        <td>أهل الكتاب</td>
+        <td>٢:١٠٥، ٢:١٠٩، ٣:٦٤، ٣:٦٥، ٣:٦٩، ٥:٥، ٥:١٥</td>
+    </tr>
+    <tr>
+        <td>آتَيْنَا مُوسَى الْكِتَابَ</td>
+        <td>آتينا موسى الكتاب</td>
+        <td>٢:٥٣، ٢:٨٧، ٦:١٥٤، ١١:١١٠، ١٧:٢، ٢٥:٣٥</td>
+    </tr>
+    <tr>
+        <td>أُوتُوا الْكِتَابَ</td>
+        <td>أُوتوا الكتاب</td>
+        <td>٢:١٠١، ٢:١٤٤، ٣:١٩، ٣:٢٠، ٤:٤٧، ٥:٥</td>
+    </tr>
+</table>
+
+<h4>الفئة ج: سجل الأعمال (~١٠٪)</h4>
+<table>
+    <tr>
+        <th>السياق</th>
+        <th>الآيات</th>
+    </tr>
+    <tr>
+        <td>سجلات يوم القيامة</td>
+        <td>١٧:١٣، ١٧:١٤، ١٨:٤٩، ٢٣:٦٢، ٣٩:٦٩، ٤٥:٢٨، ٦٩:١٩، ٨٤:٧</td>
+    </tr>
+</table>
+
+<h4>الفئة د: القضاء الإلهي (اللوح المحفوظ) (~١٠٪)</h4>
+<table>
+    <tr>
+        <th>النمط</th>
+        <th>المعنى</th>
+        <th>الآيات</th>
+    </tr>
+    <tr>
+        <td>أُمُّ الْكِتَابِ</td>
+        <td>أم الكتاب</td>
+        <td>٣:٧، ١٣:٣٩، ٤٣:٤</td>
+    </tr>
+    <tr>
+        <td>الْكِتَابُ الْمُبِينُ</td>
+        <td>الكتاب المبين</td>
+        <td>٥:١٥، ٦:٥٩، ١٠:٦١، ١١:٦، ١٢:١، ٢٧:١</td>
+    </tr>
+    <tr>
+        <td>كِتَابٌ مَّكْنُونٌ</td>
+        <td>كتاب مكنون</td>
+        <td>٥٦:٧٨</td>
+    </tr>
+</table>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم الخامس: التحليل المقارن -->
+<h2 id="comparative">٥. التحليل المقارن</h2>
+
+<h3>٥.١ مصفوفة المقارنة</h3>
+<table>
+    <tr>
+        <th>الجانب</th>
+        <th>ذِكْر</th>
+        <th>قُرْآن</th>
+        <th>كِتَاب</th>
+    </tr>
+    <tr>
+        <td><strong>الجذر</strong></td>
+        <td>ذ ك ر</td>
+        <td>ق ر أ</td>
+        <td>ك ت ب</td>
+    </tr>
+    <tr>
+        <td><strong>المعنى الأساسي</strong></td>
+        <td>التذكر، الذكر</td>
+        <td>القراءة، التلاوة</td>
+        <td>الكتابة، الفرض</td>
+    </tr>
+    <tr>
+        <td><strong>التركيز</strong></td>
+        <td>الوظيفة/الأثر</td>
+        <td>الطريقة/الشكل</td>
+        <td>الكيان/السجل</td>
+    </tr>
+    <tr>
+        <td><strong>المحور الحسي</strong></td>
+        <td>إدراكي (العقل)</td>
+        <td>سمعي (الأذن)</td>
+        <td>بصري (العين)</td>
+    </tr>
+    <tr>
+        <td><strong>ينطبق على الكتب السابقة</strong></td>
+        <td>نعم (كل الوحي)</td>
+        <td>لا (هذا الوحي فقط)</td>
+        <td>نعم (كل الكتب)</td>
+    </tr>
+</table>
+
+<h3>٥.٢ العلاقة التراتبية</h3>
+<p>بناءً على الأدلة القرآنية، تظهر هذه المصطلحات في علاقة تراتبية:</p>
+
+<div class="diagram">
+أُمُّ الكِتَاب (المصدر الإلهي)
+              ↓
+         كِتَاب (السجل المكتوب)
+              ↓
+         قُرْآن (التلاوة العربية)
+              ↓
+         ذِكْر (التذكير/الوظيفة)
+</div>
+
+<h4>أدلة هذه التراتبية:</h4>
+
+<p><strong>١. كتاب ← قرآن:</strong></p>
+<div class="verse">
+    كِتَابٌ فُصِّلَتْ آيَاتُهُ <span class="highlight">قُرْآنًا</span> عَرَبِيًّا
+    <span class="verse-ref">[٤١:٣]</span>
+</div>
+<p>الكتاب يُصاغ قرآناً (تلاوة عربية)</p>
+
+<p><strong>٢. قرآن ← ذكر:</strong></p>
+<div class="verse">
+    وَالْقُرْآنِ ذِي <span class="highlight">الذِّكْرِ</span>
+    <span class="verse-ref">[٣٨:١]</span>
+</div>
+<p>القرآن يَمتلك/يَحتوي الذكر</p>
+
+<div class="verse">
+    يَسَّرْنَا الْقُرْآنَ <span class="highlight">لِلذِّكْرِ</span>
+    <span class="verse-ref">[٥٤:١٧]</span>
+</div>
+<p>القرآن مُيسَّر لغاية الذكر</p>
+
+<h3>٥.٣ الخلاصة: الدقة الإلهية</h3>
+<p>يستخدم القرآن هذه المصطلحات الثلاثة بقصدية دقيقة:</p>
+
+<ol>
+    <li><strong>عند التركيز على المصدر السماوي أو السلطة المكتوبة</strong> ← كِتَاب
+        <ul>
+            <li>يربط بالكتب السابقة</li>
+            <li>يُركز على الديمومة والقضاء الإلهي</li>
+            <li>يُستخدم عند مخاطبة أَهْلَ الْكِتَابِ</li>
+        </ul>
+    </li>
+    <li><strong>عند التركيز على الشكل العربي المتلو</strong> ← قُرْآن
+        <ul>
+            <li>حصري لهذا الوحي</li>
+            <li>يُركز على المعجزة السمعية</li>
+            <li>يُستخدم في التحديات ووصف طبيعته الفريدة</li>
+        </ul>
+    </li>
+    <li><strong>عند التركيز على الوظيفة والأثر</strong> ← ذِكْر
+        <ul>
+            <li>ما يَفعله الوحي بالناس</li>
+            <li>علاج الغَفْلَة</li>
+            <li>غاية كل الوحي</li>
+        </ul>
+    </li>
+</ol>
+
+<div class="insight-box">
+    <strong>المصطلحات ليست مترادفات</strong> - إنها تصف أبعاداً مختلفة للتواصل الإلهي ذاته:
+    <ul>
+        <li><strong>كِتَاب</strong> = الحقيقة الوجودية (ما هو)</li>
+        <li><strong>قُرْآن</strong> = الشكل الظاهري (كيف يظهر/يُسمع)</li>
+        <li><strong>ذِكْر</strong> = الغاية الوظيفية (ما يُحققه)</li>
+    </ul>
+</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم السادس: الآيات الرئيسية -->
+<h2 id="key-verses">٦. الآيات الرئيسية</h2>
+
+<h3>٦.١ آيات تجتمع فيها المصطلحات</h3>
+
+<h4>قُرْآن مع ذِكْر</h4>
+<table>
+    <tr>
+        <th>المرجع</th>
+        <th>النص العربي</th>
+        <th>العلاقة الرئيسية</th>
+    </tr>
+    <tr>
+        <td>٣٨:١</td>
+        <td>صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</td>
+        <td>القرآن يَمتلك الذكر</td>
+    </tr>
+    <tr>
+        <td>٥٤:١٧</td>
+        <td>وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</td>
+        <td>القرآن مُيسَّر للذكر</td>
+    </tr>
+    <tr>
+        <td>٥٠:٤٥</td>
+        <td>فَذَكِّرْ بِالْقُرْآنِ مَن يَخَافُ وَعِيدِ</td>
+        <td>القرآن أداة التذكير</td>
+    </tr>
+</table>
+
+<h4>كِتَاب مع ذِكْر</h4>
+<table>
+    <tr>
+        <th>المرجع</th>
+        <th>النص العربي</th>
+        <th>العلاقة الرئيسية</th>
+    </tr>
+    <tr>
+        <td>٢١:١٠</td>
+        <td>لَقَدْ أَنزَلْنَا إِلَيْكُمْ كِتَابًا فِيهِ ذِكْرُكُمْ أَفَلَا تَعْقِلُونَ</td>
+        <td>الكتاب يَحتوي الذكر</td>
+    </tr>
+    <tr>
+        <td>٢١:١٠٥</td>
+        <td>وَلَقَدْ كَتَبْنَا فِي الزَّبُورِ مِن بَعْدِ الذِّكْرِ</td>
+        <td>الذكر كمصحف سابق (التوراة)</td>
+    </tr>
+</table>
+
+<h4>كِتَاب مع قُرْآن</h4>
+<table>
+    <tr>
+        <th>المرجع</th>
+        <th>النص العربي</th>
+        <th>العلاقة الرئيسية</th>
+    </tr>
+    <tr>
+        <td>١٥:١</td>
+        <td>الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</td>
+        <td>مُقترنان بالواو</td>
+    </tr>
+    <tr>
+        <td>٢٧:١</td>
+        <td>طسٓ ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينٍ</td>
+        <td>مُقترنان بالواو</td>
+    </tr>
+    <tr>
+        <td>٤١:٣</td>
+        <td>كِتَابٌ فُصِّلَتْ آيَاتُهُ قُرْآنًا عَرَبِيًّا لِّقَوْمٍ يَعْلَمُونَ</td>
+        <td>الكتاب يُصاغ قرآناً</td>
+    </tr>
+</table>
+
+<h3>٦.٢ آيات الذِّكْر للوحي</h3>
+
+<h4>الإنزال والوحي</h4>
+<div class="verse">وَقَالُوا يَا أَيُّهَا الَّذِي نُزِّلَ عَلَيْهِ الذِّكْرُ إِنَّكَ لَمَجْنُونٌ<span class="verse-ref">[١٥:٦]</span></div>
+<div class="verse">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ<span class="verse-ref">[١٥:٩]</span></div>
+<div class="verse">وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ<span class="verse-ref">[١٦:٤٤]</span></div>
+<div class="verse">أَءُنزِلَ عَلَيْهِ الذِّكْرُ مِن بَيْنِنَا<span class="verse-ref">[٣٨:٨]</span></div>
+<div class="verse">أَءُلْقِيَ الذِّكْرُ عَلَيْهِ مِن بَيْنِنَا بَلْ هُوَ كَذَّابٌ أَشِرٌ<span class="verse-ref">[٥٤:٢٥]</span></div>
+<div class="verse">قَدْ أَنزَلَ اللَّهُ إِلَيْكُمْ ذِكْرًا<span class="verse-ref">[٦٥:١٠]</span></div>
+
+<h4>الإعراض والصد</h4>
+<div class="verse">وَمَنْ أَعْرَضَ عَن ذِكْرِي فَإِنَّ لَهُ مَعِيشَةً ضَنكًا<span class="verse-ref">[٢٠:١٢٤]</span></div>
+<div class="verse">وَمَنْ يَعْشُ عَن ذِكْرِ الرَّحْمَٰنِ نُقَيِّضْ لَهُ شَيْطَانًا فَهُوَ لَهُ قَرِينٌ<span class="verse-ref">[٤٣:٣٦]</span></div>
+<div class="verse">وَقَدْ آتَيْنَاكَ مِن لَّدُنَّا ذِكْرًا ۝ مَّنْ أَعْرَضَ عَنْهُ فَإِنَّهُ يَحْمِلُ يَوْمَ الْقِيَامَةِ وِزْرًا<span class="verse-ref">[٢٠:٩٩-١٠٠]</span></div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- القسم السابع: الملحق -->
+<h2 id="appendix">٧. الملحق: جميع الآيات المدروسة</h2>
+
+<p>فيما يلي قائمة شاملة بالآيات التي تم دراستها في هذا البحث، مُنظمة حسب المصطلح.</p>
+
+<div class="category-header">الذِّكْر - آيات الوحي</div>
+
+<div class="appendix-verse"><span class="verse-ref">[١٥:٦]</span> وَقَالُوا يَا أَيُّهَا الَّذِي نُزِّلَ عَلَيْهِ الذِّكْرُ إِنَّكَ لَمَجْنُونٌ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٥:٩]</span> إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٦:٤٣]</span> وَمَا أَرْسَلْنَا مِن قَبْلِكَ إِلَّا رِجَالًا نُّوحِي إِلَيْهِمْ ۚ فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٦:٤٤]</span> بِالْبَيِّنَاتِ وَالزُّبُرِ ۗ وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ وَلَعَلَّهُمْ يَتَفَكَّرُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٠:٩٩]</span> كَذَٰلِكَ نَقُصُّ عَلَيْكَ مِنْ أَنبَاءِ مَا قَدْ سَبَقَ ۚ وَقَدْ آتَيْنَاكَ مِن لَّدُنَّا ذِكْرًا</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٠:١٢٤]</span> وَمَنْ أَعْرَضَ عَن ذِكْرِي فَإِنَّ لَهُ مَعِيشَةً ضَنكًا وَنَحْشُرُهُ يَوْمَ الْقِيَامَةِ أَعْمَىٰ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢١:٧]</span> وَمَا أَرْسَلْنَا قَبْلَكَ إِلَّا رِجَالًا نُّوحِي إِلَيْهِمْ ۖ فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢١:١٠]</span> لَقَدْ أَنزَلْنَا إِلَيْكُمْ كِتَابًا فِيهِ ذِكْرُكُمْ ۖ أَفَلَا تَعْقِلُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢١:٥٠]</span> وَهَٰذَا ذِكْرٌ مُّبَارَكٌ أَنزَلْنَاهُ ۚ أَفَأَنتُمْ لَهُ مُنكِرُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢١:١٠٥]</span> وَلَقَدْ كَتَبْنَا فِي الزَّبُورِ مِن بَعْدِ الذِّكْرِ أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٥:١٨]</span> قَالُوا سُبْحَانَكَ مَا كَانَ يَنبَغِي لَنَا أَن نَّتَّخِذَ مِن دُونِكَ مِنْ أَوْلِيَاءَ وَلَٰكِن مَّتَّعْتَهُمْ وَآبَاءَهُمْ حَتَّىٰ نَسُوا الذِّكْرَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٥:٢٩]</span> لَّقَدْ أَضَلَّنِي عَنِ الذِّكْرِ بَعْدَ إِذْ جَاءَنِي ۗ وَكَانَ الشَّيْطَانُ لِلْإِنسَانِ خَذُولًا</div>
+<div class="appendix-verse"><span class="verse-ref">[٣٦:١١]</span> إِنَّمَا تُنذِرُ مَنِ اتَّبَعَ الذِّكْرَ وَخَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣٨:١]</span> صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣٨:٨]</span> أَءُنزِلَ عَلَيْهِ الذِّكْرُ مِن بَيْنِنَا ۚ بَلْ هُمْ فِي شَكٍّ مِّن ذِكْرِي ۖ بَل لَّمَّا يَذُوقُوا عَذَابِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٤٣:٣٦]</span> وَمَن يَعْشُ عَن ذِكْرِ الرَّحْمَٰنِ نُقَيِّضْ لَهُ شَيْطَانًا فَهُوَ لَهُ قَرِينٌ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥٤:١٧]</span> وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥٤:٢٥]</span> أَءُلْقِيَ الذِّكْرُ عَلَيْهِ مِن بَيْنِنَا بَلْ هُوَ كَذَّابٌ أَشِرٌ</div>
+<div class="appendix-verse"><span class="verse-ref">[٦٥:١٠]</span> قَدْ أَنزَلَ اللَّهُ إِلَيْكُمْ ذِكْرًا</div>
+<div class="appendix-verse"><span class="verse-ref">[٦٨:٥١]</span> وَإِن يَكَادُ الَّذِينَ كَفَرُوا لَيُزْلِقُونَكَ بِأَبْصَارِهِمْ لَمَّا سَمِعُوا الذِّكْرَ</div>
+
+<div class="category-header">الْقُرْآن - آيات مختارة</div>
+
+<div class="appendix-verse"><span class="verse-ref">[٢:١٨٥]</span> شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٤:٨٢]</span> أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ ۚ وَلَوْ كَانَ مِنْ عِندِ غَيْرِ اللَّهِ لَوَجَدُوا فِيهِ اخْتِلَافًا كَثِيرًا</div>
+<div class="appendix-verse"><span class="verse-ref">[٧:٢٠٤]</span> وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُوا لَهُ وَأَنصِتُوا لَعَلَّكُمْ تُرْحَمُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٢:٢]</span> إِنَّا أَنزَلْنَاهُ قُرْآنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٥:١]</span> الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٧:٩]</span> إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٧:٤٥]</span> وَإِذَا قَرَأْتَ الْقُرْآنَ جَعَلْنَا بَيْنَكَ وَبَيْنَ الَّذِينَ لَا يُؤْمِنُونَ بِالْآخِرَةِ حِجَابًا مَّسْتُورًا</div>
+<div class="appendix-verse"><span class="verse-ref">[١٧:٨٨]</span> قُل لَّئِنِ اجْتَمَعَتِ الْإِنسُ وَالْجِنُّ عَلَىٰ أَن يَأْتُوا بِمِثْلِ هَٰذَا الْقُرْآنِ لَا يَأْتُونَ بِمِثْلِهِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٠:١١٣]</span> وَكَذَٰلِكَ أَنزَلْنَاهُ قُرْآنًا عَرَبِيًّا</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٧:١]</span> طسٓ ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣٨:١]</span> صٓ ۚ وَالْقُرْآنِ ذِي الذِّكْرِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣٩:٢٨]</span> قُرْآنًا عَرَبِيًّا غَيْرَ ذِي عِوَجٍ لَّعَلَّهُمْ يَتَّقُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٤١:٣]</span> كِتَابٌ فُصِّلَتْ آيَاتُهُ قُرْآنًا عَرَبِيًّا لِّقَوْمٍ يَعْلَمُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٤٢:٧]</span> وَكَذَٰلِكَ أَوْحَيْنَا إِلَيْكَ قُرْآنًا عَرَبِيًّا</div>
+<div class="appendix-verse"><span class="verse-ref">[٤٣:٣]</span> إِنَّا جَعَلْنَاهُ قُرْآنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥٠:٤٥]</span> نَّحْنُ أَعْلَمُ بِمَا يَقُولُونَ ۖ وَمَا أَنتَ عَلَيْهِم بِجَبَّارٍ ۖ فَذَكِّرْ بِالْقُرْآنِ مَن يَخَافُ وَعِيدِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥٤:١٧]</span> وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥٦:٧٧]</span> إِنَّهُ لَقُرْآنٌ كَرِيمٌ</div>
+<div class="appendix-verse"><span class="verse-ref">[٧٢:١]</span> قُلْ أُوحِيَ إِلَيَّ أَنَّهُ اسْتَمَعَ نَفَرٌ مِّنَ الْجِنِّ فَقَالُوا إِنَّا سَمِعْنَا قُرْآنًا عَجَبًا</div>
+<div class="appendix-verse"><span class="verse-ref">[٨٥:٢١-٢٢]</span> بَلْ هُوَ قُرْآنٌ مَّجِيدٌ ۝ فِي لَوْحٍ مَّحْفُوظٍ</div>
+
+<div class="category-header">الْكِتَاب - آيات مختارة</div>
+
+<div class="appendix-verse"><span class="verse-ref">[٢:٢]</span> ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣:٧]</span> هُوَ الَّذِي أَنزَلَ عَلَيْكَ الْكِتَابَ مِنْهُ آيَاتٌ مُّحْكَمَاتٌ هُنَّ أُمُّ الْكِتَابِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥:٤٨]</span> وَأَنزَلْنَا إِلَيْكَ الْكِتَابَ بِالْحَقِّ مُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ مِنَ الْكِتَابِ وَمُهَيْمِنًا عَلَيْهِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٦:٥٩]</span> وَعِندَهُ مَفَاتِحُ الْغَيْبِ لَا يَعْلَمُهَا إِلَّا هُوَ ۚ وَيَعْلَمُ مَا فِي الْبَرِّ وَالْبَحْرِ ۚ وَمَا تَسْقُطُ مِن وَرَقَةٍ إِلَّا يَعْلَمُهَا وَلَا حَبَّةٍ فِي ظُلُمَاتِ الْأَرْضِ وَلَا رَطْبٍ وَلَا يَابِسٍ إِلَّا فِي كِتَابٍ مُّبِينٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٠:١]</span> الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٢:١]</span> الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْمُبِينِ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٣:٣٩]</span> يَمْحُو اللَّهُ مَا يَشَاءُ وَيُثْبِتُ ۖ وَعِندَهُ أُمُّ الْكِتَابِ</div>
+<div class="appendix-verse"><span class="verse-ref">[١٥:١]</span> الٓر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢١:١٠]</span> لَقَدْ أَنزَلْنَا إِلَيْكُمْ كِتَابًا فِيهِ ذِكْرُكُمْ ۖ أَفَلَا تَعْقِلُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٢٧:١]</span> طسٓ ۚ تِلْكَ آيَاتُ الْقُرْآنِ وَكِتَابٍ مُّبِينٍ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣٢:٢]</span> تَنزِيلُ الْكِتَابِ لَا رَيْبَ فِيهِ مِن رَّبِّ الْعَالَمِينَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٤١:٣]</span> كِتَابٌ فُصِّلَتْ آيَاتُهُ قُرْآنًا عَرَبِيًّا لِّقَوْمٍ يَعْلَمُونَ</div>
+<div class="appendix-verse"><span class="verse-ref">[٤٣:٤]</span> وَإِنَّهُ فِي أُمِّ الْكِتَابِ لَدَيْنَا لَعَلِيٌّ حَكِيمٌ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥٦:٧٨]</span> فِي كِتَابٍ مَّكْنُونٍ</div>
+
+<div class="category-header">أَهْلَ الْكِتَابِ - آيات مختارة</div>
+
+<div class="appendix-verse"><span class="verse-ref">[٢:١٠٥]</span> مَّا يَوَدُّ الَّذِينَ كَفَرُوا مِنْ أَهْلِ الْكِتَابِ وَلَا الْمُشْرِكِينَ أَن يُنَزَّلَ عَلَيْكُم مِّنْ خَيْرٍ مِّن رَّبِّكُمْ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣:٦٤]</span> قُلْ يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ</div>
+<div class="appendix-verse"><span class="verse-ref">[٣:٦٥]</span> يَا أَهْلَ الْكِتَابِ لِمَ تُحَاجُّونَ فِي إِبْرَاهِيمَ وَمَا أُنزِلَتِ التَّوْرَاةُ وَالْإِنجِيلُ إِلَّا مِن بَعْدِهِ</div>
+<div class="appendix-verse"><span class="verse-ref">[٥:١٥]</span> يَا أَهْلَ الْكِتَابِ قَدْ جَاءَكُمْ رَسُولُنَا يُبَيِّنُ لَكُمْ كَثِيرًا مِّمَّا كُنتُمْ تُخْفُونَ مِنَ الْكِتَابِ</div>
+
+<div class="section-divider">═══════════════════════════════════════</div>
+
+<!-- إخلاء المسؤولية النهائي -->
+<div class="disclaimer">
+    <strong>تنبيه ختامي:</strong> تم إنشاء هذا التقرير بواسطة وكيل بحث قرآني ذكي مع الاستناد إلى النص الكامل للقرآن الكريم. على الرغم من أن النتائج يُفترض أن تكون شاملة، إلا أنها لا يمكن ضمانها ولا ينبغي مشاركتها كمصدر موثوق. يُرجى التحقق من جميع الآيات والتحليلات مع مصادر علمية موثوقة.
+</div>
+
+<p style="text-align: center; color: #999; margin-top: 40px;">
+    ـــــــــــــــــــــــــــــــــــــــــــ<br>
+    دراسة قرآنية بحتة<br>
+    تم إنشاؤها بواسطة وكيل البحث القرآني
+</p>
+
+</body>
+</html>

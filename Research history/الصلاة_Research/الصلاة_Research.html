@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث قرآني: الصَّلَاة / الصَّلَوٰة</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', 'Arial', serif;
+            font-size: 14pt;
+            line-height: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            color: #333;
+            direction: rtl;
+        }
+
+        h1 {
+            font-size: 28pt;
+            color: #1a5f2a;
+            text-align: center;
+            border-bottom: 3px solid #1a5f2a;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20pt;
+            color: #2c7a3f;
+            margin-top: 40px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 16pt;
+            color: #3d8a4f;
+            margin-top: 25px;
+        }
+
+        .title-page {
+            text-align: center;
+            padding: 100px 0;
+            page-break-after: always;
+        }
+
+        .title-page h1 {
+            font-size: 42pt;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 18pt;
+            margin-top: 50px;
+            color: #666;
+        }
+
+        .arabic {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Amiri', serif;
+        }
+
+        .english {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .verse {
+            background: linear-gradient(135deg, #f8fdf8, #f0f7f0);
+            padding: 20px 25px;
+            border-right: 5px solid #1a5f2a;
+            margin: 20px 0;
+            font-size: 16pt;
+            line-height: 2.2;
+        }
+
+        .verse-ref {
+            font-weight: bold;
+            color: #1a5f2a;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            direction: ltr;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background: #1a5f2a;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fffde7, #fff9c4);
+            padding: 20px 25px;
+            border-radius: 10px;
+            border: 2px solid #ffd54f;
+            margin: 25px 0;
+        }
+
+        .toc {
+            background: #f0f7f0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            page-break-after: always;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .toc li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+            font-size: 14pt;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border: 3px solid #1a5f2a;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .definition-box h2 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 32pt;
+            color: #1a5f2a;
+            border: none;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #ccc;
+            margin: 40px 0;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        ul, ol {
+            padding-right: 30px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .stats-table {
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            margin-top: 50px;
+            font-style: italic;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #1a5f2a;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16pt;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #2c7a3f;
+        }
+    </style>
+</head>
+<body>
+
+<button class="print-button no-print" onclick="window.print()">طباعة / حفظ PDF</button>
+
+<!-- إخلاء المسؤولية - البداية -->
+<div class="highlight-box" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-color: #ff9800; margin-bottom: 30px;">
+    <p style="text-align: center; font-weight: bold; color: #e65100;">⚠️ إخلاء المسؤولية / Disclaimer ⚠️</p>
+    <p style="direction: rtl; text-align: right;">هذا التقرير تم إنشاؤه بواسطة نظام ذكاء اصطناعي لبحث القرآن الكريم مع الاستناد إلى النص القرآني الكامل. على الرغم من أن النتائج يُفترض أن تكون شاملة، إلا أنها لا يمكن ضمانها ولا ينبغي مشاركتها كمصدر موثوق.</p>
+    <p style="direction: ltr; text-align: left; margin-top: 10px; font-style: italic;">"This report has been generated by a Quran Research AI Agent with grounding from the full text of the Quran. While results are supposed to be exhaustive, they cannot be guaranteed and should not be shared as authoritative."</p>
+</div>
+
+<!-- صفحة العنوان -->
+<div class="title-page">
+    <h1 style="font-size: 36pt; color: #1a5f2a;">بحث قرآني</h1>
+    <h1>الصَّلَاة / الصَّلَوٰة</h1>
+    <p class="subtitle">Quranic Research on the Meaning of الصلاة</p>
+    <p style="color: #888; margin-top: 40px;">بحث مبني على المنهج القرآني فقط</p>
+</div>
+
+<!-- جدول المحتويات -->
+<div class="toc">
+    <h2>جدول المحتويات</h2>
+    <ul>
+        <li><strong>١.</strong> ملخص البحث - Research Summary</li>
+        <li><strong>٢.</strong> التحليل الصرفي - Morphological Analysis</li>
+        <li><strong>٣.</strong> الآيات القرآنية - Key Quranic Verses</li>
+        <li><strong>٤.</strong> التحليل السياقي - Contextual Analysis</li>
+        <li><strong>٥.</strong> التعريف القرآني - Quran-Derived Definition</li>
+        <li><strong>٦.</strong> تحليل: أَقَامَ مقابل أَدَّى - أَقَامَ vs أَدَّى Analysis</li>
+        <li><strong>٧.</strong> الإحصائيات - Statistics</li>
+        <li><strong>٨.</strong> الملحق: جميع الآيات المدروسة - Appendix: Complete Verse Collection</li>
+    </ul>
+</div>
+
+<!-- ملخص البحث -->
+<h1>١. ملخص البحث</h1>
+
+<h2>سؤال البحث</h2>
+<p>ما معنى الصلاة في القرآن الكريم، مع مراعاة الأشكال الكتابية المختلفة (مع الواو وبدونها)؟</p>
+
+<h2>المنهج</h2>
+<ul>
+    <li>تحليل قرآني فقط (المصادر التقليدية للمقارنة فقط)</li>
+    <li>جمع شامل للآيات من جذر ص ل و / ص ل ي</li>
+    <li>تحليل صرفي لجميع الاشتقاقات</li>
+    <li>تحليل الأنماط السياقية</li>
+</ul>
+
+<hr>
+
+<h2>النتائج الرئيسية</h2>
+
+<h3>١. حقلان دلاليان متميزان</h3>
+<p>كشف البحث أن القرآن يستخدم <strong>جذرين مختلفين</strong>:</p>
+
+<table>
+    <tr>
+        <th>الجذر</th>
+        <th>صيغة الفعل</th>
+        <th>المعنى</th>
+        <th>السياق</th>
+    </tr>
+    <tr>
+        <td>ص ل و</td>
+        <td>صَلَّى (الباب الثاني)</td>
+        <td>التواصل، البركة، الدعاء</td>
+        <td>إيجابي - عبادة</td>
+    </tr>
+    <tr>
+        <td>ص ل ي</td>
+        <td>صَلِيَ (الباب الأول)</td>
+        <td>الاحتراق، دخول النار</td>
+        <td>سلبي - عقاب</td>
+    </tr>
+</table>
+
+<div class="verse">
+    <div class="verse-ref">الدليل:</div>
+    <p>يُصَلِّى عَلَيْكُمْ (٣٣:٤٣) - يباركم</p>
+    <p>يَصْلَى ٱلنَّارَ (٨٧:١٢) - يحترق في النار</p>
+</div>
+
+<h3>٢. الصلاة "تُقام" ولا "تُؤدَّى"</h3>
+
+<div class="highlight-box">
+    <p><strong>اكتشاف حاسم:</strong> القرآن يستخدم <em>حصرياً</em> فعل "أَقَامَ" مع الصلاة، ولا يستخدم أبداً "أَدَّى".</p>
+    <p><strong>الدلالة:</strong> الصلاة <em>حالة يجب الحفاظ عليها</em>، وليست طقساً يُؤدَّى وينتهي.</p>
+    <p><strong>الدليل:</strong> أكثر من ٣٥ موضعاً: أَقِيمُوا۟ ٱلصَّلَوٰةَ، يُقِيمُونَ ٱلصَّلَوٰةَ</p>
+</div>
+
+<h3>٣. الصلاة تنهى عن الفحشاء</h3>
+
+<div class="verse">
+    <div class="verse-ref">(٢٩:٤٥)</div>
+    <p style="font-size: 20pt;">إِنَّ ٱلصَّلَوٰةَ تَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ</p>
+</div>
+<p>القرآن يصرح بأن للصلاة <strong>وظيفة وقائية</strong> ضد الفحشاء والمنكر.</p>
+
+<h3>٤. صلاة الله = البركة</h3>
+<p>عندما الله يُصَلِّى على المؤمنين (٣٣:٤٣)، فإن ذلك يعني أنه يباركهم ويُخرجهم من الظلمات إلى النور. هذا يكشف المعنى الأصلي للجذر: <strong>التواصل والدعم</strong>.</p>
+
+<h3>٥. الصلاة الفارغة مرفوضة</h3>
+<ul>
+    <li>صلاة الكفار كانت "مُكَآءً وَتَصْدِيَةً" (٨:٣٥)</li>
+    <li>الذين يصلون وهم "سَاهُونَ" محذَّرون (١٠٧:٤-٥)</li>
+    <li>الخشوع شرط أساسي (٢٣:٢)</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- التحليل الصرفي -->
+<h1>٢. التحليل الصرفي</h1>
+
+<h2>معلومات الجذر</h2>
+<p><strong>حروف الجذر:</strong> ص ل و / ص ل ي</p>
+
+<h3>ملاحظة على الإملاء</h3>
+<ul>
+    <li><strong>الصلوة</strong> (بالواو) - الرسم العثماني المستخدم في المصحف</li>
+    <li><strong>الصلاة</strong> (بالألف) - الرسم العربي المعياري</li>
+</ul>
+
+<h2>الأشكال الاسمية</h2>
+<table>
+    <tr>
+        <th>الشكل</th>
+        <th>الوزن</th>
+        <th>النوع</th>
+        <th>العدد</th>
+    </tr>
+    <tr>
+        <td>الصَّلَوٰةَ / الصَّلَوٰةِ</td>
+        <td>فَعْلَة</td>
+        <td>مفرد معرفة</td>
+        <td>~٦٧</td>
+    </tr>
+    <tr>
+        <td>الصَّلَوَٰتِ</td>
+        <td>فَعَلات</td>
+        <td>جمع معرفة</td>
+        <td>١</td>
+    </tr>
+    <tr>
+        <td>صَلَوَٰتٌ</td>
+        <td>فَعَلات</td>
+        <td>جمع نكرة</td>
+        <td>١</td>
+    </tr>
+    <tr>
+        <td>مُصَلًّى</td>
+        <td>مُفَعَّل</td>
+        <td>اسم مكان</td>
+        <td>١</td>
+    </tr>
+</table>
+
+<h2>أشكال الفعل - الباب الثاني (صَلَّى - للصلاة والبركة)</h2>
+<table>
+    <tr>
+        <th>الشكل</th>
+        <th>الوزن</th>
+        <th>المعنى</th>
+    </tr>
+    <tr>
+        <td>صَلِّ</td>
+        <td>فَعِّل (أمر)</td>
+        <td>صَلِّ! / بارِك!</td>
+    </tr>
+    <tr>
+        <td>يُصَلِّى</td>
+        <td>يُفَعِّل</td>
+        <td>يصلي / يبارك</td>
+    </tr>
+    <tr>
+        <td>صَلُّوا</td>
+        <td>فَعِّلوا</td>
+        <td>صَلُّوا! (للجماعة)</td>
+    </tr>
+</table>
+
+<h2>أشكال الفعل - الباب الأول (صَلِيَ - للاحتراق)</h2>
+<p><em>هذا معنى مختلف تماماً - "يحترق" أو "يتعرض لحرارة النار"</em></p>
+<table>
+    <tr>
+        <th>الشكل</th>
+        <th>الوزن</th>
+        <th>المعنى</th>
+    </tr>
+    <tr>
+        <td>يَصْلَى</td>
+        <td>يَفْعَل</td>
+        <td>يحترق في النار</td>
+    </tr>
+    <tr>
+        <td>يَصْلَوْنَهَا</td>
+        <td>يَفْعَلونها</td>
+        <td>يحترقون فيها</td>
+    </tr>
+    <tr>
+        <td>ٱصْلَوْهَا</td>
+        <td>اِفْعَلوها</td>
+        <td>احترقوا فيها!</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- الآيات الرئيسية -->
+<h1>٣. الآيات القرآنية الرئيسية</h1>
+
+<h2>أمر بإقامة الصلاة</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٢:٤٣)</div>
+    <p style="font-size: 18pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(٢:١١٠)</div>
+    <p style="font-size: 18pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ ۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ ٱللَّهِ</p>
+</div>
+
+<h2>صلاة الله على المؤمنين</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٣٣:٤٣)</div>
+    <p style="font-size: 18pt;">هُوَ ٱلَّذِى يُصَلِّى عَلَيْكُمْ وَمَلَـٰٓئِكَتُهُۥ لِيُخْرِجَكُم مِّنَ ٱلظُّلُمَـٰتِ إِلَى ٱلنُّورِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(٢:١٥٧)</div>
+    <p style="font-size: 18pt;">أُو۟لَـٰٓئِكَ عَلَيْهِمْ صَلَوَٰتٌ مِّن رَّبِّهِمْ وَرَحْمَةٌ</p>
+</div>
+
+<h2>خصائص الصلاة</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٤:١٠٣) - موقوتة:</div>
+    <p style="font-size: 18pt;">إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًا مَّوْقُوتًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(٢٣:٢) - تتطلب الخشوع:</div>
+    <p style="font-size: 18pt;">ٱلَّذِينَ هُمْ فِى صَلَاتِهِمْ خَـٰشِعُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(٧٠:٢٣) - تتطلب الدوام:</div>
+    <p style="font-size: 18pt;">ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(٢:٢٣٨) - يجب حفظها:</div>
+    <p style="font-size: 18pt;">حَـٰفِظُوا۟ عَلَى ٱلصَّلَوَٰتِ وَٱلصَّلَوٰةِ ٱلْوُسْطَىٰ</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- التحليل السياقي -->
+<h1>٤. التحليل السياقي</h1>
+
+<h2>لماذا أَقَامَ وليس أَدَّى؟</h2>
+<table>
+    <tr>
+        <th>الفعل</th>
+        <th>المعنى</th>
+        <th>الدلالة</th>
+    </tr>
+    <tr>
+        <td>أقام</td>
+        <td>أسس، أقام، حافظ</td>
+        <td>الصلاة شيء يُحافَظ عليه باستمرار</td>
+    </tr>
+    <tr>
+        <td>أدَّى</td>
+        <td>نفَّذ، أتمَّ</td>
+        <td>ستعني مجرد طقس يُنجَز</td>
+    </tr>
+</table>
+
+<h2>الصلاة والزكاة: الثنائي الدائم</h2>
+<p>في أغلب الآيات، تظهر الصلاة مقترنة بالزكاة:</p>
+<ul>
+    <li>الصلاة <strong>تُقام</strong> - حالة داخلية</li>
+    <li>الزكاة <strong>تُؤتى</strong> - فعل خارجي</li>
+</ul>
+
+<h2>الصلاة الفارغة باطلة</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٨:٣٥)</div>
+    <p style="font-size: 18pt;">وَمَا كَانَ صَلَاتُهُمْ عِندَ ٱلْبَيْتِ إِلَّا مُكَآءً وَتَصْدِيَةً</p>
+    <p><em>"وما كانت صلاتهم عند البيت إلا صفيراً وتصفيقاً"</em></p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(١٠٧:٤-٥)</div>
+    <p style="font-size: 18pt;">فَوَيْلٌ لِّلْمُصَلِّينَ ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ</p>
+    <p><em>"فويل للمصلين الذين هم عن صلاتهم ساهون"</em></p>
+</div>
+
+<h2>الصلاة تشمل الحياة كلها</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٦:١٦٢)</div>
+    <p style="font-size: 18pt;">قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- التعريف القرآني -->
+<h1>٥. التعريف القرآني</h1>
+
+<div class="definition-box">
+    <h2>الصَّلَاة</h2>
+
+    <h3>الصلاة هي:</h3>
+    <ol>
+        <li><strong>حالة تُقام</strong> (أُقيمَت)، وليست مجرد طقس يُؤدَّى</li>
+        <li><strong>صِلة</strong> بين العبد والله</li>
+        <li><strong>بركة ورحمة</strong> عندما تكون من الله على الخلق</li>
+        <li><strong>دعاء وتضرع</strong> عندما تكون من الخلق نحو الله</li>
+        <li><strong>واقٍ روحي</strong> من الشر (تنهى عن الفحشاء والمنكر)</li>
+        <li><strong>موقوتة ودائمة</strong></li>
+        <li>تتطلب <strong>الحضور والخشوع</strong>، وليس مجرد الحركة</li>
+        <li>مقترنة <strong>بالزكاة</strong> كتفانٍ داخلي مع عطاء خارجي</li>
+        <li><strong>تشمل الوجود كله</strong> (صلاتي ونسكي ومحياي ومماتي)</li>
+    </ol>
+
+    <h3>الصلاة ليست:</h3>
+    <ul>
+        <li>مجرد حركات جسدية</li>
+        <li>طقساً يُؤدَّى وينتهي</li>
+        <li>صحيحة بدون حضور داخلي وخشوع</li>
+        <li>منفصلة عن بقية الحياة</li>
+    </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- مقارنة أقام وأدى -->
+<h1>٦. تحليل مفصل: أَقَامَ مقابل أَدَّى</h1>
+
+<h2>الاختيار القرآني: لماذا أَقَامَ للصلاة؟</h2>
+<p>ملاحظة حاسمة في اللغة القرآنية: الله يستخدم <strong>حصرياً</strong> فعل أَقَامَ (للتأسيس والحفاظ) مع الصلاة، ولا يستخدم <strong>أبداً</strong> أَدَّى (للأداء والإتمام). هذا ليس عرضياً - إنه يكشف الطبيعة الجوهرية للصلاة.</p>
+
+<h2>تحليل الجذور</h2>
+<table>
+    <tr>
+        <th>الفعل</th>
+        <th>الجذر</th>
+        <th>الوزن</th>
+        <th>المعنى الأساسي</th>
+    </tr>
+    <tr>
+        <td>أَقَامَ</td>
+        <td>ق و م</td>
+        <td>أَفْعَلَ (الباب الرابع)</td>
+        <td>جعله يقوم، أسس، حافظ على استقامته</td>
+    </tr>
+    <tr>
+        <td>أَدَّى</td>
+        <td>أ د ي</td>
+        <td>فَعَّلَ (الباب الثاني)</td>
+        <td>سلَّم، أوفى، أنجز، أتم</td>
+    </tr>
+</table>
+
+<h2>كيف يُستخدم أَدَّى في القرآن</h2>
+<p>يظهر فعل أَدَّى في القرآن <strong>للالتزامات المعاملاتية</strong> - أشياء تُسلَّم أو تُكمَل:</p>
+
+<div class="verse">
+    <div class="verse-ref">(٤:٥٨)</div>
+    <p style="font-size: 18pt;">إِنَّ ٱللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا۟ ٱلْأَمَـٰنَـٰتِ إِلَىٰٓ أَهْلِهَا</p>
+    <p><em>أدُّوا الأمانات - تسليم شيء لأصحابه</em></p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(٢:٢٨٣)</div>
+    <p style="font-size: 18pt;">فَلْيُؤَدِّ ٱلَّذِى ٱؤْتُمِنَ أَمَـٰنَتَهُۥ</p>
+    <p><em>فليؤدِّ أمانته - إيفاء الأمانة</em></p>
+</div>
+
+<p><strong>النمط:</strong> أَدَّى يُستخدم لأشياء:</p>
+<ul>
+    <li><strong>تُنقل</strong> من طرف إلى آخر</li>
+    <li><strong>تُكمَل</strong> وتنتهي</li>
+    <li><strong>تُفرَغ</strong> كالتزام</li>
+    <li><strong>تُسلَّم</strong> كمعاملة</li>
+</ul>
+
+<h2>كيف يُستخدم أَقَامَ مع الصلاة</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٢:٤٣)</div>
+    <p style="font-size: 18pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">(١٤:٤٠)</div>
+    <p style="font-size: 18pt;">رَبِّ ٱجْعَلْنِى مُقِيمَ ٱلصَّلَوٰةِ</p>
+</div>
+
+<p><strong>النمط:</strong> أَقَامَ يدل على:</p>
+<ul>
+    <li><strong>الديمومة</strong> - شيء يقوم باستمرار</li>
+    <li><strong>الاستقامة</strong> - الصحة والاستواء</li>
+    <li><strong>المحافظة</strong> - رعاية واهتمام مستمر</li>
+    <li><strong>التأسيس</strong> - ليس معاملة بل حالة وجود</li>
+</ul>
+
+<h2>التباين الدلالي</h2>
+
+<div class="highlight-box">
+    <table>
+        <tr>
+            <th>الجانب</th>
+            <th>أَدَّى الصلاة (لم يُستخدم)</th>
+            <th>أَقَامَ الصلاة (المستخدم)</th>
+        </tr>
+        <tr>
+            <td><strong>الطبيعة</strong></td>
+            <td>معاملة</td>
+            <td>حالة</td>
+        </tr>
+        <tr>
+            <td><strong>المدة</strong></td>
+            <td>محدودة، تنتهي عند الإتمام</td>
+            <td>مستمرة، تُحافَظ</td>
+        </tr>
+        <tr>
+            <td><strong>التركيز</strong></td>
+            <td>إكمال فعل</td>
+            <td>الحفاظ على صلة</td>
+        </tr>
+        <tr>
+            <td><strong>النتيجة</strong></td>
+            <td>التزام تم إفراغه</td>
+            <td>علاقة مستدامة</td>
+        </tr>
+        <tr>
+            <td><strong>الدلالة</strong></td>
+            <td>طقس تم أداؤه</td>
+            <td>حياة تحولت</td>
+        </tr>
+    </table>
+</div>
+
+<h2>لماذا هذا مهم؟</h2>
+
+<p>لو استخدم الله "أَدُّوا الصلاة"، لدل على:</p>
+<ul>
+    <li>الصلاة مهمة تُكمَل وتنتهي</li>
+    <li>الصلاة معاملة بينك وبين الله</li>
+    <li>بمجرد أدائها، يُفرَغ الالتزام</li>
+    <li>يمكنك الانتقال بعد "تسليمها"</li>
+</ul>
+
+<p>لكن باستخدام "أَقِيمُوا الصلاة"، الله يشير إلى:</p>
+<ul>
+    <li>الصلاة حالة يُحافَظ عليها، لا مهمة تُكمَل</li>
+    <li>الصلاة صلة مستمرة، لا معاملة</li>
+    <li>الالتزام لا "يُفرَغ" أبداً - إنه تأسيس دائم</li>
+    <li>الصلاة تُحوِّل حياتك بأكملها، لا لحظات فقط</li>
+</ul>
+
+<h2>الدليل الداعم: صلة الدوام</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٧٠:٢٣)</div>
+    <p style="font-size: 20pt;">ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ</p>
+    <p><em>الذين هم على صلاتهم دائمون - الديمومة تعكس معنى أَقَامَ</em></p>
+</div>
+
+<h2>التباين مع الزكاة</h2>
+
+<div class="verse">
+    <div class="verse-ref">(٢:٤٣)</div>
+    <p style="font-size: 18pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ</p>
+</div>
+
+<p>هذا يكشف:</p>
+<ul>
+    <li><strong>الصلاة</strong> داخلية ومستمرة - يجب <strong>إقامتها</strong></li>
+    <li><strong>الزكاة</strong> خارجية ومعاملاتية - <strong>تُؤتى</strong></li>
+</ul>
+
+<div class="definition-box">
+    <h2>الخلاصة</h2>
+    <p style="font-size: 16pt; text-align: center;">
+        <strong>الصلاة ليست طقساً تؤديه وتُكمله.</strong><br>
+        <strong>الصلاة صلة تُقيمها وتُحافظ عليها.</strong>
+    </p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- الإحصائيات -->
+<h1>٧. الإحصائيات المحدثة</h1>
+
+<h2>جذر الصلاة والبركة (ص ل و - الباب الثاني)</h2>
+<table>
+    <tr>
+        <th>الشكل</th>
+        <th>العربية</th>
+        <th>العدد</th>
+        <th>الآيات</th>
+    </tr>
+    <tr>
+        <td>الصَّلَوٰةَ (معرفة)</td>
+        <td>الصلوة/الصلاة</td>
+        <td>~٦٧</td>
+        <td>في القرآن كله</td>
+    </tr>
+    <tr>
+        <td>صَلَوٰتٌ (جمع - بركات)</td>
+        <td>صلوات</td>
+        <td>٢</td>
+        <td>٢:١٥٧، ٢:٢٣٨</td>
+    </tr>
+    <tr>
+        <td>صَلَاتِهِمْ (صلاتهم)</td>
+        <td>صلاتهم</td>
+        <td>٦</td>
+        <td>٦:٩٢، ٨:٣٥، ٢٣:٢، ٧٠:٢٣، ٧٠:٣٤، ١٠٧:٥</td>
+    </tr>
+    <tr>
+        <td>صَلَوٰتِهِمْ (عثماني)</td>
+        <td>صلوتهم</td>
+        <td>١</td>
+        <td>٢٣:٩</td>
+    </tr>
+    <tr>
+        <td>صَلَاتِي (صلاتي)</td>
+        <td>صلاتي</td>
+        <td>١</td>
+        <td>٦:١٦٢</td>
+    </tr>
+    <tr>
+        <td>صَلَوٰتِكَ (صلاتك)</td>
+        <td>صلوتك</td>
+        <td>١</td>
+        <td>٩:١٠٣</td>
+    </tr>
+    <tr>
+        <td>يُصَلِّي (يصلي/يبارك)</td>
+        <td>يصلي</td>
+        <td>٢</td>
+        <td>٣:٣٩، ٣٣:٤٣</td>
+    </tr>
+    <tr>
+        <td>يُصَلُّونَ (يصلون)</td>
+        <td>يصلون</td>
+        <td>١</td>
+        <td>٣٣:٥٦</td>
+    </tr>
+    <tr>
+        <td>صَلُّوا (صلوا - أمر)</td>
+        <td>صلوا</td>
+        <td>١</td>
+        <td>٣٣:٥٦</td>
+    </tr>
+    <tr>
+        <td>المُصَلِّين (المصلين)</td>
+        <td>المصلين</td>
+        <td>٢</td>
+        <td>٧٠:٢٢، ٧٤:٤٣</td>
+    </tr>
+    <tr>
+        <td>مُصَلًّى (مصلى)</td>
+        <td>مصلى</td>
+        <td>١</td>
+        <td>٢:١٢٥</td>
+    </tr>
+    <tr>
+        <td>لِلصَّلَوٰةِ (للصلوة)</td>
+        <td>للصلوة</td>
+        <td>١</td>
+        <td>٦٢:٩</td>
+    </tr>
+    <tr>
+        <td>بِالصَّلَوٰةِ (بالصلوة)</td>
+        <td>بالصلوة</td>
+        <td>٣</td>
+        <td>١٩:٣١، ١٩:٥٥، ٢٠:١٣٢</td>
+    </tr>
+</table>
+
+<h2>جذر الاحتراق (ص ل ي - الباب الأول)</h2>
+<table>
+    <tr>
+        <th>الشكل</th>
+        <th>العربية</th>
+        <th>العدد</th>
+        <th>الآيات</th>
+    </tr>
+    <tr>
+        <td>يَصْلَى (يحترق)</td>
+        <td>يصلى</td>
+        <td>٣</td>
+        <td>٨٤:١٢، ٨٧:١٢، ٩٢:١٥</td>
+    </tr>
+    <tr>
+        <td>يَصْلَىٰهَا (يحترق فيها)</td>
+        <td>يصلاها</td>
+        <td>٢</td>
+        <td>١٧:١٨، ٩٢:١٥</td>
+    </tr>
+    <tr>
+        <td>يَصْلَوْنَهَا (يحترقون فيها)</td>
+        <td>يصلونها</td>
+        <td>٤</td>
+        <td>١٤:٢٩، ٣٨:٥٦، ٥٨:٨، ٨٢:١٥</td>
+    </tr>
+    <tr>
+        <td>سَيَصْلَىٰ (سيحترق)</td>
+        <td>سيصلى</td>
+        <td>١</td>
+        <td>١١١:٣</td>
+    </tr>
+    <tr>
+        <td>وَسَيَصْلَوْنَ (وسيحترقون)</td>
+        <td>وسيصلون</td>
+        <td>١</td>
+        <td>٤:١٠</td>
+    </tr>
+    <tr>
+        <td>ٱصْلَوْهَا (احترقوا فيها)</td>
+        <td>اصلوها</td>
+        <td>٢</td>
+        <td>٣٦:٦٤، ٥٢:١٦</td>
+    </tr>
+    <tr>
+        <td>تَصْلَىٰ (تحترق)</td>
+        <td>تصلى</td>
+        <td>١</td>
+        <td>٨٨:٤</td>
+    </tr>
+    <tr>
+        <td>نُصْلِيهِ (نُصلِيه النار)</td>
+        <td>نصليه</td>
+        <td>١</td>
+        <td>٤:٣٠</td>
+    </tr>
+    <tr>
+        <td>صَلُّوهُ (صَلُّوه)</td>
+        <td>صلوه</td>
+        <td>١</td>
+        <td>٦٩:٣١</td>
+    </tr>
+    <tr>
+        <td>صِلِيًّا (صِلِيًّا)</td>
+        <td>صليا</td>
+        <td>١</td>
+        <td>١٩:٧٠</td>
+    </tr>
+    <tr>
+        <td>تَصْلِيَةُ (تصلية)</td>
+        <td>تصلية</td>
+        <td>١</td>
+        <td>٥٦:٩٤</td>
+    </tr>
+    <tr>
+        <td>صَالُو (صالو)</td>
+        <td>صالو</td>
+        <td>٣</td>
+        <td>٣٧:١٦٣، ٣٨:٥٩، ٨٣:١٦</td>
+    </tr>
+</table>
+
+<h2>ملخص الإجماليات</h2>
+<table class="stats-table">
+    <tr>
+        <th>الفئة</th>
+        <th>العدد التقريبي</th>
+    </tr>
+    <tr>
+        <td>الصلاة كعبادة (جميع الأشكال الاسمية)</td>
+        <td>~٨٠+ موضعاً</td>
+    </tr>
+    <tr>
+        <td>صلاة كبركة (من الله)</td>
+        <td>~٥ مواضع</td>
+    </tr>
+    <tr>
+        <td>أشكال الفعل للصلاة/البركة</td>
+        <td>~١٢ موضعاً</td>
+    </tr>
+    <tr>
+        <td>صلي كاحتراق (النار)</td>
+        <td>~٢٠+ موضعاً</td>
+    </tr>
+    <tr>
+        <td><strong>إجمالي الآيات الفريدة</strong></td>
+        <td><strong>~١٠٠+ آية</strong></td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- الملحق: جميع الآيات المدروسة -->
+<h1>٨. الملحق: جميع الآيات المدروسة</h1>
+<p style="text-align: center; color: #666;">Appendix: Complete Verse Collection</p>
+
+<!-- ملخص إحصائي للآيات -->
+<div class="highlight-box" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-color: #4caf50; margin-bottom: 30px;">
+    <h3 style="text-align: center; color: #2e7d32; margin-bottom: 15px;">📊 ملخص إحصائي / Statistical Summary</h3>
+    <table style="width: 100%; border-collapse: collapse; direction: rtl;">
+        <tr style="background: rgba(76, 175, 80, 0.1);">
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: right;"><strong>جذر ص ل و (الصلاة/البركة)</strong></td>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: center; font-weight: bold;">~٨٥ آية</td>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: left;">Root ص ل و (Prayer/Blessing): ~85 verses</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: right;"><strong>جذر ص ل ي (الاحتراق)</strong></td>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: center; font-weight: bold;">~٢١ آية</td>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: left;">Root ص ل ي (Burning/Fire): ~21 verses</td>
+        </tr>
+        <tr style="background: rgba(76, 175, 80, 0.2);">
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: right;"><strong>المجموع الكلي</strong></td>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: center; font-weight: bold; font-size: 1.1em;">~١٠٦ آيات</td>
+            <td style="padding: 10px; border: 1px solid #a5d6a7; text-align: left;"><strong>Total: ~106 verses</strong></td>
+        </tr>
+    </table>
+    <p style="text-align: center; margin-top: 15px; color: #1b5e20; font-size: 0.9em;">
+        هذه القائمة تشمل جميع الآيات التي تحتوي على الجذرين المدروسين في القرآن الكريم
+        <br>
+        <em>This list includes all verses containing the two roots studied throughout the Quran</em>
+    </p>
+</div>
+
+<h2>القسم الأول: آيات الصلاة والبركة (جذر ص ل و)</h2>
+<h3>Section 1: Prayer & Blessing Verses (Root ص ل و)</h3>
+
+<h3>أ. الصلاة المعرفة (الصَّلَوٰة)</h3>
+
+<div class="verse">
+    <div class="verse-ref">٢:٣ (2:3)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:٤٣ (2:43)</div>
+    <p style="font-size: 16pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:٤٥ (2:45)</div>
+    <p style="font-size: 16pt;">وَٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ ۚ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى ٱلْخَـٰشِعِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:٨٣ (2:83)</div>
+    <p style="font-size: 16pt;">وَإِذْ أَخَذْنَا مِيثَـٰقَ بَنِىٓ إِسْرَٰٓءِيلَ لَا تَعْبُدُونَ إِلَّا ٱللَّهَ وَبِٱلْوَٰلِدَيْنِ إِحْسَـٰنًا وَذِى ٱلْقُرْبَىٰ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينِ وَقُولُوا۟ لِلنَّاسِ حُسْنًا وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:١١٠ (2:110)</div>
+    <p style="font-size: 16pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ ۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ ٱللَّهِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:١٢٥ (2:125)</div>
+    <p style="font-size: 16pt;">وَإِذْ جَعَلْنَا ٱلْبَيْتَ مَثَابَةً لِّلنَّاسِ وَأَمْنًا وَٱتَّخِذُوا۟ مِن مَّقَامِ إِبْرَٰهِـۧمَ مُصَلًّى</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:١٥٣ (2:153)</div>
+    <p style="font-size: 16pt;">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ ۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:١٧٧ (2:177)</div>
+    <p style="font-size: 16pt;">لَّيْسَ ٱلْبِرَّ أَن تُوَلُّوا۟ وُجُوهَكُمْ قِبَلَ ٱلْمَشْرِقِ وَٱلْمَغْرِبِ وَلَـٰكِنَّ ٱلْبِرَّ مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ وَٱلْمَلَـٰٓئِكَةِ وَٱلْكِتَـٰبِ وَٱلنَّبِيِّـۧنَ وَءَاتَى ٱلْمَالَ عَلَىٰ حُبِّهِۦ ذَوِى ٱلْقُرْبَىٰ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينَ وَٱبْنَ ٱلسَّبِيلِ وَٱلسَّآئِلِينَ وَفِى ٱلرِّقَابِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:٢٣٨ (2:238)</div>
+    <p style="font-size: 16pt;">حَـٰفِظُوا۟ عَلَى ٱلصَّلَوَٰتِ وَٱلصَّلَوٰةِ ٱلْوُسْطَىٰ وَقُومُوا۟ لِلَّهِ قَـٰنِتِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢:٢٧٧ (2:277)</div>
+    <p style="font-size: 16pt;">إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ لَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:٤٣ (4:43)</div>
+    <p style="font-size: 16pt;">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَقْرَبُوا۟ ٱلصَّلَوٰةَ وَأَنتُمْ سُكَـٰرَىٰ حَتَّىٰ تَعْلَمُوا۟ مَا تَقُولُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:٧٧ (4:77)</div>
+    <p style="font-size: 16pt;">أَلَمْ تَرَ إِلَى ٱلَّذِينَ قِيلَ لَهُمْ كُفُّوٓا۟ أَيْدِيَكُمْ وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:١٠١ (4:101)</div>
+    <p style="font-size: 16pt;">وَإِذَا ضَرَبْتُمْ فِى ٱلْأَرْضِ فَلَيْسَ عَلَيْكُمْ جُنَاحٌ أَن تَقْصُرُوا۟ مِنَ ٱلصَّلَوٰةِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:١٠٢ (4:102)</div>
+    <p style="font-size: 16pt;">وَإِذَا كُنتَ فِيهِمْ فَأَقَمْتَ لَهُمُ ٱلصَّلَوٰةَ فَلْتَقُمْ طَآئِفَةٌ مِّنْهُم مَّعَكَ وَلْيَأْخُذُوٓا۟ أَسْلِحَتَهُمْ فَإِذَا سَجَدُوا۟ فَلْيَكُونُوا۟ مِن وَرَآئِكُمْ وَلْتَأْتِ طَآئِفَةٌ أُخْرَىٰ لَمْ يُصَلُّوا۟ فَلْيُصَلُّوا۟ مَعَكَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:١٠٣ (4:103)</div>
+    <p style="font-size: 16pt;">فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًا وَقُعُودًا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًا مَّوْقُوتًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:١٤٢ (4:142)</div>
+    <p style="font-size: 16pt;">إِنَّ ٱلْمُنَـٰفِقِينَ يُخَـٰدِعُونَ ٱللَّهَ وَهُوَ خَـٰدِعُهُمْ وَإِذَا قَامُوٓا۟ إِلَى ٱلصَّلَوٰةِ قَامُوا۟ كُسَالَىٰ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:١٦٢ (4:162)</div>
+    <p style="font-size: 16pt;">لَّـٰكِنِ ٱلرَّٰسِخُونَ فِى ٱلْعِلْمِ مِنْهُمْ وَٱلْمُؤْمِنُونَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ ۚ وَٱلْمُقِيمِينَ ٱلصَّلَوٰةَ ۚ وَٱلْمُؤْتُونَ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥:٦ (5:6)</div>
+    <p style="font-size: 16pt;">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا قُمْتُمْ إِلَى ٱلصَّلَوٰةِ فَٱغْسِلُوا۟ وُجُوهَكُمْ وَأَيْدِيَكُمْ إِلَى ٱلْمَرَافِقِ وَٱمْسَحُوا۟ بِرُءُوسِكُمْ وَأَرْجُلَكُمْ إِلَى ٱلْكَعْبَيْنِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥:١٢ (5:12)</div>
+    <p style="font-size: 16pt;">وَلَقَدْ أَخَذَ ٱللَّهُ مِيثَـٰقَ بَنِىٓ إِسْرَٰٓءِيلَ... لَئِنْ أَقَمْتُمُ ٱلصَّلَوٰةَ وَءَاتَيْتُمُ ٱلزَّكَوٰةَ وَءَامَنتُم بِرُسُلِى</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥:٥٥ (5:55)</div>
+    <p style="font-size: 16pt;">إِنَّمَا وَلِيُّكُمُ ٱللَّهُ وَرَسُولُهُۥ وَٱلَّذِينَ ءَامَنُوا۟ ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَهُمْ رَٰكِعُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥:٥٨ (5:58)</div>
+    <p style="font-size: 16pt;">وَإِذَا نَادَيْتُمْ إِلَى ٱلصَّلَوٰةِ ٱتَّخَذُوهَا هُزُوًا وَلَعِبًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥:٩١ (5:91)</div>
+    <p style="font-size: 16pt;">إِنَّمَا يُرِيدُ ٱلشَّيْطَـٰنُ أَن يُوقِعَ بَيْنَكُمُ ٱلْعَدَٰوَةَ وَٱلْبَغْضَآءَ فِى ٱلْخَمْرِ وَٱلْمَيْسِرِ وَيَصُدَّكُمْ عَن ذِكْرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥:١٠٦ (5:106)</div>
+    <p style="font-size: 16pt;">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ شَهَـٰدَةُ بَيْنِكُمْ إِذَا حَضَرَ أَحَدَكُمُ ٱلْمَوْتُ حِينَ ٱلْوَصِيَّةِ ٱثْنَانِ ذَوَا عَدْلٍ مِّنكُمْ أَوْ ءَاخَرَانِ مِنْ غَيْرِكُمْ إِنْ أَنتُمْ ضَرَبْتُمْ فِى ٱلْأَرْضِ فَأَصَـٰبَتْكُم مُّصِيبَةُ ٱلْمَوْتِ ۚ تَحْبِسُونَهُمَا مِنۢ بَعْدِ ٱلصَّلَوٰةِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٦:٧٢ (6:72)</div>
+    <p style="font-size: 16pt;">وَأَنْ أَقِيمُوا۟ ٱلصَّلَوٰةَ وَٱتَّقُوهُ ۚ وَهُوَ ٱلَّذِىٓ إِلَيْهِ تُحْشَرُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٦:٩٢ (6:92)</div>
+    <p style="font-size: 16pt;">وَهَـٰذَا كِتَـٰبٌ أَنزَلْنَـٰهُ مُبَارَكٌ مُّصَدِّقُ ٱلَّذِى بَيْنَ يَدَيْهِ وَلِتُنذِرَ أُمَّ ٱلْقُرَىٰ وَمَنْ حَوْلَهَا ۚ وَٱلَّذِينَ يُؤْمِنُونَ بِٱلْـَٔاخِرَةِ يُؤْمِنُونَ بِهِۦ ۖ وَهُمْ عَلَىٰ صَلَاتِهِمْ يُحَافِظُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٦:١٦٢ (6:162)</div>
+    <p style="font-size: 16pt;">قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٧:١٧٠ (7:170)</div>
+    <p style="font-size: 16pt;">وَٱلَّذِينَ يُمَسِّكُونَ بِٱلْكِتَـٰبِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ إِنَّا لَا نُضِيعُ أَجْرَ ٱلْمُصْلِحِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨:٣ (8:3)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨:٣٥ (8:35)</div>
+    <p style="font-size: 16pt;">وَمَا كَانَ صَلَاتُهُمْ عِندَ ٱلْبَيْتِ إِلَّا مُكَآءً وَتَصْدِيَةً ۚ فَذُوقُوا۟ ٱلْعَذَابَ بِمَا كُنتُمْ تَكْفُرُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩:٥ (9:5)</div>
+    <p style="font-size: 16pt;">فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَخَلُّوا۟ سَبِيلَهُمْ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩:١١ (9:11)</div>
+    <p style="font-size: 16pt;">فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَإِخْوَٰنُكُمْ فِى ٱلدِّينِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩:١٨ (9:18)</div>
+    <p style="font-size: 16pt;">إِنَّمَا يَعْمُرُ مَسَـٰجِدَ ٱللَّهِ مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩:٥٤ (9:54)</div>
+    <p style="font-size: 16pt;">وَمَا مَنَعَهُمْ أَن تُقْبَلَ مِنْهُمْ نَفَقَـٰتُهُمْ إِلَّآ أَنَّهُمْ كَفَرُوا۟ بِٱللَّهِ وَبِرَسُولِهِۦ وَلَا يَأْتُونَ ٱلصَّلَوٰةَ إِلَّا وَهُمْ كُسَالَىٰ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩:٧١ (9:71)</div>
+    <p style="font-size: 16pt;">وَٱلْمُؤْمِنُونَ وَٱلْمُؤْمِنَـٰتُ بَعْضُهُمْ أَوْلِيَآءُ بَعْضٍ ۚ يَأْمُرُونَ بِٱلْمَعْرُوفِ وَيَنْهَوْنَ عَنِ ٱلْمُنكَرِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩:١٠٣ (9:103)</div>
+    <p style="font-size: 16pt;">خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا وَصَلِّ عَلَيْهِمْ ۖ إِنَّ صَلَوٰتَكَ سَكَنٌ لَّهُمْ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٠:٨٧ (10:87)</div>
+    <p style="font-size: 16pt;">وَأَوْحَيْنَآ إِلَىٰ مُوسَىٰ وَأَخِيهِ أَن تَبَوَّءَا لِقَوْمِكُمَا بِمِصْرَ بُيُوتًا وَٱجْعَلُوا۟ بُيُوتَكُمْ قِبْلَةً وَأَقِيمُوا۟ ٱلصَّلَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١١:٨٧ (11:87)</div>
+    <p style="font-size: 16pt;">قَالُوا۟ يَـٰشُعَيْبُ أَصَلَوٰتُكَ تَأْمُرُكَ أَن نَّتْرُكَ مَا يَعْبُدُ ءَابَآؤُنَآ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١١:١١٤ (11:114)</div>
+    <p style="font-size: 16pt;">وَأَقِمِ ٱلصَّلَوٰةَ طَرَفَىِ ٱلنَّهَارِ وَزُلَفًا مِّنَ ٱلَّيْلِ ۚ إِنَّ ٱلْحَسَنَـٰتِ يُذْهِبْنَ ٱلسَّيِّـَٔاتِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٣:٢٢ (13:22)</div>
+    <p style="font-size: 16pt;">وَٱلَّذِينَ صَبَرُوا۟ ٱبْتِغَآءَ وَجْهِ رَبِّهِمْ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَأَنفَقُوا۟ مِمَّا رَزَقْنَـٰهُمْ سِرًّا وَعَلَانِيَةً</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٤:٣١ (14:31)</div>
+    <p style="font-size: 16pt;">قُل لِّعِبَادِىَ ٱلَّذِينَ ءَامَنُوا۟ يُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُنفِقُوا۟ مِمَّا رَزَقْنَـٰهُمْ سِرًّا وَعَلَانِيَةً</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٤:٣٧ (14:37)</div>
+    <p style="font-size: 16pt;">رَّبَّنَآ إِنِّىٓ أَسْكَنتُ مِن ذُرِّيَّتِى بِوَادٍ غَيْرِ ذِى زَرْعٍ عِندَ بَيْتِكَ ٱلْمُحَرَّمِ رَبَّنَا لِيُقِيمُوا۟ ٱلصَّلَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٤:٤٠ (14:40)</div>
+    <p style="font-size: 16pt;">رَبِّ ٱجْعَلْنِى مُقِيمَ ٱلصَّلَوٰةِ وَمِن ذُرِّيَّتِى ۚ رَبَّنَا وَتَقَبَّلْ دُعَآءِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٧:٧٨ (17:78)</div>
+    <p style="font-size: 16pt;">أَقِمِ ٱلصَّلَوٰةَ لِدُلُوكِ ٱلشَّمْسِ إِلَىٰ غَسَقِ ٱلَّيْلِ وَقُرْءَانَ ٱلْفَجْرِ ۖ إِنَّ قُرْءَانَ ٱلْفَجْرِ كَانَ مَشْهُودًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٧:١١٠ (17:110)</div>
+    <p style="font-size: 16pt;">قُلِ ٱدْعُوا۟ ٱللَّهَ أَوِ ٱدْعُوا۟ ٱلرَّحْمَـٰنَ ۖ أَيًّا مَّا تَدْعُوا۟ فَلَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ وَلَا تَجْهَرْ بِصَلَاتِكَ وَلَا تُخَافِتْ بِهَا وَٱبْتَغِ بَيْنَ ذَٰلِكَ سَبِيلًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٩:٣١ (19:31)</div>
+    <p style="font-size: 16pt;">وَجَعَلَنِى مُبَارَكًا أَيْنَ مَا كُنتُ وَأَوْصَـٰنِى بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ مَا دُمْتُ حَيًّا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٩:٥٥ (19:55)</div>
+    <p style="font-size: 16pt;">وَكَانَ يَأْمُرُ أَهْلَهُۥ بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ وَكَانَ عِندَ رَبِّهِۦ مَرْضِيًّا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٩:٥٩ (19:59)</div>
+    <p style="font-size: 16pt;">فَخَلَفَ مِنۢ بَعْدِهِمْ خَلْفٌ أَضَاعُوا۟ ٱلصَّلَوٰةَ وَٱتَّبَعُوا۟ ٱلشَّهَوَٰتِ ۖ فَسَوْفَ يَلْقَوْنَ غَيًّا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٠:١٤ (20:14)</div>
+    <p style="font-size: 16pt;">إِنَّنِىٓ أَنَا۠ ٱللَّهُ لَآ إِلَـٰهَ إِلَّآ أَنَا۠ فَٱعْبُدْنِى وَأَقِمِ ٱلصَّلَوٰةَ لِذِكْرِىٓ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٠:١٣٢ (20:132)</div>
+    <p style="font-size: 16pt;">وَأْمُرْ أَهْلَكَ بِٱلصَّلَوٰةِ وَٱصْطَبِرْ عَلَيْهَا ۖ لَا نَسْـَٔلُكَ رِزْقًا ۖ نَّحْنُ نَرْزُقُكَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢١:٧٣ (21:73)</div>
+    <p style="font-size: 16pt;">وَجَعَلْنَـٰهُمْ أَئِمَّةً يَهْدُونَ بِأَمْرِنَا وَأَوْحَيْنَآ إِلَيْهِمْ فِعْلَ ٱلْخَيْرَٰتِ وَإِقَامَ ٱلصَّلَوٰةِ وَإِيتَآءَ ٱلزَّكَوٰةِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٢:٣٥ (22:35)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتْ قُلُوبُهُمْ وَٱلصَّـٰبِرِينَ عَلَىٰ مَآ أَصَابَهُمْ وَٱلْمُقِيمِى ٱلصَّلَوٰةِ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٢:٤١ (22:41)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ إِن مَّكَّنَّـٰهُمْ فِى ٱلْأَرْضِ أَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ وَأَمَرُوا۟ بِٱلْمَعْرُوفِ وَنَهَوْا۟ عَنِ ٱلْمُنكَرِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٢:٧٨ (22:78)</div>
+    <p style="font-size: 16pt;">وَجَـٰهِدُوا۟ فِى ٱللَّهِ حَقَّ جِهَادِهِۦ ۚ هُوَ ٱجْتَبَىٰكُمْ وَمَا جَعَلَ عَلَيْكُمْ فِى ٱلدِّينِ مِنْ حَرَجٍ ۚ مِّلَّةَ أَبِيكُمْ إِبْرَٰهِيمَ... فَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٣:٢ (23:2)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ هُمْ فِى صَلَاتِهِمْ خَـٰشِعُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٣:٩ (23:9)</div>
+    <p style="font-size: 16pt;">وَٱلَّذِينَ هُمْ عَلَىٰ صَلَوَٰتِهِمْ يُحَافِظُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٤:٣٧ (24:37)</div>
+    <p style="font-size: 16pt;">رِجَالٌ لَّا تُلْهِيهِمْ تِجَـٰرَةٌ وَلَا بَيْعٌ عَن ذِكْرِ ٱللَّهِ وَإِقَامِ ٱلصَّلَوٰةِ وَإِيتَآءِ ٱلزَّكَوٰةِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٤:٤١ (24:41)</div>
+    <p style="font-size: 16pt;">أَلَمْ تَرَ أَنَّ ٱللَّهَ يُسَبِّحُ لَهُۥ مَن فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَٱلطَّيْرُ صَـٰٓفَّـٰتٍ ۖ كُلٌّ قَدْ عَلِمَ صَلَاتَهُۥ وَتَسْبِيحَهُۥ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٤:٥٦ (24:56)</div>
+    <p style="font-size: 16pt;">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَطِيعُوا۟ ٱلرَّسُولَ لَعَلَّكُمْ تُرْحَمُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٤:٥٨ (24:58)</div>
+    <p style="font-size: 16pt;">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لِيَسْتَـْٔذِنكُمُ ٱلَّذِينَ مَلَكَتْ أَيْمَـٰنُكُمْ وَٱلَّذِينَ لَمْ يَبْلُغُوا۟ ٱلْحُلُمَ مِنكُمْ ثَلَـٰثَ مَرَّٰتٍ ۚ مِّن قَبْلِ صَلَوٰةِ ٱلْفَجْرِ وَحِينَ تَضَعُونَ ثِيَابَكُم مِّنَ ٱلظَّهِيرَةِ وَمِنۢ بَعْدِ صَلَوٰةِ ٱلْعِشَآءِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٧:٣ (27:3)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَهُم بِٱلْـَٔاخِرَةِ هُمْ يُوقِنُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٢٩:٤٥ (29:45)</div>
+    <p style="font-size: 16pt;">ٱتْلُ مَآ أُوحِىَ إِلَيْكَ مِنَ ٱلْكِتَـٰبِ وَأَقِمِ ٱلصَّلَوٰةَ ۖ إِنَّ ٱلصَّلَوٰةَ تَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ ۗ وَلَذِكْرُ ٱللَّهِ أَكْبَرُ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٠:٣١ (30:31)</div>
+    <p style="font-size: 16pt;">مُنِيبِينَ إِلَيْهِ وَٱتَّقُوهُ وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَلَا تَكُونُوا۟ مِنَ ٱلْمُشْرِكِينَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣١:٤ (31:4)</div>
+    <p style="font-size: 16pt;">ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَهُم بِٱلْـَٔاخِرَةِ هُمْ يُوقِنُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣١:١٧ (31:17)</div>
+    <p style="font-size: 16pt;">يَـٰبُنَىَّ أَقِمِ ٱلصَّلَوٰةَ وَأْمُرْ بِٱلْمَعْرُوفِ وَٱنْهَ عَنِ ٱلْمُنكَرِ وَٱصْبِرْ عَلَىٰ مَآ أَصَابَكَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٣:٣٣ (33:33)</div>
+    <p style="font-size: 16pt;">وَقَرْنَ فِى بُيُوتِكُنَّ وَلَا تَبَرَّجْنَ تَبَرُّجَ ٱلْجَـٰهِلِيَّةِ ٱلْأُولَىٰ ۖ وَأَقِمْنَ ٱلصَّلَوٰةَ وَءَاتِينَ ٱلزَّكَوٰةَ وَأَطِعْنَ ٱللَّهَ وَرَسُولَهُۥٓ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٥:١٨ (35:18)</div>
+    <p style="font-size: 16pt;">وَلَا تَزِرُ وَازِرَةٌ وِزْرَ أُخْرَىٰ ۚ وَإِن تَدْعُ مُثْقَلَةٌ إِلَىٰ حِمْلِهَا لَا يُحْمَلْ مِنْهُ شَىْءٌ وَلَوْ كَانَ ذَا قُرْبَىٰٓ ۗ إِنَّمَا تُنذِرُ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٥:٢٩ (35:29)</div>
+    <p style="font-size: 16pt;">إِنَّ ٱلَّذِينَ يَتْلُونَ كِتَـٰبَ ٱللَّهِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَأَنفَقُوا۟ مِمَّا رَزَقْنَـٰهُمْ سِرًّا وَعَلَانِيَةً يَرْجُونَ تِجَـٰرَةً لَّن تَبُورَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤٢:٣٨ (42:38)</div>
+    <p style="font-size: 16pt;">وَٱلَّذِينَ ٱسْتَجَابُوا۟ لِرَبِّهِمْ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَأَمْرُهُمْ شُورَىٰ بَيْنَهُمْ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥٨:١٣ (58:13)</div>
+    <p style="font-size: 16pt;">ءَأَشْفَقْتُمْ أَن تُقَدِّمُوا۟ بَيْنَ يَدَىْ نَجْوَىٰكُمْ صَدَقَـٰتٍ ۚ فَإِذْ لَمْ تَفْعَلُوا۟ وَتَابَ ٱللَّهُ عَلَيْكُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٦٢:٩ (62:9)</div>
+    <p style="font-size: 16pt;">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا نُودِىَ لِلصَّلَوٰةِ مِن يَوْمِ ٱلْجُمُعَةِ فَٱسْعَوْا۟ إِلَىٰ ذِكْرِ ٱللَّهِ وَذَرُوا۟ ٱلْبَيْعَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٦٢:١٠ (62:10)</div>
+    <p style="font-size: 16pt;">فَإِذَا قُضِيَتِ ٱلصَّلَوٰةُ فَٱنتَشِرُوا۟ فِى ٱلْأَرْضِ وَٱبْتَغُوا۟ مِن فَضْلِ ٱللَّهِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٧٠:٢٢-٢٣ (70:22-23)</div>
+    <p style="font-size: 16pt;">إِلَّا ٱلْمُصَلِّينَ ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٧٠:٣٤ (70:34)</div>
+    <p style="font-size: 16pt;">وَٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ يُحَافِظُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٧٣:٢٠ (73:20)</div>
+    <p style="font-size: 16pt;">إِنَّ رَبَّكَ يَعْلَمُ أَنَّكَ تَقُومُ أَدْنَىٰ مِن ثُلُثَىِ ٱلَّيْلِ وَنِصْفَهُۥ وَثُلُثَهُۥ... فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ... وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٧٥:٣١ (75:31)</div>
+    <p style="font-size: 16pt;">فَلَا صَدَّقَ وَلَا صَلَّىٰ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨٧:١٥ (87:15)</div>
+    <p style="font-size: 16pt;">وَذَكَرَ ٱسْمَ رَبِّهِۦ فَصَلَّىٰ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩٦:١٠ (96:10)</div>
+    <p style="font-size: 16pt;">أَرَءَيْتَ ٱلَّذِى يَنْهَىٰ عَبْدًا إِذَا صَلَّىٰٓ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩٨:٥ (98:5)</div>
+    <p style="font-size: 16pt;">وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ حُنَفَآءَ وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٠٧:٤-٥ (107:4-5)</div>
+    <p style="font-size: 16pt;">فَوَيْلٌ لِّلْمُصَلِّينَ ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٠٨:٢ (108:2)</div>
+    <p style="font-size: 16pt;">فَصَلِّ لِرَبِّكَ وَٱنْحَرْ</p>
+</div>
+
+<h3>ب. صلاة الله والملائكة (البركة)</h3>
+
+<div class="verse">
+    <div class="verse-ref">٢:١٥٧ (2:157)</div>
+    <p style="font-size: 16pt;">أُو۟لَـٰٓئِكَ عَلَيْهِمْ صَلَوَٰتٌ مِّن رَّبِّهِمْ وَرَحْمَةٌ ۖ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُهْتَدُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣:٣٩ (3:39)</div>
+    <p style="font-size: 16pt;">فَنَادَتْهُ ٱلْمَلَـٰٓئِكَةُ وَهُوَ قَآئِمٌ يُصَلِّى فِى ٱلْمِحْرَابِ أَنَّ ٱللَّهَ يُبَشِّرُكَ بِيَحْيَىٰ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٣:٤٣ (33:43)</div>
+    <p style="font-size: 16pt;">هُوَ ٱلَّذِى يُصَلِّى عَلَيْكُمْ وَمَلَـٰٓئِكَتُهُۥ لِيُخْرِجَكُم مِّنَ ٱلظُّلُمَـٰتِ إِلَى ٱلنُّورِ ۚ وَكَانَ بِٱلْمُؤْمِنِينَ رَحِيمًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٣:٥٦ (33:56)</div>
+    <p style="font-size: 16pt;">إِنَّ ٱللَّهَ وَمَلَـٰٓئِكَتَهُۥ يُصَلُّونَ عَلَى ٱلنَّبِىِّ ۚ يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ صَلُّوا۟ عَلَيْهِ وَسَلِّمُوا۟ تَسْلِيمًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٧٤:٤٣ (74:43)</div>
+    <p style="font-size: 16pt;">مَا سَلَكَكُمْ فِى سَقَرَ قَالُوا۟ لَمْ نَكُ مِنَ ٱلْمُصَلِّينَ</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>القسم الثاني: آيات الاحتراق (جذر ص ل ي)</h2>
+<h3>Section 2: Fire/Burning Verses (Root ص ل ي)</h3>
+
+<div class="verse">
+    <div class="verse-ref">٤:١٠ (4:10)</div>
+    <p style="font-size: 16pt;">إِنَّ ٱلَّذِينَ يَأْكُلُونَ أَمْوَٰلَ ٱلْيَتَـٰمَىٰ ظُلْمًا إِنَّمَا يَأْكُلُونَ فِى بُطُونِهِمْ نَارًا ۖ وَسَيَصْلَوْنَ سَعِيرًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:٣٠ (4:30)</div>
+    <p style="font-size: 16pt;">وَمَن يَفْعَلْ ذَٰلِكَ عُدْوَٰنًا وَظُلْمًا فَسَوْفَ نُصْلِيهِ نَارًا ۚ وَكَانَ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٤:٥٦ (4:56)</div>
+    <p style="font-size: 16pt;">إِنَّ ٱلَّذِينَ كَفَرُوا۟ بِـَٔايَـٰتِنَا سَوْفَ نُصْلِيهِمْ نَارًا كُلَّمَا نَضِجَتْ جُلُودُهُم بَدَّلْنَـٰهُمْ جُلُودًا غَيْرَهَا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٤:٢٩ (14:29)</div>
+    <p style="font-size: 16pt;">جَهَنَّمَ يَصْلَوْنَهَا ۖ وَبِئْسَ ٱلْقَرَارُ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٧:١٨ (17:18)</div>
+    <p style="font-size: 16pt;">مَّن كَانَ يُرِيدُ ٱلْعَاجِلَةَ عَجَّلْنَا لَهُۥ فِيهَا مَا نَشَآءُ لِمَن نُّرِيدُ ثُمَّ جَعَلْنَا لَهُۥ جَهَنَّمَ يَصْلَىٰهَا مَذْمُومًا مَّدْحُورًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١٩:٧٠ (19:70)</div>
+    <p style="font-size: 16pt;">ثُمَّ لَنَحْنُ أَعْلَمُ بِٱلَّذِينَ هُمْ أَوْلَىٰ بِهَا صِلِيًّا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٦:٦٤ (36:64)</div>
+    <p style="font-size: 16pt;">ٱصْلَوْهَا ٱلْيَوْمَ بِمَا كُنتُمْ تَكْفُرُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٧:١٦٣ (37:163)</div>
+    <p style="font-size: 16pt;">إِلَّا مَنْ هُوَ صَالِ ٱلْجَحِيمِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٨:٥٦ (38:56)</div>
+    <p style="font-size: 16pt;">جَهَنَّمَ يَصْلَوْنَهَا فَبِئْسَ ٱلْمِهَادُ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٣٨:٥٩ (38:59)</div>
+    <p style="font-size: 16pt;">هَـٰذَا فَوْجٌ مُّقْتَحِمٌ مَّعَكُمْ ۖ لَا مَرْحَبًۢا بِهِمْ ۚ إِنَّهُمْ صَالُوا۟ ٱلنَّارِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥٢:١٦ (52:16)</div>
+    <p style="font-size: 16pt;">ٱصْلَوْهَا فَٱصْبِرُوٓا۟ أَوْ لَا تَصْبِرُوا۟ سَوَآءٌ عَلَيْكُمْ ۖ إِنَّمَا تُجْزَوْنَ مَا كُنتُمْ تَعْمَلُونَ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥٦:٩٤ (56:94)</div>
+    <p style="font-size: 16pt;">لَصَالُوا۟ ٱلْجَحِيمِ ۚ ثُمَّ إِنَّ عَلَيْهِمْ لَتَصْدِيَةَ ٱلْجَحِيمِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٥٨:٨ (58:8)</div>
+    <p style="font-size: 16pt;">أَلَمْ تَرَ إِلَى ٱلَّذِينَ نُهُوا۟ عَنِ ٱلنَّجْوَىٰ ثُمَّ يَعُودُونَ لِمَا نُهُوا۟ عَنْهُ... وَحَسْبُهُمْ جَهَنَّمُ يَصْلَوْنَهَا ۖ فَبِئْسَ ٱلْمَصِيرُ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٦٩:٣١ (69:31)</div>
+    <p style="font-size: 16pt;">ثُمَّ ٱلْجَحِيمَ صَلُّوهُ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨٢:١٥ (82:15)</div>
+    <p style="font-size: 16pt;">يَصْلَوْنَهَا يَوْمَ ٱلدِّينِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨٣:١٦ (83:16)</div>
+    <p style="font-size: 16pt;">ثُمَّ إِنَّهُمْ لَصَالُوا۟ ٱلْجَحِيمِ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨٤:١٢ (84:12)</div>
+    <p style="font-size: 16pt;">وَيَصْلَىٰ سَعِيرًا</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨٧:١٢ (87:12)</div>
+    <p style="font-size: 16pt;">ٱلَّذِى يَصْلَى ٱلنَّارَ ٱلْكُبْرَىٰ</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٨٨:٤ (88:4)</div>
+    <p style="font-size: 16pt;">تَصْلَىٰ نَارًا حَامِيَةً</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">٩٢:١٥ (92:15)</div>
+    <p style="font-size: 16pt;">لَا يَصْلَىٰهَآ إِلَّا ٱلْأَشْقَى</p>
+</div>
+
+<div class="verse">
+    <div class="verse-ref">١١١:٣ (111:3)</div>
+    <p style="font-size: 16pt;">سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ</p>
+</div>
+
+<hr>
+
+<!-- إخلاء المسؤولية - النهاية -->
+<div class="highlight-box" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-color: #ff9800; margin-top: 40px;">
+    <p style="text-align: center; font-weight: bold; color: #e65100;">⚠️ إخلاء المسؤولية / Disclaimer ⚠️</p>
+    <p style="direction: rtl; text-align: right;">هذا التقرير تم إنشاؤه بواسطة نظام ذكاء اصطناعي لبحث القرآن الكريم مع الاستناد إلى النص القرآني الكامل. على الرغم من أن النتائج يُفترض أن تكون شاملة، إلا أنها لا يمكن ضمانها ولا ينبغي مشاركتها كمصدر موثوق.</p>
+    <p style="direction: ltr; text-align: left; margin-top: 10px; font-style: italic;">"This report has been generated by a Quran Research AI Agent with grounding from the full text of the Quran. While results are supposed to be exhaustive, they cannot be guaranteed and should not be shared as authoritative."</p>
+</div>
+
+<div class="footer">
+    <p>بحث مكتمل باستخدام المنهج القرآني فقط</p>
+    <p>التحليل مستمد حصرياً من الأدلة القرآنية</p>
+    <p style="margin-top: 20px; direction: ltr;">Research completed using Quran-only methodology</p>
+</div>
+
+</body>
+</html>

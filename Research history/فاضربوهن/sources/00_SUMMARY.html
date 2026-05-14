@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص البحث — وَاضْرِبُوهُنَّ (ض ر ب)</title>
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #2e86c1;
+            --accent: #d4ac0d;
+            --bg: #fdfefe;
+            --card-bg: #f8f9f9;
+            --border: #d5dbdb;
+            --text: #2c3e50;
+            --light-text: #566573;
+            --success: #27ae60;
+            --warning: #e67e22;
+            --danger: #c0392b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 2;
+            padding: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        h1 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; text-align: center; }
+        h2 { font-size: 1.5rem; color: var(--primary); margin: 1.5rem 0 0.75rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.3rem; }
+        h3 { font-size: 1.25rem; color: var(--secondary); margin: 1rem 0 0.5rem; }
+        .disclaimer {
+            background: #fef9e7;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: #7d6608;
+        }
+        .nav {
+            background: var(--primary);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.75rem;
+            font-size: 0.95rem;
+        }
+        .nav a:hover { text-decoration: underline; }
+        .nav a.active { color: var(--accent); font-weight: bold; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        .finding {
+            background: #eaf2f8;
+            border-right: 5px solid var(--secondary);
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .verse {
+            background: #f4f6f6;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 6px;
+            font-size: 1.15rem;
+        }
+        .verse .ref { color: var(--secondary); font-size: 0.9rem; font-weight: bold; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 0.6rem 0.8rem;
+            text-align: right;
+        }
+        th { background: var(--primary); color: #fff; }
+        tr:nth-child(even) { background: #f8f9f9; }
+        .stat { display: inline-block; background: var(--secondary); color: #fff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; margin: 0.2rem; }
+        .highlight { background: #fef9e7; padding: 0.2rem 0.5rem; border-radius: 4px; }
+        .comparison { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .comparison > div { flex: 1; min-width: 300px; }
+        .traditional { border-right: 4px solid var(--warning); padding-right: 1rem; }
+        .quranic { border-right: 4px solid var(--success); padding-right: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a class="active" href="00_SUMMARY.html">الملخص</a>
+    <a href="01_MORPHOLOGY.html">الصرف</a>
+    <a href="02_VERSES.html">الآيات</a>
+    <a href="03_ANALYSIS.html">التحليل</a>
+    <a href="04_DISCOVERIES.html">الاكتشافات</a>
+    <a href="05_TAFSIR_COMPARISON.html">مقارنة التفاسير</a>
+</div>
+
+<h1>بحث قرآني: وَاضْرِبُوهُنَّ</h1>
+<p style="text-align:center; color:var(--light-text);">الجذر: ض ر ب | سورة النساء: ٣٤</p>
+
+<div class="disclaimer">
+    ⚠️ تنبيه: هذا التقرير تم إعداده بواسطة عميل بحث قرآني بالذكاء الاصطناعي مع استناد إلى النص الكامل للقرآن الكريم. مع أن النتائج يُفترض أن تكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.
+</div>
+
+<h2>١. الآية المدروسة</h2>
+<div class="card">
+    <div class="verse" id="verse-4-34">
+        <span class="ref">[النساء: ٣٤]</span><br>
+        ﴿ وَالَّـٰتِى تَخَافُونَ نُشُوزَهُنَّ فَعِظُوهُنَّ وَاهْجُرُوهُنَّ فِى الْمَضَاجِعِ وَاضْرِبُوهُنَّ ۖ فَإِنْ أَطَعْنَكُمْ فَلَا تَبْغُوا عَلَيْهِنَّ سَبِيلًا ۗ إِنَّ اللَّهَ كَانَ عَلِيًّا كَبِيرًا ﴾
+    </div>
+    <p><strong>الكلمة المدروسة:</strong> <span class="highlight">وَاضْرِبُوهُنَّ</span> — فعل أمر من الجذر (ض ر ب) على وزن اِفْعِلُوا + ضمير هُنَّ</p>
+    <p><strong>السياق:</strong> خطوة ثالثة ضمن تسلسل: (١) فَعِظُوهُنَّ → (٢) وَاهْجُرُوهُنَّ فِي المَضَاجِعِ → (٣) وَاضْرِبُوهُنَّ</p>
+</div>
+
+<h2>٢. الإحصائيات العامة</h2>
+<div class="card">
+    <p>
+        <span class="stat">إجمالي ورود الجذر: ~٤٩ مرة في ٤٦ آية</span>
+        <span class="stat">التصريفات: ١٦ شكل</span>
+        <span class="stat">الفئات الدلالية: ٩</span>
+    </p>
+</div>
+
+<h2>٣. الفئات الدلالية لجذر (ض ر ب) في القرآن</h2>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>الفئة الدلالية</th>
+        <th>التعبير القرآني</th>
+        <th>عدد الورود التقريبي</th>
+        <th>النسبة</th>
+    </tr>
+    <tr>
+        <td>١</td>
+        <td><strong>ضرب الأمثال</strong></td>
+        <td>ضَرَبَ اللهُ مَثَلاً / يَضْرِبُ الأَمْثَالَ</td>
+        <td>~٢٨</td>
+        <td>~٥٧٪</td>
+    </tr>
+    <tr>
+        <td>٢</td>
+        <td><strong>الضرب المادي (مع تحديد الأداة أو العضو)</strong></td>
+        <td>اضْرِبْ بِعَصَاكَ / فَاضْرِبُوا فَوْقَ الأَعْنَاقِ</td>
+        <td>~٧</td>
+        <td>~١٤٪</td>
+    </tr>
+    <tr>
+        <td>٣</td>
+        <td><strong>السفر والتنقل</strong></td>
+        <td>ضَرَبْتُمْ فِي الأَرْضِ / يَضْرِبُونَ فِي الأَرْضِ</td>
+        <td>~٦</td>
+        <td>~١٢٪</td>
+    </tr>
+    <tr>
+        <td>٤</td>
+        <td><strong>الفَرض والإلزام (ضُرِبَتْ عليهم)</strong></td>
+        <td>ضُرِبَتْ عَلَيْهِمُ الذِّلَّةُ / المَسْكَنَةُ</td>
+        <td>~٣</td>
+        <td>~٥٪</td>
+    </tr>
+    <tr>
+        <td>٥</td>
+        <td><strong>الختم والتغطية</strong></td>
+        <td>فَضَرَبْنَا عَلَى آذَانِهِمْ</td>
+        <td>١</td>
+        <td>~٢٪</td>
+    </tr>
+    <tr>
+        <td>٦</td>
+        <td><strong>الإسدال والإرخاء</strong></td>
+        <td>وَلْيَضْرِبْنَ بِخُمُرِهِنَّ / يَضْرِبْنَ بِأَرْجُلِهِنَّ</td>
+        <td>٢</td>
+        <td>~٤٪</td>
+    </tr>
+    <tr>
+        <td>٧</td>
+        <td><strong>ضرب الملائكة</strong></td>
+        <td>يَضْرِبُونَ وُجُوهَهُمْ وَأَدْبَارَهُمْ</td>
+        <td>٣</td>
+        <td>~٦٪</td>
+    </tr>
+    <tr>
+        <td>٨</td>
+        <td><strong>شق الطريق</strong></td>
+        <td>فَاضْرِبْ لَهُمْ طَرِيقًا</td>
+        <td>١</td>
+        <td>~٢٪</td>
+    </tr>
+    <tr style="background:#fef9e7;">
+        <td>٩</td>
+        <td><strong>الآية المدروسة (٤:٣٤)</strong></td>
+        <td>وَاضْرِبُوهُنَّ</td>
+        <td>١</td>
+        <td>~٢٪</td>
+    </tr>
+</table>
+
+<h2>٤. النتائج الرئيسية (من القرآن فقط)</h2>
+
+<div class="finding" id="finding-1">
+    <h3>النتيجة الأولى: الاستخدام الغالب لجذر (ض ر ب) هو ضرب الأمثال</h3>
+    <p>أكثر من نصف ورود هذا الجذر في القرآن (~٢٨ مرة من أصل ~٤٩، أي ~٥٧٪) تأتي في سياق ضرب الأمثال والبيان، وليس في سياق الضرب المادي.</p>
+    <div class="verse">
+        <span class="ref">[إبراهيم: ٢٤-٢٥]</span><br>
+        ﴿ أَلَمْ تَرَ كَيْفَ ضَرَبَ اللَّهُ مَثَلًا كَلِمَةً طَيِّبَةً كَشَجَرَةٍ طَيِّبَةٍ ﴾
+    </div>
+    <div class="verse">
+        <span class="ref">[الزمر: ٢٩]</span><br>
+        ﴿ ضَرَبَ اللَّهُ مَثَلًا رَّجُلًا فِيهِ شُرَكَاءُ مُتَشَاكِسُونَ ﴾
+    </div>
+    <div class="verse">
+        <span class="ref">[البقرة: ٢٦]</span><br>
+        ﴿ إِنَّ اللَّهَ لَا يَسْتَحْيِۦٓ أَن يَضْرِبَ مَثَلًا مَّا بَعُوضَةً فَمَا فَوْقَهَا ﴾
+    </div>
+</div>
+
+<div class="finding" id="finding-2">
+    <h3>النتيجة الثانية: الضرب المادي دائماً يُحدَّد فيه الأداة أو العضو المستهدف</h3>
+    <p>في كل آية يُستخدم فيها جذر (ض ر ب) بمعنى الضرب المادي، يُحدِّد القرآن <strong>الأداة</strong> المستخدمة (بِعَصَاكَ، بِبَعْضِها، بِضِغْثٍ) <strong>أو</strong> العضو المستهدف (فَوْقَ الأَعْنَاقِ، وُجُوهَهُمْ وأَدْبَارَهُمْ، كُلَّ بَنَانٍ). <strong>بينما في آية ٤:٣٤ لم يُحدَّد لا الأداة ولا العضو.</strong></p>
+
+    <table>
+        <tr>
+            <th>الآية</th>
+            <th>الأداة المحددة</th>
+            <th>العضو المستهدف</th>
+        </tr>
+        <tr>
+            <td>[البقرة: ٦٠] — اضْرِبْ بِعَصَاكَ الحَجَرَ</td>
+            <td>بِعَصَاكَ ✓</td>
+            <td>الحَجَرَ ✓</td>
+        </tr>
+        <tr>
+            <td>[الأعراف: ١٦٠] — اضْرِبْ بِعَصَاكَ الحَجَرَ</td>
+            <td>بِعَصَاكَ ✓</td>
+            <td>الحَجَرَ ✓</td>
+        </tr>
+        <tr>
+            <td>[الشعراء: ٦٣] — اضْرِبْ بِعَصَاكَ البَحْرَ</td>
+            <td>بِعَصَاكَ ✓</td>
+            <td>البَحْرَ ✓</td>
+        </tr>
+        <tr>
+            <td>[البقرة: ٧٣] — اضْرِبُوهُ بِبَعْضِهَا</td>
+            <td>بِبَعْضِهَا ✓</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>[ص: ٤٤] — خُذْ بِيَدِكَ ضِغْثًا فَاضْرِبْ بِهِ</td>
+            <td>ضِغْث (حزمة عشب رقيقة) ✓</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>[الأنفال: ١٢] — فَاضْرِبُوا فَوْقَ الأَعْنَاقِ</td>
+            <td>—</td>
+            <td>فَوْقَ الأَعْنَاقِ + كُلَّ بَنَانٍ ✓</td>
+        </tr>
+        <tr>
+            <td>[الأنفال: ٥٠] — يَضْرِبُونَ وُجُوهَهُمْ وَأَدْبَارَهُمْ</td>
+            <td>—</td>
+            <td>وُجُوهَهُمْ وأَدْبَارَهُمْ ✓</td>
+        </tr>
+        <tr>
+            <td>[محمد: ٢٧] — يَضْرِبُونَ وُجُوهَهُمْ وَأَدْبَارَهُمْ</td>
+            <td>—</td>
+            <td>وُجُوهَهُمْ وأَدْبَارَهُمْ ✓</td>
+        </tr>
+        <tr style="background:#fef9e7;">
+            <td><strong>[النساء: ٣٤] — وَاضْرِبُوهُنَّ</strong></td>
+            <td><strong>❌ لا توجد</strong></td>
+            <td><strong>❌ لا يوجد</strong></td>
+        </tr>
+    </table>
+</div>
+
+<div class="finding" id="finding-3">
+    <h3>النتيجة الثالثة: قصة أيوب (ص: ٤٤) — سابقة قرآنية مع الزوجة</h3>
+    <p>الموضع الآخر الوحيد في القرآن الذي يتعلق بأمر بالضرب فيه علاقة بالزوجة هو قصة أيوب عليه السلام:</p>
+    <div class="verse">
+        <span class="ref">[ص: ٤٤]</span><br>
+        ﴿ وَخُذْ بِيَدِكَ ضِغْثًا فَاضْرِب بِّهِ وَلَا تَحْنَثْ ﴾
+    </div>
+    <p>الأمر هنا باستخدام <strong>ضِغْث</strong> (حزمة من عشب لين رقيق) — أي أن الفعل رمزي وليس إيلامياً، والغرض هو عدم الحنث باليمين فقط.</p>
+</div>
+
+<div class="finding" id="finding-4">
+    <h3>النتيجة الرابعة: الجذر يحمل معاني متعددة تتجاوز الضرب المادي</h3>
+    <p>تشير الآيات إلى أن جذر (ض ر ب) في القرآن أوسع بكثير من مجرد الضرب المادي. فهو يشمل: البيان والتوضيح (ضرب الأمثال)، والسفر (الضرب في الأرض)، والفرض (ضُرِبَتْ عليهم)، والتغطية (ضَرَبْنَا على آذانهم)، والإسدال (يَضْرِبْنَ بخمرهن).</p>
+</div>
+
+<div class="finding" id="finding-5">
+    <h3>النتيجة الخامسة: سياق الآية يدعم التدرج اللطيف</h3>
+    <p>ختام الآية: ﴿ إِنَّ اللَّهَ كَانَ عَلِيًّا كَبِيرًا ﴾ — تحذير للأزواج بأن الله أعلى وأكبر منهم، مما يدل على أن المقصود ليس تسلطاً أو إيذاءً.</p>
+    <p>كما أن التسلسل (وعظ → هجر في المضاجع → واضربوهن) يُظهر تدرجاً من الكلام إلى الفعل، والانتقال مشروط بعدم استجابة الخطوة السابقة.</p>
+</div>
+
+<h2>٥. المقارنة: الفهم التقليدي مقابل النتائج القرآنية</h2>
+
+<div class="comparison">
+    <div class="traditional">
+        <h3 style="color:var(--warning);">الفهم التقليدي</h3>
+        <ul style="list-style:none; padding:0;">
+            <li>• غالبية الترجمات تترجم «واضربوهن» بـ "strike them" أو "hit them"</li>
+            <li>• بعض الترجمات تضيف "[lightly]" (بتخفيف) وهي إضافة ليست في النص العربي</li>
+            <li>• التفاسير التقليدية تُقيّد بالضرب غير المبرح استناداً للأحاديث</li>
+            <li>• المعنى الشائع: الضرب الخفيف كخيار أخير</li>
+        </ul>
+    </div>
+    <div class="quranic">
+        <h3 style="color:var(--success);">النتائج القرآنية</h3>
+        <ul style="list-style:none; padding:0;">
+            <li>• الجذر (ض ر ب) في القرآن أغلب استخدامه ليس للضرب المادي (~٥٧٪ للأمثال)</li>
+            <li>• كلما أراد القرآن الضرب المادي، حدَّد الأداة أو العضو — إلا في ٤:٣٤</li>
+            <li>• السابقة القرآنية الوحيدة المتعلقة بالزوجة (ص: ٤٤) أمرت باستخدام ضِغْث (عشب لين)</li>
+            <li>• غياب تحديد الأداة والعضو في ٤:٣٤ يُشير إلى أن المعنى المقصود قد لا يكون الضرب المادي بالمعنى المعروف</li>
+            <li>• السياق القرآني يدعم التدرج اللطيف والتحذير الإلهي</li>
+        </ul>
+    </div>
+</div>
+
+<h2>٦. خلاصة</h2>
+<div class="card">
+    <p>تُشير الآيات إلى أن كلمة «وَاضْرِبُوهُنَّ» في سورة النساء (٤:٣٤) تحتاج إلى إعادة نظر في ضوء الاستخدام القرآني الشامل لجذر (ض ر ب). فالقرآن عندما يريد الضرب المادي يُحدد دائماً الأداة أو العضو المستهدف، وغياب كليهما في هذه الآية فريد. كما أن الاستخدام الأغلب لهذا الجذر في القرآن هو للبيان والإيضاح (ضرب الأمثال). والسابقة الوحيدة المتعلقة بالزوجة أمرت بأداة رمزية (ضِغْث). هذه الملاحظات مجتمعة تستدعي تأملاً أعمق في المعنى المراد.</p>
+</div>
+
+<div class="disclaimer">
+    ⚠️ تنبيه: هذا التقرير تم إعداده بواسطة عميل بحث قرآني بالذكاء الاصطناعي مع استناد إلى النص الكامل للقرآن الكريم. مع أن النتائج يُفترض أن تكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.
+</div>
+
+</body>
+</html>

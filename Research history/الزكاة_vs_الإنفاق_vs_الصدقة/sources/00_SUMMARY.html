@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص البحث: الزكاة vs الإنفاق vs الصدقة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.8;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border-right: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        main {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin: 40px 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 30px 0 20px 0;
+            padding-right: 15px;
+            border-right: 4px solid #667eea;
+        }
+
+        .term-section {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-right: 5px solid #667eea;
+        }
+
+        .term-title {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .term-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .detail-row {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .detail-label {
+            color: #764ba2;
+            font-weight: bold;
+            min-width: 150px;
+            flex-shrink: 0;
+        }
+
+        .detail-content {
+            flex: 1;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-right: 40px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .feature {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-right: 3px solid #667eea;
+        }
+
+        .comparison-section {
+            background: #f0f4ff;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+        }
+
+        .comparison-box {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-right: 4px solid #764ba2;
+        }
+
+        .comparison-box strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .arabic-text {
+            font-family: 'Arabic Typesetting', 'Arial', sans-serif;
+            font-size: 1.1em;
+            line-height: 2;
+            color: #1a1a1a;
+        }
+
+        .verse {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-right: 3px solid #667eea;
+            border-radius: 4px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .verse-reference {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .insight-box {
+            background: #e8f4f8;
+            padding: 20px;
+            border-right: 5px solid #667eea;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .insight-box strong {
+            color: #667eea;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .footer-disclaimer {
+            background: #fff3cd;
+            border-right: 5px solid #ff9800;
+            padding: 20px;
+            border-radius: 5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-top a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            color: #764ba2;
+        }
+
+        .nav-files {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .nav-files h3 { color: #667eea; margin-bottom: 15px; }
+        .nav-files a {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-files a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .nav-files a.active { background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .detail-row {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .highlight {
+            background: #fffacd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ملخص البحث القرآني</h1>
+            <p>مقارنة شاملة بين الزكاة والإنفاق والصدقة</p>
+        </header>
+
+        <div class="disclaimer">
+            <p><strong>إخلاء المسؤولية:</strong> هذا التقرير تم إنشاؤه بواسطة وكيل بحث قرآني مدعوم بالذكاء الاصطناعي مع الاستناد إلى النص الكامل للقرآن الكريم. بينما يُفترض أن تكون النتائج شاملة، إلا أنه لا يمكن ضمان ذلك ولا ينبغي مشاركتها باعتبارها مرجعية.</p>
+        </div>
+
+        <nav>
+            <h3>جدول المحتويات</h3>
+            <ul>
+                <li><a href="01_MORPHOLOGY.html">المورفولوجيا اللغوية</a></li>
+                <li><a href="02_VERSES.html">الآيات والإحصائيات</a></li>
+                <li><a href="03_ANALYSIS.html">التحليل المقارن</a></li>
+                <li><a href="04_DISCOVERIES.html">الاكتشافات الرئيسية</a></li>
+                <li><a href="05_TAFSIR_COMPARISON.html">مقارنة التفاسير</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>الملخص التنفيذي</h2>
+
+            <p>يقدم هذا البحث تحليلاً شاملاً لثلاثة مصطلحات قرآنية أساسية تتعلق بالإنفاق والعطاء في الدين الإسلامي. بينما قد تبدو هذه المصطلحات متشابهة أحياناً أو قابلة للتبادل، فإن البحث العميق في النصوص القرآنية يكشف عن فروقات معنوية وتطبيقية جوهرية.</p>
+
+            <h2>الزكاة (جذر: ز ك و/ي)</h2>
+
+            <div class="term-section">
+                <div class="term-title">الزكاة: التكليف المؤسسي والتطهير الروحي</div>
+
+                <div class="term-details">
+                    <div class="detail-row">
+                        <span class="detail-label">المعنى اللغوي:</span>
+                        <span class="detail-content">النماء والطهارة والبركة. جذر الكلمة يدل على الزيادة والنمو.</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">عدد الآيات:</span>
+                        <span class="detail-content">حوالي 47 آية (26 آية مؤسسية + 21 آية متعلقة بالتزكية والطهارة)</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">المعنى القرآني:</span>
+                        <span class="detail-content">الزكاة في القرآن تجمع بين مفهومين متكاملين:</span>
+                    </div>
+                </div>
+
+                <ol>
+                    <li><strong>الإيتاء المالي المُنظَّم:</strong> (آتوا الزكاة) المقترن دائماً بالصلاة في السياق القرآني</li>
+                    <li><strong>التطهير والنماء الروحي:</strong> (تزكية النفس) من خلال الإيتاء المالي</li>
+                </ol>
+
+                <p><strong>الخصائص المميزة:</strong></p>
+
+                <div class="feature">
+                    <strong>الاقتران بالصلاة:</strong> تقترن الزكاة بالصلاة في أغلب مواضعها القرآنية
+                    <div class="verse arabic-text">"وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ"</div>
+                </div>
+
+                <div class="feature">
+                    <strong>فعل الإيتاء:</strong> الفعل الأكثر ارتباطاً بالزكاة هو "آتى" (الإيتاء)، وليس الإنفاق
+                </div>
+
+                <div class="feature">
+                    <strong>منظومة التكليف الإلهي:</strong> مرتبطة بميثاق العبد مع ربه وأمره المباشر
+                </div>
+
+                <div class="feature">
+                    <strong>فعل التزكية:</strong> التزكية فعل إلهي في الأساس أو نبوي
+                    <div class="verse arabic-text">"اللَّهُ يُزَكِّى مَن يَشَآءُ"</div>
+                </div>
+            </div>
+
+            <h2>الإنفاق (جذر: ن ف ق)</h2>
+
+            <div class="term-section">
+                <div class="term-title">الإنفاق: الفعل الاختياري العام لبذل المال</div>
+
+                <div class="term-details">
+                    <div class="detail-row">
+                        <span class="detail-label">المعنى اللغوي:</span>
+                        <span class="detail-content">إخراج المال وبذله في أوجه الخير والطاعة</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">عدد الآيات:</span>
+                        <span class="detail-content">حوالي 40 آية تتعلق بالإنفاق في مختلف سياقاته</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">المعنى القرآني:</span>
+                        <span class="detail-content">الإنفاق هو الفعل العام والاختياري لبذل المال في أوجه الخير</span>
+                    </div>
+                </div>
+
+                <p><strong>الخصائص المميزة:</strong></p>
+
+                <div class="feature">
+                    <strong>الحرية والاختيار:</strong> يصف الفعل الاختياري الحر من قبل المؤمن
+                    <div class="verse arabic-text">"مِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ"</div>
+                </div>
+
+                <div class="feature">
+                    <strong>الارتباط بالرزق الإلهي:</strong> دائماً مرتبط بالرزق الذي وهبه الله
+                </div>
+
+                <div class="feature">
+                    <strong>الشمولية:</strong> يشمل كل أنواع البذل: في السراء والضراء، سراً وعلانية، في سبيل الله
+                </div>
+
+                <div class="feature">
+                    <strong>عدم التحديد:</strong> القرآن يسأل عنه (يَسْـَٔلُونَكَ مَاذَا يُنفِقُونَ) مما يدل على أنه ليس محدد المقدار
+                </div>
+
+                <div class="feature">
+                    <strong>الأمثال والتشبيهات:</strong> يضرب الله له الأمثال في القرآن
+                    <div class="verse arabic-text">"كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ"</div>
+                </div>
+            </div>
+
+            <h2>الصدقة (جذر: ص د ق)</h2>
+
+            <div class="term-section">
+                <div class="term-title">الصدقة: العطاء الذي يُصدّق الإيمان</div>
+
+                <div class="term-details">
+                    <div class="detail-row">
+                        <span class="detail-label">المعنى اللغوي:</span>
+                        <span class="detail-content">من الصدق - ما يُعطى تصديقاً للإيمان والتزاماً بقيمه</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">عدد الآيات:</span>
+                        <span class="detail-content">حوالي 14 آية في معنى العطاء/الصدقة + 54 آية في معاني التصديق والصدق</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">المعنى القرآني:</span>
+                        <span class="detail-content">الصدقة هي العطاء الذي يُثبت صدق الإيمان وينبثق منه</span>
+                    </div>
+                </div>
+
+                <p><strong>الخصائص المميزة:</strong></p>
+
+                <div class="feature">
+                    <strong>التطهير والتزكية:</strong> مرتبطة مباشرة بتطهير النفس
+                    <div class="verse arabic-text">"خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا"</div>
+                    <span class="verse-reference">سورة التوبة، الآية 103</span>
+                </div>
+
+                <div class="feature">
+                    <strong>المصارف المحددة:</strong> لها مصارف محددة في القرآن الكريم
+                    <div class="verse arabic-text">"إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ..."</div>
+                    <span class="verse-reference">سورة التوبة، الآية 60</span>
+                </div>
+
+                <div class="feature">
+                    <strong>الشمولية في الأشكال:</strong> يمكن أن تكون غير مالية (كالعفو عن القصاص)
+                    <div class="verse arabic-text">"فَمَن تَصَدَّقَ بِهِۦ فَهُوَ كَفَّارَةٌ لَّهُۥ"</div>
+                    <span class="verse-reference">سورة المائدة، الآية 45</span>
+                </div>
+
+                <div class="feature">
+                    <strong>النماء الإلهي:</strong> الله يُربي الصدقات بينما يمحق الربا
+                    <div class="verse arabic-text">"يَمْحَقُ ٱللَّهُ ٱلرِّبَوٰا۟ وَيُرْبِى ٱلصَّدَقَـٰتِ"</div>
+                    <span class="verse-reference">سورة البقرة، الآية 276</span>
+                </div>
+            </div>
+
+            <h2>لماذا لا يمكن التبادل بين المصطلحات؟</h2>
+
+            <div class="comparison-section">
+                <p>على الرغم من أن الثلاثة مصطلحات تتعلق ببذل المال والعطاء، إلا أن لكل منها دلالتها الخاصة والمميزة:</p>
+
+                <div class="comparison-box">
+                    <strong>الزكاة = تكليف مؤسسي + تطهير روحي</strong>
+                    <p>فريضة محددة مقترنة بالصلاة، تجمع بين الفعل المالي (الإيتاء) والتأثير الروحي (التزكية). ليست اختيارية بل هي تكليف واضح من الله.</p>
+                </div>
+
+                <div class="comparison-box">
+                    <strong>الإنفاق = الفعل الاختياري العام</strong>
+                    <p>بذل المال في وجوه الخير المختلفة، محدود الإطار بالرزق الإلهي لكن غير محدود المقدار. يشمل كل أشكال بذل المال الاختياري.</p>
+                </div>
+
+                <div class="comparison-box">
+                    <strong>الصدقة = عطاء يُصدّق الإيمان</strong>
+                    <p>عطاء له مصارف محددة وغرض روحي واضح (التطهير والتزكية). يُظهر صدق الإيمان ويثبت الالتزام بقيم الدين.</p>
+                </div>
+            </div>
+
+            <h2>التقاطعات والعلاقات</h2>
+
+            <div class="insight-box">
+                <p><strong>الآية 9:103 تجمع بين المفاهيم الثلاثة:</strong></p>
+                <div class="verse arabic-text">"خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا"</div>
+                <p style="margin-top: 15px;">في هذه الآية نرى:</p>
+                <ul>
+                    <li><strong>الصدقة:</strong> نوع العطاء (صدقة)</li>
+                    <li><strong>التطهير والتزكية:</strong> الفعل الإلهي والروحي (التزكية)</li>
+                    <li><strong>الإنفاق:</strong> الفعل المالي (أخذ من الأموال)</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <p><strong>علاقة الاشتمال:</strong></p>
+                <p>الإنفاق أعم من الزكاة والصدقة:</p>
+                <ul>
+                    <li><span class="highlight">كل زكاة إنفاق</span> لكن ليس كل إنفاق زكاة</li>
+                    <li><span class="highlight">كل صدقة إنفاق</span> لكن ليس كل إنفاق صدقة</li>
+                    <li><span class="highlight">الزكاة والصدقة</span> قد تتقاطع لكنهما ليستا متطابقتين</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <p><strong>الهدف الروحي المشترك:</strong></p>
+                <p>بينما تختلف أشكالها، تشترك الزكاة والصدقة والإنفاق في هدف واحد: <span class="highlight">تطهير النفس وتزكيتها</span>. لكن الطرق والشروط والمقادير تختلف.</p>
+            </div>
+
+            <h2>الخلاصة</h2>
+
+            <p>هذا البحث يثبت أن فهم الفروقات الدقيقة بين المصطلحات القرآنية لا يقتصر على المعنى اللغوي، بل يتطلب الغوص العميق في السياق القرآني والأهداف الروحية والتكليفات الإلهية. كل مصطلح له دوره الخاص وموضعه الذي لا يمكن لآخر أن يحتله، وهذا التنوع في التعبير القرآني يعكس دقة وحكمة التشريع الإلهي.</p>
+
+        </main>
+
+        <div class="nav-files" style="background: #f8f9fa; border-radius: 12px; padding: 25px; margin: 30px auto; max-width: 700px; text-align: center;">
+            <h3 style="margin-bottom: 15px;">📂 ملفات البحث</h3>
+            <a href="00_SUMMARY.html" class="active">الملخص</a>
+            <a href="01_MORPHOLOGY.html">التصريف</a>
+            <a href="02_VERSES.html">الآيات</a>
+            <a href="03_ANALYSIS.html">التحليل</a>
+            <a href="04_DISCOVERIES.html">الاكتشافات</a>
+            <a href="05_TAFSIR_COMPARISON.html">التفاسير</a>
+        </div>
+
+        <footer>
+            <div class="footer-disclaimer">
+                <p><strong>إخلاء المسؤولية:</strong> هذا التقرير تم إنشاؤه بواسطة وكيل بحث قرآني مدعوم بالذكاء الاصطناعي مع الاستناد إلى النص الكامل للقرآن الكريم. بينما يُفترض أن تكون النتائج شاملة، إلا أنه لا يمكن ضمان ذلك ولا ينبغي مشاركتها باعتبارها مرجعية.</p>
+            </div>
+
+            <div class="back-to-top">
+                <a href="#top">العودة إلى الأعلى</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

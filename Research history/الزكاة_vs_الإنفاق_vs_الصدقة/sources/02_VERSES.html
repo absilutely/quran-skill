@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الآيات القرآنية: الزكاة والإنفاق والصدقة</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.8;
+            direction: rtl;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 2.2em; margin-bottom: 10px; text-align: center; }
+        header p { text-align: center; font-size: 1.1em; opacity: 0.95; }
+
+        .disclaimer {
+            background: #fff3cd;
+            border-right: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        nav h3 { color: #667eea; margin-bottom: 15px; text-align: center; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        nav a {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        nav a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+        .root-section {
+            margin-bottom: 50px;
+        }
+        .root-header {
+            color: white;
+            padding: 25px 30px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 0;
+        }
+        .root-header h2 { font-size: 1.8em; margin-bottom: 5px; }
+        .root-header .count { opacity: 0.9; font-size: 0.95em; }
+
+        .form-group {
+            background: white;
+            margin: 0 0 2px 0;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .form-group:last-child { border-radius: 0 0 10px 10px; margin-bottom: 0; }
+
+        .form-header {
+            padding: 15px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .form-header:hover { background: #f8f9fa; }
+        .form-header h3 { font-size: 1.2em; color: #333; }
+        .form-header .badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 12px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .form-header .arrow {
+            transition: transform 0.3s;
+            font-size: 1.2em;
+            color: #999;
+        }
+        .form-header.open .arrow { transform: rotate(90deg); }
+
+        .verses-list {
+            padding: 0 25px 20px 25px;
+            display: none;
+        }
+        .verses-list.show { display: block; }
+
+        .verse-card {
+            border-right: 4px solid;
+            padding: 20px;
+            margin: 12px 0;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .verse-card:hover {
+            transform: translateX(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .verse-ref {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .verse-text {
+            font-size: 1.35em;
+            line-height: 2.2;
+            font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+            color: #1a1a2e;
+            text-align: justify;
+        }
+
+        .stats-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .stat-number { font-size: 2.5em; font-weight: bold; }
+        .stat-label { font-size: 0.9em; color: #666; margin-top: 5px; }
+
+        .nav-files {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .nav-files h3 { color: #667eea; margin-bottom: 15px; }
+        .nav-files a {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-files a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .nav-files a.active { background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            .verse-text { font-size: 1.15em; }
+            .stats-bar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>📖 الآيات القرآنية الكاملة</h1>
+    <p>جميع الآيات المتعلقة بـ «الزكاة» و«الإنفاق» و«الصدقة» مرتبة حسب الجذر والتصريف</p>
+</header>
+
+<div class="disclaimer">
+    <strong>⚠️ منهجية البحث:</strong>
+    هذا البحث يعتمد حصريًا على القرآن الكريم كمصدر وحيد للمعاني. النصوص المعروضة هنا هي بالرسم العثماني كما وردت في المصحف الشريف.
+    الهدف هو تتبع كل تصريف من تصاريف الجذور الثلاثة في سياقه القرآني الأصلي.
+</div>
+
+<div class="stats-bar">
+    <div class="stat-item">
+        <div class="stat-number" style="color: #667eea;">52</div>
+        <div class="stat-label">آية في جذر «ز ك و»</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number" style="color: #f093fb;">38</div>
+        <div class="stat-label">آية في جذر «ن ف ق»</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number" style="color: #4facfe;">15</div>
+        <div class="stat-label">آية في جذر «ص د ق»</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number" style="color: #333;">105</div>
+        <div class="stat-label">إجمالي الآيات الفريدة</div>
+    </div>
+</div>
+
+<nav>
+    <h3>🔍 التنقل السريع</h3>
+    <ul>
+        <li><a href="#root_zky" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">جذر «ز ك و»</a></li>
+        <li><a href="#root_nfq" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">جذر «ن ف ق»</a></li>
+        <li><a href="#root_sdq" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">جذر «ص د ق»</a></li>
+    </ul>
+</nav>
+
+<div class="root-section" id="root_zky">
+    <div class="root-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <h2>جذر «ز ك و / ز ك ي»</h2>
+        <div class="count">52 آية فريدة — 13 تصريفات</div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_0')" id="header_root_zky_form_0">
+            <h3>الزَّكَاة / الزَّكَوٰة (بالتعريف)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">28 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_0">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:43 ﴾</span>
+                <div class="verse-text">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:83 ﴾</span>
+                <div class="verse-text">وَإِذْ أَخَذْنَا مِيثَـٰقَ بَنِىٓ إِسْرَٰٓءِيلَ لَا تَعْبُدُونَ إِلَّا ٱللَّهَ وَبِٱلْوَٰلِدَيْنِ إِحْسَانًا وَذِى ٱلْقُرْبَىٰ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينِ وَقُولُوا۟ لِلنَّاسِ حُسْنًا وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًا مِّنكُمْ وَأَنتُم مُّعْرِضُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:110 ﴾</span>
+                <div class="verse-text">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ ۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ ٱللَّهِ ۗ إِنَّ ٱللَّهَ بِمَا تَعْمَلُونَ بَصِيرٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:177 ﴾</span>
+                <div class="verse-text">۞ لَّيْسَ ٱلْبِرَّ أَن تُوَلُّوا۟ وُجُوهَكُمْ قِبَلَ ٱلْمَشْرِقِ وَٱلْمَغْرِبِ وَلَـٰكِنَّ ٱلْبِرَّ مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ وَٱلْمَلَـٰٓئِكَةِ وَٱلْكِتَـٰبِ وَٱلنَّبِيِّـۧنَ وَءَاتَى ٱلْمَالَ عَلَىٰ حُبِّهِۦ ذَوِى ٱلْقُرْبَىٰ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينَ وَٱبْنَ ٱلسَّبِيلِ وَٱلسَّآئِلِينَ وَفِى ٱلرِّقَابِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَٱلْمُوفُونَ بِعَهْدِهِمْ إِذَا عَـٰهَدُوا۟ ۖ وَٱلصَّـٰبِرِينَ فِى ٱلْبَأْسَآءِ وَٱلضَّرَّآءِ وَحِينَ ٱلْبَأْسِ ۗ أُو۟لَـٰٓئِكَ ٱلَّذِينَ صَدَقُوا۟ ۖ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُتَّقُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:277 ﴾</span>
+                <div class="verse-text">إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ لَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 4:77 ﴾</span>
+                <div class="verse-text">أَلَمْ تَرَ إِلَى ٱلَّذِينَ قِيلَ لَهُمْ كُفُّوٓا۟ أَيْدِيَكُمْ وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ فَلَمَّا كُتِبَ عَلَيْهِمُ ٱلْقِتَالُ إِذَا فَرِيقٌ مِّنْهُمْ يَخْشَوْنَ ٱلنَّاسَ كَخَشْيَةِ ٱللَّهِ أَوْ أَشَدَّ خَشْيَةً ۚ وَقَالُوا۟ رَبَّنَا لِمَ كَتَبْتَ عَلَيْنَا ٱلْقِتَالَ لَوْلَآ أَخَّرْتَنَآ إِلَىٰٓ أَجَلٍ قَرِيبٍ ۗ قُلْ مَتَـٰعُ ٱلدُّنْيَا قَلِيلٌ وَٱلْـَٔاخِرَةُ خَيْرٌ لِّمَنِ ٱتَّقَىٰ وَلَا تُظْلَمُونَ فَتِيلًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 4:162 ﴾</span>
+                <div class="verse-text">لَّـٰكِنِ ٱلرَّٰسِخُونَ فِى ٱلْعِلْمِ مِنْهُمْ وَٱلْمُؤْمِنُونَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ ۚ وَٱلْمُقِيمِينَ ٱلصَّلَوٰةَ ۚ وَٱلْمُؤْتُونَ ٱلزَّكَوٰةَ وَٱلْمُؤْمِنُونَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ أُو۟لَـٰٓئِكَ سَنُؤْتِيهِمْ أَجْرًا عَظِيمًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 5:12 ﴾</span>
+                <div class="verse-text">وَلَقَدْ أَخَذَ ٱللَّهُ مِيثَـٰقَ بَنِىٓ إِسْرَٰٓءِيلَ وَبَعَثْنَا مِنْهُمُ ٱثْنَىْ عَشَرَ نَقِيبًا ۖ وَقَالَ ٱللَّهُ إِنِّى مَعَكُمْ ۖ لَئِنْ أَقَمْتُمُ ٱلصَّلَوٰةَ وَءَاتَيْتُمُ ٱلزَّكَوٰةَ وَءَامَنتُم بِرُسُلِى وَعَزَّرْتُمُوهُمْ وَأَقْرَضْتُمُ ٱللَّهَ قَرْضًا حَسَنًا لَّأُكَفِّرَنَّ عَنكُمْ سَيِّـَٔاتِكُمْ وَلَأُدْخِلَنَّكُمْ جَنَّـٰتٍ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ ۚ فَمَن كَفَرَ بَعْدَ ذَٰلِكَ مِنكُمْ فَقَدْ ضَلَّ سَوَآءَ ٱلسَّبِيلِ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 5:55 ﴾</span>
+                <div class="verse-text">إِنَّمَا وَلِيُّكُمُ ٱللَّهُ وَرَسُولُهُۥ وَٱلَّذِينَ ءَامَنُوا۟ ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَهُمْ رَٰكِعُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 7:156 ﴾</span>
+                <div class="verse-text">وَٱكْتُبْ لَنَا فِى هَـٰذِهِ ٱلدُّنْيَا حَسَنَةً وَفِى ٱلْـَٔاخِرَةِ إِنَّا هُدْنَآ إِلَيْكَ ۚ قَالَ عَذَابِىٓ أُصِيبُ بِهِۦ مَنْ أَشَآءُ ۖ وَرَحْمَتِى وَسِعَتْ كُلَّ شَىْءٍ ۚ فَسَأَكْتُبُهَا لِلَّذِينَ يَتَّقُونَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَٱلَّذِينَ هُم بِـَٔايَـٰتِنَا يُؤْمِنُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 9:5 ﴾</span>
+                <div class="verse-text">فَإِذَا ٱنسَلَخَ ٱلْأَشْهُرُ ٱلْحُرُمُ فَٱقْتُلُوا۟ ٱلْمُشْرِكِينَ حَيْثُ وَجَدتُّمُوهُمْ وَخُذُوهُمْ وَٱحْصُرُوهُمْ وَٱقْعُدُوا۟ لَهُمْ كُلَّ مَرْصَدٍ ۚ فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَخَلُّوا۟ سَبِيلَهُمْ ۚ إِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 9:11 ﴾</span>
+                <div class="verse-text">فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَإِخْوَٰنُكُمْ فِى ٱلدِّينِ ۗ وَنُفَصِّلُ ٱلْـَٔايَـٰتِ لِقَوْمٍ يَعْلَمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 9:18 ﴾</span>
+                <div class="verse-text">إِنَّمَا يَعْمُرُ مَسَـٰجِدَ ٱللَّهِ مَنْ ءَامَنَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَلَمْ يَخْشَ إِلَّا ٱللَّهَ ۖ فَعَسَىٰٓ أُو۟لَـٰٓئِكَ أَن يَكُونُوا۟ مِنَ ٱلْمُهْتَدِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 9:71 ﴾</span>
+                <div class="verse-text">وَٱلْمُؤْمِنُونَ وَٱلْمُؤْمِنَـٰتُ بَعْضُهُمْ أَوْلِيَآءُ بَعْضٍ ۚ يَأْمُرُونَ بِٱلْمَعْرُوفِ وَيَنْهَوْنَ عَنِ ٱلْمُنكَرِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَيُطِيعُونَ ٱللَّهَ وَرَسُولَهُۥٓ ۚ أُو۟لَـٰٓئِكَ سَيَرْحَمُهُمُ ٱللَّهُ ۗ إِنَّ ٱللَّهَ عَزِيزٌ حَكِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 19:31 ﴾</span>
+                <div class="verse-text">وَجَعَلَنِى مُبَارَكًا أَيْنَ مَا كُنتُ وَأَوْصَـٰنِى بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ مَا دُمْتُ حَيًّا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 19:55 ﴾</span>
+                <div class="verse-text">وَكَانَ يَأْمُرُ أَهْلَهُۥ بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ وَكَانَ عِندَ رَبِّهِۦ مَرْضِيًّا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 21:73 ﴾</span>
+                <div class="verse-text">وَجَعَلْنَـٰهُمْ أَئِمَّةً يَهْدُونَ بِأَمْرِنَا وَأَوْحَيْنَآ إِلَيْهِمْ فِعْلَ ٱلْخَيْرَٰتِ وَإِقَامَ ٱلصَّلَوٰةِ وَإِيتَآءَ ٱلزَّكَوٰةِ ۖ وَكَانُوا۟ لَنَا عَـٰبِدِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 22:41 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ إِن مَّكَّنَّـٰهُمْ فِى ٱلْأَرْضِ أَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ وَأَمَرُوا۟ بِٱلْمَعْرُوفِ وَنَهَوْا۟ عَنِ ٱلْمُنكَرِ ۗ وَلِلَّهِ عَـٰقِبَةُ ٱلْأُمُورِ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 22:78 ﴾</span>
+                <div class="verse-text">وَجَـٰهِدُوا۟ فِى ٱللَّهِ حَقَّ جِهَادِهِۦ ۚ هُوَ ٱجْتَبَىٰكُمْ وَمَا جَعَلَ عَلَيْكُمْ فِى ٱلدِّينِ مِنْ حَرَجٍ ۚ مِّلَّةَ أَبِيكُمْ إِبْرَٰهِيمَ ۚ هُوَ سَمَّىٰكُمُ ٱلْمُسْلِمِينَ مِن قَبْلُ وَفِى هَـٰذَا لِيَكُونَ ٱلرَّسُولُ شَهِيدًا عَلَيْكُمْ وَتَكُونُوا۟ شُهَدَآءَ عَلَى ٱلنَّاسِ ۚ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱعْتَصِمُوا۟ بِٱللَّهِ هُوَ مَوْلَىٰكُمْ ۖ فَنِعْمَ ٱلْمَوْلَىٰ وَنِعْمَ ٱلنَّصِيرُ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 23:4 ﴾</span>
+                <div class="verse-text">وَٱلَّذِينَ هُمْ لِلزَّكَوٰةِ فَـٰعِلُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 24:37 ﴾</span>
+                <div class="verse-text">رِجَالٌ لَّا تُلْهِيهِمْ تِجَـٰرَةٌ وَلَا بَيْعٌ عَن ذِكْرِ ٱللَّهِ وَإِقَامِ ٱلصَّلَوٰةِ وَإِيتَآءِ ٱلزَّكَوٰةِ ۙ يَخَافُونَ يَوْمًا تَتَقَلَّبُ فِيهِ ٱلْقُلُوبُ وَٱلْأَبْصَـٰرُ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 24:56 ﴾</span>
+                <div class="verse-text">وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَطِيعُوا۟ ٱلرَّسُولَ لَعَلَّكُمْ تُرْحَمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 27:3 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَهُم بِٱلْـَٔاخِرَةِ هُمْ يُوقِنُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 31:4 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَهُم بِٱلْـَٔاخِرَةِ هُمْ يُوقِنُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 33:33 ﴾</span>
+                <div class="verse-text">وَقَرْنَ فِى بُيُوتِكُنَّ وَلَا تَبَرَّجْنَ تَبَرُّجَ ٱلْجَـٰهِلِيَّةِ ٱلْأُولَىٰ ۖ وَأَقِمْنَ ٱلصَّلَوٰةَ وَءَاتِينَ ٱلزَّكَوٰةَ وَأَطِعْنَ ٱللَّهَ وَرَسُولَهُۥٓ ۚ إِنَّمَا يُرِيدُ ٱللَّهُ لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ أَهْلَ ٱلْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 58:13 ﴾</span>
+                <div class="verse-text">ءَأَشْفَقْتُمْ أَن تُقَدِّمُوا۟ بَيْنَ يَدَىْ نَجْوَىٰكُمْ صَدَقَـٰتٍ ۚ فَإِذْ لَمْ تَفْعَلُوا۟ وَتَابَ ٱللَّهُ عَلَيْكُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥ ۚ وَٱللَّهُ خَبِيرٌۢ بِمَا تَعْمَلُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 73:20 ﴾</span>
+                <div class="verse-text">۞ إِنَّ رَبَّكَ يَعْلَمُ أَنَّكَ تَقُومُ أَدْنَىٰ مِن ثُلُثَىِ ٱلَّيْلِ وَنِصْفَهُۥ وَثُلُثَهُۥ وَطَآئِفَةٌ مِّنَ ٱلَّذِينَ مَعَكَ ۚ وَٱللَّهُ يُقَدِّرُ ٱلَّيْلَ وَٱلنَّهَارَ ۚ عَلِمَ أَن لَّن تُحْصُوهُ فَتَابَ عَلَيْكُمْ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ ۚ عَلِمَ أَن سَيَكُونُ مِنكُم مَّرْضَىٰ وَءَاخَرُونَ يَضْرِبُونَ فِى ٱلْأَرْضِ يَبْتَغُونَ مِن فَضْلِ ٱللَّهِ وَءَاخَرُونَ يُقَـٰتِلُونَ فِى سَبِيلِ ٱللَّهِ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنْهُ ۚ وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَقْرِضُوا۟ ٱللَّهَ قَرْضًا حَسَنًا ۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ ٱللَّهِ هُوَ خَيْرًا وَأَعْظَمَ أَجْرًا ۚ وَٱسْتَغْفِرُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌۢ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 98:5 ﴾</span>
+                <div class="verse-text">وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ حُنَفَآءَ وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ ۚ وَذَٰلِكَ دِينُ ٱلْقَيِّمَةِ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_1')" id="header_root_zky_form_1">
+            <h3>زَكَاة / زَكَوٰة (بدون ال)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_1">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 18:81 ﴾</span>
+                <div class="verse-text">فَأَرَدْنَآ أَن يُبْدِلَهُمَا رَبُّهُمَا خَيْرًا مِّنْهُ زَكَوٰةً وَأَقْرَبَ رُحْمًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 30:39 ﴾</span>
+                <div class="verse-text">وَمَآ ءَاتَيْتُم مِّن رِّبًا لِّيَرْبُوَا۟ فِىٓ أَمْوَٰلِ ٱلنَّاسِ فَلَا يَرْبُوا۟ عِندَ ٱللَّهِ ۖ وَمَآ ءَاتَيْتُم مِّن زَكَوٰةٍ تُرِيدُونَ وَجْهَ ٱللَّهِ فَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُضْعِفُونَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_2')" id="header_root_zky_form_2">
+            <h3>يُزَكِّي (فعل مضارع - باب التفعيل)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_2">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 4:49 ﴾</span>
+                <div class="verse-text">أَلَمْ تَرَ إِلَى ٱلَّذِينَ يُزَكُّونَ أَنفُسَهُم ۚ بَلِ ٱللَّهُ يُزَكِّى مَن يَشَآءُ وَلَا يُظْلَمُونَ فَتِيلًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 24:21 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَتَّبِعُوا۟ خُطُوَٰتِ ٱلشَّيْطَـٰنِ ۚ وَمَن يَتَّبِعْ خُطُوَٰتِ ٱلشَّيْطَـٰنِ فَإِنَّهُۥ يَأْمُرُ بِٱلْفَحْشَآءِ وَٱلْمُنكَرِ ۚ وَلَوْلَا فَضْلُ ٱللَّهِ عَلَيْكُمْ وَرَحْمَتُهُۥ مَا زَكَىٰ مِنكُم مِّنْ أَحَدٍ أَبَدًا وَلَـٰكِنَّ ٱللَّهَ يُزَكِّى مَن يَشَآءُ ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_3')" id="header_root_zky_form_3">
+            <h3>يُزَكِّيهِمْ / وَيُزَكِّيهِمْ</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">5 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_3">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:129 ﴾</span>
+                <div class="verse-text">رَبَّنَا وَٱبْعَثْ فِيهِمْ رَسُولًا مِّنْهُمْ يَتْلُوا۟ عَلَيْهِمْ ءَايَـٰتِكَ وَيُعَلِّمُهُمُ ٱلْكِتَـٰبَ وَٱلْحِكْمَةَ وَيُزَكِّيهِمْ ۚ إِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:174 ﴾</span>
+                <div class="verse-text">إِنَّ ٱلَّذِينَ يَكْتُمُونَ مَآ أَنزَلَ ٱللَّهُ مِنَ ٱلْكِتَـٰبِ وَيَشْتَرُونَ بِهِۦ ثَمَنًا قَلِيلًا ۙ أُو۟لَـٰٓئِكَ مَا يَأْكُلُونَ فِى بُطُونِهِمْ إِلَّا ٱلنَّارَ وَلَا يُكَلِّمُهُمُ ٱللَّهُ يَوْمَ ٱلْقِيَـٰمَةِ وَلَا يُزَكِّيهِمْ وَلَهُمْ عَذَابٌ أَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 3:77 ﴾</span>
+                <div class="verse-text">إِنَّ ٱلَّذِينَ يَشْتَرُونَ بِعَهْدِ ٱللَّهِ وَأَيْمَـٰنِهِمْ ثَمَنًا قَلِيلًا أُو۟لَـٰٓئِكَ لَا خَلَـٰقَ لَهُمْ فِى ٱلْـَٔاخِرَةِ وَلَا يُكَلِّمُهُمُ ٱللَّهُ وَلَا يَنظُرُ إِلَيْهِمْ يَوْمَ ٱلْقِيَـٰمَةِ وَلَا يُزَكِّيهِمْ وَلَهُمْ عَذَابٌ أَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 3:164 ﴾</span>
+                <div class="verse-text">لَقَدْ مَنَّ ٱللَّهُ عَلَى ٱلْمُؤْمِنِينَ إِذْ بَعَثَ فِيهِمْ رَسُولًا مِّنْ أَنفُسِهِمْ يَتْلُوا۟ عَلَيْهِمْ ءَايَـٰتِهِۦ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ ٱلْكِتَـٰبَ وَٱلْحِكْمَةَ وَإِن كَانُوا۟ مِن قَبْلُ لَفِى ضَلَـٰلٍ مُّبِينٍ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 62:2 ﴾</span>
+                <div class="verse-text">هُوَ ٱلَّذِى بَعَثَ فِى ٱلْأُمِّيِّـۧنَ رَسُولًا مِّنْهُمْ يَتْلُوا۟ عَلَيْهِمْ ءَايَـٰتِهِۦ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ ٱلْكِتَـٰبَ وَٱلْحِكْمَةَ وَإِن كَانُوا۟ مِن قَبْلُ لَفِى ضَلَـٰلٍ مُّبِينٍ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_4')" id="header_root_zky_form_4">
+            <h3>يَزَّكَّىٰ (باب التفعّل - مطاوعة)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_4">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 80:3 ﴾</span>
+                <div class="verse-text">وَمَا يُدْرِيكَ لَعَلَّهُۥ يَزَّكَّىٰٓ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 80:7 ﴾</span>
+                <div class="verse-text">وَمَا عَلَيْكَ أَلَّا يَزَّكَّىٰ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_5')" id="header_root_zky_form_5">
+            <h3>تَزَكَّىٰ (فعل ماضٍ - باب التفعّل)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">4 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_5">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 20:76 ﴾</span>
+                <div class="verse-text">جَنَّـٰتُ عَدْنٍ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ خَـٰلِدِينَ فِيهَا ۚ وَذَٰلِكَ جَزَآءُ مَن تَزَكَّىٰ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 35:18 ﴾</span>
+                <div class="verse-text">وَلَا تَزِرُ وَازِرَةٌ وِزْرَ أُخْرَىٰ ۚ وَإِن تَدْعُ مُثْقَلَةٌ إِلَىٰ حِمْلِهَا لَا يُحْمَلْ مِنْهُ شَىْءٌ وَلَوْ كَانَ ذَا قُرْبَىٰٓ ۗ إِنَّمَا تُنذِرُ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ ۚ وَمَن تَزَكَّىٰ فَإِنَّمَا يَتَزَكَّىٰ لِنَفْسِهِۦ ۚ وَإِلَى ٱللَّهِ ٱلْمَصِيرُ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 79:18 ﴾</span>
+                <div class="verse-text">فَقُلْ هَل لَّكَ إِلَىٰٓ أَن تَزَكَّىٰ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 87:14 ﴾</span>
+                <div class="verse-text">قَدْ أَفْلَحَ مَن تَزَكَّىٰ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_6')" id="header_root_zky_form_6">
+            <h3>يَتَزَكَّىٰ (مضارع - باب التفعّل)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_6">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 35:18 ﴾</span>
+                <div class="verse-text">وَلَا تَزِرُ وَازِرَةٌ وِزْرَ أُخْرَىٰ ۚ وَإِن تَدْعُ مُثْقَلَةٌ إِلَىٰ حِمْلِهَا لَا يُحْمَلْ مِنْهُ شَىْءٌ وَلَوْ كَانَ ذَا قُرْبَىٰٓ ۗ إِنَّمَا تُنذِرُ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ ۚ وَمَن تَزَكَّىٰ فَإِنَّمَا يَتَزَكَّىٰ لِنَفْسِهِۦ ۚ وَإِلَى ٱللَّهِ ٱلْمَصِيرُ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 92:18 ﴾</span>
+                <div class="verse-text">ٱلَّذِى يُؤْتِى مَالَهُۥ يَتَزَكَّىٰ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_7')" id="header_root_zky_form_7">
+            <h3>أَزْكَىٰ (أفعل التفضيل)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">4 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_7">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 2:232 ﴾</span>
+                <div class="verse-text">وَإِذَا طَلَّقْتُمُ ٱلنِّسَآءَ فَبَلَغْنَ أَجَلَهُنَّ فَلَا تَعْضُلُوهُنَّ أَن يَنكِحْنَ أَزْوَٰجَهُنَّ إِذَا تَرَٰضَوْا۟ بَيْنَهُم بِٱلْمَعْرُوفِ ۗ ذَٰلِكَ يُوعَظُ بِهِۦ مَن كَانَ مِنكُمْ يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ ۗ ذَٰلِكُمْ أَزْكَىٰ لَكُمْ وَأَطْهَرُ ۗ وَٱللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 18:19 ﴾</span>
+                <div class="verse-text">وَكَذَٰلِكَ بَعَثْنَـٰهُمْ لِيَتَسَآءَلُوا۟ بَيْنَهُمْ ۚ قَالَ قَآئِلٌ مِّنْهُمْ كَمْ لَبِثْتُمْ ۖ قَالُوا۟ لَبِثْنَا يَوْمًا أَوْ بَعْضَ يَوْمٍ ۚ قَالُوا۟ رَبُّكُمْ أَعْلَمُ بِمَا لَبِثْتُمْ فَٱبْعَثُوٓا۟ أَحَدَكُم بِوَرِقِكُمْ هَـٰذِهِۦٓ إِلَى ٱلْمَدِينَةِ فَلْيَنظُرْ أَيُّهَآ أَزْكَىٰ طَعَامًا فَلْيَأْتِكُم بِرِزْقٍ مِّنْهُ وَلْيَتَلَطَّفْ وَلَا يُشْعِرَنَّ بِكُمْ أَحَدًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 24:28 ﴾</span>
+                <div class="verse-text">فَإِن لَّمْ تَجِدُوا۟ فِيهَآ أَحَدًا فَلَا تَدْخُلُوهَا حَتَّىٰ يُؤْذَنَ لَكُمْ ۖ وَإِن قِيلَ لَكُمُ ٱرْجِعُوا۟ فَٱرْجِعُوا۟ ۖ هُوَ أَزْكَىٰ لَكُمْ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 24:30 ﴾</span>
+                <div class="verse-text">قُل لِّلْمُؤْمِنِينَ يَغُضُّوا۟ مِنْ أَبْصَـٰرِهِمْ وَيَحْفَظُوا۟ فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا يَصْنَعُونَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_8')" id="header_root_zky_form_8">
+            <h3>زَكِيَّة (صفة مشبّهة - مؤنث)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_8">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 18:74 ﴾</span>
+                <div class="verse-text">فَٱنطَلَقَا حَتَّىٰٓ إِذَا لَقِيَا غُلَـٰمًا فَقَتَلَهُۥ قَالَ أَقَتَلْتَ نَفْسًا زَكِيَّةًۢ بِغَيْرِ نَفْسٍ لَّقَدْ جِئْتَ شَيْـًٔا نُّكْرًا</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_9')" id="header_root_zky_form_9">
+            <h3>زَكِيًّا (صفة مشبّهة - مذكر)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_9">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 19:19 ﴾</span>
+                <div class="verse-text">قَالَ إِنَّمَآ أَنَا۠ رَسُولُ رَبِّكِ لِأَهَبَ لَكِ غُلَـٰمًا زَكِيًّا</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_10')" id="header_root_zky_form_10">
+            <h3>يُزَكُّونَ (مبني للمعلوم - جمع)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_10">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 4:49 ﴾</span>
+                <div class="verse-text">أَلَمْ تَرَ إِلَى ٱلَّذِينَ يُزَكُّونَ أَنفُسَهُم ۚ بَلِ ٱللَّهُ يُزَكِّى مَن يَشَآءُ وَلَا يُظْلَمُونَ فَتِيلًا</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_11')" id="header_root_zky_form_11">
+            <h3>تُزَكُّوٓا۟ (نهي)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_11">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 53:32 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يَجْتَنِبُونَ كَبَـٰٓئِرَ ٱلْإِثْمِ وَٱلْفَوَٰحِشَ إِلَّا ٱللَّمَمَ ۚ إِنَّ رَبَّكَ وَٰسِعُ ٱلْمَغْفِرَةِ ۚ هُوَ أَعْلَمُ بِكُمْ إِذْ أَنشَأَكُم مِّنَ ٱلْأَرْضِ وَإِذْ أَنتُمْ أَجِنَّةٌ فِى بُطُونِ أُمَّهَـٰتِكُمْ ۖ فَلَا تُزَكُّوٓا۟ أَنفُسَكُمْ ۖ هُوَ أَعْلَمُ بِمَنِ ٱتَّقَىٰ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_zky_form_12')" id="header_root_zky_form_12">
+            <h3>زَكَّاهَا (فعل ماضٍ - باب التفعيل)</h3>
+            <div>
+                <span class="badge" style="background: #667eea;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_zky_form_12">
+
+            <div class="verse-card" style="border-color: #667eea; background: #f0f0ff;">
+                <span class="verse-ref" style="background: #667eea;">﴿ 91:9 ﴾</span>
+                <div class="verse-text">قَدْ أَفْلَحَ مَن زَكَّىٰهَا</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="root-section" id="root_nfq">
+    <div class="root-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <h2>جذر «ن ف ق»</h2>
+        <div class="count">38 آية فريدة — 8 تصريفات</div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_0')" id="header_root_nfq_form_0">
+            <h3>يُنفِقُونَ (مضارع - جمع مذكر)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">20 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_0">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:3 ﴾</span>
+                <div class="verse-text">الٓمٓ ﴿١﴾ ذَٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ ﴿٢﴾ ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:195 ﴾</span>
+                <div class="verse-text">وَأَنفِقُوا۟ فِى سَبِيلِ ٱللَّهِ وَلَا تُلْقُوا۟ بِأَيْدِيكُمْ إِلَى ٱلتَّهْلُكَةِ ۛ وَأَحْسِنُوٓا۟ ۛ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:215 ﴾</span>
+                <div class="verse-text">يَسْـَٔلُونَكَ مَاذَا يُنفِقُونَ ۖ قُلْ مَآ أَنفَقْتُم مِّنْ خَيْرٍ فَلِلْوَٰلِدَيْنِ وَٱلْأَقْرَبِينَ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينِ وَٱبْنِ ٱلسَّبِيلِ ۗ وَمَا تَفْعَلُوا۟ مِنْ خَيْرٍ فَإِنَّ ٱللَّهَ بِهِۦ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:219 ﴾</span>
+                <div class="verse-text">يَسْـَٔلُونَكَ عَنِ ٱلْخَمْرِ وَٱلْمَيْسِرِ ۖ قُلْ فِيهِمَآ إِثْمٌ كَبِيرٌ وَمَنَـٰفِعُ لِلنَّاسِ وَإِثْمُهُمَآ أَكْبَرُ مِن نَّفْعِهِمَا ۗ وَيَسْـَٔلُونَكَ مَاذَا يُنفِقُونَ قُلِ ٱلْعَفْوَ ۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمُ ٱلْـَٔايَـٰتِ لَعَلَّكُمْ تَتَفَكَّرُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:261 ﴾</span>
+                <div class="verse-text">مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنۢبُلَةٍ مِّا۟ئَةُ حَبَّةٍ ۗ وَٱللَّهُ يُضَـٰعِفُ لِمَن يَشَآءُ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:262 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ ثُمَّ لَا يُتْبِعُونَ مَآ أَنفَقُوا۟ مَنًّا وَلَآ أَذًى ۙ لَّهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:264 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُبْطِلُوا۟ صَدَقَـٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ كَٱلَّذِى يُنفِقُ مَالَهُۥ رِئَآءَ ٱلنَّاسِ وَلَا يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ ۖ فَمَثَلُهُۥ كَمَثَلِ صَفْوَانٍ عَلَيْهِ تُرَابٌ فَأَصَابَهُۥ وَابِلٌ فَتَرَكَهُۥ صَلْدًا ۖ لَّا يَقْدِرُونَ عَلَىٰ شَىْءٍ مِّمَّا كَسَبُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْكَـٰفِرِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:265 ﴾</span>
+                <div class="verse-text">وَمَثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمُ ٱبْتِغَآءَ مَرْضَاتِ ٱللَّهِ وَتَثْبِيتًا مِّنْ أَنفُسِهِمْ كَمَثَلِ جَنَّةٍۭ بِرَبْوَةٍ أَصَابَهَا وَابِلٌ فَـَٔاتَتْ أُكُلَهَا ضِعْفَيْنِ فَإِن لَّمْ يُصِبْهَا وَابِلٌ فَطَلٌّ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:274 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُم بِٱلَّيْلِ وَٱلنَّهَارِ سِرًّا وَعَلَانِيَةً فَلَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 3:17 ﴾</span>
+                <div class="verse-text">ٱلصَّـٰبِرِينَ وَٱلصَّـٰدِقِينَ وَٱلْقَـٰنِتِينَ وَٱلْمُنفِقِينَ وَٱلْمُسْتَغْفِرِينَ بِٱلْأَسْحَارِ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 3:117 ﴾</span>
+                <div class="verse-text">مَثَلُ مَا يُنفِقُونَ فِى هَـٰذِهِ ٱلْحَيَوٰةِ ٱلدُّنْيَا كَمَثَلِ رِيحٍ فِيهَا صِرٌّ أَصَابَتْ حَرْثَ قَوْمٍ ظَلَمُوٓا۟ أَنفُسَهُمْ فَأَهْلَكَتْهُ ۚ وَمَا ظَلَمَهُمُ ٱللَّهُ وَلَـٰكِنْ أَنفُسَهُمْ يَظْلِمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 3:134 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يُنفِقُونَ فِى ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلْكَـٰظِمِينَ ٱلْغَيْظَ وَٱلْعَافِينَ عَنِ ٱلنَّاسِ ۗ وَٱللَّهُ يُحِبُّ ٱلْمُحْسِنِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 4:38 ﴾</span>
+                <div class="verse-text">وَٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ رِئَآءَ ٱلنَّاسِ وَلَا يُؤْمِنُونَ بِٱللَّهِ وَلَا بِٱلْيَوْمِ ٱلْـَٔاخِرِ ۗ وَمَن يَكُنِ ٱلشَّيْطَـٰنُ لَهُۥ قَرِينًا فَسَآءَ قَرِينًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 4:39 ﴾</span>
+                <div class="verse-text">وَمَاذَا عَلَيْهِمْ لَوْ ءَامَنُوا۟ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ وَأَنفَقُوا۟ مِمَّا رَزَقَهُمُ ٱللَّهُ ۚ وَكَانَ ٱللَّهُ بِهِمْ عَلِيمًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 8:36 ﴾</span>
+                <div class="verse-text">إِنَّ ٱلَّذِينَ كَفَرُوا۟ يُنفِقُونَ أَمْوَٰلَهُمْ لِيَصُدُّوا۟ عَن سَبِيلِ ٱللَّهِ ۚ فَسَيُنفِقُونَهَا ثُمَّ تَكُونُ عَلَيْهِمْ حَسْرَةً ثُمَّ يُغْلَبُونَ ۗ وَٱلَّذِينَ كَفَرُوٓا۟ إِلَىٰ جَهَنَّمَ يُحْشَرُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:34 ﴾</span>
+                <div class="verse-text">۞ يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِنَّ كَثِيرًا مِّنَ ٱلْأَحْبَارِ وَٱلرُّهْبَانِ لَيَأْكُلُونَ أَمْوَٰلَ ٱلنَّاسِ بِٱلْبَـٰطِلِ وَيَصُدُّونَ عَن سَبِيلِ ٱللَّهِ ۗ وَٱلَّذِينَ يَكْنِزُونَ ٱلذَّهَبَ وَٱلْفِضَّةَ وَلَا يُنفِقُونَهَا فِى سَبِيلِ ٱللَّهِ فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:54 ﴾</span>
+                <div class="verse-text">وَمَا مَنَعَهُمْ أَن تُقْبَلَ مِنْهُمْ نَفَقَـٰتُهُمْ إِلَّآ أَنَّهُمْ كَفَرُوا۟ بِٱللَّهِ وَبِرَسُولِهِۦ وَلَا يَأْتُونَ ٱلصَّلَوٰةَ إِلَّا وَهُمْ كُسَالَىٰ وَلَا يُنفِقُونَ إِلَّا وَهُمْ كَـٰرِهُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:98 ﴾</span>
+                <div class="verse-text">وَمِنَ ٱلْأَعْرَابِ مَن يَتَّخِذُ مَا يُنفِقُ مَغْرَمًا وَيَتَرَبَّصُ بِكُمُ ٱلدَّوَآئِرَ ۚ عَلَيْهِمْ دَآئِرَةُ ٱلسَّوْءِ ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:121 ﴾</span>
+                <div class="verse-text">وَلَا يُنفِقُونَ نَفَقَةً صَغِيرَةً وَلَا كَبِيرَةً وَلَا يَقْطَعُونَ وَادِيًا إِلَّا كُتِبَ لَهُمْ لِيَجْزِيَهُمُ ٱللَّهُ أَحْسَنَ مَا كَانُوا۟ يَعْمَلُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 13:22 ﴾</span>
+                <div class="verse-text">وَٱلَّذِينَ صَبَرُوا۟ ٱبْتِغَآءَ وَجْهِ رَبِّهِمْ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَأَنفَقُوا۟ مِمَّا رَزَقْنَـٰهُمْ سِرًّا وَعَلَانِيَةً وَيَدْرَءُونَ بِٱلْحَسَنَةِ ٱلسَّيِّئَةَ أُو۟لَـٰٓئِكَ لَهُمْ عُقْبَى ٱلدَّارِ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_1')" id="header_root_nfq_form_1">
+            <h3>أَنفِقُوا۟ (أمر)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">9 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_1">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:254 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ أَنفِقُوا۟ مِمَّا رَزَقْنَـٰكُم مِّن قَبْلِ أَن يَأْتِىَ يَوْمٌ لَّا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَـٰعَةٌ ۗ وَٱلْكَـٰفِرُونَ هُمُ ٱلظَّـٰلِمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:267 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ أَنفِقُوا۟ مِن طَيِّبَـٰتِ مَا كَسَبْتُمْ وَمِمَّآ أَخْرَجْنَا لَكُم مِّنَ ٱلْأَرْضِ ۖ وَلَا تَيَمَّمُوا۟ ٱلْخَبِيثَ مِنْهُ تُنفِقُونَ وَلَسْتُم بِـَٔاخِذِيهِ إِلَّآ أَن تُغْمِضُوا۟ فِيهِ ۚ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 4:34 ﴾</span>
+                <div class="verse-text">ٱلرِّجَالُ قَوَّٰمُونَ عَلَى ٱلنِّسَآءِ بِمَا فَضَّلَ ٱللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ وَبِمَآ أَنفَقُوا۟ مِنْ أَمْوَٰلِهِمْ ۚ فَٱلصَّـٰلِحَـٰتُ قَـٰنِتَـٰتٌ حَـٰفِظَـٰتٌ لِّلْغَيْبِ بِمَا حَفِظَ ٱللَّهُ ۚ وَٱلَّـٰتِى تَخَافُونَ نُشُوزَهُنَّ فَعِظُوهُنَّ وَٱهْجُرُوهُنَّ فِى ٱلْمَضَاجِعِ وَٱضْرِبُوهُنَّ ۖ فَإِنْ أَطَعْنَكُمْ فَلَا تَبْغُوا۟ عَلَيْهِنَّ سَبِيلًا ۗ إِنَّ ٱللَّهَ كَانَ عَلِيًّا كَبِيرًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:53 ﴾</span>
+                <div class="verse-text">قُلْ أَنفِقُوا۟ طَوْعًا أَوْ كَرْهًا لَّن يُتَقَبَّلَ مِنكُمْ ۖ إِنَّكُمْ كُنتُمْ قَوْمًا فَـٰسِقِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 25:67 ﴾</span>
+                <div class="verse-text">وَٱلَّذِينَ إِذَآ أَنفَقُوا۟ لَمْ يُسْرِفُوا۟ وَلَمْ يَقْتُرُوا۟ وَكَانَ بَيْنَ ذَٰلِكَ قَوَامًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 36:47 ﴾</span>
+                <div class="verse-text">وَإِذَا قِيلَ لَهُمْ أَنفِقُوا۟ مِمَّا رَزَقَكُمُ ٱللَّهُ قَالَ ٱلَّذِينَ كَفَرُوا۟ لِلَّذِينَ ءَامَنُوٓا۟ أَنُطْعِمُ مَن لَّوْ يَشَآءُ ٱللَّهُ أَطْعَمَهُۥٓ إِنْ أَنتُمْ إِلَّا فِى ضَلَـٰلٍ مُّبِينٍ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 57:10 ﴾</span>
+                <div class="verse-text">وَمَا لَكُمْ أَلَّا تُنفِقُوا۟ فِى سَبِيلِ ٱللَّهِ وَلِلَّهِ مِيرَٰثُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ لَا يَسْتَوِى مِنكُم مَّنْ أَنفَقَ مِن قَبْلِ ٱلْفَتْحِ وَقَـٰتَلَ ۚ أُو۟لَـٰٓئِكَ أَعْظَمُ دَرَجَةً مِّنَ ٱلَّذِينَ أَنفَقُوا۟ مِنۢ بَعْدُ وَقَـٰتَلُوا۟ ۚ وَكُلًّا وَعَدَ ٱللَّهُ ٱلْحُسْنَىٰ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 60:10 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا جَآءَكُمُ ٱلْمُؤْمِنَـٰتُ مُهَـٰجِرَٰتٍ فَٱمْتَحِنُوهُنَّ ۖ ٱللَّهُ أَعْلَمُ بِإِيمَـٰنِهِنَّ ۖ فَإِنْ عَلِمْتُمُوهُنَّ مُؤْمِنَـٰتٍ فَلَا تَرْجِعُوهُنَّ إِلَى ٱلْكُفَّارِ ۖ لَا هُنَّ حِلٌّ لَّهُمْ وَلَا هُمْ يَحِلُّونَ لَهُنَّ ۖ وَءَاتُوهُم مَّآ أَنفَقُوا۟ ۚ وَلَا جُنَاحَ عَلَيْكُمْ أَن تَنكِحُوهُنَّ إِذَآ ءَاتَيْتُمُوهُنَّ أُجُورَهُنَّ ۚ وَلَا تُمْسِكُوا۟ بِعِصَمِ ٱلْكَوَافِرِ وَسْـَٔلُوا۟ مَآ أَنفَقْتُمْ وَلْيَسْـَٔلُوا۟ مَآ أَنفَقُوا۟ ۚ ذَٰلِكُمْ حُكْمُ ٱللَّهِ ۖ يَحْكُمُ بَيْنَكُمْ ۚ وَٱللَّهُ عَلِيمٌ حَكِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 60:11 ﴾</span>
+                <div class="verse-text">وَإِن فَاتَكُمْ شَىْءٌ مِّنْ أَزْوَٰجِكُمْ إِلَى ٱلْكُفَّارِ فَعَاقَبْتُمْ فَـَٔاتُوا۟ ٱلَّذِينَ ذَهَبَتْ أَزْوَٰجُهُم مِّثْلَ مَآ أَنفَقُوا۟ ۚ وَٱتَّقُوا۟ ٱللَّهَ ٱلَّذِىٓ أَنتُم بِهِۦ مُؤْمِنُونَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_2')" id="header_root_nfq_form_2">
+            <h3>تُنفِقُوا۟ (مضارع مخاطب)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">6 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_2">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:272 ﴾</span>
+                <div class="verse-text">۞ لَّيْسَ عَلَيْكَ هُدَىٰهُمْ وَلَـٰكِنَّ ٱللَّهَ يَهْدِى مَن يَشَآءُ ۗ وَمَا تُنفِقُوا۟ مِنْ خَيْرٍ فَلِأَنفُسِكُمْ ۚ وَمَا تُنفِقُونَ إِلَّا ٱبْتِغَآءَ وَجْهِ ٱللَّهِ ۚ وَمَا تُنفِقُوا۟ مِنْ خَيْرٍ يُوَفَّ إِلَيْكُمْ وَأَنتُمْ لَا تُظْلَمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:273 ﴾</span>
+                <div class="verse-text">لِلْفُقَرَآءِ ٱلَّذِينَ أُحْصِرُوا۟ فِى سَبِيلِ ٱللَّهِ لَا يَسْتَطِيعُونَ ضَرْبًا فِى ٱلْأَرْضِ يَحْسَبُهُمُ ٱلْجَاهِلُ أَغْنِيَآءَ مِنَ ٱلتَّعَفُّفِ تَعْرِفُهُم بِسِيمَـٰهُمْ لَا يَسْـَٔلُونَ ٱلنَّاسَ إِلْحَافًا ۗ وَمَا تُنفِقُوا۟ مِنْ خَيْرٍ فَإِنَّ ٱللَّهَ بِهِۦ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 3:92 ﴾</span>
+                <div class="verse-text">لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ تُنفِقُوا۟ مِمَّا تُحِبُّونَ ۚ وَمَا تُنفِقُوا۟ مِن شَىْءٍ فَإِنَّ ٱللَّهَ بِهِۦ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 8:60 ﴾</span>
+                <div class="verse-text">وَأَعِدُّوا۟ لَهُم مَّا ٱسْتَطَعْتُم مِّن قُوَّةٍ وَمِن رِّبَاطِ ٱلْخَيْلِ تُرْهِبُونَ بِهِۦ عَدُوَّ ٱللَّهِ وَعَدُوَّكُمْ وَءَاخَرِينَ مِن دُونِهِمْ لَا تَعْلَمُونَهُمُ ٱللَّهُ يَعْلَمُهُمْ ۚ وَمَا تُنفِقُوا۟ مِن شَىْءٍ فِى سَبِيلِ ٱللَّهِ يُوَفَّ إِلَيْكُمْ وَأَنتُمْ لَا تُظْلَمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 57:10 ﴾</span>
+                <div class="verse-text">وَمَا لَكُمْ أَلَّا تُنفِقُوا۟ فِى سَبِيلِ ٱللَّهِ وَلِلَّهِ مِيرَٰثُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ لَا يَسْتَوِى مِنكُم مَّنْ أَنفَقَ مِن قَبْلِ ٱلْفَتْحِ وَقَـٰتَلَ ۚ أُو۟لَـٰٓئِكَ أَعْظَمُ دَرَجَةً مِّنَ ٱلَّذِينَ أَنفَقُوا۟ مِنۢ بَعْدُ وَقَـٰتَلُوا۟ ۚ وَكُلًّا وَعَدَ ٱللَّهُ ٱلْحُسْنَىٰ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 63:7 ﴾</span>
+                <div class="verse-text">هُمُ ٱلَّذِينَ يَقُولُونَ لَا تُنفِقُوا۟ عَلَىٰ مَنْ عِندَ رَسُولِ ٱللَّهِ حَتَّىٰ يَنفَضُّوا۟ ۗ وَلِلَّهِ خَزَآئِنُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَلَـٰكِنَّ ٱلْمُنَـٰفِقِينَ لَا يَفْقَهُونَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_3')" id="header_root_nfq_form_3">
+            <h3>أَنفَقْتُم / أَنفَقُوا۟ (ماضٍ)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">4 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_3">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:215 ﴾</span>
+                <div class="verse-text">يَسْـَٔلُونَكَ مَاذَا يُنفِقُونَ ۖ قُلْ مَآ أَنفَقْتُم مِّنْ خَيْرٍ فَلِلْوَٰلِدَيْنِ وَٱلْأَقْرَبِينَ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينِ وَٱبْنِ ٱلسَّبِيلِ ۗ وَمَا تَفْعَلُوا۟ مِنْ خَيْرٍ فَإِنَّ ٱللَّهَ بِهِۦ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:270 ﴾</span>
+                <div class="verse-text">وَمَآ أَنفَقْتُم مِّن نَّفَقَةٍ أَوْ نَذَرْتُم مِّن نَّذْرٍ فَإِنَّ ٱللَّهَ يَعْلَمُهُۥ ۗ وَمَا لِلظَّـٰلِمِينَ مِنْ أَنصَارٍ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 34:39 ﴾</span>
+                <div class="verse-text">قُلْ إِنَّ رَبِّى يَبْسُطُ ٱلرِّزْقَ لِمَن يَشَآءُ مِنْ عِبَادِهِۦ وَيَقْدِرُ لَهُۥ ۚ وَمَآ أَنفَقْتُم مِّن شَىْءٍ فَهُوَ يُخْلِفُهُۥ ۖ وَهُوَ خَيْرُ ٱلرَّٰزِقِينَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 60:10 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا جَآءَكُمُ ٱلْمُؤْمِنَـٰتُ مُهَـٰجِرَٰتٍ فَٱمْتَحِنُوهُنَّ ۖ ٱللَّهُ أَعْلَمُ بِإِيمَـٰنِهِنَّ ۖ فَإِنْ عَلِمْتُمُوهُنَّ مُؤْمِنَـٰتٍ فَلَا تَرْجِعُوهُنَّ إِلَى ٱلْكُفَّارِ ۖ لَا هُنَّ حِلٌّ لَّهُمْ وَلَا هُمْ يَحِلُّونَ لَهُنَّ ۖ وَءَاتُوهُم مَّآ أَنفَقُوا۟ ۚ وَلَا جُنَاحَ عَلَيْكُمْ أَن تَنكِحُوهُنَّ إِذَآ ءَاتَيْتُمُوهُنَّ أُجُورَهُنَّ ۚ وَلَا تُمْسِكُوا۟ بِعِصَمِ ٱلْكَوَافِرِ وَسْـَٔلُوا۟ مَآ أَنفَقْتُمْ وَلْيَسْـَٔلُوا۟ مَآ أَنفَقُوا۟ ۚ ذَٰلِكُمْ حُكْمُ ٱللَّهِ ۖ يَحْكُمُ بَيْنَكُمْ ۚ وَٱللَّهُ عَلِيمٌ حَكِيمٌ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_4')" id="header_root_nfq_form_4">
+            <h3>أَنفَقَ (ماضٍ - مفرد)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_4">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 18:42 ﴾</span>
+                <div class="verse-text">وَأُحِيطَ بِثَمَرِهِۦ فَأَصْبَحَ يُقَلِّبُ كَفَّيْهِ عَلَىٰ مَآ أَنفَقَ فِيهَا وَهِىَ خَاوِيَةٌ عَلَىٰ عُرُوشِهَا وَيَقُولُ يَـٰلَيْتَنِى لَمْ أُشْرِكْ بِرَبِّىٓ أَحَدًا</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 57:10 ﴾</span>
+                <div class="verse-text">وَمَا لَكُمْ أَلَّا تُنفِقُوا۟ فِى سَبِيلِ ٱللَّهِ وَلِلَّهِ مِيرَٰثُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ لَا يَسْتَوِى مِنكُم مَّنْ أَنفَقَ مِن قَبْلِ ٱلْفَتْحِ وَقَـٰتَلَ ۚ أُو۟لَـٰٓئِكَ أَعْظَمُ دَرَجَةً مِّنَ ٱلَّذِينَ أَنفَقُوا۟ مِنۢ بَعْدُ وَقَـٰتَلُوا۟ ۚ وَكُلًّا وَعَدَ ٱللَّهُ ٱلْحُسْنَىٰ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_5')" id="header_root_nfq_form_5">
+            <h3>نَفَقَة (اسم)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_5">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 2:270 ﴾</span>
+                <div class="verse-text">وَمَآ أَنفَقْتُم مِّن نَّفَقَةٍ أَوْ نَذَرْتُم مِّن نَّذْرٍ فَإِنَّ ٱللَّهَ يَعْلَمُهُۥ ۗ وَمَا لِلظَّـٰلِمِينَ مِنْ أَنصَارٍ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:121 ﴾</span>
+                <div class="verse-text">وَلَا يُنفِقُونَ نَفَقَةً صَغِيرَةً وَلَا كَبِيرَةً وَلَا يَقْطَعُونَ وَادِيًا إِلَّا كُتِبَ لَهُمْ لِيَجْزِيَهُمُ ٱللَّهُ أَحْسَنَ مَا كَانُوا۟ يَعْمَلُونَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_6')" id="header_root_nfq_form_6">
+            <h3>نَفَقَٰتِهِمْ (اسم مضاف)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_6">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 9:54 ﴾</span>
+                <div class="verse-text">وَمَا مَنَعَهُمْ أَن تُقْبَلَ مِنْهُمْ نَفَقَـٰتُهُمْ إِلَّآ أَنَّهُمْ كَفَرُوا۟ بِٱللَّهِ وَبِرَسُولِهِۦ وَلَا يَأْتُونَ ٱلصَّلَوٰةَ إِلَّا وَهُمْ كُسَالَىٰ وَلَا يُنفِقُونَ إِلَّا وَهُمْ كَـٰرِهُونَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_nfq_form_7')" id="header_root_nfq_form_7">
+            <h3>ٱلْإِنفَاق (مصدر)</h3>
+            <div>
+                <span class="badge" style="background: #f093fb;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_nfq_form_7">
+
+            <div class="verse-card" style="border-color: #f093fb; background: #fff0ff;">
+                <span class="verse-ref" style="background: #f093fb;">﴿ 17:100 ﴾</span>
+                <div class="verse-text">قُل لَّوْ أَنتُمْ تَمْلِكُونَ خَزَآئِنَ رَحْمَةِ رَبِّىٓ إِذًا لَّأَمْسَكْتُمْ خَشْيَةَ ٱلْإِنفَاقِ ۚ وَكَانَ ٱلْإِنسَـٰنُ قَتُورًا</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="root-section" id="root_sdq">
+    <div class="root-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <h2>جذر «ص د ق»</h2>
+        <div class="count">15 آية فريدة — 7 تصريفات</div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_0')" id="header_root_sdq_form_0">
+            <h3>ٱلصَّدَقَٰت (جمع معرّف)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">6 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_0">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 2:271 ﴾</span>
+                <div class="verse-text">إِن تُبْدُوا۟ ٱلصَّدَقَـٰتِ فَنِعِمَّا هِىَ ۖ وَإِن تُخْفُوهَا وَتُؤْتُوهَا ٱلْفُقَرَآءَ فَهُوَ خَيْرٌ لَّكُمْ ۚ وَيُكَفِّرُ عَنكُم مِّن سَيِّـَٔاتِكُمْ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 2:276 ﴾</span>
+                <div class="verse-text">يَمْحَقُ ٱللَّهُ ٱلرِّبَوٰا۟ وَيُرْبِى ٱلصَّدَقَـٰتِ ۗ وَٱللَّهُ لَا يُحِبُّ كُلَّ كَفَّارٍ أَثِيمٍ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 9:58 ﴾</span>
+                <div class="verse-text">وَمِنْهُم مَّن يَلْمِزُكَ فِى ٱلصَّدَقَـٰتِ فَإِنْ أُعْطُوا۟ مِنْهَا رَضُوا۟ وَإِن لَّمْ يُعْطَوْا۟ مِنْهَآ إِذَا هُمْ يَسْخَطُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 9:60 ﴾</span>
+                <div class="verse-text">۞ إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِ ۖ فَرِيضَةً مِّنَ ٱللَّهِ ۗ وَٱللَّهُ عَلِيمٌ حَكِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 9:79 ﴾</span>
+                <div class="verse-text">ٱلَّذِينَ يَلْمِزُونَ ٱلْمُطَّوِّعِينَ مِنَ ٱلْمُؤْمِنِينَ فِى ٱلصَّدَقَـٰتِ وَٱلَّذِينَ لَا يَجِدُونَ إِلَّا جُهْدَهُمْ فَيَسْخَرُونَ مِنْهُمْ ۙ سَخِرَ ٱللَّهُ مِنْهُمْ وَلَهُمْ عَذَابٌ أَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 9:104 ﴾</span>
+                <div class="verse-text">أَلَمْ يَعْلَمُوٓا۟ أَنَّ ٱللَّهَ هُوَ يَقْبَلُ ٱلتَّوْبَةَ عَنْ عِبَادِهِۦ وَيَأْخُذُ ٱلصَّدَقَـٰتِ وَأَنَّ ٱللَّهَ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_1')" id="header_root_sdq_form_1">
+            <h3>صَدَقَة (مفرد نكرة)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">4 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_1">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 2:196 ﴾</span>
+                <div class="verse-text">وَأَتِمُّوا۟ ٱلْحَجَّ وَٱلْعُمْرَةَ لِلَّهِ ۚ فَإِنْ أُحْصِرْتُمْ فَمَا ٱسْتَيْسَرَ مِنَ ٱلْهَدْىِ ۖ وَلَا تَحْلِقُوا۟ رُءُوسَكُمْ حَتَّىٰ يَبْلُغَ ٱلْهَدْىُ مَحِلَّهُۥ ۚ فَمَن كَانَ مِنكُم مَّرِيضًا أَوْ بِهِۦٓ أَذًى مِّن رَّأْسِهِۦ فَفِدْيَةٌ مِّن صِيَامٍ أَوْ صَدَقَةٍ أَوْ نُسُكٍ ۚ فَإِذَآ أَمِنتُمْ فَمَن تَمَتَّعَ بِٱلْعُمْرَةِ إِلَى ٱلْحَجِّ فَمَا ٱسْتَيْسَرَ مِنَ ٱلْهَدْىِ ۚ فَمَن لَّمْ يَجِدْ فَصِيَامُ ثَلَـٰثَةِ أَيَّامٍ فِى ٱلْحَجِّ وَسَبْعَةٍ إِذَا رَجَعْتُمْ ۗ تِلْكَ عَشَرَةٌ كَامِلَةٌ ۗ ذَٰلِكَ لِمَن لَّمْ يَكُنْ أَهْلُهُۥ حَاضِرِى ٱلْمَسْجِدِ ٱلْحَرَامِ ۚ وَٱتَّقُوا۟ ٱللَّهَ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 2:263 ﴾</span>
+                <div class="verse-text">۞ قَوْلٌ مَّعْرُوفٌ وَمَغْفِرَةٌ خَيْرٌ مِّن صَدَقَةٍ يَتْبَعُهَآ أَذًى ۗ وَٱللَّهُ غَنِىٌّ حَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 9:103 ﴾</span>
+                <div class="verse-text">خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا وَصَلِّ عَلَيْهِمْ ۖ إِنَّ صَلَوٰتَكَ سَكَنٌ لَّهُمْ ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 58:12 ﴾</span>
+                <div class="verse-text">يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا نَـٰجَيْتُمُ ٱلرَّسُولَ فَقَدِّمُوا۟ بَيْنَ يَدَىْ نَجْوَىٰكُمْ صَدَقَةً ۚ ذَٰلِكَ خَيْرٌ لَّكُمْ وَأَطْهَرُ ۚ فَإِن لَّمْ تَجِدُوا۟ فَإِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_2')" id="header_root_sdq_form_2">
+            <h3>تَصَدَّقُوا۟ / تَصَدَّقْ (باب التفعّل)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">2 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_2">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 2:280 ﴾</span>
+                <div class="verse-text">وَإِن كَانَ ذُو عُسْرَةٍ فَنَظِرَةٌ إِلَىٰ مَيْسَرَةٍ ۚ وَأَن تَصَدَّقُوا۟ خَيْرٌ لَّكُمْ ۖ إِن كُنتُمْ تَعْلَمُونَ</div>
+            </div>
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 12:88 ﴾</span>
+                <div class="verse-text">فَلَمَّا دَخَلُوا۟ عَلَيْهِ قَالُوا۟ يَـٰٓأَيُّهَا ٱلْعَزِيزُ مَسَّنَا وَأَهْلَنَا ٱلضُّرُّ وَجِئْنَا بِبِضَـٰعَةٍ مُّزْجَىٰةٍ فَأَوْفِ لَنَا ٱلْكَيْلَ وَتَصَدَّقْ عَلَيْنَآ ۖ إِنَّ ٱللَّهَ يَجْزِى ٱلْمُتَصَدِّقِينَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_3')" id="header_root_sdq_form_3">
+            <h3>ٱلْمُتَصَدِّقِينَ (اسم فاعل - باب التفعّل)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_3">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 12:88 ﴾</span>
+                <div class="verse-text">فَلَمَّا دَخَلُوا۟ عَلَيْهِ قَالُوا۟ يَـٰٓأَيُّهَا ٱلْعَزِيزُ مَسَّنَا وَأَهْلَنَا ٱلضُّرُّ وَجِئْنَا بِبِضَـٰعَةٍ مُّزْجَىٰةٍ فَأَوْفِ لَنَا ٱلْكَيْلَ وَتَصَدَّقْ عَلَيْنَآ ۖ إِنَّ ٱللَّهَ يَجْزِى ٱلْمُتَصَدِّقِينَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_4')" id="header_root_sdq_form_4">
+            <h3>ٱلْمُصَّدِّقِينَ (الباب الخامس - التصدّق بالمال)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_4">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 57:18 ﴾</span>
+                <div class="verse-text">إِنَّ ٱلْمُصَّدِّقِينَ وَٱلْمُصَّدِّقَـٰتِ وَأَقْرَضُوا۟ ٱللَّهَ قَرْضًا حَسَنًا يُضَـٰعَفُ لَهُمْ وَلَهُمْ أَجْرٌ كَرِيمٌ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_5')" id="header_root_sdq_form_5">
+            <h3>ٱلْمُصَدِّقِينَ (الباب الثاني - التصديق)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_5">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 37:52 ﴾</span>
+                <div class="verse-text">يَقُولُ أَءِنَّكَ لَمِنَ ٱلْمُصَدِّقِينَ</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-header" onclick="toggleForm('root_sdq_form_6')" id="header_root_sdq_form_6">
+            <h3>صَدُقَٰتِهِنَّ (المهور - من الصِّدق)</h3>
+            <div>
+                <span class="badge" style="background: #4facfe;">1 آية</span>
+                <span class="arrow">◀</span>
+            </div>
+        </div>
+        <div class="verses-list" id="root_sdq_form_6">
+
+            <div class="verse-card" style="border-color: #4facfe; background: #f0f8ff;">
+                <span class="verse-ref" style="background: #4facfe;">﴿ 4:4 ﴾</span>
+                <div class="verse-text">وَءَاتُوا۟ ٱلنِّسَآءَ صَدُقَـٰتِهِنَّ نِحْلَةً ۚ فَإِن طِبْنَ لَكُمْ عَن شَىْءٍ مِّنْهُ نَفْسًا فَكُلُوهُ هَنِيٓـًٔا مَّرِيٓـًٔا</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="nav-files">
+    <h3>📂 ملفات البحث</h3>
+    <a href="00_SUMMARY.html">الملخص</a>
+    <a href="01_MORPHOLOGY.html">التصريف</a>
+    <a href="02_VERSES.html" class="active">الآيات</a>
+    <a href="03_ANALYSIS.html">التحليل</a>
+    <a href="04_DISCOVERIES.html">الاكتشافات</a>
+    <a href="05_TAFSIR_COMPARISON.html">التفاسير</a>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function toggleForm(id) {
+    const el = document.getElementById(id);
+    const header = document.getElementById('header_' + id);
+    if (el.classList.contains('show')) {
+        el.classList.remove('show');
+        header.classList.remove('open');
+    } else {
+        el.classList.add('show');
+        header.classList.add('open');
+    }
+}
+
+// Auto-open first form of each root on load
+document.addEventListener('DOMContentLoaded', function() {
+    ['root_zky_form_0', 'root_nfq_form_0', 'root_sdq_form_0'].forEach(function(id) {
+        const el = document.getElementById(id);
+        const header = document.getElementById('header_' + id);
+        if (el && header) {
+            el.classList.add('show');
+            header.classList.add('open');
+        }
+    });
+});
+</script>
+</body>
+</html>

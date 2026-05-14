@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مقارنة التفاسير — الاطمئنان (ط م أ ن)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Amiri', serif; background: #f9f6f0; color: #2c2c2c; line-height: 1.9; padding: 30px; max-width: 960px; margin: 0 auto; }
+  .disclaimer { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px 18px; margin-bottom: 25px; font-size: 0.88rem; color: #664d03; }
+  nav { background: #1a5f7a; padding: 12px 18px; border-radius: 8px; margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { color: #e0f0f5; text-decoration: none; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; transition: background 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.2); }
+  h1 { color: #1a5f7a; font-size: 1.8rem; margin-bottom: 8px; border-bottom: 3px solid #1a5f7a; padding-bottom: 10px; }
+  h2 { color: #1a5f7a; font-size: 1.4rem; margin: 30px 0 15px; padding: 8px 14px; background: #e8f4f8; border-radius: 6px; border-right: 4px solid #1a5f7a; }
+  h3 { color: #2980b9; font-size: 1.15rem; margin: 20px 0 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  th { background: #1a5f7a; color: white; padding: 10px 12px; font-weight: 700; text-align: right; font-size: 0.9rem; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; text-align: right; font-size: 0.9rem; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  .verse-ref { background: #e8f4f8; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; color: #1a5f7a; white-space: nowrap; }
+  .note { background: #f0f8ff; border-right: 3px solid #2980b9; padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 0.95rem; }
+  .finding { background: white; border-radius: 10px; padding: 18px; margin: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.07); border-right: 4px solid #27ae60; }
+  .finding.critical { border-right-color: #e74c3c; }
+  .finding.insight { border-right-color: #f39c12; }
+  .finding-title { font-size: 1.1rem; color: #1a5f7a; font-weight: 700; margin-bottom: 8px; }
+  .arabic-quote { font-size: 1.15rem; background: #fafafa; padding: 8px 14px; border-radius: 6px; margin: 6px 0; display: block; }
+  .tafsir-card { background: white; border-radius: 10px; padding: 18px; margin: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.07); border-right: 4px solid #8e44ad; }
+  .tafsir-card.qurtubi { border-right-color: #2980b9; }
+  .tafsir-card.kathir { border-right-color: #27ae60; }
+  .tafsir-card.muyassar { border-right-color: #f39c12; }
+  .tafsir-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .tafsir-card.qurtubi .tafsir-name { color: #2980b9; }
+  .tafsir-card.kathir .tafsir-name { color: #27ae60; }
+  .tafsir-card.muyassar .tafsir-name { color: #f39c12; }
+  .trans-highlight { background: #fff9c4; padding: 1px 4px; border-radius: 3px; }
+  .accuracy-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
+  .accuracy-high { background: #27ae60; color: white; }
+  .accuracy-medium { background: #f39c12; color: white; }
+  .accuracy-low { background: #e74c3c; color: white; }
+  .section-intro { background: #f5eef8; padding: 12px 16px; border-radius: 6px; margin-bottom: 15px; font-size: 0.95rem; border-right: 3px solid #8e44ad; }
+  .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+  .comp-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .comp-card h4 { color: #1a5f7a; margin-bottom: 8px; }
+  .recommendation { background: linear-gradient(135deg, #1a5f7a 0%, #2980b9 100%); color: white; padding: 20px; border-radius: 10px; margin: 15px 0; }
+  .recommendation h3 { color: white; margin-top: 0; }
+  .star { color: #f1c40f; }
+  .en-text { direction: ltr; text-align: left; font-style: italic; color: #555; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي مع تأصيل من النص الكامل للقرآن الكريم. رغم أن النتائج مصممة لتكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+<nav>
+  <a href="00_الملخص.html">الملخص</a>
+  <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+  <a href="02_الآيات.html">الآيات</a>
+  <a href="03_التحليل.html">التحليل</a>
+  <a href="04_الاكتشافات.html">الاكتشافات</a>
+  <a href="05_مقارنة_التفاسير.html" class="active">مقارنة التفاسير</a>
+</nav>
+
+<h1>مقارنة التفاسير والترجمات — الاطمئنان</h1>
+<div class="section-intro">هذه الصفحة تقارن بين التفاسير العربية الكلاسيكية والترجمات الإنجليزية المعتمدة في تناول مفهوم الاطمئنان (ط م أ ن)، ثم تقيّم مدى توافقها مع النتائج المستخلصة من التحليل القرآني المباشر.</div>
+
+<!-- ===== ١. الترجمات الإنجليزية ===== -->
+<h2 id="translations">١. مقارنة الترجمات الإنجليزية</h2>
+
+<div class="note">تم مقارنة ثلاث ترجمات: <strong>Sahih International</strong> (SI)، <strong>Abdel Haleem</strong> (AH)، <strong>Yusuf Ali</strong> (YA). ملاحظة: ترجمة مصطفى خطاب غير متوفرة في قاعدة البيانات المستخدمة.</div>
+
+<table>
+<thead>
+<tr>
+  <th>الآية</th>
+  <th>الصيغة القرآنية</th>
+  <th>Sahih International</th>
+  <th>Abdel Haleem</th>
+  <th>Yusuf Ali</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a></td>
+  <td>لِّيَطْمَئِنَّ قَلْبِى</td>
+  <td class="en-text">my heart may be satisfied</td>
+  <td class="en-text">put my heart at rest</td>
+  <td class="en-text">reassure my heart</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-3-126" class="verse-ref">٣:١٢٦</a></td>
+  <td>وَلِتَطْمَئِنَّ قُلُوبُكُم</td>
+  <td class="en-text">reassure your hearts</td>
+  <td class="en-text">put your hearts at rest</td>
+  <td class="en-text">an assurance to your hearts</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a></td>
+  <td>فَإِذَا ٱطْمَأْنَنتُمْ</td>
+  <td class="en-text">when you become secure</td>
+  <td class="en-text">once you are safe</td>
+  <td class="en-text">when ye are free from danger</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-5-113" class="verse-ref">٥:١١٣</a></td>
+  <td>وَتَطْمَئِنَّ قُلُوبُنَا</td>
+  <td class="en-text">hearts be reassured</td>
+  <td class="en-text">hearts reassured</td>
+  <td class="en-text">satisfy our hearts</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-8-10" class="verse-ref">٨:١٠</a></td>
+  <td>وَلِتَطْمَئِنَّ بِهِۦ قُلُوبُكُمْ</td>
+  <td class="en-text">hearts would be assured</td>
+  <td class="en-text">reassure your hearts</td>
+  <td class="en-text">an assurance to your hearts</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a></td>
+  <td>وَٱطْمَأَنُّوا۟ بِهَا</td>
+  <td class="en-text">feel secure therein</td>
+  <td class="en-text">contenting themselves with it</td>
+  <td class="en-text">pleased and satisfied</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></td>
+  <td>تَطْمَئِنُّ قُلُوبُهُم / تَطْمَئِنُّ ٱلْقُلُوبُ</td>
+  <td class="en-text">hearts are assured</td>
+  <td class="en-text">hearts find peace</td>
+  <td class="en-text">hearts find satisfaction</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></td>
+  <td>مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ</td>
+  <td class="en-text">secure in faith</td>
+  <td class="en-text">hearts remain firm in faith</td>
+  <td class="en-text">heart remaining firm in Faith</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a></td>
+  <td>مُّطْمَئِنَّةً</td>
+  <td class="en-text">secure</td>
+  <td class="en-text">at ease</td>
+  <td class="en-text">in quiet</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-17-95" class="verse-ref">١٧:٩٥</a></td>
+  <td>مُطْمَئِنِّينَ</td>
+  <td class="en-text">walking securely</td>
+  <td class="en-text">feeling at home</td>
+  <td class="en-text">walking about in peace and quiet</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></td>
+  <td>ٱطْمَأَنَّ بِهِۦ</td>
+  <td class="en-text">reassured by it</td>
+  <td class="en-text">satisfied</td>
+  <td class="en-text">well content</td>
+</tr>
+<tr>
+  <td><a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></td>
+  <td>ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ</td>
+  <td class="en-text">reassured soul</td>
+  <td class="en-text">soul at peace</td>
+  <td class="en-text">soul, in complete rest and satisfaction</td>
+</tr>
+</tbody>
+</table>
+
+<h3>تحليل أنماط الترجمة</h3>
+
+<div class="finding insight">
+  <div class="finding-title">📊 المفردات المستخدمة لكل مترجم</div>
+  <table>
+    <tr><th>المترجم</th><th>المفردات المستخدمة</th><th>النمط</th></tr>
+    <tr><td>Sahih International</td><td>satisfied, assured, reassured, secure</td><td>تنوع كبير — ٤ كلمات مختلفة</td></tr>
+    <tr><td>Abdel Haleem</td><td>at rest, at peace, at ease, reassured, safe, firm, satisfied, contenting</td><td>أكثر تنوعاً — ٨ صيغ مختلفة</td></tr>
+    <tr><td>Yusuf Ali</td><td>reassure, assurance, satisfaction, content, rest, firm, quiet</td><td>تنوع كبير — ٧ صيغ</td></tr>
+  </table>
+</div>
+
+<div class="finding critical">
+  <div class="finding-title">🔑 ما تفقده جميع الترجمات</div>
+  <p>لا تنقل أي من الترجمات الثلاث المعنى القرآني الكامل للاطمئنان كما كشفه <a href="03_التحليل.html">التحليل السياقي</a>. أبرز الأبعاد المفقودة:</p>
+  <p><strong>١. البُعد الانتقالي (بعد القلق):</strong> الاطمئنان في القرآن ليس مجرد سكون، بل هو <strong>سكون يأتي بعد حالة من القلق أو الاضطراب</strong>. كلمات مثل "peace" و"rest" لا تحمل هذا البُعد الحركي.</p>
+  <p><strong>٢. ازدواجية القطبية:</strong> نفس الكلمة تُستخدم إيجابياً (١٣:٢٨) وسلبياً (١٠:٧)، لكن الترجمات تستخدم كلمات مختلفة تماماً لكل سياق، فيُفقَد هذا الربط الدلالي المهم.</p>
+  <p><strong>٣. التدرج الإيماني:</strong> العلاقة بين الإيمان والاطمئنان كمرحلتين (الإيمان ← ثم الاطمئنان) لا تظهر في أي ترجمة.</p>
+</div>
+
+<!-- ===== ٢. التفاسير العربية ===== -->
+<h2 id="tafsirs">٢. تحليل التفاسير العربية</h2>
+
+<div class="note">تم تحليل ثلاثة تفاسير: <strong>تفسير القرطبي</strong> (الجامع لأحكام القرآن)، <strong>تفسير ابن كثير</strong>، <strong>التفسير الميسر</strong>.</div>
+
+<!-- الآية ٢:٢٦٠ -->
+<h3 id="tafsir-2-260">٢:٢٦٠ — «لِّيَطْمَئِنَّ قَلْبِى»</h3>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p><strong>التعريف:</strong> «الطمأنينة: اعتدال وسكون. وطمأنينة القلب هي أن يسكن فكره في الشيء المعتقد»</p>
+  <p><strong>التمييز المهم:</strong> فرّق بين «المعلوم برهاناً» و«المعلوم عياناً»، أي أن إبراهيم أراد الانتقال من اليقين البرهاني إلى اليقين العياني.</p>
+  <p><strong>نفي الشك:</strong> أكد أن الأنبياء معصومون من الشك، وأن السؤال كان عن <strong>كيفية</strong> الإحياء لا عن <strong>إمكانيته</strong>.</p>
+</div>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>أن إبراهيم «أحب أن يترقى من <strong>علم اليقين</strong> إلى <strong>عين اليقين</strong>».</p>
+  <p>نقل عن ابن عباس: «ما في القرآن آية أرجى عندي منها» — دلالة على أن الاطمئنان مطلب مشروع حتى للمؤمن الراسخ.</p>
+</div>
+
+<div class="tafsir-card muyassar">
+  <div class="tafsir-name">📙 التفسير الميسر</div>
+  <p>«ليزداد يقيناً على يقيني» — تفسير مختصر يركز على الزيادة في اليقين.</p>
+</div>
+
+<!-- الآية ٤:١٠٣ -->
+<h3 id="tafsir-4-103">٤:١٠٣ — «فَإِذَا ٱطْمَأْنَنتُمْ»</h3>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p><strong>التعريف السياقي:</strong> «الطمأنينة <strong>سكون النفس من الخوف</strong>»</p>
+  <p>هذا التعريف دقيق جداً لأنه يربط الاطمئنان بـ<strong>حالة سابقة من الخوف</strong>، مما يؤكد البُعد الانتقالي.</p>
+</div>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>«فإذا <strong>أمنتم وذهب الخوف</strong>، وحصلت الطمأنينة» — ثلاث مراحل: أمن ← ذهاب الخوف ← حصول الاطمئنان.</p>
+</div>
+
+<!-- الآية ٥:١١٣ -->
+<h3 id="tafsir-5-113">٥:١١٣ — «وَتَطْمَئِنَّ قُلُوبُنَا»</h3>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p>ذكر <strong>ثلاثة أوجه</strong> لمعنى الاطمئنان هنا:</p>
+  <p>١. تطمئن إلى أن الله بعث عيسى نبياً</p>
+  <p>٢. تطمئن إلى أن الله اختارهم لدعوته</p>
+  <p>٣. تطمئن إلى أن الله أجاب سؤالهم</p>
+  <p>وزاد المهدوي: «تطمئن بأن الله قد قبل صومنا وعملنا».</p>
+</div>
+
+<!-- الآية ١٠:٧ -->
+<h3 id="tafsir-10-7">١٠:٧ — «وَٱطْمَأَنُّوا۟ بِهَا» (السياق السلبي)</h3>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p>«<strong>فرحوا بها وسكنوا إليها</strong>» — لاحظ استخدام «سكنوا إليها» مما يدل على أن الاطمئنان المذموم هو توجيه السكون نحو الدنيا بدلاً من الله.</p>
+</div>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>«رضوا بهذه الحياة الدنيا <strong>واطمأنت إليها أنفسهم</strong>» — استخدم نفس لفظ الاطمئنان مع إضافة «أنفسهم» لتأكيد أن المتعلَّق هو الدنيا.</p>
+</div>
+
+<!-- الآية ١٣:٢٨ -->
+<h3 id="tafsir-13-28">١٣:٢٨ — «تَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ»</h3>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p>قدّم <strong>تفسيرات متعددة</strong> لـ«ذكر الله»:</p>
+  <p>• بتوحيد الله (مجاهد وقتادة: بالقرآن)</p>
+  <p>• بأمره (سفيان بن عيينة)</p>
+  <p>• بوعده (مقاتل)</p>
+  <p>• بالحلف باسمه (ابن عباس)</p>
+  <p>• بتأمل آياته فيعرفون كمال قدرته عن بصيرة</p>
+</div>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>«تطيب <strong>وتركن</strong> إلى جانب الله، <strong>وتسكن</strong> عند ذكره، وترضى به مولى ونصيراً» — ربط الاطمئنان بالركون والسكون والرضا معاً.</p>
+</div>
+
+<!-- الآية ١٦:١٠٦ -->
+<h3 id="tafsir-16-106">١٦:١٠٦ — «مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ»</h3>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p><strong>قصة عمار بن ياسر:</strong> لما عذبه المشركون حتى قاربهم في بعض ما أرادوا، شكا ذلك إلى النبي ﷺ:</p>
+  <p class="arabic-quote">فقال النبي ﷺ: «كيف تجد قلبك؟» قال: <strong>مطمئن بالإيمان</strong>. قال النبي ﷺ: «إن عادوا فعُد».</p>
+  <p>هذا الحديث يؤكد أن الاطمئنان حالة <strong>قلبية باطنية</strong> يمكن أن تتحقق حتى مع إكراه الظاهر.</p>
+</div>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p>توسّع في <strong>٢١ مسألة فقهية</strong> حول الإكراه، وفصّل في أن الإكراه يُسقط الحكم الظاهري لكن لا يمس الحالة القلبية. هذا يؤكد أن الاطمئنان مستوى أعمق من مجرد النطق أو الفعل.</p>
+</div>
+
+<!-- الآية ١٦:١١٢ -->
+<h3 id="tafsir-16-112">١٦:١١٢ — «آمِنَةً مُّطْمَئِنَّةً»</h3>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>«كانت <strong>أمنة مطمئنة</strong> مستقرة، يُتخطف الناس من حولها ومن دخلها كان آمناً» — وصف مكة بصفتين متتاليتين: الأمن (غياب الخطر) ثم الاطمئنان (الاستقرار).</p>
+</div>
+
+<!-- الآية ٢٢:١١ -->
+<h3 id="tafsir-22-11">٢٢:١١ — «ٱطْمَأَنَّ بِهِۦ» (السياق السلبي)</h3>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>نقل عن ابن عباس: «كان الرجل يقدم المدينة، فإن ولدت امرأته غلاماً ونتجت خيله قال: هذا دين صالح. وإن لم تلد امرأته ولم تنتج خيله قال: هذا دين سوء».</p>
+  <p>الاطمئنان هنا <strong>مشروط بالنتائج الدنيوية</strong> — عكس الاطمئنان الحقيقي الذي يستمر رغم الابتلاء.</p>
+</div>
+
+<!-- الآية ٨٩:٢٧ -->
+<h3 id="tafsir-89-27">٨٩:٢٧ — «ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ»</h3>
+
+<div class="tafsir-card qurtubi">
+  <div class="tafsir-name">📘 القرطبي</div>
+  <p>جمع تفسيرات متعددة:</p>
+  <p>• «الساكنة <strong>الموقنة</strong>، أيقنت أن الله ربها فأخبتت لذلك» (مجاهد)</p>
+  <p>• «المطمئنة <strong>بثواب الله</strong>» (ابن عباس)</p>
+  <p>• «المؤمنة <strong>الموقنة</strong>» (الحسن)</p>
+  <p>• «<strong>الراضية بقضاء الله</strong>، التي علمت أن ما أخطأها لم يكن ليصيبها» (مجاهد)</p>
+  <p>• «المطمئنة <strong>بذكر الله</strong>» — ربط مباشر بآية ١٣:٢٨</p>
+</div>
+
+<div class="tafsir-card kathir">
+  <div class="tafsir-name">📗 ابن كثير</div>
+  <p>«هي الساكنة الثابتة <strong>الدائرة مع الحق</strong>» — تعريف موجز لكنه يضيف بُعد «الدوران مع الحق» أي الاستمرارية.</p>
+</div>
+
+<!-- ===== ٣. التقييم المقارن ===== -->
+<h2 id="assessment">٣. تقييم الدقة مقارنة بالتحليل القرآني</h2>
+
+<h3>أ. تقييم التفاسير العربية</h3>
+
+<table>
+<thead>
+<tr>
+  <th>المعيار</th>
+  <th>القرطبي</th>
+  <th>ابن كثير</th>
+  <th>الميسر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>تعريف الاطمئنان</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — «سكون النفس من الخوف»، «اعتدال وسكون»</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — «الساكنة الثابتة الدائرة مع الحق»</td>
+  <td><span class="accuracy-badge accuracy-medium">جيد</span> — تفسيرات مختصرة صحيحة</td>
+</tr>
+<tr>
+  <td>البُعد الانتقالي (بعد القلق)</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — «سكون النفس <strong>من الخوف</strong>» (٤:١٠٣)</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — «أمنتم <strong>وذهب الخوف</strong> وحصلت الطمأنينة»</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span> — لم يشر إلى هذا البُعد</td>
+</tr>
+<tr>
+  <td>ازدواجية القطبية</td>
+  <td><span class="accuracy-badge accuracy-medium">جيد</span> — وصف السلبي بـ«فرحوا وسكنوا إليها»</td>
+  <td><span class="accuracy-badge accuracy-medium">جيد</span> — «اطمأنت إليها أنفسهم»</td>
+  <td><span class="accuracy-badge accuracy-medium">جيد</span> — «ركنوا إليها»</td>
+</tr>
+<tr>
+  <td>التمييز عن الإيمان</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — فرّق بين «المعلوم برهاناً» و«المعلوم عياناً»</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — «الترقي من علم اليقين إلى عين اليقين»</td>
+  <td><span class="accuracy-badge accuracy-medium">جيد</span> — «ليزداد يقيناً على يقيني»</td>
+</tr>
+<tr>
+  <td>تعدد الأبعاد</td>
+  <td><span class="accuracy-badge accuracy-high">ممتاز</span> — ٣ أوجه في ٥:١١٣، تفسيرات متعددة في ١٣:٢٨</td>
+  <td><span class="accuracy-badge accuracy-medium">جيد</span> — ركز على المعنى الأساسي</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span> — تفسير واحد فقط</td>
+</tr>
+</tbody>
+</table>
+
+<h3>ب. تقييم الترجمات الإنجليزية</h3>
+
+<table>
+<thead>
+<tr>
+  <th>المعيار</th>
+  <th>Sahih International</th>
+  <th>Abdel Haleem</th>
+  <th>Yusuf Ali</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>الاتساق في ترجمة الجذر</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span> — ٤ مفردات مختلفة</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span> — ٨ مفردات مختلفة</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span> — ٧ مفردات مختلفة</td>
+</tr>
+<tr>
+  <td>نقل البُعد الانتقالي</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span></td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span> — "at rest" تحمل بعض الإيحاء</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span> — "rest and satisfaction" أقرب</td>
+</tr>
+<tr>
+  <td>نقل ازدواجية القطبية</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span> — كلمات مختلفة تماماً للسياقين</td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span></td>
+  <td><span class="accuracy-badge accuracy-low">ضعيف</span></td>
+</tr>
+<tr>
+  <td>دقة ١٦:١٠٦ (الإكراه)</td>
+  <td><span class="accuracy-badge accuracy-high">جيد</span> — "secure in faith"</td>
+  <td><span class="accuracy-badge accuracy-high">جيد</span> — "firm in faith"</td>
+  <td><span class="accuracy-badge accuracy-high">جيد</span> — "firm in Faith"</td>
+</tr>
+<tr>
+  <td>دقة ٨٩:٢٧ (النفس المطمئنة)</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span> — "reassured soul"</td>
+  <td><span class="accuracy-badge accuracy-high">جيد</span> — "soul at peace"</td>
+  <td><span class="accuracy-badge accuracy-high">جيد</span> — "soul in complete rest and satisfaction"</td>
+</tr>
+</tbody>
+</table>
+
+<!-- ===== ٤. ما يكشفه التحليل القرآني ===== -->
+<h2 id="quran-reveals">٤. ما يكشفه التحليل القرآني ولا تذكره التفاسير</h2>
+
+<div class="finding critical">
+  <div class="finding-title">🔍 اكتشاف ١: غياب المصدر «اطمئنان» من القرآن</div>
+  <p>لم يأتِ المصدر الصريح في القرآن، بل جاء الجذر حصراً في صيغ <strong>الأفعال واسم الفاعل</strong>. هذا يشير إلى أن القرآن يقدم الاطمئنان كـ<strong>حالة حيّة متحركة</strong> لا كمفهوم مجرد. لم يشر أي من التفاسير الثلاثة إلى هذه الملاحظة الصرفية.</p>
+</div>
+
+<div class="finding critical">
+  <div class="finding-title">🔍 اكتشاف ٢: نموذج المستويات المتصاعدة</div>
+  <p>كشف التحليل القرآني المباشر عن <a href="03_التحليل.html#levels">خمسة مستويات متصاعدة</a>: إسلام ← إيمان ← اطمئنان ← يقين ← إحسان. التفاسير تذكر العلاقة بين الإيمان والاطمئنان لكن لا تضعها في نموذج تصاعدي شامل.</p>
+</div>
+
+<div class="finding insight">
+  <div class="finding-title">🔍 اكتشاف ٣: المتعلَّق يحدد القيمة</div>
+  <p>التفاسير تتعامل مع كل آية منفردة، لكن التحليل القرآني يكشف <strong>نمطاً عابراً للآيات</strong>: نفس الجذر يُستخدم إيجابياً وسلبياً، والفارق الوحيد هو <strong>المتعلَّق</strong> (الله/الإيمان مقابل الدنيا). هذا النمط لم يُصاغ صراحة في أي من التفاسير.</p>
+</div>
+
+<!-- ===== ٥. التوصيات ===== -->
+<h2 id="recommendations">٥. توصيات أفضل المصادر</h2>
+
+<div class="recommendation">
+  <h3>🏆 أفضل تفسير عربي: القرطبي</h3>
+  <p><span class="star">★★★★★</span></p>
+  <p>الأكثر دقة وشمولاً في تناول الاطمئنان. يقدم تعريفات لغوية دقيقة، ويفرق بين أنواع اليقين، ويعرض أوجهاً متعددة للمعنى. تعريفه «سكون النفس من الخوف» هو الأقرب لما يكشفه التحليل القرآني.</p>
+</div>
+
+<div class="recommendation">
+  <h3>📗 ثاني أفضل تفسير: ابن كثير</h3>
+  <p><span class="star">★★★★</span>☆</p>
+  <p>يتميز بنقل الروايات والأحاديث المضيئة (خاصة قصة عمار بن ياسر)، وتعريفه «الساكنة الثابتة الدائرة مع الحق» من أجمع التعريفات. أقل تفصيلاً من القرطبي في الجانب اللغوي.</p>
+</div>
+
+<div class="recommendation">
+  <h3>📙 التفسير الميسر</h3>
+  <p><span class="star">★★★</span>☆☆</p>
+  <p>مفيد كمدخل سريع وصحيح في الأساس، لكنه يفتقر إلى العمق التحليلي اللازم لفهم أبعاد الاطمئنان المتعددة.</p>
+</div>
+
+<div class="recommendation">
+  <h3>🌍 أفضل ترجمة إنجليزية لهذا الجذر: Yusuf Ali</h3>
+  <p><span class="star">★★★★</span>☆</p>
+  <p>ترجمته لـ٨٩:٢٧ "soul in complete rest and satisfaction" هي الأقرب للمعنى الشامل. إضافته لكلمة "satisfaction" تنقل بُعد الرضا الذي يفتقده الآخرون. يليه Abdel Haleem بتعبيره "soul at peace" ثم Sahih International.</p>
+</div>
+
+<!-- ===== ملخص جدول النتائج ===== -->
+<h2 id="summary-table">٦. جدول ملخص التقييم</h2>
+
+<table>
+<thead>
+<tr>
+  <th>المصدر</th>
+  <th>النوع</th>
+  <th>الدقة</th>
+  <th>الشمول</th>
+  <th>التقييم العام</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>القرطبي</td>
+  <td>تفسير عربي</td>
+  <td><span class="accuracy-badge accuracy-high">عالية</span></td>
+  <td><span class="accuracy-badge accuracy-high">عالي</span></td>
+  <td><span class="star">★★★★★</span></td>
+</tr>
+<tr>
+  <td>ابن كثير</td>
+  <td>تفسير عربي</td>
+  <td><span class="accuracy-badge accuracy-high">عالية</span></td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span></td>
+  <td><span class="star">★★★★</span>☆</td>
+</tr>
+<tr>
+  <td>التفسير الميسر</td>
+  <td>تفسير عربي</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسطة</span></td>
+  <td><span class="accuracy-badge accuracy-low">منخفض</span></td>
+  <td><span class="star">★★★</span>☆☆</td>
+</tr>
+<tr>
+  <td>Yusuf Ali</td>
+  <td>ترجمة إنجليزية</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسطة</span></td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span></td>
+  <td><span class="star">★★★★</span>☆</td>
+</tr>
+<tr>
+  <td>Abdel Haleem</td>
+  <td>ترجمة إنجليزية</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسطة</span></td>
+  <td><span class="accuracy-badge accuracy-medium">متوسط</span></td>
+  <td><span class="star">★★★</span>★☆</td>
+</tr>
+<tr>
+  <td>Sahih International</td>
+  <td>ترجمة إنجليزية</td>
+  <td><span class="accuracy-badge accuracy-medium">متوسطة</span></td>
+  <td><span class="accuracy-badge accuracy-low">منخفض</span></td>
+  <td><span class="star">★★★</span>☆☆</td>
+</tr>
+</tbody>
+</table>
+
+<div class="disclaimer" style="margin-top: 30px;">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي مع تأصيل من النص الكامل للقرآن الكريم. رغم أن النتائج مصممة لتكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+</body>
+</html>

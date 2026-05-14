@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بحث قرآني: أنواع الدين — الدين القيّم · الدين الحنيف</title>
+<style>
+  :root {
+    --green-dark: #1a4a1a;
+    --green-mid: #2a5a2a;
+    --green-light: #e8f5e9;
+    --gold: #c8a84b;
+    --gold-light: #fff8e1;
+    --bg: #faf8f3;
+    --text: #2c1a0e;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: 'Amiri', 'Traditional Arabic', Georgia, serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.7; }
+
+  /* ─── Header ─── */
+  .page-header { background: linear-gradient(135deg, #1a4a1a 0%, #2d7a2d 100%); color: #fff; padding: 40px 30px; text-align: center; }
+  .page-header h1 { font-size: 2.4em; margin: 0 0 10px; color: #fff; }
+  .page-header .subtitle { color: #c8a84b; font-size: 1.2em; margin: 0; }
+  .page-header .date { color: rgba(255,255,255,0.6); font-size: 0.85em; margin-top: 10px; }
+
+  /* ─── TOC ─── */
+  .toc-wrap { background: var(--green-dark); padding: 0; position: sticky; top: 0; z-index: 100; }
+  .toc { display: flex; flex-wrap: wrap; gap: 0; justify-content: center; list-style: none; margin: 0; padding: 0; }
+  .toc li a { display: block; color: var(--gold); padding: 10px 16px; text-decoration: none; font-size: 0.9em; white-space: nowrap; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+  .toc li a:hover { border-bottom-color: var(--gold); color: #fff; }
+
+  /* ─── Layout ─── */
+  .container { max-width: 960px; margin: 0 auto; padding: 30px 20px; }
+  section { margin-bottom: 50px; }
+
+  /* ─── Typography ─── */
+  h2.section-title { color: var(--green-dark); font-size: 1.8em; border-bottom: 3px solid var(--gold); padding-bottom: 10px; margin-bottom: 20px; }
+  h3 { color: var(--green-mid); font-size: 1.3em; margin-top: 25px; }
+  h4 { color: #3a5a3a; font-size: 1.1em; }
+
+  /* ─── Disclaimer ─── */
+  .disclaimer { background: #fff3cd; border: 1px solid var(--gold); border-radius: 8px; padding: 14px 18px; font-size: 0.9em; color: #664d03; margin: 20px 0; }
+
+  /* ─── Stats ─── */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin: 20px 0; }
+  .stat-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .stat-num { font-size: 2.8em; color: var(--gold); font-weight: bold; display: block; line-height: 1.1; }
+  .stat-label { font-size: 0.85em; color: #666; margin-top: 4px; }
+
+  /* ─── Verse ─── */
+  .verse-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 14px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .verse-card .arabic { font-size: 1.55em; line-height: 2.3; color: #111; display: block; }
+  .verse-card .ref { font-size: 0.82em; color: #888; direction: ltr; text-align: left; margin-top: 8px; display: block; border-top: 1px dashed #eee; padding-top: 6px; }
+  .verse-card .note { font-size: 0.9em; color: #555; margin-top: 8px; }
+  .hl { background: #fff176; padding: 1px 3px; border-radius: 3px; }
+
+  /* ─── Category header ─── */
+  .cat-header { background: var(--green-dark); color: #fff; padding: 12px 18px; border-radius: 8px; margin: 28px 0 14px; display: flex; justify-content: space-between; align-items: center; }
+  .cat-header .cat-count { background: var(--gold); color: #1a1a1a; border-radius: 12px; padding: 2px 12px; font-size: 0.85em; font-weight: bold; }
+
+  /* ─── Finding ─── */
+  .finding { background: var(--green-light); border-right: 5px solid var(--green-mid); padding: 14px 18px; margin: 14px 0; border-radius: 0 10px 10px 0; }
+  .finding strong { color: var(--green-dark); }
+  .pattern { background: var(--gold-light); border: 1px solid var(--gold); border-radius: 8px; padding: 14px 18px; margin: 12px 0; }
+  .gap-box { background: #fce4ec; border-right: 4px solid #c62828; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+
+  /* ─── Badges ─── */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.82em; font-weight: bold; margin: 2px; }
+  .b-qayyim { background: #1a4a1a; color: #fff; }
+  .b-hanif { background: #4a2a1a; color: #fff; }
+  .b-haq { background: #1a2a4a; color: #fff; }
+  .b-khalis { background: #4a1a4a; color: #fff; }
+  .b-islam { background: #1a3a4a; color: #fff; }
+  .b-acc { background: #2e7d32; color: #fff; }
+  .b-par { background: #f57c00; color: #fff; }
+  .b-mis { background: #c62828; color: #fff; }
+
+  /* ─── Tables ─── */
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95em; }
+  th { background: var(--green-dark); color: #fff; padding: 10px 12px; text-align: right; }
+  td { border: 1px solid var(--border); padding: 10px 12px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f9f9f9; }
+
+  /* ─── Comparison grid ─── */
+  .cmp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .cmp-box { border-radius: 8px; padding: 15px; }
+  .cmp-trad { background: var(--gold-light); border: 1px solid var(--gold); }
+  .cmp-quran { background: var(--green-light); border: 1px solid var(--green-mid); }
+  .cmp-box h4 { margin-top: 0; }
+
+  /* ─── Sources section ─── */
+  .sources-section { background: #fff; border: 2px solid var(--green-dark); border-radius: 10px; padding: 20px; margin-top: 30px; }
+  .sources-section h3 { color: var(--green-dark); margin-top: 0; }
+  .sources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; }
+  .source-link { background: var(--green-light); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; }
+  .source-link a { color: var(--green-dark); text-decoration: none; font-weight: bold; font-size: 0.95em; }
+  .source-link a:hover { text-decoration: underline; }
+  .source-link p { font-size: 0.8em; color: #666; margin: 4px 0 0; }
+
+  /* ─── Footer ─── */
+  .page-footer { background: var(--green-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 20px; font-size: 0.85em; margin-top: 40px; }
+
+  @media (max-width: 600px) {
+    .cmp-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 1.7em; }
+    .stat-num { font-size: 2em; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════ HEADER ══ -->
+<div class="page-header">
+  <h1>أنواع الدين في القرآن الكريم</h1>
+  <p class="subtitle">الدين القيّم · الدين الحنيف · دين الحق · الدين الخالص</p>
+  <p class="date">بحث قرآني بالاعتماد على النص القرآني الكامل — مارس 2026</p>
+</div>
+
+<!-- ══════════════════════════════════════════════ NAV ══ -->
+<div class="toc-wrap">
+  <ul class="toc">
+    <li><a href="#disclaimer-top">التنبيه</a></li>
+    <li><a href="#summary">الملخص</a></li>
+    <li><a href="#morphology">الصرف</a></li>
+    <li><a href="#qayyim">الدين القيّم</a></li>
+    <li><a href="#hanif">الدين الحنيف</a></li>
+    <li><a href="#haq">دين الحق</a></li>
+    <li><a href="#khalis">الدين الخالص</a></li>
+    <li><a href="#other">أنواع أخرى</a></li>
+    <li><a href="#analysis">التحليل</a></li>
+    <li><a href="#tafsir">التفاسير</a></li>
+    <li><a href="#discoveries">الاكتشافات</a></li>
+    <li><a href="#sources-files">ملفات المصادر</a></li>
+  </ul>
+</div>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════════ DISCLAIMER ══ -->
+<div class="disclaimer" id="disclaimer-top">
+  <strong>تنبيه مهم:</strong> هذا التقرير صادر عن وكيل ذكاء اصطناعي لبحث القرآن الكريم، يستند إلى النص القرآني الكامل (265 آية جُمعت عبر فحص كامل للمصحف). وإن كانت النتائج تسعى إلى الشمولية، إلا أنها لا تُعدّ مرجعاً قاطعاً ولا ينبغي نشرها على أنها حجة علمية دون مراجعة متخصص.
+</div>
+
+<!-- ══════════════════════════════════════════════ SUMMARY ══ -->
+<section id="summary">
+  <h2 class="section-title">الملخص التنفيذي</h2>
+
+  <div class="stat-grid">
+    <div class="stat-card"><span class="stat-num">265</span><div class="stat-label">آية تحتوي على جذر (د-ي-ن)</div></div>
+    <div class="stat-card"><span class="stat-num">8</span><div class="stat-label">أنواع متمايزة للدين</div></div>
+    <div class="stat-card"><span class="stat-num">3</span><div class="stat-label">مرات ورد "الدين القيّم"</div></div>
+    <div class="stat-card"><span class="stat-num">10</span><div class="stat-label">آيات "حنيفاً"</div></div>
+    <div class="stat-card"><span class="stat-num">4</span><div class="stat-label">آيات "دين الحق"</div></div>
+    <div class="stat-card"><span class="stat-num">8+</span><div class="stat-label">آيات "مخلصين له الدين"</div></div>
+  </div>
+
+  <div class="finding">
+    <strong>الاكتشاف المحوري:</strong> الدين في القرآن ليس مفهوماً أحادياً؛ بل يُقدّمه القرآن بأبعاد متعددة متكاملة غير قابلة للتبادل. <span class="badge b-qayyim">القيّم</span> بُعده الكوني الأزلي، <span class="badge b-hanif">الحنيف</span> بُعده الإنساني العَمَلي، <span class="badge b-haq">الحق</span> بُعده التشريعي التاريخي، <span class="badge b-khalis">الخالص</span> بُعده القلبي الروحي.
+  </div>
+
+  <div class="cmp-grid">
+    <div class="cmp-box cmp-trad">
+      <h4>الفهم التقليدي</h4>
+      <ul>
+        <li>"الدين القيّم" = الدين المستقيم المعتدل</li>
+        <li>"الدين الحنيف" = الإسلام أو ملة إبراهيم</li>
+        <li>"دين الحق" = الإسلام المُظفَّر</li>
+        <li>الدين مصطلح موحّد = الإسلام</li>
+      </ul>
+    </div>
+    <div class="cmp-box cmp-quran">
+      <h4>ما يُضيفه التحليل القرآني</h4>
+      <ul>
+        <li>"القيّم" = القائم على الخلق، الحاكمية، الفطرة</li>
+        <li>"حنيفاً" = حال للفاعل (توجّه) لا صفة للدين</li>
+        <li>"دين الحق" = مقترن بالهدى والإظهار الكلي</li>
+        <li>القرآن يُميّز بين أبعاد متعددة لا تتداخل</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ MORPHOLOGY ══ -->
+<section id="morphology">
+  <h2 class="section-title">الصرف والمورفولوجيا</h2>
+
+  <div style="background:var(--green-dark);color:#fff;padding:20px;border-radius:10px;text-align:center;margin-bottom:20px;">
+    <span style="font-size:2.8em;letter-spacing:18px;color:var(--gold);display:block;margin-bottom:8px;">د · ي · ن</span>
+    <p style="margin:0;color:rgba(255,255,255,0.85);">الجذر الثلاثي — المعنى الأصلي: الطاعة والخضوع + الجزاء والمكافأة</p>
+  </div>
+
+  <table>
+    <tr><th>الصيغة</th><th>الوزن</th><th>المعنى القرآني</th><th>التكرار</th></tr>
+    <tr><td><strong>دِين / الدِّين</strong></td><td>فِعْل</td><td>منظومة الحياة والعبودية</td><td>~70+</td></tr>
+    <tr><td><strong>يَدِينُونَ</strong></td><td>يَفْعِلُون</td><td>يتّبعون ديانتهم ويُطيعونها</td><td>1 (9:29)</td></tr>
+    <tr><td><strong>يَوْمِ الدِّين</strong></td><td>إضافة</td><td>يوم الجزاء والحساب</td><td>~13</td></tr>
+    <tr><td><strong>القَيِّم</strong> (ق-و-م)</td><td>فَيْعِل — صيغة مبالغة</td><td>القائم الثابت الراسخ منذ الخلق</td><td>3 مع الدين</td></tr>
+    <tr><td><strong>القَيِّمَة</strong> (ق-و-م)</td><td>فَيْعِلَة</td><td>نسبة إلى الكتب/الأمة القيّمة</td><td>1 (98:5)</td></tr>
+    <tr><td><strong>حَنِيف / حَنِيفًا</strong> (ح-ن-ف)</td><td>فَعِيل — حال منصوب</td><td>المائل عن الشرك، المُقبِل على الحق — وصف موقف الفاعل</td><td>10</td></tr>
+    <tr><td><strong>حُنَفَاء</strong> (ح-ن-ف)</td><td>فُعَلاء — جمع</td><td>جمع حنيف — المُخلصون المنصرفون عن الشرك</td><td>2</td></tr>
+  </table>
+
+  <div class="finding">
+    <strong>ملاحظة نحوية حاسمة:</strong> "حَنِيفًا" في كل موضع في القرآن منصوبة على الحالية — وصف لحالة الفاعل لا صفة للدين. وهذا يعني أن "الحنيفية" عمل وموقف لا وصف لجوهر الدين.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ QAYYIM ══ -->
+<section id="qayyim">
+  <h2 class="section-title">الدين القيّم</h2>
+
+  <div class="finding">
+    <strong>تعريفه قرآنياً:</strong> الدين الذي يقوم بذاته على ثلاثة أسس كونية — نظام الخلق الأصيل، الحاكمية الإلهية الخالصة، الفطرة الإلهية التي لا تبديل لها.
+  </div>
+
+  <div class="cat-header"><span>السياق الأول: نظام الخلق الكوني</span><span class="cat-count">9:36</span></div>
+  <div class="verse-card" id="v-9-36">
+    <span class="arabic">إِنَّ عِدَّةَ ٱلشُّهُورِ عِندَ ٱللَّهِ ٱثْنَا عَشَرَ شَهْرًا فِى كِتَـٰبِ ٱللَّهِ يَوْمَ خَلَقَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ مِنْهَآ أَرْبَعَةٌ حُرُمٌ ۚ <span class="hl">ذَٰلِكَ ٱلدِّينُ ٱلْقَيِّمُ</span> ۚ فَلَا تَظْلِمُوا۟ فِيهِنَّ أَنفُسَكُمْ</span>
+    <span class="ref">التوبة 9:36</span>
+    <div class="note">"ذلك" يُحيل إلى نظام الأشهر الاثني عشر المُثبَّت منذ يوم خلق السماوات والأرض. الدين القيّم = الالتزام بالنظام الكوني الإلهي الأصيل.</div>
+  </div>
+
+  <div class="cat-header"><span>السياق الثاني: الحاكمية الإلهية</span><span class="cat-count">12:40</span></div>
+  <div class="verse-card" id="v-12-40">
+    <span class="arabic">مَا تَعْبُدُونَ مِن دُونِهِۦٓ إِلَّآ أَسْمَآءً... إِنِ ٱلْحُكْمُ إِلَّا لِلَّهِ ۚ أَمَرَ أَلَّا تَعْبُدُوٓا۟ إِلَّآ إِيَّاهُ ۚ <span class="hl">ذَٰلِكَ ٱلدِّينُ ٱلْقَيِّمُ</span> وَلَـٰكِنَّ أَكْثَرَ ٱلنَّاسِ لَا يَعْلَمُونَ</span>
+    <span class="ref">يوسف 12:40</span>
+    <div class="note">"ذلك" يُحيل إلى: الحكم لله + عبادته وحده. الدين القيّم = الدين القائم على توحيد الحاكمية والعبادة. يختم بـ"لا يعلمون" مما يُشير إلى أنها حقيقة مجهولة رغم وضوحها.</div>
+  </div>
+
+  <div class="cat-header"><span>السياق الثالث: الفطرة الإلهية</span><span class="cat-count">30:30</span></div>
+  <div class="verse-card" id="v-30-30">
+    <span class="arabic">فَأَقِمْ وَجْهَكَ لِلدِّينِ <span class="hl">حَنِيفًا</span> ۚ فِطْرَتَ ٱللَّهِ ٱلَّتِى فَطَرَ ٱلنَّاسَ عَلَيْهَا ۚ لَا تَبْدِيلَ لِخَلْقِ ٱللَّهِ ۚ <span class="hl">ذَٰلِكَ ٱلدِّينُ ٱلْقَيِّمُ</span> وَلَـٰكِنَّ أَكْثَرَ ٱلنَّاسِ لَا يَعْلَمُونَ</span>
+    <span class="ref">الروم 30:30 — آية جامعة</span>
+    <div class="note">تجمع "حنيفاً" (موقف الفاعل) + الفطرة (لا تبديل) + "الدين القيّم" (وصف الدين). الفطرة = الدين القيّم.</div>
+  </div>
+
+  <div class="cat-header"><span>دين القيّمة — الشكل المُجمَّع</span><span class="cat-count">98:5</span></div>
+  <div class="verse-card" id="v-98-5">
+    <span class="arabic">وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ حُنَفَآءَ وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ ۚ <span class="hl">وَذَٰلِكَ دِينُ ٱلْقَيِّمَةِ</span></span>
+    <span class="ref">البيّنة 98:5</span>
+    <div class="note">يُعرّف "دِينَ الْقَيِّمَةِ" بثلاثة: إخلاص الدين + إقامة الصلاة + إيتاء الزكاة. ويجمع "مخلصين" + "حنفاء" معاً.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ HANIF ══ -->
+<section id="hanif">
+  <h2 class="section-title">الدين الحنيف</h2>
+
+  <div class="finding">
+    <strong>تعريفه قرآنياً:</strong> "حنيفاً" دائماً حال من الفاعل تصف توجّهه الكلي نحو الله مع الانصراف التام عن الشرك. ومعادلتها الثابتة: حنيفاً = إقامة الوجه لله + نفي الشرك.
+  </div>
+
+  <div class="cat-header"><span>الآية الجامعة — الدين الحنيف والقيّم معاً</span><span class="cat-count">6:161</span></div>
+  <div class="verse-card" id="v-6-161">
+    <span class="arabic">قُلْ إِنَّنِى هَدَىٰنِى رَبِّىٓ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ <span class="hl">دِينًا قِيَمًا مِّلَّةَ إِبْرَٰهِيمَ حَنِيفًا</span> ۚ وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ</span>
+    <span class="ref">الأنعام 6:161 — الآية الجامعة</span>
+    <div class="note">تجمع: الصراط المستقيم + دِيناً قِيَمًا + مِلَّةَ إبراهيم + حنيفاً + نفي الشرك — خمسة عناصر في تسلسل واحد.</div>
+  </div>
+
+  <div class="cat-header"><span>آيات حنيفاً</span><span class="cat-count">10 آيات</span></div>
+
+  <div class="verse-card"><span class="arabic">فَأَقِمْ وَجْهَكَ لِلدِّينِ <span class="hl">حَنِيفًا</span> ۚ فِطْرَتَ ٱللَّهِ... ذَٰلِكَ ٱلدِّينُ ٱلْقَيِّمُ</span><span class="ref">الروم 30:30</span></div>
+  <div class="verse-card"><span class="arabic">وَأَنْ أَقِمْ وَجْهَكَ لِلدِّينِ <span class="hl">حَنِيفًا</span> وَلَا تَكُونَنَّ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">يونس 10:105</span></div>
+  <div class="verse-card"><span class="arabic">وَقَالُوا۟ كُونُوا۟ هُودًا أَوْ نَصَـٰرَىٰ تَهْتَدُوا۟ ۗ قُلْ بَلْ مِلَّةَ إِبْرَٰهِـۧمَ <span class="hl">حَنِيفًا</span> ۖ وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">البقرة 2:135</span></div>
+  <div class="verse-card"><span class="arabic">مَا كَانَ إِبْرَٰهِيمُ يَهُودِيًّا وَلَا نَصْرَانِيًّا وَلَـٰكِن كَانَ <span class="hl">حَنِيفًا مُّسْلِمًا</span> وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">آل عمران 3:67</span><div class="note">قرن "حنيفاً" بـ"مسلماً" — الحنيفية والإسلام وجهان لحقيقة واحدة</div></div>
+  <div class="verse-card"><span class="arabic">قُلْ صَدَقَ ٱللَّهُ ۗ فَٱتَّبِعُوا۟ مِلَّةَ إِبْرَٰهِيمَ <span class="hl">حَنِيفًا</span> وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">آل عمران 3:95</span></div>
+  <div class="verse-card"><span class="arabic">وَمَنْ أَحْسَنُ دِينًا مِّمَّنْ أَسْلَمَ وَجْهَهُۥ لِلَّهِ وَهُوَ مُحْسِنٌ وَٱتَّبَعَ مِلَّةَ إِبْرَٰهِيمَ <span class="hl">حَنِيفًا</span> ۗ وَٱتَّخَذَ ٱللَّهُ إِبْرَٰهِيمَ خَلِيلًا</span><span class="ref">النساء 4:125</span><div class="note">أحسن الدين = إسلام الوجه + الإحسان + اتباع ملة إبراهيم حنيفاً</div></div>
+  <div class="verse-card"><span class="arabic">إِنِّى وَجَّهْتُ وَجْهِىَ لِلَّذِى فَطَرَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ <span class="hl">حَنِيفًا</span> ۖ وَمَآ أَنَا۠ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">الأنعام 6:79 — إبراهيم ع</span><div class="note">ربط "حنيف" بالفاطر — الحنيفية = التوجه نحو خالق الكون</div></div>
+  <div class="verse-card"><span class="arabic">إِنَّ إِبْرَٰهِيمَ كَانَ أُمَّةً قَانِتًا لِّلَّهِ <span class="hl">حَنِيفًا</span> وَلَمْ يَكُ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">النحل 16:120</span><div class="note">"قانتاً" + "حنيفاً" — الحنيفية تنبثق من القنوت الدائم</div></div>
+  <div class="verse-card"><span class="arabic">ثُمَّ أَوْحَيْنَآ إِلَيْكَ أَنِ ٱتَّبِعْ مِلَّةَ إِبْرَٰهِيمَ <span class="hl">حَنِيفًا</span> ۖ وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ</span><span class="ref">النحل 16:123</span></div>
+
+  <div class="cat-header"><span>حنفاء — الجمع</span><span class="cat-count">2 آيات</span></div>
+  <div class="verse-card"><span class="arabic"><span class="hl">حُنَفَآءَ لِلَّهِ</span> غَيْرَ مُشْرِكِينَ بِهِۦ ۚ وَمَن يُشْرِكْ بِٱللَّهِ فَكَأَنَّمَا خَرَّ مِنَ ٱلسَّمَآءِ</span><span class="ref">الحج 22:31</span><div class="note">حنفاء = غير مشركين — التعريف بالضد مباشرة</div></div>
+  <div class="verse-card"><span class="arabic">مُخْلِصِينَ لَهُ ٱلدِّينَ <span class="hl">حُنَفَآءَ</span> وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ ۚ وَذَٰلِكَ دِينُ ٱلْقَيِّمَةِ</span><span class="ref">البيّنة 98:5</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════ HAQ ══ -->
+<section id="haq">
+  <h2 class="section-title">دين الحق</h2>
+
+  <div class="finding">
+    <strong>تعريفه قرآنياً:</strong> الدين المُرسَل به النبي ﷺ مقروناً بالهدى، والمحكوم له بالإظهار والغلبة على الدين كله — بُعده التشريعي التاريخي.
+  </div>
+
+  <div class="cat-header"><span>دين الحق — 4 آيات (3 منها بنص متكرر)</span><span class="cat-count">9:29 · 9:33 · 48:28 · 61:9</span></div>
+  <div class="verse-card" id="v-9-29"><span class="arabic">وَلَا يَدِينُونَ <span class="hl">دِينَ ٱلْحَقِّ</span> مِنَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَـٰبَ حَتَّىٰ يُعْطُوا۟ ٱلْجِزْيَةَ عَن يَدٍ وَهُمْ صَـٰغِرُونَ</span><span class="ref">التوبة 9:29</span><div class="note">"يَدِينُونَ دِينَ الْحَقِّ" — استخدام الفعل مع الدين: يعيشون وفقه. وصف أهل الكتاب بعدم التديّن بدين الحق رغم امتلاكهم الكتاب.</div></div>
+  <div class="verse-card" id="v-9-33"><span class="arabic">هُوَ ٱلَّذِىٓ أَرْسَلَ رَسُولَهُۥ بِٱلْهُدَىٰ وَ<span class="hl">دِينِ ٱلْحَقِّ</span> لِيُظْهِرَهُۥ عَلَى ٱلدِّينِ كُلِّهِۦ وَلَوْ كَرِهَ ٱلْمُشْرِكُونَ</span><span class="ref">التوبة 9:33</span></div>
+  <div class="verse-card" id="v-48-28"><span class="arabic">هُوَ ٱلَّذِىٓ أَرْسَلَ رَسُولَهُۥ بِٱلْهُدَىٰ وَ<span class="hl">دِينِ ٱلْحَقِّ</span> لِيُظْهِرَهُۥ عَلَى ٱلدِّينِ كُلِّهِۦ ۚ وَكَفَىٰ بِٱللَّهِ شَهِيدًا</span><span class="ref">الفتح 48:28</span><div class="note">خاتمة مختلفة: "وَكَفَى بِاللَّهِ شَهِيدًا" — في سياق صلح الحديبية</div></div>
+  <div class="verse-card" id="v-61-9"><span class="arabic">هُوَ ٱلَّذِىٓ أَرْسَلَ رَسُولَهُۥ بِٱلْهُدَىٰ وَ<span class="hl">دِينِ ٱلْحَقِّ</span> لِيُظْهِرَهُۥ عَلَى ٱلدِّينِ كُلِّهِۦ وَلَوْ كَرِهَ ٱلْمُشْرِكُونَ</span><span class="ref">الصف 61:9</span></div>
+
+  <div class="pattern">التكرار الثلاثي للآية يُفيد التأكيد القاطع — الهدى ودين الحق يقترنان دائماً، والإظهار على الدين كله حقيقة مكفولة.</div>
+</section>
+
+<!-- ══════════════════════════════════════════════ KHALIS ══ -->
+<section id="khalis">
+  <h2 class="section-title">الدين الخالص / مخلصين له الدين</h2>
+
+  <div class="finding">
+    <strong>تعريفه قرآنياً:</strong> الدين الصافي من كل شائبة إشراك — يُقابَل في 39:3 بدين التقريب بالأولياء. "مخلصين له الدين" يرد 8 مرات — الإخلاص هو تحرير الدين من كل مشاركة لغير الله.
+  </div>
+
+  <div class="verse-card" id="v-39-3"><span class="arabic">أَلَا لِلَّهِ <span class="hl">ٱلدِّينُ ٱلْخَالِصُ</span> ۚ وَٱلَّذِينَ ٱتَّخَذُوا۟ مِن دُونِهِۦٓ أَوْلِيَآءَ مَا نَعْبُدُهُمْ إِلَّا لِيُقَرِّبُونَآ إِلَى ٱللَّهِ زُلْفَىٰٓ</span><span class="ref">الزمر 39:3</span><div class="note">الدين الخالص ↔ دين التقريب بالوسطاء — تعريف بالضد في آية واحدة</div></div>
+  <div class="verse-card"><span class="arabic">فَٱعْبُدِ ٱللَّهَ <span class="hl">مُخْلِصًا لَّهُ ٱلدِّينَ</span></span><span class="ref">الزمر 39:2</span></div>
+  <div class="verse-card"><span class="arabic">قُلْ إِنِّىٓ أُمِرْتُ أَنْ أَعْبُدَ ٱللَّهَ <span class="hl">مُخْلِصًا لَّهُ ٱلدِّينَ</span></span><span class="ref">الزمر 39:11</span></div>
+  <div class="verse-card"><span class="arabic">قُلِ ٱللَّهَ أَعْبُدُ <span class="hl">مُخْلِصًا لَّهُۥ دِينِى</span></span><span class="ref">الزمر 39:14</span></div>
+  <div class="verse-card"><span class="arabic">فَٱدْعُوا۟ ٱللَّهَ <span class="hl">مُخْلِصِينَ لَهُ ٱلدِّينَ</span> وَلَوْ كَرِهَ ٱلْكَـٰفِرُونَ</span><span class="ref">غافر 40:14</span></div>
+  <div class="verse-card"><span class="arabic">فَٱدْعُوهُ <span class="hl">مُخْلِصِينَ لَهُ ٱلدِّينَ</span> ۗ ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ</span><span class="ref">غافر 40:65</span></div>
+  <div class="verse-card"><span class="arabic">وَأَقِيمُوا۟ وُجُوهَكُمْ عِندَ كُلِّ مَسْجِدٍ وَٱدْعُوهُ <span class="hl">مُخْلِصِينَ لَهُ ٱلدِّينَ</span></span><span class="ref">الأعراف 7:29</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════ OTHER ══ -->
+<section id="other">
+  <h2 class="section-title">أنواع أخرى</h2>
+
+  <h3>الإسلام ديناً / الدين عند الله</h3>
+  <div class="verse-card"><span class="arabic"><span class="hl">إِنَّ ٱلدِّينَ عِندَ ٱللَّهِ ٱلْإِسْلَـٰمُ</span> ۗ وَمَا ٱخْتَلَفَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَـٰبَ إِلَّا مِنۢ بَعْدِ مَا جَآءَهُمُ ٱلْعِلْمُ بَغْيًۢا بَيْنَهُمْ</span><span class="ref">آل عمران 3:19</span></div>
+  <div class="verse-card"><span class="arabic">وَمَن يَبْتَغِ غَيْرَ ٱلْإِسْلَـٰمِ <span class="hl">دِينًا</span> فَلَن يُقْبَلَ مِنْهُ وَهُوَ فِى ٱلْـَٔاخِرَةِ مِنَ ٱلْخَـٰسِرِينَ</span><span class="ref">آل عمران 3:85</span></div>
+  <div class="verse-card"><span class="arabic">ٱلْيَوْمَ أَكْمَلْتُ لَكُمْ <span class="hl">دِينَكُمْ</span> وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِى وَرَضِيتُ لَكُمُ <span class="hl">ٱلْإِسْلَـٰمَ دِينًا</span></span><span class="ref">المائدة 5:3</span><div class="note">ثلاثة أفعال إلهية: أكملت + أتممت + رضيت</div></div>
+
+  <h3>لا إكراه في الدين</h3>
+  <div class="verse-card"><span class="arabic"><span class="hl">لَآ إِكْرَاهَ فِى ٱلدِّينِ</span> ۖ قَد تَّبَيَّنَ ٱلرُّشْدُ مِنَ ٱلْغَىِّ ۚ فَمَن يَكْفُرْ بِٱلطَّـٰغُوتِ وَيُؤْمِنۢ بِٱللَّهِ فَقَدِ ٱسْتَمْسَكَ بِٱلْعُرْوَةِ ٱلْوُثْقَىٰ</span><span class="ref">البقرة 2:256</span></div>
+
+  <h3>لكم دينكم ولي دين</h3>
+  <div class="verse-card"><span class="arabic"><span class="hl">لَكُمْ دِينُكُمْ وَلِىَ دِينِ</span></span><span class="ref">الكافرون 109:6</span></div>
+
+  <h3>يوم الدين</h3>
+  <div class="verse-card"><span class="arabic">مَـٰلِكِ <span class="hl">يَوْمِ ٱلدِّينِ</span></span><span class="ref">الفاتحة 1:4</span><div class="note">الدين = الجزاء والحساب — البُعد الثاني للجذر (د-ي-ن)</div></div>
+  <div class="verse-card"><span class="arabic">أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِ<span class="hl">ٱلدِّينِ</span></span><span class="ref">الماعون 107:1</span><div class="note">التكذيب بالدين يظهر في إهمال اليتيم والمسكين — الدين منظومة سلوك لا مجرد عقيدة</div></div>
+</section>
+
+<!-- ══════════════════════════════════════════════ ANALYSIS ══ -->
+<section id="analysis">
+  <h2 class="section-title">التحليل — مصفوفة التمييز</h2>
+
+  <table>
+    <tr>
+      <th>المعيار</th>
+      <th><span class="badge b-qayyim">الدين القيّم</span></th>
+      <th><span class="badge b-hanif">الدين الحنيف</span></th>
+      <th><span class="badge b-haq">دين الحق</span></th>
+      <th><span class="badge b-khalis">الدين الخالص</span></th>
+    </tr>
+    <tr>
+      <td>الجذر</td>
+      <td>ق-و-م (القيام)</td>
+      <td>ح-ن-ف (الميل)</td>
+      <td>ح-ق-ق (الثبوت)</td>
+      <td>خ-ل-ص (الصفاء)</td>
+    </tr>
+    <tr>
+      <td>وصف لـ</td>
+      <td>الدين ذاته (خبر)</td>
+      <td>موقف الفاعل (حال)</td>
+      <td>الدين ذاته (مضاف إليه)</td>
+      <td>الدين ذاته (صفة)</td>
+    </tr>
+    <tr>
+      <td>المقابل الضدي</td>
+      <td>الاعوجاج / التبديل</td>
+      <td>الشرك</td>
+      <td>الدين الباطل</td>
+      <td>الشوب / الوساطة</td>
+    </tr>
+    <tr>
+      <td>البُعد</td>
+      <td>كوني — أزلي</td>
+      <td>عملي — فوري</td>
+      <td>تاريخي — تشريعي</td>
+      <td>روحي — قلبي</td>
+    </tr>
+    <tr>
+      <td>السياق الأبرز</td>
+      <td>الخلق / الفطرة / الحاكمية</td>
+      <td>إبراهيم ع / النبي ﷺ</td>
+      <td>الرسالة والإظهار</td>
+      <td>العبادة والدعاء</td>
+    </tr>
+  </table>
+
+  <div class="finding">
+    <strong>الاستنتاج الكلي:</strong> الأنواع المختلفة للدين في القرآن أبعاد متكاملة لمنظومة واحدة. وآية الأنعام 6:161 تجمعها معاً في جملة واحدة: <em>"دِيناً قِيَمًا مِّلَّةَ إِبْرَٰهِيمَ حَنِيفًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ"</em>.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ TAFSIR ══ -->
+<section id="tafsir">
+  <h2 class="section-title">مقارنة التفاسير — خلاصة</h2>
+
+  <table>
+    <tr>
+      <th>المصدر</th>
+      <th>الدين القيّم</th>
+      <th>الدين الحنيف</th>
+      <th>دين الحق</th>
+      <th>التقييم</th>
+    </tr>
+    <tr>
+      <td><strong>ابن كثير</strong></td>
+      <td><span class="badge b-acc">دقيق</span></td>
+      <td><span class="badge b-acc">دقيق</span></td>
+      <td><span class="badge b-acc">دقيق</span></td>
+      <td>الأوفى — يُنصح به أولاً</td>
+    </tr>
+    <tr>
+      <td><strong>الراغب الأصفهاني (المفردات)</strong></td>
+      <td>—</td>
+      <td><span class="badge b-acc">الأدق لغوياً</span></td>
+      <td>—</td>
+      <td>المرجع الأمثل للجذور</td>
+    </tr>
+    <tr>
+      <td><strong>القرطبي</strong></td>
+      <td><span class="badge b-acc">دقيق</span></td>
+      <td><span class="badge b-par">جزئي</span></td>
+      <td><span class="badge b-par">جزئي</span></td>
+      <td>غني لغوياً</td>
+    </tr>
+    <tr>
+      <td><strong>Sahih International</strong></td>
+      <td><span class="badge b-par">جزئي</span></td>
+      <td><span class="badge b-par">جزئي</span></td>
+      <td><span class="badge b-acc">دقيق</span></td>
+      <td>أفضل الترجمات الإنجليزية</td>
+    </tr>
+    <tr>
+      <td><strong>Abdel Haleem</strong></td>
+      <td><span class="badge b-mis">قاصر</span></td>
+      <td><span class="badge b-mis">قاصر</span></td>
+      <td><span class="badge b-acc">دقيق</span></td>
+      <td>أدبية — ليست للبحث اللغوي</td>
+    </tr>
+  </table>
+
+  <div class="gap-box">
+    <strong>الفجوة الكبرى في التفاسير:</strong> أغفلت معظم التفاسير والترجمات أن: (١) "القيّم" يحمل البُعد الكوني المرتبط بنظام الخلق، و(٢) "حنيفاً" حال من الفاعل لا وصف للدين. وهذان الأمران يتبيّنان فقط من قراءة الآيات الثلاث لكل مصطلح معاً.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ DISCOVERIES ══ -->
+<section id="discoveries">
+  <h2 class="section-title">الاكتشافات — توسعات بحثية مقترحة</h2>
+
+  <table>
+    <tr>
+      <th>المصطلح</th>
+      <th>العلاقة بالدين</th>
+      <th>الآيات المرجعية</th>
+      <th>الأولوية</th>
+    </tr>
+    <tr>
+      <td><strong>الفطرة (ف-ط-ر)</strong></td>
+      <td>مرادف للدين القيّم في 30:30</td>
+      <td>30:30 · 6:79</td>
+      <td><span class="badge b-acc">عالية</span></td>
+    </tr>
+    <tr>
+      <td><strong>الحُكم (ح-ك-م)</strong></td>
+      <td>أساس الدين القيّم في 12:40</td>
+      <td>12:40 · 5:44</td>
+      <td><span class="badge b-acc">عالية</span></td>
+    </tr>
+    <tr>
+      <td><strong>الإخلاص (خ-ل-ص)</strong></td>
+      <td>متلازم مع الحنيفية والدين الخالص</td>
+      <td>98:5 · 39:2-14</td>
+      <td><span class="badge b-acc">عالية</span></td>
+    </tr>
+    <tr>
+      <td><strong>مِلَّة إبراهيم</strong></td>
+      <td>الأصل التاريخي للدين الحنيف</td>
+      <td>2:135 · 4:125 · 22:78</td>
+      <td><span class="badge b-par">متوسطة</span></td>
+    </tr>
+    <tr>
+      <td><strong>الهُدى (ه-د-ي)</strong></td>
+      <td>دائماً مقترن بدين الحق</td>
+      <td>9:33 · 48:28 · 61:9</td>
+      <td><span class="badge b-par">متوسطة</span></td>
+    </tr>
+    <tr>
+      <td><strong>الصراط المستقيم</strong></td>
+      <td>مرادف للدين القيّم في 6:161</td>
+      <td>6:161 · 1:6-7</td>
+      <td><span class="badge b-par">متوسطة</span></td>
+    </tr>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════ SOURCE FILES ══ -->
+<div class="sources-section" id="sources-files">
+  <h3>ملفات المصادر للدراسة المتعمقة</h3>
+  <p style="color:#666;font-size:0.9em;">هذا التصدير مشتق من ملفات المصادر التالية. للاطلاع على التفاصيل الكاملة:</p>
+  <div class="sources-grid">
+    <div class="source-link"><a href="sources/00_SUMMARY.html">00 — الملخص</a><p>النتائج الرئيسية ومقارنة المنهجين</p></div>
+    <div class="source-link"><a href="sources/01_MORPHOLOGY.html">01 — الصرف</a><p>جذر (د-ي-ن) وكل أوزانه القرآنية</p></div>
+    <div class="source-link"><a href="sources/02_VERSES.html">02 — الآيات</a><p>كامل الآيات مصنّفةً بالتفصيل</p></div>
+    <div class="source-link"><a href="sources/03_ANALYSIS.html">03 — التحليل</a><p>الأنماط السياقية والمتضادات والعلاقات</p></div>
+    <div class="source-link"><a href="sources/04_DISCOVERIES.html">04 — الاكتشافات</a><p>مصطلحات مكتشفة للبحث المستقبلي</p></div>
+    <div class="source-link"><a href="sources/05_TAFSIR_COMPARISON.html">05 — التفاسير</a><p>مقارنة تفصيلية للتفاسير والترجمات</p></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ DISCLAIMER BOTTOM ══ -->
+<div class="disclaimer" style="margin-top:30px;">
+  <strong>تنبيه:</strong> هذا التقرير صادر عن وكيل ذكاء اصطناعي لبحث القرآن الكريم، يستند إلى النص القرآني الكامل. وإن كانت النتائج تسعى إلى الشمولية، إلا أنها لا تُعدّ مرجعاً قاطعاً ولا ينبغي نشرها على أنها حجة قطعية.
+</div>
+
+</div><!-- /container -->
+
+<div class="page-footer">
+  بحث قرآني بمنهج الاستنباط من القرآن وحده · مارس 2026<br>
+  <span style="color:rgba(255,255,255,0.4);font-size:0.8em;">تم جمع الآيات عبر Quran.com API v4 بفحص كامل للمصحف (114 سورة)</span>
+</div>
+
+</body>
+</html>

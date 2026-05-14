@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>يُسَارِعُونَ فِي الْخَيْرَاتِ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            padding: 40px;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media print {
+            .slide {
+                height: 100vh;
+                page-break-after: always;
+            }
+        }
+
+        /* Colors */
+        :root {
+            --primary: #0D5C63;
+            --secondary: #14919B;
+            --accent: #C9A227;
+            --dark: #1A1A2E;
+            --light: #F7F9FC;
+            --text: #2D3748;
+            --muted: #718096;
+            --correct: #059669;
+            --incorrect: #DC2626;
+            --light-green: #D1FAE5;
+            --light-red: #FEE2E2;
+            --yellow-light: #FEF3C7;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 {
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-1 h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .slide-1 .tagline {
+            font-size: 1.2rem;
+            color: var(--muted);
+        }
+
+        .slide-1 .accent-line {
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            position: absolute;
+            top: 50%;
+        }
+
+        /* Slide 2 - Question */
+        .slide-2 {
+            background: var(--light);
+        }
+
+        .slide-2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 8px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .slide-2 h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .question-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .question-box p {
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .question-box .sub {
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+
+        .approaches {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .approach-box {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .approach-box.traditional {
+            background: var(--light-red);
+        }
+
+        .approach-box.quranic {
+            background: var(--light-green);
+        }
+
+        .approach-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .approach-box.traditional h3 { color: var(--incorrect); }
+        .approach-box.quranic h3 { color: var(--correct); }
+
+        /* Slide 3 - Traditional */
+        .slide-3 {
+            background: var(--light);
+        }
+
+        .slide-3 .header {
+            background: var(--light-red);
+            margin: -40px -40px 30px -40px;
+            padding: 25px 40px;
+            border-bottom: 4px solid var(--incorrect);
+        }
+
+        .slide-3 .header h2 {
+            color: var(--incorrect);
+            font-size: 2rem;
+        }
+
+        .slide-3 ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .slide-3 li {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 15px;
+            padding-right: 20px;
+        }
+
+        .warning-box {
+            background: #FECACA;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .warning-box h4 {
+            color: var(--incorrect);
+            margin-bottom: 10px;
+        }
+
+        /* Evidence slides */
+        .evidence-header {
+            background: var(--primary);
+            margin: -40px -40px 30px -40px;
+            padding: 20px 40px;
+        }
+
+        .evidence-header h2 {
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .verse-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .verse-box .arabic {
+            font-size: 1.5rem;
+            color: var(--primary);
+            line-height: 2;
+        }
+
+        .char-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .char-item {
+            background: #E6FFFA;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border-right: 4px solid var(--correct);
+            font-size: 1.1rem;
+        }
+
+        .insight-box {
+            background: var(--yellow-light);
+            padding: 15px 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Slide 7 - Contrast */
+        .slide-7 {
+            background: var(--light);
+        }
+
+        .slide-7 .header {
+            background: var(--dark);
+            margin: -40px -40px 20px -40px;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .slide-7 .header h2 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .contrast-grid {
+            display: flex;
+            gap: 30px;
+            height: calc(100% - 120px);
+        }
+
+        .contrast-box {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .contrast-box.good {
+            background: var(--light-green);
+        }
+
+        .contrast-box.bad {
+            background: var(--light-red);
+        }
+
+        .contrast-box .title {
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .contrast-box.good .title { background: var(--correct); }
+        .contrast-box.bad .title { background: var(--incorrect); }
+
+        .contrast-box .content {
+            padding: 20px;
+        }
+
+        .contrast-box ul {
+            list-style: none;
+        }
+
+        .contrast-box li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Slide 8 - Balance */
+        .slide-8 {
+            background: var(--dark);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-8 h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .slide-8 .verse {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .slide-8 .translation {
+            color: var(--muted);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .balance-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .balance-box {
+            padding: 25px 40px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .balance-box.hope { background: var(--secondary); }
+        .balance-box.fear { background: var(--primary); }
+
+        .balance-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Slide 9 - Comparison */
+        .slide-9 {
+            background: var(--light);
+        }
+
+        .slide-9 h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .comparison-table {
+            width: 100%;
+        }
+
+        .comparison-row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .comparison-cell {
+            flex: 1;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+        }
+
+        .comparison-header {
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .comparison-header.trad { background: var(--incorrect); }
+        .comparison-header.quran { background: var(--correct); }
+
+        .comparison-row:nth-child(odd) .trad-cell { background: #FEF2F2; }
+        .comparison-row:nth-child(odd) .quran-cell { background: #ECFDF5; }
+        .comparison-row:nth-child(even) .trad-cell { background: white; }
+        .comparison-row:nth-child(even) .quran-cell { background: white; }
+
+        /* Slide 10 - Conclusion */
+        .slide-10 {
+            background: var(--dark);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-10 h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .slide-10 .main-point {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .slide-10 .sub-point {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .conclusion-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .conclusion-box {
+            background: var(--primary);
+            padding: 20px 30px;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+
+        .conclusion-box h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .conclusion-box p {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .slide-10 .final-message {
+            color: var(--muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .accent-bar {
+            width: 120px;
+            height: 3px;
+            background: var(--accent);
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <div class="accent-line"></div>
+        <h1>يُسَارِعُونَ فِي الْخَيْرَاتِ</h1>
+        <p class="subtitle">مَن هُم؟ وما صِفاتُهم؟</p>
+        <p class="tagline">المعنى القرآني مقابل التفسير التقليدي</p>
+    </div>
+
+    <!-- Slide 2: Question -->
+    <div class="slide slide-2">
+        <h2>السؤال المحوري</h2>
+        <div class="question-box">
+            <p>مَن هم الذين وصفهم القرآن بأنهم يُسَارِعُونَ فِي الْخَيْرَاتِ؟</p>
+            <p class="sub">وما الصفات التي تُميّزهم؟</p>
+        </div>
+        <h3 style="color: var(--muted); margin-bottom: 20px;">منهجان للفهم:</h3>
+        <div class="approaches">
+            <div class="approach-box traditional">
+                <h3>التفسير التقليدي</h3>
+                <p>"المسارعة تعني السرعة في فعل الخير"</p>
+            </div>
+            <div class="approach-box quranic">
+                <h3>الدليل القرآني</h3>
+                <p>صفات محددة وخصائص قلبية</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Traditional View -->
+    <div class="slide slide-3">
+        <div class="header">
+            <h2>❌ التفسير التقليدي</h2>
+        </div>
+        <h3 style="font-size: 1.3rem; margin-bottom: 20px;">الفهم الشائع:</h3>
+        <ul>
+            <li>• "يسارعون" تعني ببساطة: يفعلون الخير بسرعة</li>
+            <li>• التركيز على سرعة الأفعال وكثرتها</li>
+            <li>• كل من يكثر من الخيرات يدخل في هذا الوصف</li>
+            <li>• الاهتمام بالظاهر دون الباطن</li>
+        </ul>
+        <div class="warning-box">
+            <h4>ما الذي يغفله هذا الفهم؟</h4>
+            <p>القرآن يذكر صفات محددة لهؤلاء الناس — الأمر ليس مجرد سرعة، بل هو عن هويتهم وحالتهم الروحية.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: Evidence #1 -->
+    <div class="slide slide-4" style="background: var(--light);">
+        <div class="evidence-header">
+            <h2>✓ الدليل الأول: سورة الأنبياء ٢١:٩٠</h2>
+        </div>
+        <div class="verse-box">
+            <p class="arabic">إِنَّهُمْ كَانُوا۟ يُسَـٰرِعُونَ فِى ٱلْخَيْرَٰتِ وَيَدْعُونَنَا رَغَبًا وَرَهَبًا ۖ وَكَانُوا۟ لَنَا خَـٰشِعِينَ</p>
+        </div>
+        <div style="display: flex; gap: 40px;">
+            <div style="flex: 1;">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">مَن هُم؟</h3>
+                <p style="font-size: 1.2rem;">الأنبياء زكريا ويحيى وأهلهما</p>
+            </div>
+            <div style="flex: 1;">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">صفاتهم:</h3>
+                <div class="char-list">
+                    <div class="char-item">١. يُسَارِعُونَ فِي الْخَيْرَاتِ</div>
+                    <div class="char-item">٢. يَدْعُونَنَا رَغَبًا وَرَهَبًا</div>
+                    <div class="char-item">٣. كَانُوا لَنَا خَاشِعِينَ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Evidence #2 -->
+    <div class="slide slide-5" style="background: var(--light);">
+        <div class="evidence-header">
+            <h2>✓ الدليل الثاني: سورة المؤمنون ٢٣:٥٧-٦١</h2>
+        </div>
+        <div class="verse-box">
+            <p class="arabic">أُو۟لَـٰٓئِكَ يُسَـٰرِعُونَ فِى ٱلْخَيْرَٰتِ وَهُمْ لَهَا سَـٰبِقُونَ</p>
+        </div>
+        <p style="color: var(--muted); margin-bottom: 20px;">ذكر القرآن ٥ صفات قبل هذه العبارة:</p>
+        <div class="char-list">
+            <div class="char-item">١. مِنْ خَشْيَةِ رَبِّهِم مُشْفِقُونَ</div>
+            <div class="char-item">٢. بِآيَاتِ رَبِّهِمْ يُؤْمِنُونَ</div>
+            <div class="char-item">٣. بِرَبِّهِمْ لَا يُشْرِكُونَ</div>
+            <div class="char-item">٤. يُؤْتُونَ مَا آتَوْا...</div>
+            <div class="char-item">٥. وَقُلُوبُهُمْ وَجِلَةٌ</div>
+        </div>
+        <div class="insight-box">
+            <p>ملاحظة مهمة: <strong>وَهُمْ لَهَا سَابِقُونَ</strong> — هم "سابقون" إلى الخير، وليسوا مجرد مسرعين</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: Evidence #3 -->
+    <div class="slide slide-6" style="background: var(--light);">
+        <div class="evidence-header">
+            <h2>✓ الدليل الثالث: سورة آل عمران ٣:١١٣-١١٤</h2>
+        </div>
+        <div class="verse-box">
+            <p class="arabic">وَيُسَـٰرِعُونَ فِى ٱلْخَيْرَٰتِ وَأُو۟لَـٰٓئِكَ مِنَ ٱلصَّـٰلِحِينَ</p>
+            <p style="color: var(--muted); margin-top: 10px;">"وأولئك من الصالحين"</p>
+        </div>
+        <h3 style="color: var(--accent); margin-bottom: 15px;">مَن هُم: أُمَّةٌ قَائِمَةٌ من أهل الكتاب</h3>
+        <div class="char-list">
+            <div class="char-item">١. يَتْلُونَ آيَاتِ اللَّهِ آنَاءَ اللَّيْلِ</div>
+            <div class="char-item">٢. وَهُمْ يَسْجُدُونَ</div>
+            <div class="char-item">٣. يُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ</div>
+            <div class="char-item">٤. يَأْمُرُونَ بِالْمَعْرُوفِ</div>
+            <div class="char-item">٥. يَنْهَوْنَ عَنِ الْمُنكَرِ</div>
+        </div>
+        <div class="insight-box" style="background: var(--light-green);">
+            <p style="color: var(--correct);"><strong>النتيجة: وَأُولَٰئِكَ مِنَ الصَّالِحِينَ</strong></p>
+        </div>
+    </div>
+
+    <!-- Slide 7: Contrast -->
+    <div class="slide slide-7">
+        <div class="header">
+            <h2>⚖ المقارنة القرآنية</h2>
+            <p style="color: var(--muted); margin-top: 10px;">نفس الفعل "يُسَارِعُونَ" يُستخدم مع أضداد</p>
+        </div>
+        <div class="contrast-grid">
+            <div class="contrast-box good">
+                <div class="title">يُسَارِعُونَ فِي الْخَيْرَاتِ<br><small>المسارعة في الخير</small></div>
+                <div class="content">
+                    <ul>
+                        <li>• الأنبياء وأهلهم</li>
+                        <li>• المؤمنون الصادقون</li>
+                        <li>• الصالحون من أهل الكتاب</li>
+                        <li style="margin-top: 20px;"><strong>مقرونة بـ:</strong></li>
+                        <li>خشية، خشوع، إيمان، دعاء، توحيد</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contrast-box bad">
+                <div class="title">يُسَارِعُونَ فِي الْكُفْرِ<br><small>المسارعة في الكفر</small></div>
+                <div class="content">
+                    <ul>
+                        <li>• المنافقون (٥:٤١)</li>
+                        <li>• الذين كفروا (٣:١٧٦)</li>
+                        <li style="margin-top: 20px;"><strong>وأيضاً:</strong></li>
+                        <li>يُسَارِعُونَ فِي الْإِثْمِ وَالْعُدْوَانِ</li>
+                        <li>(٥:٦٢)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Balance -->
+    <div class="slide slide-8">
+        <h2>💡 التوازن بين الرجاء والخوف</h2>
+        <p class="verse">وَيَدْعُونَنَا رَغَبًا وَرَهَبًا</p>
+        <p class="translation">"يدعوننا بين الرجاء والخوف"</p>
+        <div class="balance-boxes">
+            <div class="balance-box hope">
+                <h3>رَغَبًا</h3>
+                <p>الرجاء</p>
+                <p>الطمع في ثواب الله</p>
+            </div>
+            <div class="balance-box fear">
+                <h3>رَهَبًا</h3>
+                <p>الخوف</p>
+                <p>الخشية من سخط الله</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Comparison -->
+    <div class="slide slide-9">
+        <h2>الفهم التقليدي مقابل الدليل القرآني</h2>
+        <div class="comparison-table">
+            <div class="comparison-row">
+                <div class="comparison-cell comparison-header trad">الفهم التقليدي</div>
+                <div class="comparison-cell comparison-header quran">الدليل القرآني</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell trad-cell">التركيز على سرعة الأفعال</div>
+                <div class="comparison-cell quran-cell">التركيز على حال القلب والصفات</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell trad-cell">كل من يُسرع في الخير</div>
+                <div class="comparison-cell quran-cell">أشخاص محددون بصفات محددة</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell trad-cell">الاهتمام بالظاهر</div>
+                <div class="comparison-cell quran-cell">الحال الباطنة: خشية، خشوع، وجل</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell trad-cell">"افعل الخير بسرعة"</div>
+                <div class="comparison-cell quran-cell">مقرونة بالدعاء رغباً ورهباً</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell trad-cell">تعليم عام</div>
+                <div class="comparison-cell quran-cell">الأنبياء هم المثال الأعلى</div>
+            </div>
+        </div>
+        <div class="insight-box" style="margin-top: 30px;">
+            <p><strong>القرآن يُحدد مَن هم هؤلاء — وليس فقط ماذا يفعلون</strong></p>
+        </div>
+    </div>
+
+    <!-- Slide 10: Conclusion -->
+    <div class="slide slide-10">
+        <div class="accent-bar"></div>
+        <h2>الخلاصة</h2>
+        <p class="main-point">يُسَارِعُونَ فِي الْخَيْرَاتِ ليست مجرد سرعة —</p>
+        <p class="sub-point">بل هي صفة قلبية تتجلى في العمل</p>
+        <div class="conclusion-boxes">
+            <div class="conclusion-box">
+                <h3>إيمان وتوحيد</h3>
+                <p>إيمان عميق وتوحيد خالص</p>
+            </div>
+            <div class="conclusion-box">
+                <h3>خشية وخشوع</h3>
+                <p>خوف من الله وتواضع</p>
+            </div>
+            <div class="conclusion-box">
+                <h3>رغباً ورهباً</h3>
+                <p>رجاء ممزوج بالخوف</p>
+            </div>
+        </div>
+        <p class="final-message">
+            المؤمن يُسابق إلى الخير وهو متواضع خاشع،<br>
+            يعلم أن قبول عمله موقوف على رحمة الله
+        </p>
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

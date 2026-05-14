@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أهل النار وصفاتهم في القرآن الكريم</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #c53030;
+            --accent: #2c7a7b;
+            --bg-light: #f7fafc;
+            --bg-dark: #1a202c;
+            --text-dark: #2d3748;
+            --gold: #d69e2e;
+            --green: #276749;
+            --orange: #c05621;
+            --purple: #553c9a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            line-height: 2;
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--bg-dark) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 { font-size: 2.8em; margin-bottom: 15px; }
+        header p { font-size: 1.3em; opacity: 0.9; }
+
+        .term-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-right: 6px solid var(--primary);
+        }
+
+        .term-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .term-name {
+            font-size: 2em;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .term-count {
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+        }
+
+        .category-box {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .category-title {
+            color: var(--accent);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-title::before {
+            content: "◆";
+            color: var(--gold);
+        }
+
+        .trait-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        .trait-item {
+            background: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            border-right: 4px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trait-item .verse-ref {
+            background: var(--primary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .verse-card {
+            background: linear-gradient(to right, #fefcbf 0%, white 100%);
+            border-right: 5px solid var(--gold);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .verse-arabic {
+            font-size: 1.4em;
+            line-height: 2.2;
+            color: var(--bg-dark);
+        }
+
+        .verse-ref-large {
+            color: var(--accent);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .highlight-red { background: #fed7d7; padding: 2px 8px; border-radius: 4px; }
+        .highlight-green { background: #c6f6d5; padding: 2px 8px; border-radius: 4px; }
+        .highlight-yellow { background: #fefcbf; padding: 2px 8px; border-radius: 4px; }
+        .highlight-blue { background: #bee3f8; padding: 2px 8px; border-radius: 4px; }
+
+        .summary-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--bg-dark) 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .summary-box h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .summary-list {
+            list-style: none;
+        }
+
+        .summary-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .summary-list li::before {
+            content: "▸ ";
+            color: var(--gold);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: right;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:nth-child(even) { background: var(--bg-light); }
+        tr:hover { background: #edf2f7; }
+
+        .nature-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, white 100%);
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .nature-box h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary);
+        }
+
+        .comparison-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .sin-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+
+        .unique-badge {
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .term-header { flex-direction: column; gap: 15px; }
+            .trait-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>أهل النار وصفاتهم في القرآن الكريم</h1>
+        <p>دراسة تفصيلية للعلاقة بين كل مصطلح من مصطلحات النار والفئات المستحقة له</p>
+    </header>
+
+    <div class="container">
+
+        <!-- جهنم -->
+        <section class="term-section" style="border-right-color: #c53030;">
+            <div class="term-header">
+                <span class="term-name">١. جهنم</span>
+                <span class="term-count">٧٧ آية</span>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">الكافرون - الصنف الأكبر</h3>
+                <ul class="trait-list">
+                    <li class="trait-item"><span class="verse-ref">٣:١٢</span> رفض الإيمان بالله</li>
+                    <li class="trait-item"><span class="verse-ref">١٨:١٠٠</span> الكفر بالله وآياته</li>
+                    <li class="trait-item"><span class="verse-ref">٣٩:٣٢</span> الكذب على الله وتكذيب الحق</li>
+                    <li class="trait-item"><span class="verse-ref">٣٩:٧١</span> رفض دعوة الرسل</li>
+                    <li class="trait-item"><span class="verse-ref">٩٨:٦</span> كفار أهل الكتاب والمشركون</li>
+                </ul>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">المنافقون</h3>
+                <ul class="trait-list">
+                    <li class="trait-item"><span class="verse-ref">٤:١٤٠</span> الجلوس مع المستهزئين بآيات الله</li>
+                    <li class="trait-item"><span class="verse-ref">٩:٦٨</span> النفاق (ذكور وإناث)</li>
+                    <li class="trait-item"><span class="verse-ref">٤٨:٦</span> سوء الظن بالله</li>
+                </ul>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">المتكبرون والظالمون</h3>
+                <ul class="trait-list">
+                    <li class="trait-item"><span class="verse-ref">١٦:٢٩</span> التكبر عن عبادة الله</li>
+                    <li class="trait-item"><span class="verse-ref">٤٠:٧٦</span> الاستكبار</li>
+                    <li class="trait-item"><span class="verse-ref">٧:٤١</span> الظلم والبغي</li>
+                </ul>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">ذنوب محددة</h3>
+                <ul class="trait-list">
+                    <li class="trait-item"><span class="verse-ref">٤:٩٣</span> قتل المؤمن عمداً</li>
+                    <li class="trait-item"><span class="verse-ref">٨:١٦</span> الفرار من المعركة</li>
+                    <li class="trait-item"><span class="verse-ref">٩:٣٥</span> كنز الذهب والفضة</li>
+                    <li class="trait-item"><span class="verse-ref">٨٥:١٠</span> فتنة المؤمنين والمؤمنات</li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h4>خلاصة صفات أهل جهنم</h4>
+                <ul class="summary-list">
+                    <li>الكفر بالله ورسله - المصير الأساسي</li>
+                    <li>النفاق - إظهار الإيمان وإخفاء الكفر</li>
+                    <li>الشرك - اتخاذ شريك مع الله</li>
+                    <li>التكبر - الاستعلاء عن العبادة</li>
+                    <li>القتل العمد - قتل المؤمن</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- السعير -->
+        <section class="term-section" style="border-right-color: #d69e2e;">
+            <div class="term-header">
+                <span class="term-name">٢. السعير</span>
+                <span class="term-count">١٦ آية</span>
+            </div>
+
+            <div class="unique-badge">⭐ مخصص للشيطان وأتباعه - الارتباط الفريد!</div>
+
+            <div class="category-box">
+                <h3 class="category-title">الشيطان وحزبه</h3>
+                <div class="verse-card">
+                    <div class="verse-arabic">
+                        {وَلَقَدْ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنْيَا بِمَصَـٰبِيحَ وَجَعَلْنَـٰهَا رُجُومًا لِّلشَّيَـٰطِينِ ۖ <span class="highlight-red">وَأَعْتَدۡنَا لَهُمۡ عَذَابَ ٱلسَّعِيرِ</span>}
+                    </div>
+                    <div class="verse-ref-large">الملك: ٥</div>
+                </div>
+
+                <div class="verse-card">
+                    <div class="verse-arabic">
+                        {إِنَّ ٱلشَّيْطَـٰنَ لَكُمْ عَدُوٌّ فَٱتَّخِذُوهُ عَدُوًّا ۚ <span class="highlight-red">إِنَّمَا يَدْعُوا۟ حِزْبَهُۥ لِيَكُونُوا۟ مِنْ أَصْحَـٰبِ ٱلسَّعِيرِ</span>}
+                    </div>
+                    <div class="verse-ref-large">فاطر: ٦</div>
+                </div>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">صفات أخرى</h3>
+                <ul class="trait-list">
+                    <li class="trait-item"><span class="verse-ref">٣١:٢١</span> اتباع الآباء رغم ضلالهم</li>
+                    <li class="trait-item"><span class="verse-ref">٦٧:١٠</span> عدم استخدام السمع والعقل</li>
+                    <li class="trait-item"><span class="verse-ref">٤:١٠</span> أكل أموال اليتامى ظلماً</li>
+                    <li class="trait-item"><span class="verse-ref">٣٤:١٢</span> الجن المخالفون لأمر الله</li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h4>خلاصة صفات أهل السعير</h4>
+                <ul class="summary-list">
+                    <li>اتباع الشيطان - العلاقة الأساسية والفريدة</li>
+                    <li>التقليد الأعمى - اتباع الآباء دون تفكير</li>
+                    <li>تعطيل العقل - عدم استخدام السمع والبصيرة</li>
+                    <li>أكل أموال اليتامى - ظلم الضعفاء</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- سقر -->
+        <section class="term-section" style="border-right-color: #553c9a;">
+            <div class="term-header">
+                <span class="term-name">٣. سقر</span>
+                <span class="term-count">٤ آيات</span>
+            </div>
+
+            <div class="unique-badge">⭐ الآية الوحيدة التي تسأل أهل النار عن سبب دخولهم!</div>
+
+            <div class="verse-card" style="border-right-color: #553c9a;">
+                <div class="verse-arabic">
+                    {مَا سَلَكَكُمْ فِى سَقَرَ ۝ قَالُوا۟ <span class="highlight-red">لَمْ نَكُ مِنَ ٱلْمُصَلِّينَ</span> ۝ <span class="highlight-red">وَلَمْ نَكُ نُطْعِمُ ٱلْمِسْكِينَ</span> ۝ <span class="highlight-yellow">وَكُنَّا نَخُوضُ مَعَ ٱلْخَآئِضِينَ</span> ۝ <span class="highlight-blue">وَكُنَّا نُكَذِّبُ بِيَوْمِ ٱلدِّينِ</span>}
+                </div>
+                <div class="verse-ref-large">المدثر: ٤٢-٤٦</div>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">الذنوب الأربعة المحددة</h3>
+                <table>
+                    <tr>
+                        <th>الذنب</th>
+                        <th>التفصيل</th>
+                    </tr>
+                    <tr>
+                        <td><strong>١. ترك الصلاة</strong></td>
+                        <td>"لم نكُ من المصلين" - أول ذنب مذكور!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>٢. ترك إطعام المسكين</strong></td>
+                        <td>"لم نكُ نطعم المسكين" - البخل على الفقراء</td>
+                    </tr>
+                    <tr>
+                        <td><strong>٣. الخوض مع الخائضين</strong></td>
+                        <td>"كنا نخوض مع الخائضين" - الاستهزاء والسخرية</td>
+                    </tr>
+                    <tr>
+                        <td><strong>٤. تكذيب يوم الدين</strong></td>
+                        <td>"كنا نكذب بيوم الدين" - إنكار الآخرة</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="nature-box">
+                <h4>طبيعة سقر (المدثر: ٢٧-٢٩)</h4>
+                <ul class="summary-list" style="color: var(--text-dark);">
+                    <li><strong>لا تُبقي ولا تذر</strong> - لا تترك شيئاً دون حرق</li>
+                    <li><strong>لوّاحة للبشر</strong> - تلوح الجلود وتحرقها</li>
+                    <li><strong>عليها تسعة عشر</strong> - ملائكة موكلون بها</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- لظى -->
+        <section class="term-section" style="border-right-color: #c05621;">
+            <div class="term-header">
+                <span class="term-name">٤. لظى</span>
+                <span class="term-count">آية واحدة</span>
+            </div>
+
+            <div class="verse-card" style="border-right-color: #c05621;">
+                <div class="verse-arabic">
+                    {كَلَّآ إِنَّهَا لَظَىٰ ۝ <span class="highlight-red">نَزَّاعَةً لِّلشَّوَىٰ</span> ۝ تَدْعُوا۟ <span class="highlight-yellow">مَنْ أَدْبَرَ وَتَوَلَّىٰ</span> ۝ <span class="highlight-blue">وَجَمَعَ فَأَوْعَىٰ</span>}
+                </div>
+                <div class="verse-ref-large">المعارج: ١٥-١٨</div>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">صفات أهل لظى</h3>
+                <table>
+                    <tr>
+                        <th>الصفة</th>
+                        <th>المعنى</th>
+                    </tr>
+                    <tr>
+                        <td><strong>أَدْبَرَ</strong></td>
+                        <td>أعرض عن الحق</td>
+                    </tr>
+                    <tr>
+                        <td><strong>تَوَلَّىٰ</strong></td>
+                        <td>تولى عن الإيمان</td>
+                    </tr>
+                    <tr>
+                        <td><strong>جَمَعَ</strong></td>
+                        <td>جمع المال</td>
+                    </tr>
+                    <tr>
+                        <td><strong>أَوْعَىٰ</strong></td>
+                        <td>وعاه وكنزه ومنعه</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="nature-box">
+                <h4>طبيعة لظى</h4>
+                <ul class="summary-list" style="color: var(--text-dark);">
+                    <li><strong>نزّاعة للشوى</strong> - تنزع جلدة الرأس</li>
+                    <li><strong>تدعو</strong> - تنادي وتجذب أهلها إليها</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- الحطمة -->
+        <section class="term-section" style="border-right-color: #276749;">
+            <div class="term-header">
+                <span class="term-name">٥. الحطمة</span>
+                <span class="term-count">آيتان</span>
+            </div>
+
+            <div class="verse-card" style="border-right-color: #276749;">
+                <div class="verse-arabic">
+                    {وَيْلٌ لِّكُلِّ <span class="highlight-red">هُمَزَةٍ لُّمَزَةٍ</span> ۝ ٱلَّذِى <span class="highlight-yellow">جَمَعَ مَالًا وَعَدَّدَهُۥ</span> ۝ <span class="highlight-blue">يَحْسَبُ أَنَّ مَالَهُۥٓ أَخْلَدَهُۥ</span> ۝ كَلَّا ۖ لَيُنۢبَذَنَّ فِى ٱلْحُطَمَةِ}
+                </div>
+                <div class="verse-ref-large">الهمزة: ١-٤</div>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">صفات أهل الحطمة</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                    <span class="sin-tag">هُمَزَة - يغتاب الناس</span>
+                    <span class="sin-tag">لُمَزَة - يعيب الناس ويسخر</span>
+                    <span class="sin-tag">جمع المال وعدّه</span>
+                    <span class="sin-tag">يظن أن المال يخلده</span>
+                </div>
+            </div>
+
+            <div class="nature-box">
+                <h4>طبيعة الحطمة (الهمزة: ٥-٩)</h4>
+                <ul class="summary-list" style="color: var(--text-dark);">
+                    <li><strong>نار الله الموقدة</strong> - نار الله المشتعلة</li>
+                    <li><strong>تطّلع على الأفئدة</strong> - تصل إلى القلوب!</li>
+                    <li><strong>مؤصدة</strong> - مغلقة عليهم</li>
+                    <li><strong>في عمد ممددة</strong> - في أعمدة ممتدة</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- هاوية -->
+        <section class="term-section" style="border-right-color: #2c7a7b;">
+            <div class="term-header">
+                <span class="term-name">٦. هاوية</span>
+                <span class="term-count">آية واحدة</span>
+            </div>
+
+            <div class="verse-card" style="border-right-color: #2c7a7b;">
+                <div class="verse-arabic">
+                    {وَأَمَّا مَنْ <span class="highlight-red">خَفَّتْ مَوَٰزِينُهُۥ</span> ۝ فَأُمُّهُۥ هَاوِيَةٌ ۝ وَمَآ أَدْرَىٰكَ مَا هِيَهْ ۝ <span class="highlight-yellow">نَارٌ حَامِيَةٌ</span>}
+                </div>
+                <div class="verse-ref-large">القارعة: ٨-١١</div>
+            </div>
+
+            <div class="category-box">
+                <h3 class="category-title">الصفة الوحيدة المذكورة</h3>
+                <p style="font-size: 1.3em; text-align: center; padding: 20px;">
+                    <strong style="color: var(--secondary);">خفة الميزان</strong> = قلة الحسنات عن السيئات
+                </p>
+            </div>
+        </section>
+
+        <!-- الجدول المقارن الشامل -->
+        <section class="term-section">
+            <h2 style="color: var(--primary); font-size: 1.8em; margin-bottom: 25px;">الجدول المقارن الشامل</h2>
+
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>المصطلح</th>
+                            <th>الصنف الرئيسي</th>
+                            <th>الذنب المميز</th>
+                            <th>الطبيعة الخاصة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>جهنم</strong></td>
+                            <td>الكافرون والمنافقون</td>
+                            <td>الكفر والنفاق والشرك</td>
+                            <td>أعم وأشمل + "خالدين أبداً"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>السعير</strong></td>
+                            <td>الشيطان وحزبه</td>
+                            <td>اتباع الشيطان</td>
+                            <td>مخصص للشيطان وأتباعه</td>
+                        </tr>
+                        <tr>
+                            <td><strong>سقر</strong></td>
+                            <td>تاركو الصلاة والزكاة</td>
+                            <td>ترك أركان الإسلام</td>
+                            <td>لا تبقي ولا تذر</td>
+                        </tr>
+                        <tr>
+                            <td><strong>لظى</strong></td>
+                            <td>جامعو المال البخلاء</td>
+                            <td>كنز المال والإعراض</td>
+                            <td>تنزع جلدة الرأس</td>
+                        </tr>
+                        <tr>
+                            <td><strong>الحطمة</strong></td>
+                            <td>الهمازون اللمازون</td>
+                            <td>الغيبة والسخرية</td>
+                            <td>تطلع على الأفئدة</td>
+                        </tr>
+                        <tr>
+                            <td><strong>هاوية</strong></td>
+                            <td>من خفت موازينه</td>
+                            <td>قلة الحسنات</td>
+                            <td>هوة سحيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- الاستنتاجات -->
+        <section class="term-section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--bg-dark) 100%); color: white;">
+            <h2 style="color: var(--gold); font-size: 1.8em; margin-bottom: 25px;">الاستنتاجات الرئيسية</h2>
+
+            <div class="comparison-grid">
+                <div class="comparison-card" style="background: rgba(255,255,255,0.1); color: white; border-top-color: var(--gold);">
+                    <h3 style="color: var(--gold);">١. تخصيص كل مصطلح</h3>
+                    <ul class="summary-list">
+                        <li>جهنم ← الكافرون بشكل عام</li>
+                        <li>السعير ← أتباع الشيطان تحديداً</li>
+                        <li>سقر ← تاركو الصلاة والزكاة</li>
+                        <li>لظى ← كانزو المال</li>
+                        <li>الحطمة ← المغتابون والساخرون</li>
+                        <li>هاوية ← من قلّت حسناته</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card" style="background: rgba(255,255,255,0.1); color: white; border-top-color: var(--gold);">
+                    <h3 style="color: var(--gold);">٢. دقة العدل الإلهي</h3>
+                    <p style="line-height: 2;">
+                        كل مصطلح يرتبط بنوع معين من الذنوب، مما يشير إلى دقة العدل الإلهي في المجازاة. الذنوب المختلفة لها عقوبات مختلفة ومصطلحات مختلفة.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>دراسة قرآنية بحتة وفق منهج "القرآن يفسر نفسه"</p>
+    </footer>
+</body>
+</html>

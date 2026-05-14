@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الملخص — الاطمئنان (ط م أ ن)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Amiri', serif; background: #f9f6f0; color: #2c2c2c; line-height: 1.9; padding: 30px; max-width: 960px; margin: 0 auto; }
+  .disclaimer { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px 18px; margin-bottom: 25px; font-size: 0.88rem; color: #664d03; }
+  nav { background: #1a5f7a; padding: 12px 18px; border-radius: 8px; margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { color: #e0f0f5; text-decoration: none; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; transition: background 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.2); }
+  h1 { color: #1a5f7a; font-size: 1.8rem; margin-bottom: 8px; border-bottom: 3px solid #1a5f7a; padding-bottom: 10px; }
+  h2 { color: #1a5f7a; font-size: 1.4rem; margin: 30px 0 15px; padding: 8px 14px; background: #e8f4f8; border-radius: 6px; border-right: 4px solid #1a5f7a; }
+  h3 { color: #2980b9; font-size: 1.15rem; margin: 20px 0 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  th { background: #1a5f7a; color: white; padding: 10px 12px; font-weight: 700; text-align: right; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; text-align: right; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  .verse-ref { background: #e8f4f8; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; color: #1a5f7a; white-space: nowrap; }
+  .note { background: #f0f8ff; border-right: 3px solid #2980b9; padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 0.95rem; }
+  .finding { background: white; border-radius: 10px; padding: 18px; margin: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.07); border-right: 4px solid #27ae60; }
+  .finding.critical { border-right-color: #e74c3c; }
+  .finding.insight { border-right-color: #f39c12; }
+  .finding-title { font-size: 1.1rem; color: #1a5f7a; font-weight: 700; margin-bottom: 8px; }
+  .arabic-quote { font-size: 1.15rem; background: #fafafa; padding: 8px 14px; border-radius: 6px; margin: 6px 0; display: block; }
+  .hero-box { background: linear-gradient(135deg, #1a5f7a 0%, #2980b9 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 20px 0; }
+  .hero-box .hero-word { font-size: 3rem; letter-spacing: 5px; margin: 10px 0; }
+  .hero-box .hero-root { font-size: 1.3rem; opacity: 0.9; letter-spacing: 15px; }
+  .hero-box .hero-meaning { font-size: 1.2rem; margin-top: 12px; background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 6px; display: inline-block; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 15px 0; }
+  .stat-card { background: white; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .stat-card .num { font-size: 2rem; color: #1a5f7a; font-weight: 700; }
+  .stat-card .label { font-size: 0.85rem; color: #666; }
+  .pattern-box { background: linear-gradient(135deg, #1a5f7a 0%, #2980b9 100%); color: white; padding: 20px; border-radius: 10px; margin: 15px 0; }
+  .pattern-box h3 { color: white; margin-top: 0; }
+  .pattern-box .formula { font-size: 1.2rem; text-align: center; padding: 10px; background: rgba(255,255,255,0.15); border-radius: 6px; margin: 10px 0; }
+  .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+  .comp-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .comp-card.positive { border-top: 3px solid #27ae60; }
+  .comp-card.negative { border-top: 3px solid #e74c3c; }
+  .comp-card h4 { color: #1a5f7a; margin-bottom: 8px; }
+  .level-track { display: flex; flex-direction: column; gap: 0; margin: 15px 0; }
+  .level-item { background: white; padding: 12px 18px; border-right: 4px solid #1a5f7a; position: relative; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .level-item:last-child { border-right-color: #27ae60; background: #f0faf0; }
+  .level-item .level-num { display: inline-block; background: #1a5f7a; color: white; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-size: 0.85rem; margin-left: 8px; }
+  .level-item:last-child .level-num { background: #27ae60; }
+  .level-item .level-verse { font-size: 0.85rem; color: #888; margin-top: 4px; }
+  .arrow-down { text-align: center; color: #1a5f7a; font-size: 1.3rem; padding: 2px 0; }
+  .source-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0; }
+  .source-link { background: white; border-radius: 8px; padding: 14px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+  .source-link:hover { transform: translateY(-2px); box-shadow: 0 3px 8px rgba(0,0,0,0.12); }
+  .source-link a { text-decoration: none; color: #1a5f7a; font-weight: 700; font-size: 0.95rem; }
+  .source-link .icon { font-size: 1.5rem; display: block; margin-bottom: 6px; }
+  .accuracy-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
+  .accuracy-high { background: #27ae60; color: white; }
+  .accuracy-medium { background: #f39c12; color: white; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي مع تأصيل من النص الكامل للقرآن الكريم. رغم أن النتائج مصممة لتكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+<nav>
+  <a href="00_الملخص.html" class="active">الملخص</a>
+  <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+  <a href="02_الآيات.html">الآيات</a>
+  <a href="03_التحليل.html">التحليل</a>
+  <a href="04_الاكتشافات.html">الاكتشافات</a>
+  <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a>
+</nav>
+
+<h1>ملخص البحث — الاطمئنان</h1>
+
+<!-- ===== مربع البطل ===== -->
+<div class="hero-box">
+  <div class="hero-word">الاطمئنان</div>
+  <div class="hero-root">ط &nbsp; م &nbsp; أ &nbsp; ن</div>
+  <div class="hero-meaning">سكون القلب واستقراره بعد قلق أو اضطراب — وقيمته تتحدد بمتعلَّقه</div>
+</div>
+
+<!-- ===== إحصائيات عامة ===== -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="num">١٣</div>
+    <div class="label">ورود في القرآن</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">١٢</div>
+    <div class="label">آية</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">١١</div>
+    <div class="label">سور</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">٤</div>
+    <div class="label">صيغ صرفية</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">رباعي</div>
+    <div class="label">نوع الجذر</div>
+  </div>
+</div>
+
+<!-- ===== ١. المعنى القرآني المستخلص ===== -->
+<h2 id="meaning">١. المعنى القرآني المستخلص من الآيات</h2>
+
+<div class="finding critical">
+  <div class="finding-title">🔑 التعريف القرآني للاطمئنان</div>
+  <p>من خلال تحليل جميع الورود الثلاثة عشر في القرآن، يتكشّف أن <strong>الاطمئنان</strong> هو:</p>
+  <p><strong>سكون داخلي عميق واستقرار يأتي بعد حالة من القلق أو التساؤل أو الاضطراب</strong>، يتحقق في القلب ابتداءً ثم يتسع ليشمل النفس بأكملها. وهو ليس فضيلة بذاته، بل <strong>قيمته تتحدد بمتعلَّقه</strong>: فإن كان متعلقه الله وذكره والإيمان فهو أسمى حالات القلب، وإن كان متعلقه الدنيا فهو سبب خسران.</p>
+  <div style="margin-top: 10px;">
+    <strong>الأدلة المحورية:</strong>
+    <span class="arabic-quote">«أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ» <a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></span>
+    <span class="arabic-quote">«وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ» <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></span>
+    <span class="arabic-quote">«يَـٰٓأَيَّتُهَا ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ» <a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></span>
+  </div>
+</div>
+
+<!-- ===== ٢. الاكتشافات الرئيسية ===== -->
+<h2 id="key-findings">٢. الاكتشافات الرئيسية</h2>
+
+<!-- اكتشاف ١ -->
+<div class="finding critical">
+  <div class="finding-title">اكتشاف ١: القطبية المزدوجة — المتعلَّق يحدد القيمة</div>
+  <p>القرآن يستخدم نفس الجذر في سياقين متعاكسين: <strong>ممدوح</strong> (٩ مرات — بالله والإيمان) و<strong>مذموم</strong> (مرتين — بالدنيا). الفارق الوحيد هو المتعلَّق. → <a href="03_التحليل.html#polarity">التفاصيل</a></p>
+</div>
+
+<div class="pattern-box">
+  <div class="formula">الاطمئنان + متعلَّق إلهي = فضيلة عليا</div>
+  <div class="formula">الاطمئنان + متعلَّق دنيوي = سبب خسران</div>
+</div>
+
+<!-- اكتشاف ٢ -->
+<div class="finding">
+  <div class="finding-title">اكتشاف ٢: الاطمئنان مرحلة أعمق من الإيمان</div>
+  <p>إبراهيم عليه السلام أكّد إيمانه («بلى») ثم طلب الاطمئنان كشيء زائد عنه (<a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a>). وفي <a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a>: «الذين آمنوا وتطمئنّ قلوبهم» — الإيمان فعل تمّ (ماضٍ) والاطمئنان حالة مستمرة (مضارع) تتبعه. → <a href="03_التحليل.html#iman-relation">التفاصيل</a></p>
+</div>
+
+<!-- اكتشاف ٣ -->
+<div class="finding">
+  <div class="finding-title">اكتشاف ٣: غياب المصدر من القرآن</div>
+  <p>لم يرد المصدر الصريح «اطمئنان» في القرآن قط. جاء الجذر حصراً في صيغ <strong>الأفعال</strong> (اطمأنّ، تطمئنّ، اطمأننتم) و<strong>اسم الفاعل</strong> (مطمئنّ، مطمئنة). هذا يشير إلى أن القرآن يقدم الاطمئنان كـ<strong>حالة حيّة متحركة</strong> لا كمفهوم نظري مجرد. → <a href="01_التحليل_الصرفي.html">التفاصيل</a></p>
+</div>
+
+<!-- اكتشاف ٤ -->
+<div class="finding insight">
+  <div class="finding-title">اكتشاف ٤: الزمن الصرفي يحمل دلالة أخلاقية</div>
+  <p>الاطمئنان <strong>الإيجابي</strong> يأتي غالبًا بصيغ مستمرة (مضارع، اسم فاعل) — حالة حيّة. بينما الاطمئنان <strong>السلبي</strong> يأتي بالفعل الماضي — قرار منتهٍ محسوم. الآيات تشير إلى أن الاطمئنان بالله حالة <strong>متجددة</strong>، والاطمئنان بالدنيا <strong>ركود</strong>. → <a href="03_التحليل.html#usage-patterns">التفاصيل</a></p>
+</div>
+
+<!-- اكتشاف ٥ -->
+<div class="finding">
+  <div class="finding-title">اكتشاف ٥: القلب هو المحل الأساسي (٥٤٪)</div>
+  <p>في ٧ من ١٣ وروداً، يُنسب الاطمئنان إلى «القلب» أو «القلوب». وفي الذروة (<a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a>) يُنسب إلى «النفس» بأكملها. هذا يكشف مسار التدرج: يبدأ في القلب ثم يتسع حتى يشمل النفس كلها. → <a href="03_التحليل.html#parallels">التفاصيل</a></p>
+</div>
+
+<!-- ===== ٣. مراتب الاطمئنان ===== -->
+<h2 id="levels">٣. مراتب الاطمئنان في القرآن</h2>
+
+<div class="level-track">
+  <div class="level-item">
+    <span class="level-num">١</span>
+    <strong>الاطمئنان المادي</strong> — استقرار في المكان وغياب الخطر
+    <div class="level-verse">«فإذا اطمأننتم فأقيموا الصلاة» <a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a></div>
+  </div>
+  <div class="arrow-down">▼</div>
+  <div class="level-item">
+    <span class="level-num">٢</span>
+    <strong>طلب الاطمئنان</strong> — القلب المؤمن يبحث عن سكون أعمق
+    <div class="level-verse">«ليطمئنّ قلبي» <a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a> — «وتطمئنّ قلوبنا» <a href="02_الآيات.html#verse-5-113" class="verse-ref">٥:١١٣</a></div>
+  </div>
+  <div class="arrow-down">▼</div>
+  <div class="level-item">
+    <span class="level-num">٣</span>
+    <strong>الاطمئنان بذكر الله</strong> — حالة مستمرة من سكون القلب
+    <div class="level-verse">«ألا بذكر الله تطمئنّ القلوب» <a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></div>
+  </div>
+  <div class="arrow-down">▼</div>
+  <div class="level-item">
+    <span class="level-num">٤</span>
+    <strong>القلب المطمئن بالإيمان</strong> — صفة ثابتة تصمد أمام الإكراه
+    <div class="level-verse">«وقلبه مطمئنّ بالإيمان» <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></div>
+  </div>
+  <div class="arrow-down">▼</div>
+  <div class="level-item" style="border-right-color: #27ae60; background: #f0faf0;">
+    <span class="level-num" style="background: #27ae60;">٥</span>
+    <strong>النفس المطمئنة</strong> — أعلى المراتب: النفس بأكملها صارت مطمئنة
+    <div class="level-verse">«يا أيتها النفس المطمئنة» <a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></div>
+  </div>
+</div>
+
+<div class="note">→ التفاصيل الكاملة في <a href="03_التحليل.html#levels">التحليل السياقي §٧</a></div>
+
+<!-- ===== ٤. العلاقات السببية ===== -->
+<h2 id="causation">٤. خلاصة العلاقات السببية</h2>
+
+<div class="comparison-grid">
+  <div class="comp-card positive">
+    <h4>✅ المسار الإيجابي</h4>
+    <p><strong>إيمان + ذكر الله + رؤية آياته</strong></p>
+    <p>↓</p>
+    <p><strong>اطمئنان القلب</strong></p>
+    <p>↓</p>
+    <p><strong>ثبات أمام الابتلاء</strong></p>
+    <p>↓</p>
+    <p><strong>النفس المطمئنة ← ارجعي إلى ربك</strong></p>
+  </div>
+  <div class="comp-card negative">
+    <h4>❌ المسار السلبي</h4>
+    <p><strong>الرضا بالدنيا + الاطمئنان بها</strong></p>
+    <p>↓</p>
+    <p><strong>غفلة عن آيات الله</strong></p>
+    <p>↓</p>
+    <p><strong>انقلاب عند الفتنة</strong></p>
+    <p>↓</p>
+    <p><strong>خسران الدنيا والآخرة</strong></p>
+  </div>
+</div>
+
+<div class="note">→ التفاصيل الكاملة في <a href="03_التحليل.html#causation">التحليل السياقي §٨</a></div>
+
+<!-- ===== ٥. المقارنة مع التفاسير ===== -->
+<h2 id="traditional">٥. المقارنة مع التفسير التقليدي</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>الجانب</th>
+    <th>الفهم التقليدي</th>
+    <th>ما يكشفه التحليل القرآني</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><strong>تعريف الاطمئنان</strong></td>
+    <td>سكون وهدوء (القرطبي: «اعتدال وسكون»)</td>
+    <td>سكون <strong>بعد قلق</strong> — البُعد الانتقالي جوهري في المعنى</td>
+  </tr>
+  <tr>
+    <td><strong>ازدواجية القطبية</strong></td>
+    <td>التفاسير تتعامل مع كل آية منفردة</td>
+    <td><strong>نمط عابر للآيات</strong>: نفس الجذر يُستخدم إيجاباً وسلباً، والمتعلَّق هو الفارق</td>
+  </tr>
+  <tr>
+    <td><strong>الصيغ الصرفية</strong></td>
+    <td>لم تُلاحظ دلالة غياب المصدر</td>
+    <td>القرآن يقدم الاطمئنان كـ<strong>حالة حيّة</strong> (أفعال + اسم فاعل) لا كمفهوم مجرد</td>
+  </tr>
+  <tr>
+    <td><strong>نموذج المراتب</strong></td>
+    <td>ابن كثير: «الترقي من علم اليقين إلى عين اليقين»</td>
+    <td>خمسة مستويات تصاعدية من المادي إلى النفس المطمئنة</td>
+  </tr>
+  <tr>
+    <td><strong>الدلالة الزمنية</strong></td>
+    <td>لم تُلاحظ</td>
+    <td>الإيجابي بالمضارع (حالة متجددة)، السلبي بالماضي (قرار منتهٍ)</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="finding insight">
+  <div class="finding-title">📋 تقييم أفضل المصادر التقليدية</div>
+  <table>
+    <tr><th>المصدر</th><th>التقييم</th><th>الملاحظة</th></tr>
+    <tr><td><strong>القرطبي</strong></td><td><span class="accuracy-badge accuracy-high">الأفضل</span></td><td>تعريفات لغوية دقيقة، أوجه متعددة، تمييز بين أنواع اليقين</td></tr>
+    <tr><td><strong>ابن كثير</strong></td><td><span class="accuracy-badge accuracy-high">ممتاز</span></td><td>روايات مضيئة (قصة عمار)، تعريف «الدائرة مع الحق»</td></tr>
+    <tr><td><strong>التفسير الميسر</strong></td><td><span class="accuracy-badge accuracy-medium">مقبول</span></td><td>صحيح لكن مختصر، يفتقر للعمق</td></tr>
+  </table>
+  <p style="margin-top: 8px;">→ التفاصيل الكاملة في <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a></p>
+</div>
+
+<!-- ===== ٦. الأضداد ===== -->
+<h2 id="antonyms">٦. أضداد الاطمئنان في القرآن</h2>
+
+<table>
+  <tr><th>الضد</th><th>العلاقة</th><th>الآية</th></tr>
+  <tr>
+    <td><strong>الخوف</strong></td>
+    <td>الحالة التي يزيلها الاطمئنان</td>
+    <td><a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a> <a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a></td>
+  </tr>
+  <tr>
+    <td><strong>الانقلاب</strong></td>
+    <td>تحوّل مفاجئ — ضد الثبات</td>
+    <td><a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></td>
+  </tr>
+  <tr>
+    <td><strong>الغفلة</strong></td>
+    <td>الاطمئنان بالدنيا = نوع من الغفلة</td>
+    <td><a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a></td>
+  </tr>
+  <tr>
+    <td><strong>شرح الصدر بالكفر</strong></td>
+    <td>انفتاح طوعي على الكفر — ضد سكون الإيمان</td>
+    <td><a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></td>
+  </tr>
+</table>
+
+<div class="note">بجمع الأضداد: الاطمئنان الحقيقي = <strong>ثبات لا يتزعزع</strong> (ضد الانقلاب) + <strong>سكون بعد قلق</strong> (ضد الخوف) + <strong>يقظة واعية</strong> (ضد الغفلة) + <strong>انسجام مع الإيمان</strong> (ضد شرح الصدر بالكفر). → <a href="03_التحليل.html#antonyms">التفاصيل</a></div>
+
+<!-- ===== ٧. اتجاهات البحث المستقبلي ===== -->
+<h2 id="future">٧. اتجاهات البحث المستقبلي</h2>
+
+<table>
+  <tr><th>#</th><th>الموضوع</th><th>النوع</th><th>السبب</th></tr>
+  <tr><td>١</td><td>سكينة (س ك ن)</td><td>مرادف</td><td>أقرب مرادف — هل هي السبب والاطمئنان الأثر؟</td></tr>
+  <tr><td>٢</td><td>رضا (ر ض ي)</td><td>مرادف</td><td>«راضية مرضية» بعد «المطمئنة» — مرحلتان أم صفتان؟</td></tr>
+  <tr><td>٣</td><td>ذكر (ذ ك ر)</td><td>سبب</td><td>السبب الحصري المعلن — ما حقيقة الذكر القرآني؟</td></tr>
+  <tr><td>٤</td><td>قلب (ق ل ب)</td><td>محل</td><td>في ٥٨٪ من الآيات — ما هو القلب القرآني؟</td></tr>
+  <tr><td>٥</td><td>نفس (ن ف س)</td><td>محل</td><td>مراتب النفس (أمّارة، لوّامة، مطمئنة)</td></tr>
+  <tr><td>٦</td><td>شرح (ش ر ح)</td><td>ضد</td><td>شرح بالكفر مقابل اطمئنان بالإيمان</td></tr>
+</table>
+
+<div class="note">→ التفاصيل الكاملة في <a href="04_الاكتشافات.html">الاكتشافات</a></div>
+
+<!-- ===== ٨. ملفات المصدر ===== -->
+<h2 id="sources">٨. ملفات المصدر للدراسة المعمّقة</h2>
+
+<div class="source-links">
+  <div class="source-link">
+    <span class="icon">📊</span>
+    <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+    <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">الجذر، الصيغ، الجدول الصرفي</div>
+  </div>
+  <div class="source-link">
+    <span class="icon">📖</span>
+    <a href="02_الآيات.html">الآيات</a>
+    <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">جميع الآيات مصنّفة (١٣ وروداً)</div>
+  </div>
+  <div class="source-link">
+    <span class="icon">🔍</span>
+    <a href="03_التحليل.html">التحليل السياقي</a>
+    <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">الأنماط، المراتب، العلاقات</div>
+  </div>
+  <div class="source-link">
+    <span class="icon">💡</span>
+    <a href="04_الاكتشافات.html">الاكتشافات</a>
+    <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">المرادفات، الأضداد، البحث المستقبلي</div>
+  </div>
+  <div class="source-link">
+    <span class="icon">📚</span>
+    <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a>
+    <div style="font-size: 0.8rem; color: #888; margin-top: 4px;">التفاسير، الترجمات، التقييم</div>
+  </div>
+</div>
+
+<div class="disclaimer" style="margin-top: 30px;">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي مع تأصيل من النص الكامل للقرآن الكريم. رغم أن النتائج مصممة لتكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاكتشافات - بحث الإيمان</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        body { font-family: 'Amiri', 'Traditional Arabic', serif; line-height: 2.2; max-width: 1100px; margin: 0 auto; padding: 20px; background: #fafafa; color: #333; }
+        h1, h2, h3 { color: #1a5f7a; }
+        h1 { text-align: center; border-bottom: 3px solid #1a5f7a; padding-bottom: 15px; }
+        .nav { background: #1a5f7a; padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center; }
+        .nav a { color: white; text-decoration: none; margin: 0 8px; padding: 5px 12px; border-radius: 3px; }
+        .nav a:hover { background: rgba(255,255,255,0.2); }
+        .nav a.active { background: rgba(255,255,255,0.3); font-weight: bold; }
+        .discovery-card { background: white; padding: 25px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-right: 5px solid #28a745; }
+        .discovery-card.synonym { border-right-color: #17a2b8; }
+        .discovery-card.antonym { border-right-color: #dc3545; }
+        .discovery-card.coupled { border-right-color: #ffc107; }
+        .discovery-card.causal { border-right-color: #6f42c1; }
+        .discovery-card.definition { border-right-color: #fd7e14; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 15px; font-size: 0.8em; color: white; margin-left: 8px; }
+        .tag-synonym { background: #17a2b8; }
+        .tag-antonym { background: #dc3545; }
+        .tag-coupled { background: #ffc107; color: #333; }
+        .tag-causal { background: #6f42c1; }
+        .tag-definition { background: #fd7e14; }
+        .tag-pending { background: #6c757d; }
+        .tag-analyzed { background: #28a745; }
+        .priority { font-size: 1.2em; }
+        .verse-quote { background: #f8f9fa; padding: 12px; margin: 10px 0; border-radius: 5px; font-size: 1.1em; color: #1a5f7a; line-height: 2.5; border-right: 3px solid #2d8aa5; }
+        .verse-ref { color: #888; font-size: 0.85em; font-weight: bold; }
+        .keyword { color: #d63384; font-weight: bold; }
+        .pattern-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pattern-table th, .pattern-table td { border: 1px solid #ddd; padding: 12px; text-align: right; }
+        .pattern-table th { background: #1a5f7a; color: white; }
+        .pattern-table tr:nth-child(even) { background: #f8f9fa; }
+        .queue-summary { background: linear-gradient(135deg, #e8f4f8 0%, #d4edda 100%); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .disclaimer { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin: 20px 0; font-size: 0.9em; }
+        .section-divider { border: none; border-top: 2px dashed #1a5f7a; margin: 40px 0; opacity: 0.3; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="00_الملخص.html">الملخص</a>
+        <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+        <a href="02_الآيات.html">الآيات</a>
+        <a href="03_التحليل.html">التحليل</a>
+        <a href="04_الاكتشافات.html" class="active">الاكتشافات</a>
+        <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a>
+    </nav>
+
+    <h1>الاكتشافات واتجاهات البحث المستقبلية</h1>
+
+    <div class="disclaimer">
+        ⚠️ هذا التقرير من إنتاج وكيل بحث قرآني ذكي مع تأصيل من النص الكامل للقرآن الكريم. النتائج مبنية على تحليل شامل لكنها لا يمكن أن تكون مضمونة بشكل مطلق، ولا ينبغي مشاركتها باعتبارها مرجعاً نهائياً.
+    </div>
+
+    <!-- ===== ملخص قائمة الاكتشافات ===== -->
+    <div class="queue-summary">
+        <h2>ملخص الاكتشافات</h2>
+        <p>أثناء تحليل كلمة «الإيمان» في القرآن الكريم، ظهرت الكلمات والمفاهيم التالية كاتجاهات بحثية مستقبلية واعدة. تُصنَّف حسب نوع العلاقة مع الإيمان:</p>
+
+        <table class="pattern-table">
+            <tr>
+                <th>النوع</th>
+                <th>العدد</th>
+                <th>الحالة</th>
+            </tr>
+            <tr><td><span class="tag tag-synonym">مرادفات محتملة</span></td><td>4</td><td>بحاجة لبحث مستقل</td></tr>
+            <tr><td><span class="tag tag-antonym">أضداد</span></td><td>6</td><td>تحليل أولي — بحاجة لتعميق</td></tr>
+            <tr><td><span class="tag tag-coupled">كلمات مقترنة</span></td><td>5</td><td>رُصد الاقتران — بحاجة لبحث مستقل</td></tr>
+            <tr><td><span class="tag tag-causal">علاقات سببية</span></td><td>4</td><td>تشير الآيات إليها — بحاجة لتأكيد</td></tr>
+            <tr><td><span class="tag tag-definition">تعريفات قرآنية</span></td><td>3</td><td>القرآن يُعرّف المفهوم — بحاجة لتجميع</td></tr>
+        </table>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== المرادفات المحتملة ===== -->
+    <h2><span class="tag tag-synonym">مرادفات محتملة</span> كلمات قد تبدو مرادفة للإيمان</h2>
+
+    <div class="discovery-card synonym">
+        <h3>١. التصديق <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ص د ق</p>
+        <p><strong>سبب الاكتشاف:</strong> كثير من المفسرين يُعرّفون الإيمان بأنه «التصديق». لكن القرآن لا يستخدم «صدّق» كمرادف مباشر لـ«آمن». هل هناك فروق دقيقة؟</p>
+        <div class="verse-quote">
+            <span class="verse-ref">[يوسف: 17]</span>
+            وَمَا أَنتَ <span class="keyword">بِمُؤْمِنٍ</span> لَّنَا وَلَوْ كُنَّا <span class="keyword">صَادِقِينَ</span>
+        </div>
+        <p><strong>الملاحظة:</strong> في هذه الآية، استُخدم «مؤمن لنا» بمعنى «مصدّق لنا»، مما يوحي بتقارب المعنيين. لكن هل يُستخدمان بنفس الطريقة في سياقات أخرى؟</p>
+        <p><strong>أسئلة بحثية:</strong> هل «آمن بـ» و«صدّق بـ» متطابقتان في الاستخدام القرآني؟ متى يختار القرآن إحداهما دون الأخرى؟</p>
+    </div>
+
+    <div class="discovery-card synonym">
+        <h3>٢. اليقين <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ي ق ن</p>
+        <p><strong>سبب الاكتشاف:</strong> الإيمان يشترط عدم الارتياب (49:15)، واليقين يبدو كأعلى درجات التصديق.</p>
+        <div class="verse-quote">
+            <span class="verse-ref">[البقرة: 4]</span>
+            وَبِالْآخِرَةِ هُمْ <span class="keyword">يُوقِنُونَ</span>
+        </div>
+        <p><strong>الملاحظة:</strong> «يوقنون» جاءت في وصف المتقين (البقرة 2-4) إلى جانب «يؤمنون بالغيب». هل اليقين درجة أعلى من الإيمان أم جزء منه؟</p>
+        <p><strong>أسئلة بحثية:</strong> ما الفرق بين «يؤمنون» و«يوقنون» في القرآن؟ هل اليقين شرط للإيمان أم نتيجة له؟</p>
+    </div>
+
+    <div class="discovery-card synonym">
+        <h3>٣. الهُدى <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> هـ د ي</p>
+        <p><strong>سبب الاكتشاف:</strong> «هداكم للإيمان» (49:17) — الهداية تقود إلى الإيمان. وفي 6:82 الإيمان يُنتج الاهتداء.</p>
+        <p><strong>أسئلة بحثية:</strong> هل الهداية سابقة للإيمان أم نتيجة له أم متلازمة معه؟ كيف يستخدم القرآن «هدى» مقابل «آمن»؟</p>
+    </div>
+
+    <div class="discovery-card synonym">
+        <h3>٤. التقوى <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> و ق ي</p>
+        <p><strong>سبب الاكتشاف:</strong> المتقون يُوصفون بالإيمان في بداية البقرة (2:2-4)، والتقوى تقترن كثيراً بالإيمان.</p>
+        <p><strong>أسئلة بحثية:</strong> ما العلاقة بين الإيمان والتقوى؟ هل التقوى نتيجة للإيمان أم مرتبة أعلى منه؟</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== الأضداد ===== -->
+    <h2><span class="tag tag-antonym">أضداد</span> كلمات تقابل الإيمان في القرآن</h2>
+
+    <div class="discovery-card antonym">
+        <h3>١. الكفر <span class="tag tag-pending">بحاجة لبحث مستقل</span> <span class="priority">⭐⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ك ف ر</p>
+        <p><strong>سبب الاكتشاف:</strong> الضد الأول والأكثر مباشرة للإيمان في القرآن. يرد في مئات المواضع مقابل الإيمان.</p>
+        <div class="verse-quote">
+            <span class="verse-ref">[الحجرات: 7]</span>
+            حَبَّبَ إِلَيْكُمُ <span class="keyword">الْإِيمَانَ</span>... وَكَرَّهَ إِلَيْكُمُ <span class="keyword">الْكُفْرَ</span> وَالْفُسُوقَ وَالْعِصْيَانَ
+        </div>
+        <p><strong>أسئلة بحثية:</strong> الكفر في أصله اللغوي «الستر والتغطية» — كيف يُجسّد ذلك معنى ضدية الإيمان؟ هل الكافر مَن يُغطّي الحق الذي يعرفه؟</p>
+    </div>
+
+    <div class="discovery-card antonym">
+        <h3>٢. النفاق <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ن ف ق</p>
+        <p><strong>سبب الاكتشاف:</strong> المنافقون يُظهرون الإيمان ويُبطنون الكفر — يكشفون عن ثنائية الظاهر/الباطن في الإيمان.</p>
+        <div class="verse-quote">
+            <span class="verse-ref">[البقرة: 8]</span>
+            وَمِنَ النَّاسِ مَن يَقُولُ <span class="keyword">آمَنَّا</span> بِاللَّـهِ وَبِالْيَوْمِ الْآخِرِ وَمَا هُم <span class="keyword">بِمُؤْمِنِينَ</span>
+        </div>
+        <p><strong>أسئلة بحثية:</strong> ما المعنى القرآني الدقيق للنفاق؟ هل هو ضد الإيمان أم ضد الإسلام أم بينهما؟</p>
+    </div>
+
+    <div class="discovery-card antonym">
+        <h3>٣. الريب / الشك <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ر ي ب</p>
+        <p><strong>سبب الاكتشاف:</strong> الإيمان يشترط صراحةً «لم يرتابوا» (49:15). الريب ضد اليقين الذي يتطلبه الإيمان.</p>
+        <p><strong>أسئلة بحثية:</strong> ما الفرق بين الريب والشك في القرآن؟ كيف يُستخدم «ريب» في سياقات أخرى غير الإيمان؟</p>
+    </div>
+
+    <div class="discovery-card antonym">
+        <h3>٤. الفسوق <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ف س ق</p>
+        <p><strong>سبب الاكتشاف:</strong> ورد ضداً للإيمان في 49:7 — «كَرَّهَ إِلَيْكُمُ الْكُفْرَ وَالْفُسُوقَ وَالْعِصْيَانَ».</p>
+        <p><strong>أسئلة بحثية:</strong> ما الفرق بين الفسوق والكفر والعصيان؟ لماذا ذُكرت ثلاثتها كأضداد للإيمان الواحد؟</p>
+    </div>
+
+    <div class="discovery-card antonym">
+        <h3>٥. العصيان <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐</span></h3>
+        <p><strong>الجذر:</strong> ع ص ي</p>
+        <p><strong>سبب الاكتشاف:</strong> ورد ضمن الثلاثية المقابلة للإيمان في 49:7.</p>
+    </div>
+
+    <div class="discovery-card antonym">
+        <h3>٦. الشرك <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ش ر ك</p>
+        <p><strong>سبب الاكتشاف:</strong> في 6:82 «لم يلبسوا إيمانهم بظلم» — والظلم فُسّر بالشرك (حسب حديث ابن مسعود). الشرك يُفسد الإيمان.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== الكلمات المقترنة ===== -->
+    <h2><span class="tag tag-coupled">كلمات مقترنة</span> كلمات تقترن بالإيمان بكثرة</h2>
+
+    <div class="discovery-card coupled">
+        <h3>١. العمل الصالح <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ع م ل + ص ل ح</p>
+        <p><strong>نسبة الاقتران:</strong> ~50 مرة (من أكثر التراكيب تكراراً في القرآن)</p>
+        <p><strong>النمط:</strong> «الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ» — الإيمان يسبق العمل دائماً.</p>
+        <p><strong>أسئلة بحثية:</strong> لماذا لم يرد «عملوا الصالحات وآمنوا» (بعكس الترتيب)؟ ما المعنى الدقيق لـ«الصالحات» في القرآن؟</p>
+    </div>
+
+    <div class="discovery-card coupled">
+        <h3>٢. الصلاة <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ص ل و</p>
+        <p><strong>سبب الاكتشاف:</strong> «يقيمون الصلاة» تأتي مباشرة بعد «يؤمنون بالغيب» في وصف المتقين (2:3).</p>
+    </div>
+
+    <div class="discovery-card coupled">
+        <h3>٣. الزكاة / الإنفاق <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ز ك و / ن ف ق</p>
+        <p><strong>سبب الاكتشاف:</strong> «ومما رزقناهم ينفقون» (2:3) مقترنة بالإيمان بالغيب.</p>
+    </div>
+
+    <div class="discovery-card coupled">
+        <h3>٤. الصبر <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> ص ب ر</p>
+        <p><strong>سبب الاكتشاف:</strong> في سورة العصر (103:3): «إلا الذين آمنوا وعملوا الصالحات وتواصوا بالحق وتواصوا بالصبر».</p>
+    </div>
+
+    <div class="discovery-card coupled">
+        <h3>٥. التسليم <span class="tag tag-pending">بحاجة لبحث</span> <span class="priority">⭐⭐</span></h3>
+        <p><strong>الجذر:</strong> س ل م</p>
+        <p><strong>سبب الاكتشاف:</strong> «ما زادهم إلا إيماناً وتسليماً» (33:22) — الإيمان والتسليم يزدادان معاً.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== العلاقات السببية ===== -->
+    <h2><span class="tag tag-causal">علاقات سببية</span> نتائج الإيمان وأسبابه</h2>
+
+    <div class="discovery-card causal">
+        <h3>١. الإيمان → الأمن <span class="tag tag-analyzed">تم التحليل</span></h3>
+        <p><strong>الآية:</strong> الأنعام 82 — «الذين آمنوا ولم يلبسوا إيمانهم بظلم أولئك لهم <span class="keyword">الأمن</span> وهم مهتدون»</p>
+        <p><strong>العلاقة:</strong> الإيمان الصافي من الشرك يُنتج الأمن والاهتداء. رابط لغوي وسببي من نفس الجذر «أ م ن».</p>
+    </div>
+
+    <div class="discovery-card causal">
+        <h3>٢. الإيمان → الهداية <span class="tag tag-pending">بحاجة لتعميق</span></h3>
+        <p><strong>الآية:</strong> يونس 9 — «إن الذين آمنوا وعملوا الصالحات <span class="keyword">يهديهم</span> ربهم بإيمانهم»</p>
+        <p><strong>العلاقة:</strong> الإيمان سبب للهداية الإلهية — «يهديهم ربهم <span class="keyword">بإيمانهم</span>»: الباء سببية.</p>
+    </div>
+
+    <div class="discovery-card causal">
+        <h3>٣. السكينة → زيادة الإيمان <span class="tag tag-pending">بحاجة لتعميق</span></h3>
+        <p><strong>الآية:</strong> الفتح 4 — «هو الذي أنزل <span class="keyword">السكينة</span> في قلوب المؤمنين <span class="keyword">ليزدادوا إيماناً</span> مع إيمانهم»</p>
+        <p><strong>العلاقة:</strong> السكينة الإلهية تُنزل في القلوب بغرض زيادة الإيمان. اللام في «ليزدادوا» لام التعليل.</p>
+    </div>
+
+    <div class="discovery-card causal">
+        <h3>٤. تلاوة القرآن → زيادة الإيمان <span class="tag tag-analyzed">تم التحليل</span></h3>
+        <p><strong>الآية:</strong> الأنفال 2 — «وإذا تُليت عليهم آياته <span class="keyword">زادتهم إيماناً</span>»</p>
+        <p><strong>العلاقة:</strong> التعرض للقرآن يزيد الإيمان. العلاقة سببية مباشرة.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== التعريفات القرآنية ===== -->
+    <h2><span class="tag tag-definition">تعريفات قرآنية</span> آيات يُعرّف فيها القرآن الإيمان</h2>
+
+    <div class="discovery-card definition">
+        <h3>١. تعريف المؤمنين الحقيقيين (الحجرات 15)</h3>
+        <div class="verse-quote">
+            <span class="verse-ref">[الحجرات: 15]</span>
+            إِنَّمَا <span class="keyword">الْمُؤْمِنُونَ</span> الَّذِينَ آمَنُوا بِاللَّـهِ وَرَسُولِهِ ثُمَّ لَمْ يَرْتَابُوا وَجَاهَدُوا بِأَمْوَالِهِمْ وَأَنفُسِهِمْ فِي سَبِيلِ اللَّـهِ ۚ أُولَـٰئِكَ هُمُ الصَّادِقُونَ
+        </div>
+        <p><strong>التعريف:</strong> «إنما» حصر — المؤمنون حقاً هم فقط من جمعوا: تصديق + عدم ارتياب + جهاد بالمال والنفس. ختام الآية «أولئك هم الصادقون» يربط الإيمان بالصدق.</p>
+    </div>
+
+    <div class="discovery-card definition">
+        <h3>٢. تعريف المؤمنين بأثرهم القلبي (الأنفال 2-4)</h3>
+        <div class="verse-quote">
+            <span class="verse-ref">[الأنفال: 2-4]</span>
+            إِنَّمَا <span class="keyword">الْمُؤْمِنُونَ</span> الَّذِينَ إِذَا ذُكِرَ اللَّـهُ <span class="keyword">وَجِلَتْ قُلُوبُهُمْ</span> وَإِذَا تُلِيَتْ عَلَيْهِمْ آيَاتُهُ <span class="keyword">زَادَتْهُمْ إِيمَانًا</span> وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ ● الَّذِينَ يُقِيمُونَ الصَّلَاةَ وَمِمَّا رَزَقْنَاهُمْ يُنفِقُونَ ● أُولَـٰئِكَ هُمُ <span class="keyword">الْمُؤْمِنُونَ حَقًّا</span>
+        </div>
+        <p><strong>التعريف:</strong> خمس صفات: وجل القلب + زيادة الإيمان بالآيات + التوكل + إقامة الصلاة + الإنفاق. الآيات تختم بـ«المؤمنون حقاً» = تعريف قرآني صريح.</p>
+    </div>
+
+    <div class="discovery-card definition">
+        <h3>٣. أركان الإيمان (البقرة 285)</h3>
+        <div class="verse-quote">
+            <span class="verse-ref">[البقرة: 285]</span>
+            آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ <span class="keyword">بِاللَّـهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ</span> لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِ
+        </div>
+        <p><strong>التعريف:</strong> متعلقات الإيمان الأربعة الأساسية: الله + الملائكة + الكتب + الرسل. مع شرط عدم التفريق بين الرسل.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== خريطة العلاقات ===== -->
+    <div class="queue-summary">
+        <h2>خريطة علاقات الإيمان في القرآن</h2>
+        <table class="pattern-table">
+            <tr>
+                <th>نوع العلاقة</th>
+                <th>الكلمات</th>
+                <th>الأولوية</th>
+            </tr>
+            <tr>
+                <td>مرادفات محتملة</td>
+                <td>التصديق (ص د ق)، اليقين (ي ق ن)، الهدى (هـ د ي)، التقوى (و ق ي)</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>أضداد مباشرة</td>
+                <td>الكفر (ك ف ر)، النفاق (ن ف ق)</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>أضداد جزئية</td>
+                <td>الفسوق (ف س ق)، العصيان (ع ص ي)، الشرك (ش ر ك)، الريب (ر ي ب)</td>
+                <td>⭐⭐</td>
+            </tr>
+            <tr>
+                <td>مقترنة بالإيمان</td>
+                <td>العمل الصالح، الصلاة، الزكاة/الإنفاق، الصبر، التسليم</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>نتائج الإيمان</td>
+                <td>الأمن، الهداية، الفلاح، الجنة</td>
+                <td>⭐⭐</td>
+            </tr>
+            <tr>
+                <td>أسباب زيادة الإيمان</td>
+                <td>تلاوة القرآن، السكينة الإلهية، الابتلاء</td>
+                <td>⭐⭐</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="disclaimer">
+        ⚠️ هذا التقرير من إنتاج وكيل بحث قرآني ذكي مع تأصيل من النص الكامل للقرآن الكريم. النتائج مبنية على تحليل شامل لكنها لا يمكن أن تكون مضمونة بشكل مطلق، ولا ينبغي مشاركتها باعتبارها مرجعاً نهائياً.
+    </div>
+
+    <nav class="nav" style="margin-top: 20px;">
+        <a href="03_التحليل.html">← السابق: التحليل</a>
+        <a href="05_مقارنة_التفاسير.html">التالي: مقارنة التفاسير →</a>
+    </nav>
+</body>
+</html>

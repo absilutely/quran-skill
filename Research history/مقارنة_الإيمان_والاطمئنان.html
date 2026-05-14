@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مقارنة قرآنية: الإيمان والاطمئنان</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a5f7a;
+  --primary-light: #2980b9;
+  --iman-color: #1a5f7a;
+  --itminan-color: #8e44ad;
+  --shared-color: #27ae60;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #2c3e50;
+  --text-light: #7f8c8d;
+  --border: #e0e0e0;
+  --gold: #d4a017;
+  --negative: #c0392b;
+  --neutral: #7f8c8d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Amiri', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* Navigation */
+.nav-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: linear-gradient(135deg, var(--iman-color), var(--itminan-color));
+  padding: 12px 30px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.nav-bar h1 { color: #fff; font-size: 1.3rem; }
+.nav-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-tab {
+  background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 16px; border-radius: 20px; cursor: pointer; font-family: 'Amiri', serif;
+  font-size: 0.9rem; transition: all 0.3s;
+}
+.nav-tab:hover, .nav-tab.active { background: rgba(255,255,255,0.35); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--iman-color) 0%, #6c3483 50%, var(--itminan-color) 100%);
+  color: #fff; text-align: center; padding: 60px 30px 50px;
+}
+.hero h1 { font-size: 2.6rem; margin-bottom: 10px; }
+.hero .subtitle { font-size: 1.3rem; opacity: 0.9; margin-bottom: 25px; }
+.hero .verse-box {
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px; padding: 20px 30px; max-width: 700px; margin: 0 auto;
+  font-size: 1.4rem; line-height: 2;
+}
+.hero .verse-ref { font-size: 0.95rem; opacity: 0.75; margin-top: 8px; }
+
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+
+/* Section */
+.section { margin-bottom: 50px; scroll-margin-top: 70px; }
+.section-title {
+  font-size: 1.6rem; color: var(--primary); border-bottom: 3px solid;
+  border-image: linear-gradient(to left, var(--iman-color), var(--itminan-color)) 1;
+  padding-bottom: 10px; margin-bottom: 25px;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg); border-radius: 12px; padding: 25px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 20px;
+  border-right: 4px solid var(--primary);
+}
+.card.iman-card { border-right-color: var(--iman-color); }
+.card.itminan-card { border-right-color: var(--itminan-color); }
+.card.shared-card { border-right-color: var(--shared-color); }
+
+/* Dual columns */
+.dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .dual-grid { grid-template-columns: 1fr; } }
+
+.dual-header {
+  text-align: center; font-size: 1.2rem; font-weight: 700; padding: 12px;
+  border-radius: 10px 10px 0 0; color: #fff; margin-bottom: 0;
+}
+.dual-header.iman { background: var(--iman-color); }
+.dual-header.itminan { background: var(--itminan-color); }
+
+.dual-body {
+  background: var(--card-bg); border-radius: 0 0 10px 10px; padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); min-height: 200px;
+}
+
+/* Stats comparison */
+.stats-row { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 25px 0; }
+.stat-box {
+  text-align: center; padding: 20px 30px; border-radius: 12px; min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.stat-box.iman { background: linear-gradient(135deg, #eaf2f8, #d4e6f1); }
+.stat-box.itminan { background: linear-gradient(135deg, #f4ecf7, #e8daef); }
+.stat-box .stat-num { font-size: 2.2rem; font-weight: 700; }
+.stat-box.iman .stat-num { color: var(--iman-color); }
+.stat-box.itminan .stat-num { color: var(--itminan-color); }
+.stat-box .stat-label { font-size: 0.9rem; color: var(--text-light); margin-top: 4px; }
+
+/* Bar chart */
+.bar-chart { margin: 20px 0; }
+.bar-row { display: flex; align-items: center; margin-bottom: 12px; gap: 10px; }
+.bar-label { min-width: 130px; font-size: 0.95rem; text-align: left; }
+.bar-track { flex: 1; height: 28px; background: #ecf0f1; border-radius: 14px; overflow: hidden; position: relative; }
+.bar-fill {
+  height: 100%; border-radius: 14px; display: flex; align-items: center;
+  justify-content: center; color: #fff; font-size: 0.85rem; font-weight: 700;
+  transition: width 1.5s ease;
+}
+.bar-fill.iman { background: linear-gradient(to left, var(--iman-color), #3498db); }
+.bar-fill.itminan { background: linear-gradient(to left, var(--itminan-color), #9b59b6); }
+
+/* Tables */
+.comp-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+.comp-table th {
+  background: linear-gradient(135deg, var(--iman-color), var(--itminan-color));
+  color: #fff; padding: 12px 15px; text-align: right;
+}
+.comp-table td { padding: 10px 15px; border-bottom: 1px solid var(--border); text-align: right; }
+.comp-table tr:nth-child(even) { background: #f8f9fa; }
+.comp-table tr:hover { background: #eef5fb; }
+
+/* Tags */
+.tag {
+  display: inline-block; padding: 4px 14px; border-radius: 15px; font-size: 0.85rem;
+  margin: 3px; font-weight: 700;
+}
+.tag.iman { background: #d4e6f1; color: var(--iman-color); }
+.tag.itminan { background: #e8daef; color: var(--itminan-color); }
+.tag.shared { background: #d5f5e3; color: var(--shared-color); }
+.tag.positive { background: #d5f5e3; color: #27ae60; }
+.tag.negative { background: #fadbd8; color: #c0392b; }
+.tag.neutral { background: #eaecee; color: #7f8c8d; }
+
+/* Venn Diagram */
+.venn-container { display: flex; justify-content: center; padding: 30px 0; }
+.venn { position: relative; width: 500px; height: 300px; }
+.venn-circle {
+  position: absolute; width: 250px; height: 250px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  font-size: 0.85rem; padding: 20px; text-align: center; top: 25px;
+}
+.venn-circle.iman-c {
+  right: 0; background: rgba(26,95,122,0.15); border: 2px solid var(--iman-color);
+}
+.venn-circle.itminan-c {
+  left: 0; background: rgba(142,68,173,0.15); border: 2px solid var(--itminan-color);
+}
+.venn-overlap {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(39,174,96,0.12); border-radius: 8px; padding: 12px 18px;
+  border: 2px dashed var(--shared-color); text-align: center; font-size: 0.85rem;
+  z-index: 2;
+}
+
+/* Levels track */
+.levels-track { position: relative; padding: 20px 40px 20px 20px; }
+.level-line {
+  position: absolute; right: 28px; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(to bottom, var(--itminan-color), var(--iman-color));
+  border-radius: 2px;
+}
+.level-item {
+  position: relative; padding: 15px 50px 15px 15px; margin-bottom: 15px;
+  background: var(--card-bg); border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.level-item::before {
+  content: ''; position: absolute; right: -34px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--itminan-color);
+  background: #fff; z-index: 1;
+}
+.level-item.highlight { border: 2px solid var(--shared-color); }
+.level-item.highlight::before { background: var(--shared-color); border-color: var(--shared-color); }
+.level-num { font-size: 1.4rem; font-weight: 700; color: var(--itminan-color); }
+.level-title { font-weight: 700; font-size: 1.05rem; }
+.level-desc { font-size: 0.9rem; color: var(--text-light); margin-top: 4px; }
+
+/* Causal flows */
+.flow-container { display: flex; flex-direction: column; gap: 12px; margin: 15px 0; }
+.flow-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.flow-box {
+  padding: 8px 18px; border-radius: 8px; font-size: 0.9rem; font-weight: 700;
+}
+.flow-box.cause { background: #eaf2f8; color: var(--iman-color); }
+.flow-box.effect { background: #f4ecf7; color: var(--itminan-color); }
+.flow-box.negative-effect { background: #fadbd8; color: var(--negative); }
+.flow-arrow { font-size: 1.4rem; color: var(--gold); }
+
+/* Interactive tabs */
+.tab-buttons { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.tab-btn {
+  padding: 8px 20px; border-radius: 20px; border: 2px solid var(--border);
+  background: #fff; cursor: pointer; font-family: 'Amiri', serif; font-size: 0.95rem;
+  transition: all 0.3s;
+}
+.tab-btn:hover { border-color: var(--primary); }
+.tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Polarity comparison */
+.polarity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0; }
+.polarity-box { text-align: center; padding: 20px; border-radius: 10px; }
+.polarity-box.pos { background: #d5f5e3; }
+.polarity-box.neg { background: #fadbd8; }
+.polarity-box.neu { background: #eaecee; }
+.polarity-num { font-size: 2rem; font-weight: 700; }
+.polarity-box.pos .polarity-num { color: #27ae60; }
+.polarity-box.neg .polarity-num { color: #c0392b; }
+.polarity-box.neu .polarity-num { color: #7f8c8d; }
+
+/* Donut charts (CSS) */
+.donut-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 25px 0; }
+.donut-item { text-align: center; }
+.donut {
+  width: 120px; height: 120px; border-radius: 50%; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+}
+.donut-label { font-size: 0.9rem; color: var(--text-light); }
+.donut-value { font-size: 1.3rem; font-weight: 700; }
+
+/* Verse highlight */
+.verse-highlight {
+  background: linear-gradient(135deg, rgba(26,95,122,0.05), rgba(142,68,173,0.05));
+  border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px;
+  margin: 12px 0; font-size: 1.15rem; line-height: 2.2; text-align: center;
+}
+.verse-highlight .ref { font-size: 0.85rem; color: var(--text-light); display: block; margin-top: 6px; }
+
+/* Footer */
+.footer {
+  text-align: center; padding: 30px; background: linear-gradient(135deg, var(--iman-color), var(--itminan-color));
+  color: #fff; margin-top: 40px;
+}
+.footer a { color: #fff; opacity: 0.8; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { animation: fadeIn 0.6s ease forwards; }
+
+/* Print */
+@media print {
+  .nav-bar { display: none; }
+  .hero { padding: 30px; }
+  body { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-bar">
+  <h1>الإيمان ↔ الاطمئنان</h1>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="scrollToSection('overview')">نظرة عامة</button>
+    <button class="nav-tab" onclick="scrollToSection('roots')">الجذور</button>
+    <button class="nav-tab" onclick="scrollToSection('stats')">الإحصائيات</button>
+    <button class="nav-tab" onclick="scrollToSection('polarity')">القطبية</button>
+    <button class="nav-tab" onclick="scrollToSection('heart')">القلب</button>
+    <button class="nav-tab" onclick="scrollToSection('semantic')">الحقول الدلالية</button>
+    <button class="nav-tab" onclick="scrollToSection('levels')">المراتب</button>
+    <button class="nav-tab" onclick="scrollToSection('causal')">العلاقات السببية</button>
+    <button class="nav-tab" onclick="scrollToSection('definitions')">التعريفات القرآنية</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1>مقارنة قرآنية</h1>
+  <p class="subtitle">الإيمان والاطمئنان — دراسة مقارنة تفاعلية</p>
+  <div class="verse-box">
+    ﴿ إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُۥ <strong style="color:#ffd700">مُطْمَئِنٌّ</strong> بِٱلْ<strong style="color:#ffd700">إِيمَـٰنِ</strong> ﴾
+    <div class="verse-ref">النحل: ١٠٦ — الآية الجامعة بين المفهومين</div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ===== 1. OVERVIEW ===== -->
+<section class="section" id="overview">
+  <h2 class="section-title">١. نظرة عامة مقارنة</h2>
+
+  <table class="comp-table">
+    <thead>
+      <tr><th>وجه المقارنة</th><th style="color:#d4e6f1">الإيمان</th><th style="color:#e8daef">الاطمئنان</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>الجذر</strong></td><td>أ م ن (ثلاثي)</td><td>ط م أ ن (رباعي)</td></tr>
+      <tr><td><strong>نوع الجذر</strong></td><td>ثلاثي — الأكثر شيوعاً</td><td>رباعي — نادر في القرآن</td></tr>
+      <tr><td><strong>الوزن</strong></td><td>إِفْعَال (مصدر باب أَفْعَلَ)</td><td>اِطْمَأَنَّ - يَطْمَئِنُّ (افْعَلَلَّ)</td></tr>
+      <tr><td><strong>الورود في القرآن</strong></td><td>~٧٥٠+ مرة</td><td>١٣ مرة فقط</td></tr>
+      <tr><td><strong>عدد الآيات</strong></td><td>مئات الآيات</td><td>١٢ آية</td></tr>
+      <tr><td><strong>عدد السور</strong></td><td>معظم سور القرآن</td><td>١١ سورة</td></tr>
+      <tr><td><strong>القطبية الدلالية</strong></td><td>إيجابية دائماً</td><td>مزدوجة (إيجابي ٩ / سلبي ٢ / محايد ٢)</td></tr>
+      <tr><td><strong>المعنى المعجمي</strong></td><td>الأمان، الطمأنينة، السكون</td><td>سكون القلب واستقراره بعد قلق</td></tr>
+      <tr><td><strong>المحل</strong></td><td>القلب حصراً</td><td>القلب (٥٤%) + النفس + البدن</td></tr>
+      <tr><td><strong>المصدر في القرآن</strong></td><td>موجود (إيماناً، إيمانهم)</td><td>غائب تماماً — أفعال واسم فاعل فقط</td></tr>
+      <tr><td><strong>العلاقة الهرمية</strong></td><td>أساس يُبنى عليه الاطمئنان</td><td>ثمرة ومرحلة أعمق من الإيمان</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Venn Diagram -->
+  <h3 style="text-align:center; margin-top:30px; color:var(--primary);">التقاطع الدلالي</h3>
+  <div class="venn-container">
+    <div class="venn">
+      <div class="venn-circle iman-c" style="padding-right:70px;">
+        <strong style="color:var(--iman-color)">الإيمان</strong>
+        <span>تصديق</span>
+        <span>عمل صالح</span>
+        <span>يزيد وينقص</span>
+        <span>أركان ستة</span>
+      </div>
+      <div class="venn-circle itminan-c" style="padding-left:70px;">
+        <strong style="color:var(--itminan-color)">الاطمئنان</strong>
+        <span>قطبية مزدوجة</span>
+        <span>ذكر الله</span>
+        <span>٥ مراتب</span>
+        <span>اسم فاعل فقط</span>
+      </div>
+      <div class="venn-overlap">
+        <strong style="color:var(--shared-color)">المشترك</strong><br>
+        القلب محلهما<br>
+        سكون واستقرار<br>
+        جذر أ م ن<br>
+        ١٦:١٠٦
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. ROOTS ===== -->
+<section class="section" id="roots">
+  <h2 class="section-title">٢. مقارنة الجذور اللغوية</h2>
+
+  <div class="dual-grid">
+    <div>
+      <div class="dual-header iman">أ م ن — جذر الإيمان</div>
+      <div class="dual-body">
+        <p><strong>النوع:</strong> ثلاثي مجرد</p>
+        <p><strong>الفعل:</strong> آمَنَ — يُؤْمِنُ (باب أَفْعَلَ / الرابع)</p>
+        <p><strong>الوزن:</strong> إِفْعَال (مصدر)</p>
+        <p><strong>المعنى الأصلي:</strong> الأمان، الطمأنينة، السكون، ضد الخوف</p>
+        <p><strong>الاشتقاقات:</strong> إيمان، مؤمن، مؤمنون، أمن، أمانة، أمين، مأمون</p>
+        <p style="margin-top:12px; padding:10px; background:#eaf2f8; border-radius:8px;">
+          <strong>الرابط الجوهري:</strong> المعنى المعجمي لجذر «أ م ن» يتضمن «الطمأنينة» نفسها — فالإيمان في أصله اللغوي يحمل معنى الاطمئنان
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="dual-header itminan">ط م أ ن — جذر الاطمئنان</div>
+      <div class="dual-body">
+        <p><strong>النوع:</strong> رباعي</p>
+        <p><strong>الفعل:</strong> اطْمَأَنَّ — يَطْمَئِنُّ (افْعَلَلَّ)</p>
+        <p><strong>الوزن:</strong> افْعِلْلَال (المصدر النظري — غائب عن القرآن)</p>
+        <p><strong>المعنى:</strong> سكون القلب واستقراره بعد قلق أو اضطراب</p>
+        <p><strong>الاشتقاقات القرآنية:</strong></p>
+        <ul style="margin-right:20px;">
+          <li>اطْمَأَنَّ (فعل ماضٍ) — ٣ مرات</li>
+          <li>تَطْمَئِنُّ (مضارع) — ٣ مرات</li>
+          <li>لِيَطْمَئِنَّ (مضارع منصوب) — ٣ مرات</li>
+          <li>مُطْمَئِنّ/ـين/ـة (اسم فاعل) — ٤ مرات</li>
+        </ul>
+        <p style="margin-top:12px; padding:10px; background:#f4ecf7; border-radius:8px;">
+          <strong>ملاحظة فريدة:</strong> القرآن لم يستخدم المصدر «اطمئنان» أبداً — فقط الأفعال واسم الفاعل، مما يشير لكون الاطمئنان حالة حيّة متجددة لا مفهوماً مجرداً
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shared-card" style="margin-top:20px;">
+    <h3 style="color:var(--shared-color);">🔗 الرابط الاشتقاقي بين الجذرين</h3>
+    <p>جذر «أ م ن» يحمل في أصله المعجمي معنى «الطمأنينة والسكون»، مما يعني أن الإيمان والاطمئنان يلتقيان في الجذر المفهومي حتى قبل الاستعمال القرآني. وقد جمعهما القرآن صراحةً في:</p>
+    <div class="verse-highlight">
+      ﴿ إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ ﴾
+      <span class="ref">النحل: ١٠٦</span>
+    </div>
+    <p>وفي هذه الآية يظهر الاطمئنان <strong>وسيلةً</strong> والإيمان <strong>متعلَّقاً</strong>، فيصير الإيمان هو الذي يُنتج الاطمئنان في القلب.</p>
+  </div>
+</section>
+
+<!-- ===== 3. STATS ===== -->
+<section class="section" id="stats">
+  <h2 class="section-title">٣. المقارنة الإحصائية</h2>
+
+  <div class="stats-row">
+    <div class="stat-box iman">
+      <div class="stat-num">~٧٥٠+</div>
+      <div class="stat-label">ورود الإيمان</div>
+    </div>
+    <div class="stat-box" style="background:linear-gradient(135deg,#fef9e7,#fdebd0);">
+      <div class="stat-num" style="color:var(--gold);">×٥٧</div>
+      <div class="stat-label">نسبة الفرق</div>
+    </div>
+    <div class="stat-box itminan">
+      <div class="stat-num">١٣</div>
+      <div class="stat-label">ورود الاطمئنان</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>التوزيع الصرفي المقارن</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">أفعال ماضية</span>
+        <div class="bar-track">
+          <div class="bar-fill iman" style="width:82%;">آمنوا ٢٥٤+</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label"></span>
+        <div class="bar-track">
+          <div class="bar-fill itminan" style="width:8%;">اطمأنّ ٣</div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <span class="bar-label">أفعال مضارعة</span>
+        <div class="bar-track">
+          <div class="bar-fill iman" style="width:45%;">يؤمنون ~١٤٠</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label"></span>
+        <div class="bar-track">
+          <div class="bar-fill itminan" style="width:12%;">تطمئنّ/ليطمئنّ ٦</div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <span class="bar-label">اسم فاعل</span>
+        <div class="bar-track">
+          <div class="bar-fill iman" style="width:62%;">مؤمنين/ات ~٢٣٠</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label"></span>
+        <div class="bar-track">
+          <div class="bar-fill itminan" style="width:10%;">مطمئنّ/ين/ة ٤</div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <span class="bar-label">مصدر</span>
+        <div class="bar-track">
+          <div class="bar-fill iman" style="width:15%;">إيماناً ~٤٥</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label"></span>
+        <div class="bar-track">
+          <div class="bar-fill itminan" style="width:0%;background:#ecf0f1;color:#999;min-width:80px;">غائب ٠</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:15px; padding:12px; background:#fef9e7; border-radius:8px;">
+      <strong style="color:var(--gold);">اكتشاف:</strong> غياب المصدر «اطمئنان» من القرآن بالكامل يشير إلى أن القرآن يعرض الاطمئنان كحالة حيّة لا كمفهوم نظري مجرد
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>توزيع السور</h3>
+    <div class="dual-grid">
+      <div style="text-align:center;">
+        <div class="donut" style="background: conic-gradient(var(--iman-color) 0% 85%, #ecf0f1 85% 100%); margin: 0 auto 10px;">
+          <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+            <span style="font-weight:700; color:var(--iman-color); font-size:1.1rem;">~٨٥%</span>
+          </div>
+        </div>
+        <span class="tag iman">الإيمان — معظم سور القرآن</span>
+      </div>
+      <div style="text-align:center;">
+        <div class="donut" style="background: conic-gradient(var(--itminan-color) 0% 10%, #ecf0f1 10% 100%); margin: 0 auto 10px;">
+          <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+            <span style="font-weight:700; color:var(--itminan-color); font-size:1.1rem;">١١</span>
+          </div>
+        </div>
+        <span class="tag itminan">الاطمئنان — ١١ سورة فقط</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. POLARITY ===== -->
+<section class="section" id="polarity">
+  <h2 class="section-title">٤. القطبية الدلالية</h2>
+
+  <div class="dual-grid">
+    <div>
+      <div class="dual-header iman">الإيمان — قطبية واحدة</div>
+      <div class="dual-body" style="text-align:center;">
+        <div style="padding:30px;">
+          <div class="polarity-num" style="color:#27ae60; font-size:3rem;">إيجابي دائماً</div>
+          <p style="margin-top:15px;">كل ورود «الإيمان» ومشتقاته في القرآن يحمل قيمة إيجابية. لا يوجد سياق يُذم فيه الإيمان بالله ذاته.</p>
+          <div style="margin-top:15px;">
+            <span class="tag positive">~٧٥٠+ ورود إيجابي</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="dual-header itminan">الاطمئنان — قطبية مزدوجة</div>
+      <div class="dual-body">
+        <div class="polarity-grid">
+          <div class="polarity-box pos">
+            <div class="polarity-num">٩</div>
+            <div>إيجابي</div>
+          </div>
+          <div class="polarity-box neg">
+            <div class="polarity-num">٢</div>
+            <div>سلبي</div>
+          </div>
+          <div class="polarity-box neu">
+            <div class="polarity-num">٢</div>
+            <div>محايد</div>
+          </div>
+        </div>
+        <p style="margin-top:10px; padding:10px; background:#fef9e7; border-radius:8px; text-align:center;">
+          <strong>القاعدة:</strong> المتعلَّق هو الذي يحدد القيمة — الاطمئنان بذكر الله إيجابي، والاطمئنان بالحياة الدنيا سلبي
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px;">
+    <h3>أمثلة القطبية المزدوجة للاطمئنان</h3>
+    <table class="comp-table">
+      <thead><tr><th>القطبية</th><th>الآية</th><th>المتعلَّق</th></tr></thead>
+      <tbody>
+        <tr style="background:#d5f5e3;"><td><span class="tag positive">إيجابي</span></td><td>﴿أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ﴾ الرعد:٢٨</td><td>ذكر الله</td></tr>
+        <tr style="background:#d5f5e3;"><td><span class="tag positive">إيجابي</span></td><td>﴿وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ﴾ النحل:١٠٦</td><td>الإيمان</td></tr>
+        <tr style="background:#fadbd8;"><td><span class="tag negative">سلبي</span></td><td>﴿ٱلَّذِينَ ٱسْتَحَبُّوا۟ ٱلْحَيَوٰةَ ٱلدُّنْيَا عَلَى ٱلْءَاخِرَةِ... وَٱطْمَأَنُّوا۟ بِهَا﴾ يونس:٧</td><td>الحياة الدنيا</td></tr>
+        <tr style="background:#fadbd8;"><td><span class="tag negative">سلبي</span></td><td>﴿فَأَمَّا مَنْ أُوتِيَ كِتَـٰبَهُۥ بِيَمِينِهِۦ... رَضِيَ ٱلْمُطْمَئِنَّةُ﴾ المائدة:١١٩ — الاطمئنان بالكفر ضمنياً</td><td>الدنيا / الكفر</td></tr>
+        <tr><td><span class="tag neutral">محايد</span></td><td>﴿وَلَـٰكِن لِّيَطْمَئِنَّ قَلْبِى﴾ البقرة:٢٦٠</td><td>طلب البرهان</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card shared-card">
+    <h3 style="color:var(--shared-color);">📊 دلالة الفرق في القطبية</h3>
+    <p>الإيمان ذاتي القيمة — قيمته من ذاته لأنه تصديق بالله. أما الاطمئنان فهو أداة تتحدد قيمتها بمتعلَّقها: إن كان المتعلَّق الله والإيمان فهو ممدوح، وإن كان الدنيا فهو مذموم. وهذا يكشف أن الاطمئنان مفهوم أعمق وأكثر تعقيداً من مجرد «الراحة النفسية».</p>
+  </div>
+</section>
+
+<!-- ===== 5. HEART ===== -->
+<section class="section" id="heart">
+  <h2 class="section-title">٥. القلب — المحل المشترك</h2>
+
+  <div class="card shared-card">
+    <h3 style="color:var(--shared-color);">القلب نقطة الالتقاء الكبرى</h3>
+    <p>كلا المفهومين يتمركز في القلب، لكن بطريقة مختلفة:</p>
+
+    <div class="dual-grid" style="margin-top:20px;">
+      <div style="text-align:center;">
+        <div class="donut" style="background: conic-gradient(var(--iman-color) 0% 100%); margin: 0 auto 10px;">
+          <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <span style="font-weight:700; color:var(--iman-color); font-size:1.3rem;">١٠٠%</span>
+          </div>
+        </div>
+        <p><strong style="color:var(--iman-color);">الإيمان</strong></p>
+        <p>محله القلب <strong>حصراً</strong></p>
+        <div class="verse-highlight" style="font-size:1rem;">
+          ﴿وَلَمَّا يَدْخُلِ ٱلْإِيمَـٰنُ فِى قُلُوبِكُمْ﴾
+          <span class="ref">الحجرات: ١٤</span>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <div class="donut" style="background: conic-gradient(var(--itminan-color) 0% 54%, #e8daef 54% 100%); margin: 0 auto 10px;">
+          <div style="width:80px; height:80px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <span style="font-weight:700; color:var(--itminan-color); font-size:1.3rem;">٥٤%</span>
+          </div>
+        </div>
+        <p><strong style="color:var(--itminan-color);">الاطمئنان</strong></p>
+        <p>القلب (٥٤%) + النفس + البدن</p>
+        <div class="verse-highlight" style="font-size:1rem;">
+          ﴿أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ﴾
+          <span class="ref">الرعد: ٢٨</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>آيات القلب المشتركة</h3>
+    <div class="verse-highlight">
+      ﴿ وَقَلْبُهُۥ <strong style="color:var(--itminan-color)">مُطْمَئِنٌّ</strong> بِٱلْ<strong style="color:var(--iman-color)">إِيمَـٰنِ</strong> ﴾
+      <span class="ref">النحل: ١٠٦ — المفهومان معاً في القلب</span>
+    </div>
+    <div class="verse-highlight">
+      ﴿ هُوَ ٱلَّذِىٓ أَنزَلَ ٱلسَّكِينَةَ فِى قُلُوبِ ٱلْمُؤْمِنِينَ لِيَزْدَادُوٓا۟ <strong style="color:var(--iman-color)">إِيمَـٰنًا</strong> مَّعَ <strong style="color:var(--iman-color)">إِيمَـٰنِهِمْ</strong> ﴾
+      <span class="ref">الفتح: ٤ — السكينة (قريبة الاطمئنان) تزيد الإيمان في القلب</span>
+    </div>
+    <div class="verse-highlight">
+      ﴿ وَلَـٰكِن لِّ<strong style="color:var(--itminan-color)">يَطْمَئِنَّ</strong> <strong>قَلْبِى</strong> ﴾
+      <span class="ref">البقرة: ٢٦٠ — إبراهيم عليه السلام: الاطمئنان غاية القلب المؤمن</span>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center; background:linear-gradient(135deg, rgba(26,95,122,0.03), rgba(142,68,173,0.03));">
+    <h3>الخلاصة</h3>
+    <p style="font-size:1.1rem;">الإيمان <strong>يسكن</strong> القلب حصراً — بينما الاطمئنان <strong>ينبعث</strong> من القلب ليشمل النفس والبدن. فالقلب هو <strong>مصنع الإيمان</strong> و<strong>منبع الاطمئنان</strong>.</p>
+  </div>
+</section>
+
+<!-- ===== 6. SEMANTIC FIELDS ===== -->
+<section class="section" id="semantic">
+  <h2 class="section-title">٦. الحقول الدلالية المقارنة</h2>
+
+  <!-- Interactive tabs -->
+  <div class="tab-buttons">
+    <button class="tab-btn active" onclick="switchTab('synonyms')">المترادفات</button>
+    <button class="tab-btn" onclick="switchTab('antonyms')">الأضداد</button>
+    <button class="tab-btn" onclick="switchTab('coupled')">الألفاظ المقترنة</button>
+  </div>
+
+  <!-- Synonyms -->
+  <div class="tab-content active" id="tab-synonyms">
+    <div class="dual-grid">
+      <div>
+        <div class="dual-header iman">مترادفات الإيمان (٤)</div>
+        <div class="dual-body">
+          <div style="margin-bottom:12px;"><span class="tag iman">التصديق</span> — المعنى القريب المباشر</div>
+          <div style="margin-bottom:12px;"><span class="tag iman">اليقين</span> — أعلى درجات الإيمان</div>
+          <div style="margin-bottom:12px;"><span class="tag iman">الهدى</span> — النور الذي يصاحب الإيمان</div>
+          <div style="margin-bottom:12px;"><span class="tag iman">التقوى</span> — ثمرة عملية للإيمان</div>
+        </div>
+      </div>
+      <div>
+        <div class="dual-header itminan">مترادفات الاطمئنان (٣)</div>
+        <div class="dual-body">
+          <div style="margin-bottom:12px;"><span class="tag itminan">السكينة</span> — الأقرب معنىً، مع فرق: السكينة نزول إلهي، والاطمئنان حالة بشرية</div>
+          <div style="margin-bottom:12px;"><span class="tag itminan">الأمن / الأمان</span> — <span class="tag shared">مشترك مع جذر الإيمان!</span></div>
+          <div style="margin-bottom:12px;"><span class="tag itminan">الرضا</span> — مرتبة عالية تتوج الاطمئنان</div>
+        </div>
+      </div>
+    </div>
+    <div class="card shared-card" style="margin-top:15px;">
+      <strong style="color:var(--shared-color);">🔗 تقاطع:</strong> «الأمن/الأمان» مترادف للاطمئنان وفي نفس الوقت من جذر «أ م ن» = جذر الإيمان. هذا يؤكد التداخل العميق بين المفهومين.
+    </div>
+  </div>
+
+  <!-- Antonyms -->
+  <div class="tab-content" id="tab-antonyms">
+    <div class="dual-grid">
+      <div>
+        <div class="dual-header iman">أضداد الإيمان (٦)</div>
+        <div class="dual-body">
+          <div style="margin-bottom:8px;"><span class="tag negative">الكفر</span> — الضد الأول والأشمل</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">النفاق</span> — الإيمان الزائف</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">الريب</span> — الشك المناقض لليقين</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">الفسوق</span> — الخروج عن الطاعة</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">العصيان</span> — رفض الانقياد</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">الشرك</span> — نقض التوحيد</div>
+        </div>
+      </div>
+      <div>
+        <div class="dual-header itminan">أضداد الاطمئنان (٤)</div>
+        <div class="dual-body">
+          <div style="margin-bottom:8px;"><span class="tag negative">الخوف</span> — اضطراب النفس (ضد السكون)</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">الانقلاب</span> — عدم الاستقرار</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">الغفلة</span> — عدم الانتباه لآيات الله</div>
+          <div style="margin-bottom:8px;"><span class="tag negative">شرح الصدر بالكفر</span> — ضد اطمئنان القلب بالإيمان (النحل:١٠٦)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:15px; text-align:center;">
+      <strong>ملاحظة:</strong> أضداد الإيمان (٦) تتمحور حول <strong>العقيدة والسلوك</strong> — بينما أضداد الاطمئنان (٤) تتمحور حول <strong>الحالة النفسية والوجدانية</strong>
+    </div>
+  </div>
+
+  <!-- Coupled -->
+  <div class="tab-content" id="tab-coupled">
+    <div class="dual-grid">
+      <div>
+        <div class="dual-header iman">مقترنات الإيمان (٥)</div>
+        <div class="dual-body">
+          <div style="margin-bottom:10px;">
+            <span class="tag iman">العمل الصالح</span>
+            <span style="font-size:0.85rem; color:var(--text-light);"> — ~٥٠ مرة «آمنوا وعملوا الصالحات»</span>
+          </div>
+          <div style="margin-bottom:10px;"><span class="tag iman">الصلاة</span></div>
+          <div style="margin-bottom:10px;"><span class="tag iman">الزكاة</span></div>
+          <div style="margin-bottom:10px;"><span class="tag iman">الصبر</span></div>
+          <div style="margin-bottom:10px;"><span class="tag iman">التسليم</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="dual-header itminan">مقترنات الاطمئنان (٥)</div>
+        <div class="dual-body">
+          <div style="margin-bottom:10px;">
+            <span class="tag itminan">ذكر الله</span>
+            <span style="font-size:0.85rem; color:var(--text-light);"> — الرابط الأقوى</span>
+          </div>
+          <div style="margin-bottom:10px;">
+            <span class="tag itminan">القلب / القلوب</span>
+            <span style="font-size:0.85rem; color:var(--text-light);"> — ٥٤% من الورود</span>
+          </div>
+          <div style="margin-bottom:10px;"><span class="tag itminan">البشرى</span></div>
+          <div style="margin-bottom:10px;"><span class="tag itminan">النفس</span></div>
+          <div style="margin-bottom:10px;"><span class="tag itminan">الحياة الدنيا</span> <span class="tag negative">سلبي</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card shared-card" style="margin-top:15px;">
+      <strong style="color:var(--shared-color);">📊 مقارنة النمط:</strong> الإيمان يقترن بـ<strong>الأعمال</strong> (صلاة، زكاة، عمل صالح) — بينما الاطمئنان يقترن بـ<strong>الحالات</strong> (قلب، نفس، ذكر). هذا يؤكد أن الإيمان مفهوم <strong>عملي</strong> والاطمئنان مفهوم <strong>وجداني</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. LEVELS ===== -->
+<section class="section" id="levels">
+  <h2 class="section-title">٧. مراتب الاطمئنان وموقع الإيمان فيها</h2>
+
+  <div class="card">
+    <p style="margin-bottom:20px;">كشف البحث عن ٥ مراتب تصاعدية للاطمئنان في القرآن، والإيمان يتموضع في المرتبة الرابعة:</p>
+
+    <div class="levels-track">
+      <div class="level-line"></div>
+
+      <div class="level-item">
+        <span class="level-num">١</span>
+        <div class="level-title">الاطمئنان المادي / الجسدي</div>
+        <div class="level-desc">السكون الجسدي والاستقرار المكاني — ﴿فَإِذَا ٱطْمَأْنَنتُمْ﴾ النساء:١٠٣</div>
+      </div>
+
+      <div class="level-item">
+        <span class="level-num">٢</span>
+        <div class="level-title">اطمئنان الطلب والبحث</div>
+        <div class="level-desc">طلب البرهان ليسكن القلب — ﴿وَلَـٰكِن لِّيَطْمَئِنَّ قَلْبِى﴾ البقرة:٢٦٠</div>
+      </div>
+
+      <div class="level-item">
+        <span class="level-num">٣</span>
+        <div class="level-title">الاطمئنان بذكر الله</div>
+        <div class="level-desc">القاعدة الذهبية — ﴿أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ﴾ الرعد:٢٨</div>
+      </div>
+
+      <div class="level-item highlight">
+        <span class="level-num" style="color:var(--shared-color);">٤</span>
+        <div class="level-title" style="color:var(--shared-color);">الاطمئنان بالإيمان ← هنا يلتقي المفهومان</div>
+        <div class="level-desc">﴿وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ﴾ النحل:١٠٦ — الإيمان يُنتج أعلى اطمئنان القلب</div>
+      </div>
+
+      <div class="level-item">
+        <span class="level-num">٥</span>
+        <div class="level-title">النفس المطمئنة</div>
+        <div class="level-desc">أعلى المراتب — ﴿يَـٰٓأَيَّتُهَا ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ﴾ الفجر:٢٧ — حالة وجودية شاملة</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, rgba(26,95,122,0.04), rgba(142,68,173,0.04));">
+    <h3 style="text-align:center;">العلاقة الهرمية</h3>
+    <div style="text-align:center; font-size:1.2rem; margin:20px 0;">
+      <span class="tag iman" style="font-size:1.1rem; padding:8px 20px;">الإيمان (الأساس)</span>
+      <span style="font-size:1.5rem; margin:0 10px;">⟶</span>
+      <span class="tag itminan" style="font-size:1.1rem; padding:8px 20px;">الاطمئنان (الثمرة)</span>
+    </div>
+    <div class="verse-highlight">
+      ﴿ وَإِذْ قَالَ إِبْرَٰهِـۧمُ رَبِّ أَرِنِى كَيْفَ تُحْىِ ٱلْمَوْتَىٰ ۖ قَالَ أَوَلَمْ <strong style="color:var(--iman-color)">تُؤْمِن</strong> ۖ قَالَ بَلَىٰ وَلَـٰكِن لِّ<strong style="color:var(--itminan-color)">يَطْمَئِنَّ</strong> قَلْبِى ﴾
+      <span class="ref">البقرة: ٢٦٠ — إبراهيم يؤكد إيمانه ويطلب الاطمئنان: مرحلة أعمق</span>
+    </div>
+    <p style="text-align:center; margin-top:10px;">الإيمان موجود عند إبراهيم عليه السلام، لكنه يطلب الاطمئنان — مما يدل على أن الاطمئنان <strong>مرتبة أعلى وأعمق</strong> من مجرد الإيمان.</p>
+  </div>
+</section>
+
+<!-- ===== 8. CAUSAL ===== -->
+<section class="section" id="causal">
+  <h2 class="section-title">٨. العلاقات السببية المقارنة</h2>
+
+  <div class="dual-grid">
+    <div>
+      <div class="dual-header iman">سببيات الإيمان</div>
+      <div class="dual-body">
+        <div class="flow-container">
+          <div class="flow-row">
+            <span class="flow-box cause">إيمان</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">أمن وأمان</span>
+          </div>
+          <div class="flow-row">
+            <span class="flow-box cause">إيمان</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">هداية</span>
+          </div>
+          <div class="flow-row">
+            <span class="flow-box cause">سكينة (نزول إلهي)</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">زيادة إيمان</span>
+          </div>
+          <div class="flow-row">
+            <span class="flow-box cause">تلاوة القرآن</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">زيادة إيمان</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="dual-header itminan">سببيات الاطمئنان</div>
+      <div class="dual-body">
+        <h4 style="color:#27ae60; margin-bottom:8px;">المسار الإيجابي:</h4>
+        <div class="flow-container">
+          <div class="flow-row">
+            <span class="flow-box cause">ذكر الله</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">اطمئنان القلوب</span>
+          </div>
+          <div class="flow-row">
+            <span class="flow-box cause">رؤية البرهان</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">اطمئنان القلب</span>
+          </div>
+          <div class="flow-row">
+            <span class="flow-box cause">نصر الله</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">اطمئنان وبشرى</span>
+          </div>
+          <div class="flow-row">
+            <span class="flow-box cause">إيمان</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box effect">قلب مطمئن</span>
+          </div>
+        </div>
+        <h4 style="color:#c0392b; margin-top:15px; margin-bottom:8px;">المسار السلبي:</h4>
+        <div class="flow-container">
+          <div class="flow-row">
+            <span class="flow-box cause">اطمئنان بالدنيا</span>
+            <span class="flow-arrow">⟵</span>
+            <span class="flow-box negative-effect">غفلة + خسران</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shared-card" style="margin-top:20px;">
+    <h3 style="color:var(--shared-color);">🔄 الدورة المتبادلة</h3>
+    <div style="text-align:center; font-size:1.1rem; padding:15px;">
+      <span class="tag iman" style="font-size:1rem; padding:8px 15px;">إيمان</span>
+      <span style="font-size:1.5rem; margin:0 8px;">⟶</span>
+      <span class="tag itminan" style="font-size:1rem; padding:8px 15px;">اطمئنان</span>
+      <span style="font-size:1.5rem; margin:0 8px;">⟶</span>
+      <span style="font-size:1rem; padding:8px 15px; background:#d5f5e3; border-radius:15px; color:#27ae60;">سكينة</span>
+      <span style="font-size:1.5rem; margin:0 8px;">⟶</span>
+      <span class="tag iman" style="font-size:1rem; padding:8px 15px;">زيادة إيمان</span>
+    </div>
+    <p style="text-align:center;">الإيمان يُنتج الاطمئنان (١٦:١٠٦)، والسكينة (قريبة الاطمئنان) تزيد الإيمان (٤٨:٤) — فالعلاقة <strong>تبادلية دائرية</strong> لا خطية.</p>
+  </div>
+
+  <div class="card">
+    <h3>الزمن الصرفي والدلالة الأخلاقية</h3>
+    <table class="comp-table">
+      <thead><tr><th>الزمن</th><th>الاطمئنان الإيجابي</th><th>الاطمئنان السلبي</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>المضارع (استمرار)</strong></td>
+          <td><span class="tag positive">تطمئنّ القلوب</span> — حالة متجددة مستمرة</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>الماضي (انتهاء)</strong></td>
+          <td>—</td>
+          <td><span class="tag negative">اطمأنّوا بها</span> — ركون منتهٍ مذموم</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px; text-align:center;"><strong>اكتشاف:</strong> الاطمئنان الإيجابي يأتي بصيغة المضارع (متجدد)، والسلبي بصيغة الماضي (ركون) — الزمن الصرفي يحمل حكماً أخلاقياً!</p>
+  </div>
+</section>
+
+<!-- ===== 9. DEFINITIONS ===== -->
+<section class="section" id="definitions">
+  <h2 class="section-title">٩. التعريفات القرآنية المقارنة</h2>
+
+  <div class="dual-grid">
+    <div>
+      <div class="dual-header iman">تعريفات الإيمان القرآنية (٣)</div>
+      <div class="dual-body">
+        <div style="margin-bottom:18px; padding-bottom:15px; border-bottom:1px solid var(--border);">
+          <strong>١. التعريف الشامل:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿إِنَّمَا ٱلْمُؤْمِنُونَ ٱلَّذِينَ ءَامَنُوا۟ بِٱللَّهِ وَرَسُولِهِۦ ثُمَّ لَمْ يَرْتَابُوا۟ وَجَـٰهَدُوا۟ بِأَمْوَٰلِهِمْ وَأَنفُسِهِمْ﴾
+            <span class="ref">الحجرات: ١٥</span>
+          </div>
+        </div>
+        <div style="margin-bottom:18px; padding-bottom:15px; border-bottom:1px solid var(--border);">
+          <strong>٢. التعريف بالصفات:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿إِنَّمَا ٱلْمُؤْمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتْ قُلُوبُهُمْ وَإِذَا تُلِيَتْ عَلَيْهِمْ ءَايَـٰتُهُۥ زَادَتْهُمْ إِيمَـٰنًا وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ﴾
+            <span class="ref">الأنفال: ٢-٤</span>
+          </div>
+        </div>
+        <div>
+          <strong>٣. التعريف بالمتعلقات:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿ءَامَنَ ٱلرَّسُولُ بِمَآ أُنزِلَ إِلَيْهِ مِن رَّبِّهِۦ وَٱلْمُؤْمِنُونَ ۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَـٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ﴾
+            <span class="ref">البقرة: ٢٨٥</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="dual-header itminan">تعريفات الاطمئنان القرآنية (٥)</div>
+      <div class="dual-body">
+        <div style="margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+          <strong>١. التعريف بالسبب الأعلى:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ﴾
+            <span class="ref">الرعد: ٢٨</span>
+          </div>
+        </div>
+        <div style="margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+          <strong>٢. التعريف بالمتعلق الإيماني:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ﴾
+            <span class="ref">النحل: ١٠٦</span>
+          </div>
+        </div>
+        <div style="margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+          <strong>٣. التعريف بالغاية القصوى:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿يَـٰٓأَيَّتُهَا ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ ٱرْجِعِىٓ إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً﴾
+            <span class="ref">الفجر: ٢٧-٢٨</span>
+          </div>
+        </div>
+        <div style="margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+          <strong>٤. التعريف السلبي (المذموم):</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿وَرَضُوا۟ بِٱلْحَيَوٰةِ ٱلدُّنْيَا وَٱطْمَأَنُّوا۟ بِهَا﴾
+            <span class="ref">يونس: ٧</span>
+          </div>
+        </div>
+        <div>
+          <strong>٥. تعريف الطلب:</strong>
+          <div class="verse-highlight" style="font-size:0.95rem;">
+            ﴿وَلَـٰكِن لِّيَطْمَئِنَّ قَلْبِى﴾
+            <span class="ref">البقرة: ٢٦٠</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL SUMMARY ===== -->
+<section class="section" id="conclusion">
+  <h2 class="section-title">١٠. الخلاصة الكبرى</h2>
+
+  <div class="card" style="background: linear-gradient(135deg, rgba(26,95,122,0.06), rgba(142,68,173,0.06)); border-right:4px solid var(--gold);">
+    <h3 style="color:var(--gold); text-align:center; font-size:1.3rem; margin-bottom:15px;">عشر نتائج مركزية</h3>
+
+    <table class="comp-table">
+      <thead><tr><th>#</th><th>النتيجة</th></tr></thead>
+      <tbody>
+        <tr><td><strong>١</strong></td><td>الإيمان <strong>أساس</strong> والاطمئنان <strong>ثمرة</strong> — العلاقة هرمية وتبادلية في آن</td></tr>
+        <tr><td><strong>٢</strong></td><td>القلب هو <strong>المحل المشترك</strong> للمفهومين (١٠٠% للإيمان، ٥٤% للاطمئنان)</td></tr>
+        <tr><td><strong>٣</strong></td><td>الإيمان <strong>ذاتي القيمة</strong> (إيجابي دائماً) — الاطمئنان <strong>نسبي القيمة</strong> (يحدده المتعلَّق)</td></tr>
+        <tr><td><strong>٤</strong></td><td>الإيمان مفهوم <strong>عملي</strong> (يقترن بالأعمال) — الاطمئنان مفهوم <strong>وجداني</strong> (يقترن بالحالات)</td></tr>
+        <tr><td><strong>٥</strong></td><td>جذر «أ م ن» يحمل معنى الطمأنينة أصلاً — فالإيمان والاطمئنان <strong>متداخلان اشتقاقياً</strong></td></tr>
+        <tr><td><strong>٦</strong></td><td>غياب مصدر «اطمئنان» من القرآن يشير لكونه <strong>حالة حية متجددة</strong> لا مفهوماً نظرياً</td></tr>
+        <tr><td><strong>٧</strong></td><td>الزمن الصرفي للاطمئنان يحمل <strong>حكماً أخلاقياً</strong>: المضارع = ممدوح، الماضي = مذموم</td></tr>
+        <tr><td><strong>٨</strong></td><td>آية ١٦:١٠٦ هي <strong>الآية الجامعة</strong> التي تربط المفهومين صراحةً في القلب</td></tr>
+        <tr><td><strong>٩</strong></td><td>الاطمئنان بالإيمان هو <strong>المرتبة الرابعة</strong> من خمس مراتب تصاعدية</td></tr>
+        <tr><td><strong>١٠</strong></td><td>الفرق الكمّي الهائل (~٧٥٠ مقابل ١٣) يعكس <strong>مركزية الإيمان</strong> وتخصص الاطمئنان في القرآن</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div> <!-- /container -->
+
+<!-- Footer -->
+<div class="footer">
+  <p>مقارنة قرآنية تفاعلية: الإيمان والاطمئنان</p>
+  <p style="opacity:0.75; font-size:0.9rem; margin-top:5px;">مبنية على بحث «الإيمان» وبحث «الاطمئنان» — منهجية الباحث القرآني</p>
+</div>
+
+<script>
+// Smooth scroll to section
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  // Update active nav tab
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Tab switching for semantic fields
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Intersection observer for animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-in');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .dual-body, .stat-box').forEach(el => observer.observe(el));
+
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('.section');
+const navTabs = document.querySelectorAll('.nav-tab');
+const sectionIds = ['overview','roots','stats','polarity','heart','semantic','levels','causal','definitions'];
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 100;
+    if (scrollY >= top) current = section.id;
+  });
+  navTabs.forEach((tab, i) => {
+    tab.classList.toggle('active', sectionIds[i] === current);
+  });
+});
+</script>
+
+</body>
+</html>

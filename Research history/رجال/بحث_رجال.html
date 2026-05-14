@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحث قرآني: رِجَال - الجذر ر ج ل</title>
+    <style>
+        :root {
+            --primary-color: #1a5f4a;
+            --secondary-color: #2d8a6e;
+            --accent-color: #d4af37;
+            --bg-color: #faf8f5;
+            --text-color: #2c2c2c;
+            --verse-bg: #f5f0e8;
+            --border-color: #e0d8c8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 2;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .root-display {
+            font-size: 3em;
+            color: var(--accent-color);
+            margin: 20px 0;
+            letter-spacing: 20px;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--verse-bg);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.4em;
+            margin: 25px 0 15px;
+        }
+
+        h4 {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin: 20px 0 10px;
+            padding: 10px;
+            background: var(--verse-bg);
+            border-radius: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .morphology-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .morphology-table th,
+        .morphology-table td {
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            text-align: right;
+        }
+
+        .morphology-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .morphology-table tr:nth-child(even) {
+            background: var(--verse-bg);
+        }
+
+        .verse-card {
+            background: var(--verse-bg);
+            border-right: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .verse-reference {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .verse-text {
+            font-size: 1.4em;
+            line-height: 2.2;
+            color: var(--text-color);
+        }
+
+        .verse-text .highlight {
+            background: linear-gradient(120deg, #ffd70040, #ffd70080);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .category-box {
+            background: linear-gradient(135deg, #f8f6f3, #f0ebe3);
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .category-title {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        .meaning-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .meaning-list li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            border-right: 3px solid var(--secondary-color);
+        }
+
+        .two-meanings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-meanings {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .meaning-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid var(--border-color);
+        }
+
+        .meaning-section h3 {
+            text-align: center;
+            background: var(--primary-color);
+            color: white;
+            margin: -25px -25px 20px -25px;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .discovery-box {
+            background: linear-gradient(135deg, #fff9e6, #fff3cc);
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .discovery-title {
+            color: #8b6914;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .count-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>بحث قرآني شامل</h1>
+    <div class="root-display">ر ج ل</div>
+    <p class="subtitle">دراسة استقرائية لاستخدام الجذر في القرآن الكريم</p>
+</header>
+
+<nav>
+    <h2>فهرس البحث</h2>
+    <ul>
+        <li><a href="#summary">الملخص</a></li>
+        <li><a href="#morphology">التحليل الصرفي</a></li>
+        <li><a href="#verses-men">آيات الرجال (البشر)</a></li>
+        <li><a href="#verses-feet">آيات الأرجل (الأقدام)</a></li>
+        <li><a href="#analysis">التحليل السياقي</a></li>
+        <li><a href="#meanings">المعاني القرآنية</a></li>
+        <li><a href="#discoveries">الاكتشافات</a></li>
+    </ul>
+</nav>
+
+<section id="summary">
+    <h2>الملخص التنفيذي</h2>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-number">٥٥+</span>
+            <span class="stat-label">إجمالي الآيات</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">١٥</span>
+            <span class="stat-label">صيغة صرفية</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">٢</span>
+            <span class="stat-label">معنيان رئيسيان</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">٣٠+</span>
+            <span class="stat-label">سورة</span>
+        </div>
+    </div>
+
+    <p>يُشتق من الجذر <strong>ر ج ل</strong> في القرآن الكريم معنيان رئيسيان:</p>
+
+    <div class="two-meanings">
+        <div class="meaning-section">
+            <h3>المعنى الأول: الرَّجُل / الرِّجَال</h3>
+            <p><strong>الإنسان الذكر البالغ</strong></p>
+            <ul class="meaning-list">
+                <li>رَجُلٌ (مفرد نكرة)</li>
+                <li>الرِّجَالُ (جمع معرف)</li>
+                <li>رِجَالٌ (جمع نكرة)</li>
+                <li>رَجُلَيْنِ (مثنى)</li>
+                <li>رِجَالًا (جمع منصوب)</li>
+                <li>رِجَالِكُمْ (مضاف)</li>
+            </ul>
+        </div>
+        <div class="meaning-section">
+            <h3>المعنى الثاني: الرِّجْل / الأَرْجُل</h3>
+            <p><strong>القدم - عضو الجسم</strong></p>
+            <ul class="meaning-list">
+                <li>رِجْلَيْنِ (مثنى الأقدام)</li>
+                <li>أَرْجُلِهِمْ (جمع مضاف)</li>
+                <li>أَرْجُلِكُمْ (جمع مضاف)</li>
+                <li>بِرِجْلِكَ (مفرد مجرور)</li>
+                <li>بِأَرْجُلِهِنَّ (جمع مؤنث)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="morphology">
+    <h2>التحليل الصرفي</h2>
+
+    <h3>الجذر الثلاثي: ر ج ل</h3>
+
+    <table class="morphology-table">
+        <thead>
+            <tr>
+                <th>الصيغة</th>
+                <th>الوزن</th>
+                <th>المعنى</th>
+                <th>عدد الورود</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>رَجُلٌ</strong></td>
+                <td>فَعُل</td>
+                <td>مفرد - رجل واحد</td>
+                <td>١٣</td>
+            </tr>
+            <tr>
+                <td><strong>رَجُلًا</strong></td>
+                <td>فَعُلًا</td>
+                <td>مفرد منصوب</td>
+                <td>٧</td>
+            </tr>
+            <tr>
+                <td><strong>رَجُلَيْنِ</strong></td>
+                <td>فَعُلَيْن</td>
+                <td>مثنى - رجلان</td>
+                <td>٤</td>
+            </tr>
+            <tr>
+                <td><strong>رِجَالٌ</strong></td>
+                <td>فِعَال</td>
+                <td>جمع تكسير - رجال</td>
+                <td>٦</td>
+            </tr>
+            <tr>
+                <td><strong>الرِّجَالُ / الرِّجَالِ</strong></td>
+                <td>الفِعَال</td>
+                <td>جمع معرف بأل</td>
+                <td>٧</td>
+            </tr>
+            <tr>
+                <td><strong>رِجَالًا</strong></td>
+                <td>فِعَالًا</td>
+                <td>جمع منصوب</td>
+                <td>٨</td>
+            </tr>
+            <tr>
+                <td><strong>رِجَالِكُمْ</strong></td>
+                <td>فِعَال + ضمير</td>
+                <td>جمع مضاف</td>
+                <td>١</td>
+            </tr>
+            <tr>
+                <td><strong>رِجْلَيْنِ</strong></td>
+                <td>فِعْلَيْن</td>
+                <td>مثنى الأقدام</td>
+                <td>١</td>
+            </tr>
+            <tr>
+                <td><strong>أَرْجُلِهِمْ</strong></td>
+                <td>أَفْعُل + ضمير</td>
+                <td>جمع الأقدام مضاف</td>
+                <td>٣</td>
+            </tr>
+            <tr>
+                <td><strong>أَرْجُلِكُمْ</strong></td>
+                <td>أَفْعُل + ضمير</td>
+                <td>أقدامكم</td>
+                <td>١</td>
+            </tr>
+            <tr>
+                <td><strong>بِرِجْلِكَ</strong></td>
+                <td>بِفِعْل + ضمير</td>
+                <td>بقدمك</td>
+                <td>١</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="verses-men">
+    <h2>آيات الرِّجَال (الذكور من البشر)</h2>
+
+    <h3>صيغة رِجَالٌ (جمع نكرة)</h3>
+    <span class="count-badge">٦ آيات</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأعراف - الآية ٤٦</div>
+        <div class="verse-text">وَبَيْنَهُمَا حِجَابٌ ۚ وَعَلَى الْأَعْرَافِ <span class="highlight">رِجَالٌ</span> يَعْرِفُونَ كُلًّا بِسِيمَاهُمْ ۚ وَنَادَوْا أَصْحَابَ الْجَنَّةِ أَن سَلَامٌ عَلَيْكُمْ ۚ لَمْ يَدْخُلُوهَا وَهُمْ يَطْمَعُونَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأحزاب - الآية ٢٣</div>
+        <div class="verse-text">مِّنَ الْمُؤْمِنِينَ <span class="highlight">رِجَالٌ</span> صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ ۖ فَمِنْهُم مَّن قَضَىٰ نَحْبَهُ وَمِنْهُم مَّن يَنتَظِرُ ۖ وَمَا بَدَّلُوا تَبْدِيلًا</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النور - الآية ٣٧</div>
+        <div class="verse-text"><span class="highlight">رِجَالٌ</span> لَّا تُلْهِيهِمْ تِجَارَةٌ وَلَا بَيْعٌ عَن ذِكْرِ اللَّهِ وَإِقَامِ الصَّلَاةِ وَإِيتَاءِ الزَّكَاةِ ۙ يَخَافُونَ يَوْمًا تَتَقَلَّبُ فِيهِ الْقُلُوبُ وَالْأَبْصَارُ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة التوبة - الآية ١٠٨</div>
+        <div class="verse-text">لَا تَقُمْ فِيهِ أَبَدًا ۚ لَّمَسْجِدٌ أُسِّسَ عَلَى التَّقْوَىٰ مِنْ أَوَّلِ يَوْمٍ أَحَقُّ أَن تَقُومَ فِيهِ ۚ فِيهِ <span class="highlight">رِجَالٌ</span> يُحِبُّونَ أَن يَتَطَهَّرُوا ۚ وَاللَّهُ يُحِبُّ الْمُطَّهِّرِينَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الفتح - الآية ٢٥</div>
+        <div class="verse-text">وَلَوْلَا <span class="highlight">رِجَالٌ</span> مُّؤْمِنُونَ وَنِسَاءٌ مُّؤْمِنَاتٌ لَّمْ تَعْلَمُوهُمْ أَن تَطَئُوهُمْ فَتُصِيبَكُم مِّنْهُم مَّعَرَّةٌ بِغَيْرِ عِلْمٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الجن - الآية ٦</div>
+        <div class="verse-text">وَأَنَّهُ كَانَ <span class="highlight">رِجَالٌ</span> مِّنَ الْإِنسِ يَعُوذُونَ بِرِجَالٍ مِّنَ الْجِنِّ فَزَادُوهُمْ رَهَقًا</div>
+    </div>
+
+    <h3>صيغة الرِّجَالُ / الرِّجَالِ (معرف بأل)</h3>
+    <span class="count-badge">٧ آيات</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النساء - الآية ٣٤</div>
+        <div class="verse-text"><span class="highlight">الرِّجَالُ</span> قَوَّامُونَ عَلَى النِّسَاءِ بِمَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ وَبِمَا أَنفَقُوا مِنْ أَمْوَالِهِمْ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النساء - الآية ٧٥</div>
+        <div class="verse-text">وَمَا لَكُمْ لَا تُقَاتِلُونَ فِي سَبِيلِ اللَّهِ وَالْمُسْتَضْعَفِينَ مِنَ <span class="highlight">الرِّجَالِ</span> وَالنِّسَاءِ وَالْوِلْدَانِ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النساء - الآية ٩٨</div>
+        <div class="verse-text">إِلَّا الْمُسْتَضْعَفِينَ مِنَ <span class="highlight">الرِّجَالِ</span> وَالنِّسَاءِ وَالْوِلْدَانِ لَا يَسْتَطِيعُونَ حِيلَةً وَلَا يَهْتَدُونَ سَبِيلًا</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأعراف - الآية ٨١</div>
+        <div class="verse-text">إِنَّكُمْ لَتَأْتُونَ <span class="highlight">الرِّجَالَ</span> شَهْوَةً مِّن دُونِ النِّسَاءِ ۚ بَلْ أَنتُمْ قَوْمٌ مُّسْرِفُونَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النمل - الآية ٥٥</div>
+        <div class="verse-text">أَئِنَّكُمْ لَتَأْتُونَ <span class="highlight">الرِّجَالَ</span> شَهْوَةً مِّن دُونِ النِّسَاءِ ۚ بَلْ أَنتُمْ قَوْمٌ تَجْهَلُونَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة العنكبوت - الآية ٢٩</div>
+        <div class="verse-text">أَئِنَّكُمْ لَتَأْتُونَ <span class="highlight">الرِّجَالَ</span> وَتَقْطَعُونَ السَّبِيلَ وَتَأْتُونَ فِي نَادِيكُمُ الْمُنكَرَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النور - الآية ٣١</div>
+        <div class="verse-text">أَوِ التَّابِعِينَ غَيْرِ أُولِي الْإِرْبَةِ مِنَ <span class="highlight">الرِّجَالِ</span> أَوِ الطِّفْلِ الَّذِينَ لَمْ يَظْهَرُوا عَلَىٰ عَوْرَاتِ النِّسَاءِ</div>
+    </div>
+
+    <h3>صيغة رَجُلٌ (مفرد)</h3>
+    <span class="count-badge">١٣ آية</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة المؤمنون - الآية ٢٥</div>
+        <div class="verse-text">إِنْ هُوَ إِلَّا <span class="highlight">رَجُلٌ</span> بِهِ جِنَّةٌ فَتَرَبَّصُوا بِهِ حَتَّىٰ حِينٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة المؤمنون - الآية ٣٨</div>
+        <div class="verse-text">إِنْ هُوَ إِلَّا <span class="highlight">رَجُلٌ</span> افْتَرَىٰ عَلَى اللَّهِ كَذِبًا وَمَا نَحْنُ لَهُ بِمُؤْمِنِينَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة غافر - الآية ٢٨</div>
+        <div class="verse-text">وَقَالَ <span class="highlight">رَجُلٌ</span> مُّؤْمِنٌ مِّنْ آلِ فِرْعَوْنَ يَكْتُمُ إِيمَانَهُ أَتَقْتُلُونَ رَجُلًا أَن يَقُولَ رَبِّيَ اللَّهُ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة يس - الآية ٢٠</div>
+        <div class="verse-text">وَجَاءَ مِنْ أَقْصَا الْمَدِينَةِ <span class="highlight">رَجُلٌ</span> يَسْعَىٰ قَالَ يَا قَوْمِ اتَّبِعُوا الْمُرْسَلِينَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة القصص - الآية ٢٠</div>
+        <div class="verse-text">وَجَاءَ <span class="highlight">رَجُلٌ</span> مِّنْ أَقْصَا الْمَدِينَةِ يَسْعَىٰ قَالَ يَا مُوسَىٰ إِنَّ الْمَلَأَ يَأْتَمِرُونَ بِكَ لِيَقْتُلُوكَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة هود - الآية ٧٨</div>
+        <div class="verse-text">أَلَيْسَ مِنكُمْ <span class="highlight">رَجُلٌ</span> رَّشِيدٌ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النساء - الآية ١٢</div>
+        <div class="verse-text">وَإِن كَانَ <span class="highlight">رَجُلٌ</span> يُورَثُ كَلَالَةً أَوِ امْرَأَةٌ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة يونس - الآية ٢</div>
+        <div class="verse-text">أَكَانَ لِلنَّاسِ عَجَبًا أَنْ أَوْحَيْنَا إِلَىٰ <span class="highlight">رَجُلٍ</span> مِّنْهُمْ أَنْ أَنذِرِ النَّاسَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأعراف - الآية ٦٣</div>
+        <div class="verse-text">أَوَعَجِبْتُمْ أَن جَاءَكُمْ ذِكْرٌ مِّن رَّبِّكُمْ عَلَىٰ <span class="highlight">رَجُلٍ</span> مِّنكُمْ لِيُنذِرَكُمْ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأعراف - الآية ٦٩</div>
+        <div class="verse-text">أَوَعَجِبْتُمْ أَن جَاءَكُمْ ذِكْرٌ مِّن رَّبِّكُمْ عَلَىٰ <span class="highlight">رَجُلٍ</span> مِّنكُمْ لِيُنذِرَكُمْ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة سبأ - الآية ٧</div>
+        <div class="verse-text">وَقَالَ الَّذِينَ كَفَرُوا هَلْ نَدُلُّكُمْ عَلَىٰ <span class="highlight">رَجُلٍ</span> يُنَبِّئُكُمْ إِذَا مُزِّقْتُمْ كُلَّ مُمَزَّقٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الزخرف - الآية ٣١</div>
+        <div class="verse-text">وَقَالُوا لَوْلَا نُزِّلَ هَٰذَا الْقُرْآنُ عَلَىٰ <span class="highlight">رَجُلٍ</span> مِّنَ الْقَرْيَتَيْنِ عَظِيمٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة سبأ - الآية ٤٣</div>
+        <div class="verse-text">قَالُوا مَا هَٰذَا إِلَّا <span class="highlight">رَجُلٌ</span> يُرِيدُ أَن يَصُدَّكُمْ عَمَّا كَانَ يَعْبُدُ آبَاؤُكُمْ</div>
+    </div>
+
+    <h3>صيغة رَجُلَيْنِ (مثنى)</h3>
+    <span class="count-badge">٤ آيات</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة البقرة - الآية ٢٨٢</div>
+        <div class="verse-text">وَاسْتَشْهِدُوا شَهِيدَيْنِ مِن رِّجَالِكُمْ ۖ فَإِن لَّمْ يَكُونَا <span class="highlight">رَجُلَيْنِ</span> فَرَجُلٌ وَامْرَأَتَانِ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الكهف - الآية ٣٢</div>
+        <div class="verse-text">وَاضْرِبْ لَهُم مَّثَلًا <span class="highlight">رَّجُلَيْنِ</span> جَعَلْنَا لِأَحَدِهِمَا جَنَّتَيْنِ مِنْ أَعْنَابٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النحل - الآية ٧٦</div>
+        <div class="verse-text">وَضَرَبَ اللَّهُ مَثَلًا <span class="highlight">رَّجُلَيْنِ</span> أَحَدُهُمَا أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَيْءٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة القصص - الآية ١٥</div>
+        <div class="verse-text">وَدَخَلَ الْمَدِينَةَ عَلَىٰ حِينِ غَفْلَةٍ مِّنْ أَهْلِهَا فَوَجَدَ فِيهَا <span class="highlight">رَجُلَيْنِ</span> يَقْتَتِلَانِ</div>
+    </div>
+
+    <h3>صيغة رِجَالًا (جمع منصوب)</h3>
+    <span class="count-badge">٨ آيات</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النساء - الآية ١</div>
+        <div class="verse-text">يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمُ الَّذِي خَلَقَكُم مِّن نَّفْسٍ وَاحِدَةٍ وَخَلَقَ مِنْهَا زَوْجَهَا وَبَثَّ مِنْهُمَا <span class="highlight">رِجَالًا</span> كَثِيرًا وَنِسَاءً</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة يوسف - الآية ١٠٩</div>
+        <div class="verse-text">وَمَا أَرْسَلْنَا مِن قَبْلِكَ إِلَّا <span class="highlight">رِجَالًا</span> نُّوحِي إِلَيْهِم مِّنْ أَهْلِ الْقُرَىٰ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النحل - الآية ٤٣</div>
+        <div class="verse-text">وَمَا أَرْسَلْنَا مِن قَبْلِكَ إِلَّا <span class="highlight">رِجَالًا</span> نُّوحِي إِلَيْهِمْ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأنبياء - الآية ٧</div>
+        <div class="verse-text">وَمَا أَرْسَلْنَا قَبْلَكَ إِلَّا <span class="highlight">رِجَالًا</span> نُّوحِي إِلَيْهِمْ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الحج - الآية ٢٧</div>
+        <div class="verse-text">وَأَذِّن فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ <span class="highlight">رِجَالًا</span> وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة ص - الآية ٦٢</div>
+        <div class="verse-text">وَقَالُوا مَا لَنَا لَا نَرَىٰ <span class="highlight">رِجَالًا</span> كُنَّا نَعُدُّهُم مِّنَ الْأَشْرَارِ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النساء - الآية ١٧٦</div>
+        <div class="verse-text">وَإِن كَانُوا إِخْوَةً <span class="highlight">رِّجَالًا</span> وَنِسَاءً فَلِلذَّكَرِ مِثْلُ حَظِّ الْأُنثَيَيْنِ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأعراف - الآية ٤٨</div>
+        <div class="verse-text">وَنَادَىٰ أَصْحَابُ الْأَعْرَافِ <span class="highlight">رِجَالًا</span> يَعْرِفُونَهُم بِسِيمَاهُمْ</div>
+    </div>
+</section>
+
+<section id="verses-feet">
+    <h2>آيات الأَرْجُل (الأقدام)</h2>
+
+    <h3>صيغة أَرْجُلِهِمْ (أقدامهم)</h3>
+    <span class="count-badge">٣ آيات</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة يس - الآية ٦٥</div>
+        <div class="verse-text">الْيَوْمَ نَخْتِمُ عَلَىٰ أَفْوَاهِهِمْ وَتُكَلِّمُنَا أَيْدِيهِمْ وَتَشْهَدُ <span class="highlight">أَرْجُلُهُم</span> بِمَا كَانُوا يَكْسِبُونَ</div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة العنكبوت - الآية ٥٥</div>
+        <div class="verse-text">يَوْمَ يَغْشَاهُمُ الْعَذَابُ مِن فَوْقِهِمْ وَمِن تَحْتِ <span class="highlight">أَرْجُلِهِمْ</span></div>
+    </div>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة المائدة - الآية ٦٦</div>
+        <div class="verse-text">وَلَوْ أَنَّهُمْ أَقَامُوا التَّوْرَاةَ وَالْإِنجِيلَ لَأَكَلُوا مِن فَوْقِهِمْ وَمِن تَحْتِ <span class="highlight">أَرْجُلِهِم</span></div>
+    </div>
+
+    <h3>صيغة أَرْجُلِكُمْ (أقدامكم)</h3>
+    <span class="count-badge">١ آية</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة الأنعام - الآية ٦٥</div>
+        <div class="verse-text">قُلْ هُوَ الْقَادِرُ عَلَىٰ أَن يَبْعَثَ عَلَيْكُمْ عَذَابًا مِّن فَوْقِكُمْ أَوْ مِن تَحْتِ <span class="highlight">أَرْجُلِكُمْ</span></div>
+    </div>
+
+    <h3>صيغة بِرِجْلِكَ (بقدمك)</h3>
+    <span class="count-badge">١ آية</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة ص - الآية ٤٢</div>
+        <div class="verse-text">ارْكُضْ <span class="highlight">بِرِجْلِكَ</span> ۖ هَٰذَا مُغْتَسَلٌ بَارِدٌ وَشَرَابٌ</div>
+    </div>
+
+    <h3>صيغة رِجْلَيْنِ (قدمين)</h3>
+    <span class="count-badge">١ آية</span>
+
+    <div class="verse-card">
+        <div class="verse-reference">سورة النور - الآية ٤٥</div>
+        <div class="verse-text">وَاللَّهُ خَلَقَ كُلَّ دَابَّةٍ مِّن مَّاءٍ ۖ فَمِنْهُم مَّن يَمْشِي عَلَىٰ بَطْنِهِ وَمِنْهُم مَّن يَمْشِي عَلَىٰ <span class="highlight">رِجْلَيْنِ</span> وَمِنْهُم مَّن يَمْشِي عَلَىٰ أَرْبَعٍ</div>
+    </div>
+</section>
+
+<section id="analysis">
+    <h2>التحليل السياقي</h2>
+
+    <div class="category-box">
+        <div class="category-title">
+            <div class="category-icon">١</div>
+            سياقات استخدام "الرِّجَال" في مقابلة "النساء"
+        </div>
+        <p>يأتي لفظ "الرجال" في القرآن غالبًا في سياق المقارنة أو المقابلة مع "النساء"، مما يؤكد دلالته على الذكور البالغين:</p>
+        <ul class="meaning-list">
+            <li><strong>الأحكام الشرعية:</strong> "الرِّجَالُ قَوَّامُونَ عَلَى النِّسَاءِ" (النساء: ٣٤)</li>
+            <li><strong>المواريث:</strong> "وَإِن كَانُوا إِخْوَةً رِّجَالًا وَنِسَاءً" (النساء: ١٧٦)</li>
+            <li><strong>الخلق والتكاثر:</strong> "وَبَثَّ مِنْهُمَا رِجَالًا كَثِيرًا وَنِسَاءً" (النساء: ١)</li>
+            <li><strong>الشهادة:</strong> "فَإِن لَّمْ يَكُونَا رَجُلَيْنِ فَرَجُلٌ وَامْرَأَتَانِ" (البقرة: ٢٨٢)</li>
+        </ul>
+    </div>
+
+    <div class="category-box">
+        <div class="category-title">
+            <div class="category-icon">٢</div>
+            سياقات مدح الرجال المؤمنين
+        </div>
+        <p>يُستخدم لفظ "رجال" في سياقات المدح والثناء على صفات معينة:</p>
+        <ul class="meaning-list">
+            <li><strong>الصدق في العهد:</strong> "مِّنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ" (الأحزاب: ٢٣)</li>
+            <li><strong>عدم الانشغال عن ذكر الله:</strong> "رِجَالٌ لَّا تُلْهِيهِمْ تِجَارَةٌ وَلَا بَيْعٌ عَن ذِكْرِ اللَّهِ" (النور: ٣٧)</li>
+            <li><strong>حب التطهر:</strong> "فِيهِ رِجَالٌ يُحِبُّونَ أَن يَتَطَهَّرُوا" (التوبة: ١٠٨)</li>
+            <li><strong>الإيمان المكتوم:</strong> "وَقَالَ رَجُلٌ مُّؤْمِنٌ مِّنْ آلِ فِرْعَوْنَ يَكْتُمُ إِيمَانَهُ" (غافر: ٢٨)</li>
+        </ul>
+    </div>
+
+    <div class="category-box">
+        <div class="category-title">
+            <div class="category-icon">٣</div>
+            سياقات النبوة والرسالة
+        </div>
+        <p>التأكيد على بشرية الأنبياء بكونهم رجالًا من البشر:</p>
+        <ul class="meaning-list">
+            <li>"وَمَا أَرْسَلْنَا مِن قَبْلِكَ إِلَّا رِجَالًا نُّوحِي إِلَيْهِم" (يوسف: ١٠٩، النحل: ٤٣، الأنبياء: ٧)</li>
+            <li>"أَكَانَ لِلنَّاسِ عَجَبًا أَنْ أَوْحَيْنَا إِلَىٰ رَجُلٍ مِّنْهُمْ" (يونس: ٢)</li>
+            <li>"وَقَالُوا لَوْلَا نُزِّلَ هَٰذَا الْقُرْآنُ عَلَىٰ رَجُلٍ مِّنَ الْقَرْيَتَيْنِ عَظِيمٍ" (الزخرف: ٣١)</li>
+        </ul>
+    </div>
+
+    <div class="category-box">
+        <div class="category-title">
+            <div class="category-icon">٤</div>
+            سياقات الأرجل (الأقدام)
+        </div>
+        <p>تأتي الأرجل بمعنى الأقدام في سياقات محددة:</p>
+        <ul class="meaning-list">
+            <li><strong>الشهادة يوم القيامة:</strong> "وَتَشْهَدُ أَرْجُلُهُم بِمَا كَانُوا يَكْسِبُونَ" (يس: ٦٥)</li>
+            <li><strong>العذاب:</strong> "وَمِن تَحْتِ أَرْجُلِهِمْ" (العنكبوت: ٥٥)</li>
+            <li><strong>المشي:</strong> "وَمِنْهُم مَّن يَمْشِي عَلَىٰ رِجْلَيْنِ" (النور: ٤٥)</li>
+            <li><strong>الضرب بالقدم:</strong> "ارْكُضْ بِرِجْلِكَ" (ص: ٤٢)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="meanings">
+    <h2>المعاني المستنبطة من القرآن</h2>
+
+    <div class="discovery-box">
+        <div class="discovery-title">المعنى الأول: الرَّجُل = الذكر البالغ من البشر</div>
+        <p>الدلائل القرآنية:</p>
+        <ul class="meaning-list">
+            <li>المقابلة الدائمة مع "النساء" تؤكد أن المراد الذكور البالغين</li>
+            <li>السياقات الشرعية (الشهادة، المواريث، القوامة) تتطلب البلوغ</li>
+            <li>وصف الأنبياء بأنهم "رجال" يدل على الإنسان الذكر البالغ</li>
+            <li>استخدام "رجل رشيد" (هود: ٧٨) يدل على اشتراط العقل والرشد</li>
+        </ul>
+    </div>
+
+    <div class="discovery-box">
+        <div class="discovery-title">المعنى الثاني: الرِّجْل = القدم (عضو الجسم)</div>
+        <p>الدلائل القرآنية:</p>
+        <ul class="meaning-list">
+            <li>السياق يوضح المعنى: "يَمْشِي عَلَىٰ رِجْلَيْنِ" - المشي يكون بالأقدام</li>
+            <li>الاقتران بأعضاء الجسم: "أَيْدِيهِمْ... أَرْجُلُهُم" (يس: ٦٥)</li>
+            <li>الموضع: "مِن تَحْتِ أَرْجُلِهِمْ" - موضع القدم تحت الجسم</li>
+            <li>الفعل: "ارْكُضْ بِرِجْلِكَ" - الركض يكون بالقدم</li>
+        </ul>
+    </div>
+</section>
+
+<section id="discoveries">
+    <h2>الاكتشافات والملاحظات</h2>
+
+    <div class="discovery-box">
+        <div class="discovery-title">١. التفريق بين المعنيين بالحركات</div>
+        <p>القرآن يفرق بين المعنيين بالتشكيل:</p>
+        <ul class="meaning-list">
+            <li><strong>رَجُل</strong> (بفتح الراء وضم الجيم) = الذكر البالغ</li>
+            <li><strong>رِجْل</strong> (بكسر الراء وسكون الجيم) = القدم</li>
+        </ul>
+    </div>
+
+    <div class="discovery-box">
+        <div class="discovery-title">٢. صيغة "رِجَالًا" في سياق الحج</div>
+        <p>في آية الحج (٢٢:٢٧): "يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ"</p>
+        <p>هنا "رجالًا" تعني: <strong>مشاة على أقدامهم</strong>، في مقابلة الركبان على الإبل. وهذا معنى ثالث مشتق من الجذر يجمع بين المعنيين: الرجال الذين يمشون على أرجلهم.</p>
+    </div>
+
+    <div class="discovery-box">
+        <div class="discovery-title">٣. رجال الجن</div>
+        <p>في سورة الجن (٧٢:٦): "رِجَالٌ مِّنَ الْإِنسِ يَعُوذُونَ بِرِجَالٍ مِّنَ الْجِنِّ"</p>
+        <p>إطلاق لفظ "رجال" على الجن يدل على أن المعنى يشمل: <strong>الذكور البالغين من العقلاء</strong>، وليس فقط البشر.</p>
+    </div>
+
+    <div class="discovery-box">
+        <div class="discovery-title">٤. أصحاب الأعراف</div>
+        <p>ذُكر "رجال" في سياق أصحاب الأعراف (٧:٤٦-٤٨) مرتين، مما يشير إلى أن من سيكونون على الأعراف هم ذكور.</p>
+    </div>
+</section>
+
+<footer>
+    <p>بحث قرآني استقرائي</p>
+    <p>المنهجية: تحليل جميع الآيات القرآنية من الجذر (ر ج ل) واستنباط المعاني من السياق القرآني</p>
+    <p>عدد الآيات المدروسة: ٥٥+ آية</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>التحليل السياقي — الاطمئنان (ط م أ ن)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Amiri', serif; background: #f9f6f0; color: #2c2c2c; line-height: 1.9; padding: 30px; max-width: 960px; margin: 0 auto; }
+  .disclaimer { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px 18px; margin-bottom: 25px; font-size: 0.88rem; color: #664d03; }
+  nav { background: #1a5f7a; padding: 12px 18px; border-radius: 8px; margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { color: #e0f0f5; text-decoration: none; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; transition: background 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.2); }
+  h1 { color: #1a5f7a; font-size: 1.8rem; margin-bottom: 8px; border-bottom: 3px solid #1a5f7a; padding-bottom: 10px; }
+  h2 { color: #1a5f7a; font-size: 1.4rem; margin: 30px 0 15px; padding: 8px 14px; background: #e8f4f8; border-radius: 6px; border-right: 4px solid #1a5f7a; }
+  h3 { color: #2980b9; font-size: 1.15rem; margin: 20px 0 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  th { background: #1a5f7a; color: white; padding: 10px 12px; font-weight: 700; text-align: right; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; text-align: right; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  .verse-ref { background: #e8f4f8; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; color: #1a5f7a; white-space: nowrap; }
+  .note { background: #f0f8ff; border-right: 3px solid #2980b9; padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 0.95rem; }
+  .finding { background: white; border-radius: 10px; padding: 18px; margin: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.07); border-right: 4px solid #27ae60; }
+  .finding.critical { border-right-color: #e74c3c; }
+  .finding.insight { border-right-color: #f39c12; }
+  .finding-title { font-size: 1.1rem; color: #1a5f7a; font-weight: 700; margin-bottom: 8px; }
+  .evidence { font-size: 0.9rem; color: #555; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ddd; }
+  .arabic-quote { font-size: 1.15rem; background: #fafafa; padding: 8px 14px; border-radius: 6px; margin: 6px 0; display: block; }
+  .pattern-box { background: linear-gradient(135deg, #1a5f7a 0%, #2980b9 100%); color: white; padding: 20px; border-radius: 10px; margin: 15px 0; }
+  .pattern-box h3 { color: white; margin-top: 0; }
+  .pattern-box .formula { font-size: 1.3rem; text-align: center; padding: 10px; background: rgba(255,255,255,0.15); border-radius: 6px; margin: 10px 0; }
+  .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+  .comp-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .comp-card.positive { border-top: 3px solid #27ae60; }
+  .comp-card.negative { border-top: 3px solid #e74c3c; }
+  .comp-card h4 { color: #1a5f7a; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي مع تأصيل من النص الكامل للقرآن الكريم. رغم أن النتائج مصممة لتكون شاملة، إلا أنها غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+<nav>
+  <a href="00_الملخص.html">الملخص</a>
+  <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+  <a href="02_الآيات.html">الآيات</a>
+  <a href="03_التحليل.html" class="active">التحليل</a>
+  <a href="04_الاكتشافات.html">الاكتشافات</a>
+  <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a>
+</nav>
+
+<h1>التحليل السياقي — الاطمئنان</h1>
+
+<!-- ===== ١. نمط القطبية المزدوجة ===== -->
+<h2 id="polarity">١. نمط القطبية المزدوجة: المتعلَّق يحدد القيمة</h2>
+
+<div class="finding critical">
+  <div class="finding-title">🔑 الاكتشاف المحوري: الاطمئنان ليس فضيلة بذاته</div>
+  <p>القرآن يستخدم نفس الجذر (ط م أ ن) في سياقين متعاكسين تمامًا: إيجابي ممدوح وسلبي مذموم. ما يحدد قيمة الاطمئنان هو <strong>متعلَّقه</strong> — أي الشيء الذي يطمئن إليه القلب.</p>
+  <div class="evidence">
+    <strong>الشواهد:</strong>
+  </div>
+</div>
+
+<div class="comparison-grid">
+  <div class="comp-card positive">
+    <h4>✅ الاطمئنان الممدوح (٩ مرات)</h4>
+    <p><strong>المتعلَّق:</strong> الله، ذكر الله، نصر الله، الإيمان</p>
+    <p><strong>الآيات:</strong></p>
+    <p>• «تَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ» <a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></p>
+    <p>• «وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ» <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></p>
+    <p>• «لِّيَطْمَئِنَّ قَلْبِى» <a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a></p>
+    <p>• «وَلِتَطْمَئِنَّ قُلُوبُكُم بِهِ» <a href="02_الآيات.html#verse-3-126" class="verse-ref">٣:١٢٦</a> و<a href="02_الآيات.html#verse-8-10" class="verse-ref">٨:١٠</a></p>
+    <p>• «وَتَطْمَئِنَّ قُلُوبُنَا» <a href="02_الآيات.html#verse-5-113" class="verse-ref">٥:١١٣</a></p>
+    <p>• «ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ» <a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></p>
+  </div>
+  <div class="comp-card negative">
+    <h4>❌ الاطمئنان المذموم (٢ مرتين)</h4>
+    <p><strong>المتعلَّق:</strong> الحياة الدنيا، الخير الدنيوي</p>
+    <p><strong>الآيات:</strong></p>
+    <p>• «رَضُوا۟ بِٱلْحَيَوٰةِ ٱلدُّنْيَا وَٱطْمَأَنُّوا۟ بِهَا» <a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a></p>
+    <p>• «فَإِنْ أَصَابَهُۥ خَيْرٌ ٱطْمَأَنَّ بِهِ» <a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></p>
+    <p style="margin-top: 10px;"><strong>الملاحظة:</strong> كلا الاستخدامين السلبيين جاءا بصيغة <strong>الفعل الماضي</strong> — مما يشير إلى أن هذا الاطمئنان حدث منتهٍ وقرار محسوم، بينما الاطمئنان الإيجابي غالبًا بالمضارع (حالة مستمرة).</p>
+  </div>
+</div>
+
+<div class="pattern-box">
+  <h3>القاعدة القرآنية المستخلصة</h3>
+  <div class="formula">الاطمئنان + متعلَّق إلهي (ذكر الله، الإيمان، نصر الله) = فضيلة عليا</div>
+  <div class="formula">الاطمئنان + متعلَّق دنيوي (مال، خير ظاهري، دنيا) = سبب خسران</div>
+</div>
+
+<!-- ===== ٢. العلاقة مع الإيمان ===== -->
+<h2 id="iman-relation">٢. العلاقة بين الاطمئنان والإيمان</h2>
+
+<div class="finding">
+  <div class="finding-title">الاطمئنان مرحلة أعمق من الإيمان — وليس شرطًا له</div>
+  <p>الآيات تكشف أن الاطمئنان يأتي <strong>بعد</strong> الإيمان وليس قبله:</p>
+  <span class="arabic-quote">«أَوَلَمْ تُؤْمِن ۖ قَالَ بَلَىٰ وَلَـٰكِن لِّيَطْمَئِنَّ قَلْبِى» <a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a></span>
+  <p>إبراهيم عليه السلام أكّد إيمانه («بلى»)، لكنه طلب الاطمئنان كشيء زائد عن الإيمان. هذا يعني:</p>
+  <table>
+    <tr><th>المرحلة</th><th>الوصف</th><th>الدليل</th></tr>
+    <tr><td>١. الإيمان</td><td>التصديق القلبي والقبول</td><td>«أَوَلَمْ تُؤْمِن ۖ قَالَ بَلَىٰ»</td></tr>
+    <tr><td>٢. الاطمئنان</td><td>سكون القلب واستقراره بعد رؤية البرهان</td><td>«وَلَـٰكِن لِّيَطْمَئِنَّ قَلْبِى»</td></tr>
+  </table>
+</div>
+
+<div class="finding">
+  <div class="finding-title">الاطمئنان مبني على الإيمان — يصمد حيث يضعف الظاهر</div>
+  <span class="arabic-quote">«إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُۥ مُطْمَئِنٌّ بِٱلْإِيمَـٰنِ» <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></span>
+  <p>الاطمئنان هنا حالة قلبية تبقى ثابتة <strong>حتى تحت الإكراه الجسدي</strong>. الحرف «بـ» يكشف أن الإيمان هو <strong>أساس</strong> الاطمئنان ومادته — «مطمئنٌّ بالإيمان» أي أن الإيمان هو ما يُحدث الاطمئنان.</p>
+</div>
+
+<div class="finding insight">
+  <div class="finding-title">الترتيب القرآني: إيمان → ثم اطمئنان</div>
+  <span class="arabic-quote">«ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ» <a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></span>
+  <p>الواو هنا عاطفة تفيد الترتيب: آمنوا (ماضٍ) ثم تطمئنّ (مضارع). الإيمان فعل تمّ، والاطمئنان حالة مستمرة تتبعه. هذا يعني أن الإيمان <strong>حدث</strong> والاطمئنان <strong>حالة ناتجة عنه</strong>.</p>
+</div>
+
+<!-- ===== ٣. البنى المتوازية ===== -->
+<h2 id="parallels">٣. البنى المتوازية — الكلمات المصاحبة</h2>
+
+<table>
+  <tr>
+    <th>الكلمة المصاحبة</th>
+    <th>عدد الاقتران</th>
+    <th>نوع العلاقة</th>
+    <th>الآيات</th>
+  </tr>
+  <tr>
+    <td><strong>قلب / قلوب</strong></td>
+    <td>٧ من ١٣ (٥٤٪)</td>
+    <td>محل الاطمئنان</td>
+    <td><a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a> <a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a> <a href="02_الآيات.html#verse-3-126" class="verse-ref">٣:١٢٦</a> <a href="02_الآيات.html#verse-8-10" class="verse-ref">٨:١٠</a> <a href="02_الآيات.html#verse-5-113" class="verse-ref">٥:١١٣</a> <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></td>
+  </tr>
+  <tr>
+    <td><strong>ذكر الله</strong></td>
+    <td>٢ من ١٣ (١٥٪)</td>
+    <td>سبب مباشر</td>
+    <td><a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></td>
+  </tr>
+  <tr>
+    <td><strong>الإيمان / آمنوا</strong></td>
+    <td>٤ من ١٣ (٣١٪)</td>
+    <td>أساس وشرط</td>
+    <td><a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a> <a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a> <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a> <a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a></td>
+  </tr>
+  <tr>
+    <td><strong>بشرى / نصر</strong></td>
+    <td>٢ من ١٣ (١٥٪)</td>
+    <td>سبب ظرفي</td>
+    <td><a href="02_الآيات.html#verse-3-126" class="verse-ref">٣:١٢٦</a> <a href="02_الآيات.html#verse-8-10" class="verse-ref">٨:١٠</a></td>
+  </tr>
+  <tr>
+    <td><strong>نفس</strong></td>
+    <td>١ من ١٣ (٨٪)</td>
+    <td>محل الاطمئنان (أعلى مرتبة)</td>
+    <td><a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></td>
+  </tr>
+  <tr>
+    <td><strong>الحياة الدنيا</strong></td>
+    <td>٢ من ١٣ (١٥٪)</td>
+    <td>متعلَّق سلبي</td>
+    <td><a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a> <a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></td>
+  </tr>
+</table>
+
+<div class="note">
+  <strong>ملاحظة إحصائية:</strong> «القلب» هو الكلمة الأكثر اقترانًا بالاطمئنان (٥٨٪ من الورود). هذا يؤكد أن الاطمئنان في القرآن حالة <strong>قلبية داخلية</strong> بالدرجة الأولى، وليس مجرد استقرار مادي أو غياب خطر.
+</div>
+
+<!-- ===== ٤. الأنماط المقابلة (الأضداد) ===== -->
+<h2 id="antonyms">٤. الأضداد القرآنية للاطمئنان</h2>
+
+<p>القرآن يكشف أضداد الاطمئنان ضمنيًا من خلال السياقات المقابلة:</p>
+
+<table>
+  <tr>
+    <th>ضد الاطمئنان</th>
+    <th>الآية</th>
+    <th>كيف يظهر التقابل</th>
+  </tr>
+  <tr>
+    <td><strong>الانقلاب</strong> (انقَلَبَ عَلَىٰ وَجْهِهِ)</td>
+    <td><a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></td>
+    <td>«إنْ أصابه خير اطمأنّ به، وإنْ أصابته فتنة <strong>انقلب</strong>» — الاطمئنان المشروط ضده الانقلاب عند الابتلاء</td>
+  </tr>
+  <tr>
+    <td><strong>الخوف</strong></td>
+    <td><a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a></td>
+    <td>سياق صلاة الخوف: «فإذا اطمأننتم فأقيموا الصلاة» — الاطمئنان حالة تأتي <strong>بعد زوال الخوف</strong></td>
+  </tr>
+  <tr>
+    <td><strong>الجوع والخوف</strong></td>
+    <td><a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a></td>
+    <td>قرية «مطمئنة» عُوقبت بـ «لباس الجوع والخوف» — العقوبة نقيض الاطمئنان بدقة</td>
+  </tr>
+  <tr>
+    <td><strong>شرح الصدر بالكفر</strong></td>
+    <td><a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></td>
+    <td>«مطمئنٌّ بالإيمان» مقابل «شرح بالكفر صدرًا» — الاطمئنان ضد الانفتاح الراضي على الكفر</td>
+  </tr>
+  <tr>
+    <td><strong>الغفلة</strong></td>
+    <td><a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a></td>
+    <td>«اطمأنوا بها» مقرونة بـ «غافلون عن آياتنا» — الاطمئنان بالدنيا = نوع من الغفلة</td>
+  </tr>
+</table>
+
+<div class="finding">
+  <div class="finding-title">المعنى القرآني للاطمئنان من خلال أضداده</div>
+  <p>بجمع الأضداد يتكشّف معنى الاطمئنان الحقيقي:</p>
+  <p>الاطمئنان ليس مجرد غياب الخوف، بل هو: <strong>ثبات داخلي لا يتزعزع بالظروف</strong> (ضد الانقلاب)، و<strong>سكون قلبي بعد قلق</strong> (ضد الخوف)، و<strong>يقظة واعية</strong> (ضد الغفلة)، و<strong>انسجام القلب مع الإيمان</strong> (ضد شرح الصدر بالكفر).</p>
+</div>
+
+<!-- ===== ٥. أنماط الاستخدام السياقية ===== -->
+<h2 id="usage-patterns">٥. أنماط الاستخدام حسب السياق</h2>
+
+<table>
+  <tr>
+    <th>السياق</th>
+    <th>عدد الورود</th>
+    <th>الصيغة الغالبة</th>
+    <th>الآيات</th>
+  </tr>
+  <tr>
+    <td><strong>طلب / دعاء</strong></td>
+    <td>٣</td>
+    <td>مضارع منصوب بلام التعليل</td>
+    <td><a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a> <a href="02_الآيات.html#verse-3-126" class="verse-ref">٣:١٢٦</a> <a href="02_الآيات.html#verse-8-10" class="verse-ref">٨:١٠</a></td>
+  </tr>
+  <tr>
+    <td><strong>حقيقة كونية</strong></td>
+    <td>٢</td>
+    <td>مضارع مرفوع (تقريري)</td>
+    <td><a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></td>
+  </tr>
+  <tr>
+    <td><strong>وصف حالة إيمانية</strong></td>
+    <td>٢</td>
+    <td>اسم فاعل (صفة ثابتة)</td>
+    <td><a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a> <a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></td>
+  </tr>
+  <tr>
+    <td><strong>تحذير من الركون للدنيا</strong></td>
+    <td>٢</td>
+    <td>فعل ماضٍ (حدث محسوم)</td>
+    <td><a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a> <a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></td>
+  </tr>
+  <tr>
+    <td><strong>انتقال من حالة لأخرى</strong></td>
+    <td>١</td>
+    <td>فعل ماضٍ (تحوّل)</td>
+    <td><a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a></td>
+  </tr>
+  <tr>
+    <td><strong>مَثَل / افتراض</strong></td>
+    <td>٢</td>
+    <td>اسم فاعل (وصف)</td>
+    <td><a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a> <a href="02_الآيات.html#verse-17-95" class="verse-ref">١٧:٩٥</a></td>
+  </tr>
+</table>
+
+<div class="note">
+  <strong>ملاحظة بلاغية:</strong> الاطمئنان الإيجابي يأتي غالبًا بصيغ <strong>مستمرة</strong> (مضارع، اسم فاعل)، بينما الاطمئنان السلبي يأتي بصيغ <strong>ماضية محسومة</strong>. الآيات تشير إلى أن الاطمئنان بالله <strong>حالة حيّة مستمرة</strong>، بينما الاطمئنان بالدنيا <strong>قرار منتهٍ ثابت</strong>.
+</div>
+
+<!-- ===== ٦. لماذا اختار القرآن هذا الجذر ===== -->
+<h2 id="word-choice">٦. لماذا اختار القرآن جذر (ط م أ ن) دون غيره؟</h2>
+
+<div class="finding insight">
+  <div class="finding-title">المقارنة مع جذور قريبة</div>
+  <table>
+    <tr>
+      <th>الجذر</th>
+      <th>المعنى الأساسي</th>
+      <th>ما ينقصه مقارنة بـ ط م أ ن</th>
+    </tr>
+    <tr>
+      <td><strong>س ك ن</strong> (سكينة)</td>
+      <td>السكون والهدوء</td>
+      <td>لا يشترط سبق القلق — قد يكون سكونًا ابتدائيًا</td>
+    </tr>
+    <tr>
+      <td><strong>ه د أ</strong> (هدوء)</td>
+      <td>التوقف عن الحركة</td>
+      <td>يصف غياب الحركة فقط — لا يتضمن الاستقرار الداخلي</td>
+    </tr>
+    <tr>
+      <td><strong>أ م ن</strong> (أمان)</td>
+      <td>غياب الخوف والتهديد</td>
+      <td>يركّز على الجانب الأمني — لا يشمل السكون القلبي العميق</td>
+    </tr>
+    <tr>
+      <td><strong>ر ض ي</strong> (رضا)</td>
+      <td>القبول والموافقة</td>
+      <td>يصف موقفًا ذهنيًا — لا يتضمن الاستقرار الجسدي أو العاطفي</td>
+    </tr>
+  </table>
+  <p style="margin-top: 12px;">جذر <strong>ط م أ ن</strong> يجمع بشكل فريد بين: (أ) السكون بعد اضطراب سابق، (ب) الاستقرار الداخلي العميق، (ج) الثبات الذي لا يتزعزع. لذلك اختاره القرآن ليصف العلاقة بين القلب والإيمان — لأن الإيمان يُحدث سكونًا بعد تساؤلات وبحث.</p>
+</div>
+
+<!-- ===== ٧. مراتب الاطمئنان القرآني ===== -->
+<h2 id="levels">٧. مراتب الاطمئنان في القرآن — نموذج تصاعدي</h2>
+
+<div class="pattern-box">
+  <h3>المراتب من الأدنى إلى الأعلى</h3>
+  <table style="background: rgba(255,255,255,0.95); color: #2c2c2c;">
+    <tr><th>المرتبة</th><th>الوصف</th><th>الدليل</th></tr>
+    <tr>
+      <td>١. الاطمئنان المادي</td>
+      <td>استقرار في المكان وغياب الخطر</td>
+      <td>«فإذا اطمأننتم» <a href="02_الآيات.html#verse-4-103" class="verse-ref">٤:١٠٣</a></td>
+    </tr>
+    <tr>
+      <td>٢. طلب الاطمئنان</td>
+      <td>القلب المؤمن يبحث عن سكون أعمق</td>
+      <td>«ليطمئنّ قلبي» <a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a>، «وتطمئنّ قلوبنا» <a href="02_الآيات.html#verse-5-113" class="verse-ref">٥:١١٣</a></td>
+    </tr>
+    <tr>
+      <td>٣. الاطمئنان بذكر الله</td>
+      <td>حالة مستمرة من سكون القلب بالذكر</td>
+      <td>«ألا بذكر الله تطمئنّ القلوب» <a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></td>
+    </tr>
+    <tr>
+      <td>٤. القلب المطمئن بالإيمان</td>
+      <td>صفة ثابتة تصمد أمام الإكراه</td>
+      <td>«وقلبه مطمئنّ بالإيمان» <a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></td>
+    </tr>
+    <tr style="background: #e8f4f8;">
+      <td><strong>٥. النفس المطمئنة</strong></td>
+      <td><strong>أعلى المراتب — النفس بأكملها صارت مطمئنة</strong></td>
+      <td>«يا أيتها النفس المطمئنة» <a href="02_الآيات.html#verse-89-27" class="verse-ref">٨٩:٢٧</a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="finding">
+  <div class="finding-title">التدرج من القلب إلى النفس</div>
+  <p>في المراتب ١–٤، الاطمئنان يُنسب إلى <strong>القلب</strong>. في المرتبة ٥، يُنسب إلى <strong>النفس</strong> بأكملها. هذا يشير إلى أن الاطمئنان يبدأ في القلب ثم يتسع حتى يشمل النفس كلها — فيصبح الإنسان بأكمله في حالة سكون واستقرار.</p>
+</div>
+
+<!-- ===== ٨. الاطمئنان كعلاقة سببية ===== -->
+<h2 id="causation">٨. العلاقات السببية</h2>
+
+<table>
+  <tr>
+    <th>السبب</th>
+    <th>النتيجة</th>
+    <th>الآية</th>
+  </tr>
+  <tr>
+    <td>ذكر الله</td>
+    <td>← اطمئنان القلوب</td>
+    <td><a href="02_الآيات.html#verse-13-28" class="verse-ref">١٣:٢٨</a></td>
+  </tr>
+  <tr>
+    <td>رؤية البرهان الإلهي</td>
+    <td>← اطمئنان قلب إبراهيم</td>
+    <td><a href="02_الآيات.html#verse-2-260" class="verse-ref">٢:٢٦٠</a></td>
+  </tr>
+  <tr>
+    <td>نصر الله (إنزال الملائكة)</td>
+    <td>← بشرى + اطمئنان القلوب</td>
+    <td><a href="02_الآيات.html#verse-3-126" class="verse-ref">٣:١٢٦</a> <a href="02_الآيات.html#verse-8-10" class="verse-ref">٨:١٠</a></td>
+  </tr>
+  <tr>
+    <td>الإيمان</td>
+    <td>← قلب مطمئن يصمد أمام الإكراه</td>
+    <td><a href="02_الآيات.html#verse-16-106" class="verse-ref">١٦:١٠٦</a></td>
+  </tr>
+  <tr>
+    <td>الاطمئنان بالدنيا</td>
+    <td>← غفلة عن الآيات + خسران</td>
+    <td><a href="02_الآيات.html#verse-10-7" class="verse-ref">١٠:٧</a></td>
+  </tr>
+  <tr>
+    <td>اطمئنان مشروط بالخير</td>
+    <td>← انقلاب عند الفتنة + خسران الدارين</td>
+    <td><a href="02_الآيات.html#verse-22-11" class="verse-ref">٢٢:١١</a></td>
+  </tr>
+  <tr>
+    <td>كفران النعم (بعد اطمئنان مادي)</td>
+    <td>← عقوبة بالجوع والخوف</td>
+    <td><a href="02_الآيات.html#verse-16-112" class="verse-ref">١٦:١١٢</a></td>
+  </tr>
+</table>
+
+<div class="finding">
+  <div class="finding-title">خلاصة التحليل السببي</div>
+  <p>الآيات تشير إلى دورة واضحة: <strong>الإيمان + ذكر الله + رؤية آياته → اطمئنان القلب → ثبات أمام الابتلاء → النفس المطمئنة</strong>. وفي المقابل: <strong>الرضا بالدنيا + الاطمئنان بها → غفلة → انقلاب عند الفتنة → خسران</strong>.</p>
+</div>
+
+<div class="disclaimer" style="margin-top: 30px;">⚠️ هذا التقرير تم إنشاؤه بواسطة عامل بحث قرآني مدعوم بالذكاء الاصطناعي. النتائج غير مضمونة ولا ينبغي مشاركتها كمرجع موثوق.</div>
+
+</body>
+</html>

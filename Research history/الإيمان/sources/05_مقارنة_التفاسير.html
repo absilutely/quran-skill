@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقارنة التفاسير والترجمات - الإيمان</title>
+    <style>
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            line-height: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fafafa;
+            color: #333;
+        }
+        h1, h2, h3 { color: #1a5f7a; }
+        .nav {
+            background: #1a5f7a;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .nav a { color: white; text-decoration: none; margin: 0 10px; padding: 5px 10px; }
+        .nav a:hover { background: rgba(255,255,255,0.2); border-radius: 3px; }
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .section-box {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .verse-arabic {
+            background: #f0f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: #1a5f7a;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 2.2;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+            vertical-align: top;
+        }
+        .comparison-table th {
+            background: #1a5f7a;
+            color: white;
+        }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .rating {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .rating-excellent { background: #d4edda; color: #155724; }
+        .rating-good { background: #d1ecf1; color: #0c5460; }
+        .rating-partial { background: #fff3cd; color: #856404; }
+        .rating-weak { background: #f8d7da; color: #721c24; }
+        .finding {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4edda 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-right: 5px solid #1a5f7a;
+        }
+        .finding h4 { color: #1a5f7a; margin-top: 0; }
+        .translation-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .translation-card .source {
+            font-weight: bold;
+            color: #1a5f7a;
+            margin-bottom: 5px;
+        }
+        .translation-card .en-text {
+            font-family: Georgia, serif;
+            direction: ltr;
+            text-align: left;
+            font-size: 0.95em;
+            color: #444;
+        }
+        .highlight { background: #ffe0b2; padding: 2px 4px; border-radius: 3px; }
+        .tafsir-excerpt {
+            background: #f8f9fa;
+            padding: 15px;
+            border-right: 3px solid #1a5f7a;
+            margin: 10px 0;
+        }
+        .tafsir-source { font-weight: bold; color: #1a5f7a; }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .summary-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 3px solid #1a5f7a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .score-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .score-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+        .score-high { background: #28a745; }
+        .score-mid { background: #ffc107; }
+        .score-low { background: #dc3545; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="00_الملخص.html">الملخص</a>
+        <a href="01_التحليل_الصرفي.html">التحليل الصرفي</a>
+        <a href="02_الآيات.html">الآيات</a>
+        <a href="03_التحليل.html">التحليل</a>
+        <a href="04_الاكتشافات.html">الاكتشافات</a>
+        <a href="05_مقارنة_التفاسير.html">مقارنة التفاسير</a>
+    </nav>
+
+    <div class="disclaimer">
+        <strong>⚠️ تنبيه منهجي:</strong> هذا البحث يعتمد على استخراج المعاني من القرآن مباشرة. التفاسير والترجمات تُستخدم هنا للمقارنة فقط، وليست مصدراً للمعنى. التقييم يقيس مدى توافق كل تفسير أو ترجمة مع ما أظهره التحليل القرآني المباشر.
+    </div>
+
+    <h1>مقارنة التفاسير والترجمات</h1>
+
+    <!-- ===== القسم الأول: مقارنة الترجمات ===== -->
+    <div class="section-box">
+        <h2>أولاً: مقارنة الترجمات الإنجليزية</h2>
+        <p>نقارن ثلاث ترجمات رئيسية في ترجمتها لمفهوم الإيمان ومشتقاته:</p>
+
+        <!-- الآية الأولى: 49:14 -->
+        <h3>١. آية التفريق الأساسية (49:14)</h3>
+        <div class="verse-arabic">
+            قَالَتِ الْأَعْرَابُ آمَنَّا ۖ قُل لَّمْ تُؤْمِنُوا وَلَـٰكِن قُولُوا أَسْلَمْنَا وَلَمَّا يَدْخُلِ الْإِيمَانُ فِي قُلُوبِكُمْ
+        </div>
+
+        <div class="translation-card">
+            <div class="source">Sahih International (ترجمة صحيح الدولية)</div>
+            <div class="en-text">
+                The bedouins say, "We have <span class="highlight">believed</span>." Say, "You have not [yet] <span class="highlight">believed</span>; but say [instead], 'We have <span class="highlight">submitted</span>,' for <span class="highlight">faith</span> has not yet entered your hearts."
+            </div>
+        </div>
+        <div class="translation-card">
+            <div class="source">Abdel Haleem (ترجمة عبد الحليم)</div>
+            <div class="en-text">
+                The desert Arabs say, 'We have <span class="highlight">faith</span>.' Tell them, 'You do not have <span class="highlight">faith</span>. What you should say instead is, "We have <span class="highlight">submitted</span>," for <span class="highlight">faith</span> has not yet entered your hearts.'
+            </div>
+        </div>
+        <div class="translation-card">
+            <div class="source">Mustafa Khattab (ترجمة مصطفى خطاب)</div>
+            <div class="en-text">
+                The nomadic Arabs say, "We have <span class="highlight">believed</span>." Say, "You have not believed; but say, 'We have submitted,' for <span class="highlight">faith</span> has not yet entered your hearts."
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <tr>
+                <th>المعيار</th>
+                <th>Sahih International</th>
+                <th>Abdel Haleem</th>
+                <th>Mustafa Khattab</th>
+            </tr>
+            <tr>
+                <td>ترجمة آمَنَّا</td>
+                <td>"believed" <span class="rating rating-good">جيد</span></td>
+                <td>"have faith" <span class="rating rating-good">جيد</span></td>
+                <td>"believed" <span class="rating rating-good">جيد</span></td>
+            </tr>
+            <tr>
+                <td>ترجمة أَسْلَمْنَا</td>
+                <td>"submitted" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"submitted" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"submitted" <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>الفرق بين الإيمان والإسلام</td>
+                <td>واضح <span class="rating rating-excellent">ممتاز</span></td>
+                <td>واضح <span class="rating rating-excellent">ممتاز</span></td>
+                <td>واضح <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>محل الإيمان (القلب)</td>
+                <td>"entered your hearts" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"entered your hearts" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"entered your hearts" <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+        </table>
+        <p><strong>التقييم:</strong> الترجمات الثلاث نجحت في نقل التفريق بين الإيمان والإسلام في هذه الآية بشكل دقيق.</p>
+
+        <!-- الآية الثانية: 8:2 -->
+        <h3>٢. آية صفات المؤمنين (8:2)</h3>
+        <div class="verse-arabic">
+            إِنَّمَا الْمُؤْمِنُونَ الَّذِينَ إِذَا ذُكِرَ اللَّـهُ وَجِلَتْ قُلُوبُهُمْ وَإِذَا تُلِيَتْ عَلَيْهِمْ آيَاتُهُ زَادَتْهُمْ إِيمَانًا
+        </div>
+
+        <div class="translation-card">
+            <div class="source">Sahih International</div>
+            <div class="en-text">
+                The believers are only those who, when Allāh is mentioned, their hearts become <span class="highlight">fearful</span>, and when His verses are recited to them, it <span class="highlight">increases them in faith</span>
+            </div>
+        </div>
+        <div class="translation-card">
+            <div class="source">Abdel Haleem</div>
+            <div class="en-text">
+                true believers are those whose hearts <span class="highlight">tremble with awe</span> when God is mentioned, whose <span class="highlight">faith increases</span> when His revelations are recited to them
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <tr>
+                <th>المعيار</th>
+                <th>Sahih International</th>
+                <th>Abdel Haleem</th>
+            </tr>
+            <tr>
+                <td>ترجمة وَجِلَتْ قُلُوبُهُمْ</td>
+                <td>"hearts become fearful" <span class="rating rating-partial">جزئي</span></td>
+                <td>"hearts tremble with awe" <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>ترجمة زَادَتْهُمْ إِيمَانًا</td>
+                <td>"increases them in faith" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"faith increases" <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>نقل مفهوم زيادة الإيمان</td>
+                <td>واضح <span class="rating rating-excellent">ممتاز</span></td>
+                <td>واضح <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+        </table>
+        <p><strong>التقييم:</strong> ترجمة عبد الحليم أدق في نقل معنى الوَجَل (الخشية المقترنة بالتعظيم) مقارنة بـ fearful التي تميل للخوف المطلق.</p>
+
+        <!-- الآية الثالثة: 49:15 -->
+        <h3>٣. آية تعريف المؤمنين (49:15)</h3>
+        <div class="verse-arabic">
+            إِنَّمَا الْمُؤْمِنُونَ الَّذِينَ آمَنُوا بِاللَّـهِ وَرَسُولِهِ ثُمَّ لَمْ يَرْتَابُوا وَجَاهَدُوا بِأَمْوَالِهِمْ وَأَنفُسِهِمْ
+        </div>
+
+        <div class="translation-card">
+            <div class="source">Sahih International</div>
+            <div class="en-text">
+                The believers are only the ones who have believed in Allāh and His Messenger and then <span class="highlight">doubt not</span> but strive with their properties and their lives in the cause of Allāh. It is those who are the <span class="highlight">truthful</span>.
+            </div>
+        </div>
+        <div class="translation-card">
+            <div class="source">Abdel Haleem</div>
+            <div class="en-text">
+                The true believers are the ones who have faith in God and His Messenger and <span class="highlight">leave all doubt behind</span>, the ones who have struggled with their possessions and their persons in God's way: they are the ones who are <span class="highlight">true</span>.
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <tr>
+                <th>المعيار</th>
+                <th>Sahih International</th>
+                <th>Abdel Haleem</th>
+            </tr>
+            <tr>
+                <td>ترجمة لَمْ يَرْتَابُوا</td>
+                <td>"doubt not" <span class="rating rating-good">جيد</span></td>
+                <td>"leave all doubt behind" <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>نقل شرط اليقين</td>
+                <td>مختصر <span class="rating rating-good">جيد</span></td>
+                <td>أوضح وأشمل <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>ترجمة الصَّادِقُونَ</td>
+                <td>"truthful" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"true" <span class="rating rating-good">جيد</span></td>
+            </tr>
+        </table>
+
+        <!-- الآية الرابعة: 2:285 -->
+        <h3>٤. آية متعلقات الإيمان (2:285)</h3>
+        <div class="verse-arabic">
+            آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّـهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ
+        </div>
+
+        <div class="translation-card">
+            <div class="source">Sahih International</div>
+            <div class="en-text">
+                The Messenger has believed in what was revealed to him from his Lord, and [so have] the believers. All of them have believed in Allāh and His <span class="highlight">angels</span> and His <span class="highlight">books</span> and His <span class="highlight">messengers</span>
+            </div>
+        </div>
+        <div class="translation-card">
+            <div class="source">Abdel Haleem</div>
+            <div class="en-text">
+                The Messenger believes in what has been sent down to him from his Lord, as do the faithful. They all believe in God, His <span class="highlight">angels</span>, His <span class="highlight">scriptures</span>, and His <span class="highlight">messengers</span>.
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <tr>
+                <th>المعيار</th>
+                <th>Sahih International</th>
+                <th>Abdel Haleem</th>
+            </tr>
+            <tr>
+                <td>ترجمة كُتُبِهِ</td>
+                <td>"His books" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"His scriptures" <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>ترجمة المؤمنون</td>
+                <td>"the believers" <span class="rating rating-excellent">ممتاز</span></td>
+                <td>"the faithful" <span class="rating rating-good">جيد</span></td>
+            </tr>
+            <tr>
+                <td>نقل متعلقات الإيمان الأربعة</td>
+                <td>كاملة <span class="rating rating-excellent">ممتاز</span></td>
+                <td>كاملة <span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ===== القسم الثاني: مقارنة التفاسير ===== -->
+    <div class="section-box">
+        <h2>ثانياً: مقارنة التفاسير</h2>
+        <p>نقارن ثلاثة تفاسير رئيسية في تناولها لمفهوم الإيمان:</p>
+
+        <h3>١. تفسير آية الحجرات 14 (آية التفريق)</h3>
+
+        <div class="tafsir-excerpt">
+            <div class="tafsir-source">تفسير القرطبي (الجامع لأحكام القرآن):</div>
+            <p>ذكر القرطبي أن الآية نزلت في بني أسد بن خزيمة الذين وفدوا على النبي ﷺ في سنة تسع (سنة الوفود)، وكانت سنة جدب ببلادهم فأسلموا، وكانوا يمنّون على النبي ﷺ بإسلامهم. فالقرطبي يركز على السبب التاريخي للنزول ويفرّق بين الإسلام الظاهري والإيمان القلبي.</p>
+            <p><strong>تقييم الدقة:</strong> <span class="rating rating-excellent">ممتاز</span> — يتوافق مع التحليل القرآني في التفريق بين الإسلام الظاهري والإيمان القلبي.</p>
+        </div>
+
+        <div class="tafsir-excerpt">
+            <div class="tafsir-source">تفسير المختصر (الوسيط - الطنطاوي):</div>
+            <p>ختم السورة بالرد على الأعراب الذين قالوا آمنا دون أن يدركوا حقيقة الإيمان، وبيّن من هم المؤمنون الصادقون. وأوضح أن المراد جماعة من الأعراب لا كلهم، لأن منهم من يؤمن بالله واليوم الآخر حقاً.</p>
+            <p><strong>تقييم الدقة:</strong> <span class="rating rating-excellent">ممتاز</span> — يؤكد على التفريق بين ادعاء الإيمان وحقيقته، مع التنبيه على عدم التعميم.</p>
+        </div>
+
+        <div class="tafsir-excerpt">
+            <div class="tafsir-source">تفسير ابن كثير:</div>
+            <p>قال ابن كثير إن الآية تُثبت أن الإيمان مرتبة أعلى من الإسلام وفقاً لعلماء أهل السنة والجماعة، واستدل بحديث جبريل عليه السلام حين سأل النبي ﷺ عن الإسلام ثم الإيمان ثم الإحسان، مما يدل على التدرج من العام إلى الخاص.</p>
+            <p><strong>تقييم الدقة:</strong> <span class="rating rating-excellent">ممتاز</span> — يتوافق تماماً مع ما أظهره التحليل القرآني من أن الإيمان أخص من الإسلام.</p>
+        </div>
+
+        <h3>٢. المقارنة في مسألة زيادة الإيمان (8:2)</h3>
+
+        <table class="comparison-table">
+            <tr>
+                <th>التفسير</th>
+                <th>موقفه من زيادة الإيمان</th>
+                <th>التوافق مع القرآن</th>
+            </tr>
+            <tr>
+                <td>القرطبي</td>
+                <td>يؤكد أن الإيمان يزيد وينقص، ويستشهد بأقوال السلف وآيات متعددة</td>
+                <td><span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>المختصر</td>
+                <td>يقر بزيادة الإيمان بسماع القرآن وتدبر الآيات</td>
+                <td><span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>ابن كثير</td>
+                <td>يفصّل في أن صفات المؤمنين الحقيقيين تشمل وجل القلب وزيادة الإيمان بالتلاوة والتوكل</td>
+                <td><span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+        </table>
+
+        <h3>٣. المقارنة في تعريف الإيمان (49:15)</h3>
+
+        <table class="comparison-table">
+            <tr>
+                <th>التفسير</th>
+                <th>تحديد شروط الإيمان</th>
+                <th>التوافق</th>
+            </tr>
+            <tr>
+                <td>القرطبي</td>
+                <td>ثلاثة شروط: التصديق بالله ورسوله، عدم الارتياب، الجهاد بالمال والنفس</td>
+                <td><span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>المختصر</td>
+                <td>يؤكد على أن الإيمان الحقيقي يتطلب يقيناً وعملاً لا مجرد قول</td>
+                <td><span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+            <tr>
+                <td>ابن كثير</td>
+                <td>يفصّل في أن الصادقين هم من جمعوا بين التصديق واليقين والعمل</td>
+                <td><span class="rating rating-excellent">ممتاز</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ===== القسم الثالث: تحليل نقاط الاتفاق والاختلاف ===== -->
+    <div class="section-box">
+        <h2>ثالثاً: نقاط الاتفاق والاختلاف</h2>
+
+        <div class="finding">
+            <h4>نقاط الاتفاق بين التفاسير والتحليل القرآني</h4>
+            <ol>
+                <li><strong>التفريق بين الإسلام والإيمان:</strong> جميع التفاسير تؤكد أن الإسلام أعم والإيمان أخص، وأن الإيمان محله القلب</li>
+                <li><strong>زيادة الإيمان ونقصانه:</strong> التفاسير الثلاثة تقر بأن الإيمان يتفاوت ويزيد وينقص</li>
+                <li><strong>شروط الإيمان:</strong> اتفاق على أن الإيمان يتطلب تصديقاً ويقيناً وعملاً</li>
+                <li><strong>متعلقات الإيمان:</strong> اتفاق على أركان الإيمان المذكورة في القرآن</li>
+            </ol>
+        </div>
+
+        <div class="finding">
+            <h4>نقاط يُضيفها التحليل القرآني المباشر</h4>
+            <ol>
+                <li><strong>العلاقة الجذرية بين الإيمان والأمن:</strong> ربط لغوي بين إيمان (باب الإفعال) وأمن (باب الفعل الثلاثي) لم تفصّل فيه التفاسير بشكل كافٍ — فالمؤمن يُعطي الأمان لمن حوله (بدلالة الآية 9:6)</li>
+                <li><strong>نمط الاقتران المنهجي:</strong> تكرار "آمنوا وعملوا الصالحات" (~50 مرة) يكشف عن علاقة بنيوية بين الإيمان والعمل لا مجرد ارتباط عرضي</li>
+                <li><strong>التعريف القرآني الذاتي للإيمان:</strong> القرآن يعرّف الإيمان بنفسه في آيات محددة (49:15، 8:2-4) دون حاجة لمصادر خارجية</li>
+                <li><strong>الإيمان كفعل إلهي وبشري معاً:</strong> من جهة الله: يحبّبه ويزيّنه في القلوب (49:7)، يثبّت المؤمنين (8:12)؛ ومن جهة الإنسان: يختار ويعمل ويجاهد</li>
+                <li><strong>ستة أضداد للإيمان:</strong> الكفر، النفاق، الريب، الفسوق، العصيان، الشرك — مما يكشف عن أبعاد متعددة للإيمان لا بُعداً واحداً</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ===== القسم الرابع: تقييم الترجمات ===== -->
+    <div class="section-box">
+        <h2>رابعاً: التقييم العام للترجمات</h2>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h4>Sahih International</h4>
+                <p>ترجمة حرفية دقيقة تحافظ على البنية القرآنية</p>
+                <table class="comparison-table">
+                    <tr><td>الدقة اللغوية</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:90%"></div></div>
+                    </td></tr>
+                    <tr><td>نقل الفروق الدلالية</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:85%"></div></div>
+                    </td></tr>
+                    <tr><td>وضوح المعنى</td><td>
+                        <div class="score-bar"><div class="score-fill score-mid" style="width:75%"></div></div>
+                    </td></tr>
+                </table>
+                <p><strong>نقاط القوة:</strong> حرفية عالية، تحافظ على التراكيب القرآنية</p>
+                <p><strong>نقاط الضعف:</strong> أحياناً تفتقر للسلاسة، "fearful" لا تنقل معنى الوَجَل بدقة</p>
+            </div>
+            <div class="summary-card">
+                <h4>Abdel Haleem</h4>
+                <p>ترجمة تفسيرية سلسة مع حفاظ على الدقة</p>
+                <table class="comparison-table">
+                    <tr><td>الدقة اللغوية</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:85%"></div></div>
+                    </td></tr>
+                    <tr><td>نقل الفروق الدلالية</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:90%"></div></div>
+                    </td></tr>
+                    <tr><td>وضوح المعنى</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:90%"></div></div>
+                    </td></tr>
+                </table>
+                <p><strong>نقاط القوة:</strong> سلاسة اللغة، "tremble with awe" أدق من "fearful"، "leave all doubt behind" أوضح</p>
+                <p><strong>نقاط الضعف:</strong> أحياناً تبتعد قليلاً عن الحرفية</p>
+            </div>
+            <div class="summary-card">
+                <h4>Mustafa Khattab</h4>
+                <p>ترجمة حديثة تجمع بين الدقة والوضوح</p>
+                <table class="comparison-table">
+                    <tr><td>الدقة اللغوية</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:85%"></div></div>
+                    </td></tr>
+                    <tr><td>نقل الفروق الدلالية</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:85%"></div></div>
+                    </td></tr>
+                    <tr><td>وضوح المعنى</td><td>
+                        <div class="score-bar"><div class="score-fill score-high" style="width:85%"></div></div>
+                    </td></tr>
+                </table>
+                <p><strong>نقاط القوة:</strong> لغة عصرية واضحة، متاحة للقارئ الحديث</p>
+                <p><strong>نقاط الضعف:</strong> أقل تفصيلاً في بعض المواضع</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== القسم الخامس: تقييم التفاسير ===== -->
+    <div class="section-box">
+        <h2>خامساً: التقييم العام للتفاسير</h2>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h4>تفسير القرطبي</h4>
+                <table class="comparison-table">
+                    <tr><td>التوافق مع القرآن</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                    <tr><td>الاستيعاب اللغوي</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                    <tr><td>ربط الآيات ببعضها</td><td><span class="rating rating-good">جيد</span></td></tr>
+                    <tr><td>الاعتماد على القرآن أولاً</td><td><span class="rating rating-good">جيد</span></td></tr>
+                </table>
+                <p><strong>الخلاصة:</strong> تفسير شامل يجمع بين التحليل اللغوي والفقهي وأسباب النزول. يتميز بعمق التحليل اللغوي وكثرة الأقوال.</p>
+            </div>
+            <div class="summary-card">
+                <h4>تفسير المختصر (الوسيط)</h4>
+                <table class="comparison-table">
+                    <tr><td>التوافق مع القرآن</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                    <tr><td>الاستيعاب اللغوي</td><td><span class="rating rating-good">جيد</span></td></tr>
+                    <tr><td>ربط الآيات ببعضها</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                    <tr><td>الاعتماد على القرآن أولاً</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                </table>
+                <p><strong>الخلاصة:</strong> تفسير وسيط واضح يربط بين الآيات بشكل جيد، مع تنبيهات مهمة (كعدم التعميم على كل الأعراب). مناسب للقارئ المعاصر.</p>
+            </div>
+            <div class="summary-card">
+                <h4>تفسير ابن كثير</h4>
+                <table class="comparison-table">
+                    <tr><td>التوافق مع القرآن</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                    <tr><td>الاستيعاب اللغوي</td><td><span class="rating rating-good">جيد</span></td></tr>
+                    <tr><td>ربط الآيات ببعضها</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                    <tr><td>الاعتماد على القرآن أولاً</td><td><span class="rating rating-excellent">ممتاز</span></td></tr>
+                </table>
+                <p><strong>الخلاصة:</strong> يتميز بتفسير القرآن بالقرآن والحديث، وربط المفاهيم بحديث جبريل. يُعدّ من أقرب التفاسير لمنهج التحليل القرآني المباشر.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== القسم السادس: التوصيات ===== -->
+    <div class="section-box">
+        <h2>سادساً: التوصيات</h2>
+
+        <div class="finding">
+            <h4>أفضل المصادر لدراسة مفهوم الإيمان</h4>
+            <table class="comparison-table">
+                <tr>
+                    <th>الترتيب</th>
+                    <th>التفاسير</th>
+                    <th>الترجمات</th>
+                </tr>
+                <tr>
+                    <td>١ (الأفضل)</td>
+                    <td><strong>ابن كثير</strong> — لمنهجه في تفسير القرآن بالقرآن</td>
+                    <td><strong>Abdel Haleem</strong> — لدقة نقل الفروق الدلالية</td>
+                </tr>
+                <tr>
+                    <td>٢</td>
+                    <td><strong>القرطبي</strong> — لعمق التحليل اللغوي</td>
+                    <td><strong>Sahih International</strong> — للحرفية والأمانة</td>
+                </tr>
+                <tr>
+                    <td>٣</td>
+                    <td><strong>المختصر</strong> — للوضوح والربط بين الآيات</td>
+                    <td><strong>Mustafa Khattab</strong> — للغة العصرية</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="finding">
+            <h4>ملاحظات ختامية على الترجمات</h4>
+            <ul>
+                <li><strong>إشكالية ترجمة "آمن" بـ "believed":</strong> كلمة believed في الإنجليزية تركز على الجانب العقلي/الفكري، بينما آمَنَ في القرآن تشمل القلب والعمل واليقين. لا توجد كلمة إنجليزية واحدة تنقل المعنى الكامل.</li>
+                <li><strong>إشكالية ترجمة "إيمان" بـ "faith":</strong> كلمة faith أقرب لكنها تفتقر لبُعد الأمان والطمأنينة الموجود في الجذر العربي (أ م ن).</li>
+                <li><strong>التوصية:</strong> استخدام أكثر من ترجمة معاً للحصول على صورة أكمل، مع الرجوع دائماً للنص العربي.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="disclaimer" style="margin-top: 20px;">
+        <strong>⚠️ تذكير:</strong> هذا البحث تحليل لغوي قرآني بحت. التقييمات المذكورة أعلاه تقيس مدى توافق كل مصدر مع ما أظهره التحليل القرآني المباشر، وليست حكماً على جودة هذه المصادر بشكل مطلق. لكل تفسير وترجمة سياقها ومنهجها وأهدافها.
+    </div>
+
+    <nav class="nav" style="margin-top: 20px;">
+        <a href="04_الاكتشافات.html">← السابق: الاكتشافات</a>
+        <a href="00_الملخص.html">العودة للملخص</a>
+    </nav>
+</body>
+</html>

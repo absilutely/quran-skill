@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحليل السياقي: الزكاة والإنفاق والصدقة</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.8;
+            direction: rtl;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 2.2em; margin-bottom: 10px; text-align: center; }
+        header p { text-align: center; font-size: 1.1em; opacity: 0.95; }
+        .disclaimer {
+            background: #fff3cd;
+            border-right: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+        }
+        .section h3 {
+            font-size: 1.25em;
+            margin: 20px 0 10px;
+            color: #444;
+        }
+        .section p, .section li {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        .section ul { padding-right: 25px; }
+        .verse-inline {
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            font-size: 1.15em;
+            color: #1a1a2e;
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+            line-height: 2;
+            border-right: 3px solid;
+        }
+        .ref { font-weight: bold; font-size: 0.85em; }
+        .zky { border-color: #667eea; color: #667eea; }
+        .nfq { border-color: #f093fb; color: #f093fb; }
+        .sdq { border-color: #4facfe; color: #4facfe; }
+        .highlight-box {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .highlight-box.zky { background: #f0f0ff; border-right: 5px solid #667eea; }
+        .highlight-box.nfq { background: #fff0ff; border-right: 5px solid #f093fb; }
+        .highlight-box.sdq { background: #f0f8ff; border-right: 5px solid #4facfe; }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border: 1px solid #ddd;
+        }
+        .comparison-table th {
+            color: white;
+            font-weight: bold;
+        }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .pattern-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-right: 4px solid #667eea;
+        }
+        .pattern-card h4 { color: #667eea; margin-bottom: 10px; }
+        .nav-files {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .nav-files h3 { color: #667eea; margin-bottom: 15px; }
+        .nav-files a {
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-files a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .nav-files a.active { background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            .comparison-table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>🔬 التحليل السياقي والأنماط القرآنية</h1>
+    <p>دراسة معمّقة للسياقات والأنماط التي ترد فيها «الزكاة» و«الإنفاق» و«الصدقة» في القرآن الكريم</p>
+</header>
+
+<div class="disclaimer">
+    <strong>⚠️ منهجية البحث:</strong>
+    هذا التحليل مبنيٌّ بالكامل على استقراء الآيات القرآنية فقط، دون الاعتماد على أيّ مصدر خارجي.
+    المعاني مستنبطة من السياق القرآني الداخلي ومن تتبّع كل لفظة في مواضعها المختلفة.
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- القسم الأول: النمط الاقتراني للزكاة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #667eea; color: #667eea;">أولاً: أنماط ورود «الزكاة» في القرآن</h2>
+
+    <h3>١. النمط الاقتراني الثابت: الصلاة والزكاة</h3>
+    <p>
+        من أبرز الأنماط القرآنية أنّ «الزكاة» بصيغة التعريف (الزَّكَاة / الزَّكَوٰة) تقترن في الغالب الأعمّ بـ«الصلاة» في تركيب واحد: <strong>«أقيموا الصلاة وآتوا الزكاة»</strong>. هذا الاقتران يتكرر في أكثر من 25 موضعًا، مما يدلّ على أنّ «الزكاة» في القرآن ليست مجرد «إخراج مال»، بل هي ركن عبادي مقرون بالصلاة، له طبيعة تختلف عن مطلق الإنفاق.
+    </p>
+
+    <div class="highlight-box zky">
+        <strong>أمثلة على الاقتران:</strong>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 2:43 ﴾</span> وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 9:11 ﴾</span> فَإِن تَابُوا۟ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ فَإِخْوَٰنُكُمْ فِى ٱلدِّينِ
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 22:41 ﴾</span> ٱلَّذِينَ إِن مَّكَّنَّـٰهُمْ فِى ٱلْأَرْضِ أَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ
+        </div>
+    </div>
+
+    <h3>٢. الزكاة كـ«تطهير» و«نماء» — البُعد الأصلي للجذر</h3>
+    <p>
+        جذر «ز ك و» يدور حول معنيين متلازمين: <strong>الطهارة والنماء</strong>. وهذا يظهر بوضوح في التصاريف غير المالية:
+    </p>
+    <div class="highlight-box zky">
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 18:74 ﴾</span> أَقَتَلْتَ نَفْسًا <strong>زَكِيَّةً</strong>ۢ بِغَيْرِ نَفْسٍ — «زكيّة» هنا بمعنى: طاهرة بريئة
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 19:19 ﴾</span> لِأَهَبَ لَكِ غُلَـٰمًا <strong>زَكِيًّا</strong> — غلام طاهر نقيّ
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 18:19 ﴾</span> فَلْيَنظُرْ أَيُّهَآ <strong>أَزْكَىٰ</strong> طَعَامًا — أي أطهر وأطيب
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 24:30 ﴾</span> ذَٰلِكَ <strong>أَزْكَىٰ</strong> لَهُمْ — أي أطهر لنفوسهم
+        </div>
+    </div>
+
+    <h3>٣. التزكية الإلهية — فعل الله لا فعل العبد</h3>
+    <p>
+        نمطٌ لافت: عندما يأتي الفعل «يُزَكِّي» مسندًا إلى الله أو إلى الرسول، فإنه يعني تطهير النفوس ورفعها، وليس إخراج المال:
+    </p>
+    <div class="highlight-box zky">
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 2:129 ﴾</span> رَبَّنَا وَٱبْعَثْ فِيهِمْ رَسُولًا مِّنْهُمْ يَتْلُوا۟ عَلَيْهِمْ ءَايَـٰتِكَ وَيُعَلِّمُهُمُ ٱلْكِتَـٰبَ وَٱلْحِكْمَةَ <strong>وَيُزَكِّيهِمْ</strong>
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 24:21 ﴾</span> وَلَـٰكِنَّ ٱللَّهَ <strong>يُزَكِّى</strong> مَن يَشَآءُ
+        </div>
+    </div>
+    <p>
+        وبالمقابل، يُنهى الإنسان عن تزكية نفسه:
+    </p>
+    <div class="highlight-box zky">
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 53:32 ﴾</span> فَلَا <strong>تُزَكُّوٓا۟</strong> أَنفُسَكُمْ ۖ هُوَ أَعْلَمُ بِمَنِ ٱتَّقَىٰ
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 4:49 ﴾</span> أَلَمْ تَرَ إِلَى ٱلَّذِينَ <strong>يُزَكُّونَ</strong> أَنفُسَهُم ۚ بَلِ ٱللَّهُ يُزَكِّى مَن يَشَآءُ
+        </div>
+    </div>
+
+    <h3>٤. «تَزَكَّى» — الفلاح الشخصي</h3>
+    <p>
+        صيغة «تَزَكَّى» (باب التفعّل) تأتي في سياق الفلاح الذاتي والتطهير الشخصي:
+    </p>
+    <div class="highlight-box zky">
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 87:14 ﴾</span> قَدْ أَفْلَحَ مَن <strong>تَزَكَّىٰ</strong>
+        </div>
+        <div class="verse-inline" style="border-color: #667eea;">
+            <span class="ref zky">﴿ 35:18 ﴾</span> وَمَن <strong>تَزَكَّىٰ</strong> فَإِنَّمَا <strong>يَتَزَكَّىٰ</strong> لِنَفْسِهِۦ
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- القسم الثاني: أنماط الإنفاق -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #f093fb; color: #d63384;">ثانيًا: أنماط ورود «الإنفاق» في القرآن</h2>
+
+    <h3>١. الإنفاق كفعل عامّ يشمل كل بذل</h3>
+    <p>
+        جذر «ن ف ق» أوسع نطاقًا من «الزكاة» و«الصدقة». فهو يشمل كل إخراج للمال، سواء كان في سبيل الله أو في سبيل الباطل، سواء كان طوعيًا أو فرضيًا. والدليل أنّ القرآن يستخدمه حتى في وصف إنفاق الكفار:
+    </p>
+    <div class="highlight-box nfq">
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 8:36 ﴾</span> إِنَّ ٱلَّذِينَ كَفَرُوا۟ <strong>يُنفِقُونَ</strong> أَمْوَٰلَهُمْ لِيَصُدُّوا۟ عَن سَبِيلِ ٱللَّهِ
+        </div>
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 4:38 ﴾</span> وَٱلَّذِينَ <strong>يُنفِقُونَ</strong> أَمْوَٰلَهُمْ رِئَآءَ ٱلنَّاسِ
+        </div>
+    </div>
+
+    <h3>٢. «ماذا ينفقون» — سؤال الكمّ والكيف</h3>
+    <p>
+        نمطٌ مميز في القرآن: يُسأل النبي ﷺ عن ماذا ينفقون وكيف ينفقون، مما يؤكد أنّ «الإنفاق» مفهوم عامّ يحتاج إلى توجيه:
+    </p>
+    <div class="highlight-box nfq">
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 2:215 ﴾</span> يَسْـَٔلُونَكَ <strong>مَاذَا يُنفِقُونَ</strong> ۖ قُلْ مَآ أَنفَقْتُم مِّنْ خَيْرٍ فَلِلْوَٰلِدَيْنِ وَٱلْأَقْرَبِينَ...
+        </div>
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 2:219 ﴾</span> وَيَسْـَٔلُونَكَ <strong>مَاذَا يُنفِقُونَ</strong> قُلِ ٱلْعَفْوَ
+        </div>
+    </div>
+
+    <h3>٣. الإنفاق وشروطه: الإخلاص والتوسط</h3>
+    <p>
+        يرسم القرآن ملامح الإنفاق المقبول في عدة آيات تؤكد على الإخلاص والتوسط:
+    </p>
+    <div class="highlight-box nfq">
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 2:265 ﴾</span> وَمَثَلُ ٱلَّذِينَ <strong>يُنفِقُونَ</strong> أَمْوَٰلَهُمُ ٱبْتِغَآءَ مَرْضَاتِ ٱللَّهِ
+        </div>
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 25:67 ﴾</span> وَٱلَّذِينَ إِذَآ <strong>أَنفَقُوا۟</strong> لَمْ يُسْرِفُوا۟ وَلَمْ يَقْتُرُوا۟ وَكَانَ بَيْنَ ذَٰلِكَ قَوَامًا
+        </div>
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 2:267 ﴾</span> أَنفِقُوا۟ مِن طَيِّبَـٰتِ مَا كَسَبْتُمْ
+        </div>
+    </div>
+
+    <h3>٤. الإنفاق في ميزان الإيمان</h3>
+    <p>
+        القرآن يجعل الإنفاق علامةً إيمانية ترتبط بالإيمان بالغيب واليوم الآخر:
+    </p>
+    <div class="highlight-box nfq">
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 2:3 ﴾</span> ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ <strong>يُنفِقُونَ</strong>
+        </div>
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 3:92 ﴾</span> لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ <strong>تُنفِقُوا۟</strong> مِمَّا تُحِبُّونَ
+        </div>
+    </div>
+
+    <h3>٥. البُخل كمقابل للإنفاق</h3>
+    <p>
+        يأتي التحذير من الإمساك (عدم الإنفاق) في سياقات شديدة:
+    </p>
+    <div class="highlight-box nfq">
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 9:34 ﴾</span> وَٱلَّذِينَ يَكْنِزُونَ ٱلذَّهَبَ وَٱلْفِضَّةَ وَلَا <strong>يُنفِقُونَهَا</strong> فِى سَبِيلِ ٱللَّهِ فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ
+        </div>
+        <div class="verse-inline" style="border-color: #f093fb;">
+            <span class="ref nfq">﴿ 17:100 ﴾</span> إِذًا لَّأَمْسَكْتُمْ خَشْيَةَ <strong>ٱلْإِنفَاقِ</strong> ۚ وَكَانَ ٱلْإِنسَـٰنُ قَتُورًا
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- القسم الثالث: أنماط الصدقة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #4facfe; color: #0d6efd;">ثالثًا: أنماط ورود «الصدقة» في القرآن</h2>
+
+    <h3>١. الصدقة كتطهير: الربط بالتزكية</h3>
+    <p>
+        الآية المفتاحية التي تجمع «الصدقة» و«التزكية» معًا:
+    </p>
+    <div class="highlight-box sdq">
+        <div class="verse-inline" style="border-color: #4facfe;">
+            <span class="ref sdq">﴿ 9:103 ﴾</span> خُذْ مِنْ أَمْوَٰلِهِمْ <strong>صَدَقَةً</strong> تُطَهِّرُهُمْ <strong>وَتُزَكِّيهِم</strong> بِهَا
+        </div>
+    </div>
+    <p>
+        هذه الآية تكشف أنّ «الصدقة» ليست مجرد عطاء مالي، بل هي وسيلة تطهير وتزكية. ووجود الجذرين (ص د ق) و(ز ك و) في آية واحدة يؤكد التكامل بينهما لا الترادف.
+    </p>
+
+    <h3>٢. مصارف الصدقات — التحديد القرآني</h3>
+    <p>
+        القرآن يحدد مصارف «الصدقات» بشكل دقيق في آية واحدة فريدة:
+    </p>
+    <div class="highlight-box sdq">
+        <div class="verse-inline" style="border-color: #4facfe;">
+            <span class="ref sdq">﴿ 9:60 ﴾</span> إِنَّمَا <strong>ٱلصَّدَقَـٰتُ</strong> لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِ ۖ فَرِيضَةً مِّنَ ٱللَّهِ
+        </div>
+    </div>
+    <p>
+        لاحظ أنّ كلمة «فريضة» وردت هنا مع «الصدقات» لا مع «الزكاة»، مما يُعيد النظر في الفهم الشائع.
+    </p>
+
+    <h3>٣. الصدقة والربا — المقابلة القرآنية</h3>
+    <div class="highlight-box sdq">
+        <div class="verse-inline" style="border-color: #4facfe;">
+            <span class="ref sdq">﴿ 2:276 ﴾</span> يَمْحَقُ ٱللَّهُ ٱلرِّبَوٰا۟ وَيُرْبِى <strong>ٱلصَّدَقَـٰتِ</strong>
+        </div>
+    </div>
+    <p>
+        القرآن يضع «الصدقات» في مقابل «الربا» مباشرةً: الربا يُمحق، والصدقات تُنمّى. وهذا التقابل لم يرد مع «الزكاة» ولا مع «الإنفاق».
+    </p>
+
+    <h3>٤. الصدقة كبديل وكفّارة</h3>
+    <p>
+        تأتي «الصدقة» في سياق الكفّارة والبدل:
+    </p>
+    <div class="highlight-box sdq">
+        <div class="verse-inline" style="border-color: #4facfe;">
+            <span class="ref sdq">﴿ 2:196 ﴾</span> فَفِدْيَةٌ مِّن صِيَامٍ أَوْ <strong>صَدَقَةٍ</strong> أَوْ نُسُكٍ — في سياق الحج
+        </div>
+        <div class="verse-inline" style="border-color: #4facfe;">
+            <span class="ref sdq">﴿ 58:12 ﴾</span> إِذَا نَـٰجَيْتُمُ ٱلرَّسُولَ فَقَدِّمُوا۟ بَيْنَ يَدَىْ نَجْوَىٰكُمْ <strong>صَدَقَةً</strong>
+        </div>
+    </div>
+
+    <h3>٥. «صَدُقَاتِهِنَّ» — المهر كصدقة</h3>
+    <div class="highlight-box sdq">
+        <div class="verse-inline" style="border-color: #4facfe;">
+            <span class="ref sdq">﴿ 4:4 ﴾</span> وَءَاتُوا۟ ٱلنِّسَآءَ <strong>صَدُقَـٰتِهِنَّ</strong> نِحْلَةً
+        </div>
+    </div>
+    <p>
+        استخدام جذر «ص د ق» للمهر يُظهر أنّ الجذر يحمل معنى «الصِّدق» و«الإخلاص في العطاء»، وليس مجرد التبرع.
+    </p>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- القسم الرابع: المقارنة المباشرة -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #333;">رابعًا: جدول المقارنة الشاملة</h2>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th style="background: #667eea;">المعيار</th>
+                <th style="background: #667eea;">الزكاة (ز ك و)</th>
+                <th style="background: #f093fb;">الإنفاق (ن ف ق)</th>
+                <th style="background: #4facfe;">الصدقة (ص د ق)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>المعنى الجذري</strong></td>
+                <td>الطهارة والنماء</td>
+                <td>الإخراج والنفاذ</td>
+                <td>الصدق والإخلاص</td>
+            </tr>
+            <tr>
+                <td><strong>الاقتران الرئيسي</strong></td>
+                <td>الصلاة (ثنائي ثابت)</td>
+                <td>سبيل الله / الإيمان بالغيب</td>
+                <td>التطهير والتزكية</td>
+            </tr>
+            <tr>
+                <td><strong>الفاعل</strong></td>
+                <td>المؤمنون (حصريًا)</td>
+                <td>المؤمنون والكفار معًا</td>
+                <td>المؤمنون (غالبًا)</td>
+            </tr>
+            <tr>
+                <td><strong>النطاق</strong></td>
+                <td>ركن تعبّدي محدد</td>
+                <td>كل بذل مالي عام</td>
+                <td>عطاء بصدق وإخلاص</td>
+            </tr>
+            <tr>
+                <td><strong>وصف بالفريضة</strong></td>
+                <td>ضمنيًا (مع الصلاة)</td>
+                <td>لا</td>
+                <td>نعم (فريضة من الله - 9:60)</td>
+            </tr>
+            <tr>
+                <td><strong>المصارف المحددة</strong></td>
+                <td>غير محددة في الآيات</td>
+                <td>واسعة ومتنوعة</td>
+                <td>ثمانية أصناف (9:60)</td>
+            </tr>
+            <tr>
+                <td><strong>البُعد غير المالي</strong></td>
+                <td>واسع (تزكية النفس، طهارة)</td>
+                <td>يُستعمل مع «الوقت» مجازًا</td>
+                <td>المهر (4:4)، التصديق</td>
+            </tr>
+            <tr>
+                <td><strong>المقابل / النقيض</strong></td>
+                <td>عدم التزكية</td>
+                <td>الكنز والبخل</td>
+                <td>الربا والمنّ والأذى</td>
+            </tr>
+            <tr>
+                <td><strong>عدد الآيات</strong></td>
+                <td>52 آية</td>
+                <td>38 آية</td>
+                <td>15 آية</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- القسم الخامس: التقاطعات -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #ff9800; color: #e65100;">خامسًا: نقاط التقاطع بين المصطلحات</h2>
+
+    <div class="pattern-card" style="border-color: #ff9800;">
+        <h4 style="color: #e65100;">تقاطع ١: «الصدقة» و«التزكية» في آية واحدة</h4>
+        <p>في ﴿9:103﴾ تجتمع الصدقة والتزكية: «خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا». هذا يدل على أنّ الصدقة وسيلة والتزكية غاية.</p>
+    </div>
+
+    <div class="pattern-card" style="border-color: #ff9800;">
+        <h4 style="color: #e65100;">تقاطع ٢: «الإنفاق» يشمل «الصدقة» لغويًا</h4>
+        <p>في ﴿2:264﴾ يقول تعالى: «لَا تُبْطِلُوا۟ صَدَقَـٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ كَٱلَّذِى يُنفِقُ مَالَهُۥ رِئَآءَ ٱلنَّاسِ». هنا استُخدمت «الصدقات» و«الإنفاق» في سياق واحد، مما يدل على تداخل مع تمايز: الصدقة هي النوع المحدد، والإنفاق هو الفعل العام.</p>
+    </div>
+
+    <div class="pattern-card" style="border-color: #ff9800;">
+        <h4 style="color: #e65100;">تقاطع ٣: الزكاة والصدقة في ﴿58:13﴾</h4>
+        <p>تأتي «الصدقات» في ﴿58:12﴾ ثم «الزكاة» في ﴿58:13﴾ في سياق متتابع، مما يُظهر أنهما مفهومان مختلفان وإن كانا متقاربين. الصدقة المقدَّمة بين يدي النجوى (58:12) خُفِّفت واستُبدلت بإقامة الصلاة وإيتاء الزكاة (58:13).</p>
+    </div>
+
+    <div class="pattern-card" style="border-color: #ff9800;">
+        <h4 style="color: #e65100;">تقاطع ٤: الزكاة والإنفاق لا يقترنان مباشرة</h4>
+        <p>ملاحظة دقيقة: لا توجد آية تجمع بين «الزكاة» و«الإنفاق» في تركيب واحد مباشر. الزكاة تقترن بالصلاة، والإنفاق يأتي مستقلاً أو مع الإيمان. هذا الفصل يؤكد اختلاف المفهومين في الاستعمال القرآني.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- القسم السادس: الأنماط الإحصائية -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section">
+    <h2 style="border-color: #28a745; color: #28a745;">سادسًا: الأنماط الإحصائية والتوزيع</h2>
+
+    <h3>١. التوزيع السُّوَري</h3>
+    <p>
+        <strong>الزكاة:</strong> تنتشر في 33 سورة من سور القرآن، مع تركّز ملحوظ في السور المدنية (البقرة، التوبة، النور، الأحزاب). في المقابل، ترد في سور مكّية مبكّرة (مريم، الأنبياء، المؤمنون) مما يدل على أصالة المفهوم قبل التشريع التفصيلي.
+    </p>
+    <p>
+        <strong>الإنفاق:</strong> يتركّز بشكل لافت في سورة البقرة (أكثر من 15 آية) ثم التوبة. سورة البقرة تضمّ أطول سلسلة متصلة عن الإنفاق (الآيات 261-274).
+    </p>
+    <p>
+        <strong>الصدقة:</strong> أقل الثلاثة ورودًا (15 آية)، مع تركّز في سورة التوبة (6 آيات) والبقرة (5 آيات).
+    </p>
+
+    <h3>٢. سورة التوبة: الملتقى الثلاثي</h3>
+    <p>
+        سورة التوبة هي السورة الوحيدة التي تجتمع فيها الجذور الثلاثة بكثافة عالية: «الزكاة» في آيات (5، 11، 18، 71)، و«الإنفاق» في آيات (34، 53، 54، 98، 121)، و«الصدقة» في آيات (58، 60، 79، 103، 104). هذا التجمع يجعل سورة التوبة المرجع الأول لفهم العلاقة بين المصطلحات الثلاثة.
+    </p>
+</div>
+
+<div class="nav-files">
+    <h3>📂 ملفات البحث</h3>
+    <a href="00_SUMMARY.html">الملخص</a>
+    <a href="01_MORPHOLOGY.html">التصريف</a>
+    <a href="02_VERSES.html">الآيات</a>
+    <a href="03_ANALYSIS.html" class="active">التحليل</a>
+    <a href="04_DISCOVERIES.html">الاكتشافات</a>
+    <a href="05_TAFSIR_COMPARISON.html">التفاسير</a>
+</div>
+
+</div>
+</body>
+</html>

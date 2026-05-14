@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بحث قرآني شامل — الدين القيم</title>
+<style>
+  :root {
+    --primary: #2c3e50;
+    --accent: #2980b9;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --purple: #8e44ad;
+    --red: #c0392b;
+    --light: #fafaf7;
+    --border: #d6eaf8;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: var(--light); color: #1a1a1a; margin: 0; padding: 0; direction: rtl; font-size: 16px; }
+
+  /* ===== COVER ===== */
+  .cover { background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 60%, #34495e 100%); color: white; padding: 60px 40px; text-align: center; min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+  .cover h1 { font-size: 2.8rem; margin: 0 0 12px 0; letter-spacing: 2px; }
+  .cover .subtitle { font-size: 1.1rem; opacity: 0.8; margin: 0 0 24px 0; }
+  .cover .meta { font-size: 0.85rem; opacity: 0.6; }
+
+  /* ===== NAV ===== */
+  .toc-nav { background: #34495e; position: sticky; top: 0; z-index: 100; padding: 0 32px; display: flex; align-items: center; gap: 0; overflow-x: auto; }
+  .toc-nav a { color: #ecf0f1; text-decoration: none; padding: 14px 16px; font-size: 0.88rem; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  .toc-nav a:hover { background: rgba(255,255,255,0.1); border-bottom-color: var(--accent); }
+
+  /* ===== SECTIONS ===== */
+  .section { max-width: 960px; margin: 0 auto; padding: 48px 28px; border-bottom: 1px solid #e8f4fd; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+  .section-icon { font-size: 2rem; }
+  .section-header h2 { margin: 0; color: var(--primary); font-size: 1.6rem; border-bottom: 3px solid var(--accent); padding-bottom: 6px; }
+
+  /* ===== DISCLAIMER ===== */
+  .disclaimer { background: #fef3cd; border: 1px solid #f39c12; border-right: 5px solid #f39c12; padding: 16px 20px; border-radius: 6px; font-size: 0.92rem; margin: 32px auto; max-width: 960px; }
+
+  /* ===== ARABIC ===== */
+  .arabic-big { font-size: 3rem; color: #1a5276; font-weight: bold; text-align: center; padding: 28px; background: linear-gradient(135deg, #eaf4fb, #d6eaf8); border-radius: 12px; margin: 28px 0; letter-spacing: 4px; }
+  .arabic { font-size: 1.2rem; line-height: 2.2; }
+  .arabic-verse { font-size: 1.5rem; line-height: 2.4; text-align: center; background: #f0f7ff; border-radius: 8px; padding: 20px; margin: 16px 0; color: #1a1a2e; }
+  .highlight { background: #ffd700; padding: 1px 4px; border-radius: 3px; }
+
+  /* ===== STATS ===== */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 24px 0; }
+  .stat-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .stat-number { font-size: 2.4rem; font-weight: bold; color: var(--accent); }
+  .stat-label { font-size: 0.82rem; color: #7f8c8d; margin-top: 6px; line-height: 1.4; }
+
+  /* ===== FINDING CARDS ===== */
+  .finding-card { background: white; border: 1px solid #d5e8d4; border-right: 5px solid var(--green); border-radius: 8px; padding: 22px 24px; margin: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .finding-card h4 { margin: 0 0 12px 0; color: #1e8449; font-size: 1.05rem; }
+  .finding-number { display: inline-block; background: var(--green); color: white; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; font-size: 0.9rem; margin-left: 10px; }
+  .verse-ref-sm { color: #7f8c8d; font-size: 0.83rem; }
+
+  /* ===== TABLES ===== */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  th { background: var(--primary); color: white; padding: 12px 16px; text-align: right; font-size: 0.92rem; }
+  td { padding: 11px 16px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.93rem; line-height: 1.7; }
+  tr:nth-child(even) { background: #f8f9fa; }
+
+  /* ===== MORPHOLOGY ===== */
+  .wazn { color: var(--purple); font-weight: bold; }
+  .morph-row-main { background: #eaf4fb !important; }
+  .morph-row-divine { background: #fef9e7 !important; }
+
+  /* ===== ANALYSIS ===== */
+  .analysis-box { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin: 20px 0; }
+  .analysis-box h4 { margin: 0 0 12px 0; color: #1a5276; }
+  .key-insight { background: #eafaf1; border-right: 4px solid var(--green); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+  .key-insight h4 { margin: 0 0 8px 0; color: #1e8449; }
+
+  /* ===== TAFSIR ===== */
+  .tafsir-block { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 18px 22px; margin: 16px 0; }
+  .tafsir-block h5 { margin: 0 0 8px 0; color: var(--primary); }
+  .tafsir-text { font-size: 0.95rem; line-height: 1.85; color: #2c3e50; border-right: 3px solid #aed6f1; padding-right: 14px; }
+  .verdict { display: inline-block; border-radius: 4px; padding: 2px 10px; font-size: 0.8rem; color: white; margin-top: 8px; }
+  .verdict-good { background: var(--green); }
+  .verdict-partial { background: var(--orange); }
+  .verdict-miss { background: var(--red); }
+
+  /* ===== DISCOVERIES ===== */
+  .discovery-item { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 18px 22px; margin: 16px 0; }
+  .discovery-item h5 { margin: 0 0 8px 0; color: #1a5276; }
+  .type-badge { display: inline-block; border-radius: 4px; padding: 2px 9px; font-size: 0.78rem; color: white; margin-left: 8px; }
+  .type-synonym { background: var(--purple); }
+  .type-coupled { background: var(--accent); }
+  .type-causal { background: var(--green); }
+  .type-definition { background: var(--orange); }
+
+  /* ===== SOURCE LINKS ===== */
+  .source-links { background: #f0f7ff; border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; margin: 40px auto; max-width: 960px; }
+  .source-links h3 { margin: 0 0 16px 0; color: var(--primary); }
+  .source-links ul { margin: 0; padding-right: 20px; }
+  .source-links li { margin: 10px 0; }
+  .source-links a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+  .source-links a:hover { text-decoration: underline; }
+
+  /* ===== FOOTER ===== */
+  .footer { background: var(--primary); color: rgba(255,255,255,0.7); text-align: center; padding: 28px; font-size: 0.88rem; }
+  .footer p { margin: 6px 0; }
+
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 1.8rem; }
+    .arabic-big { font-size: 2rem; }
+    .section { padding: 32px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <h1>الدين القيم</h1>
+  <p class="subtitle">بحث قرآني شامل — مستند إلى القرآن الكريم وحده</p>
+  <p class="meta">تاريخ البحث: 2026 | اللغة: العربية | المنهج: قرآني خالص</p>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="toc-nav">
+  <a href="#summary">📋 الملخص</a>
+  <a href="#morphology">🔤 الصرف</a>
+  <a href="#verses">📖 الآيات</a>
+  <a href="#analysis">🔍 التحليل</a>
+  <a href="#discoveries">💡 الاكتشافات</a>
+  <a href="#tafsir">📚 التفاسير</a>
+  <a href="#sources">🔗 المصادر</a>
+</nav>
+
+<!-- ===== DISCLAIMER ===== -->
+<div class="disclaimer">
+  ⚠️ <strong>تنبيه:</strong> هذا التقرير صادر عن وكيل بحث قرآني آلي مستند إلى النص القرآني الكامل. وإن كانت النتائج تسعى إلى الاستيعاب الشامل، إلا أنها لا يمكن ضمانها وينبغي عدم تداولها بوصفها مرجعًا قاطعًا.
+</div>
+
+<!-- ========================================
+     SECTION 1: SUMMARY
+======================================== -->
+<div class="section" id="summary">
+  <div class="section-header">
+    <span class="section-icon">📋</span>
+    <h2>الملخص التنفيذي</h2>
+  </div>
+
+  <div class="arabic-big">الدِّينُ الْقَيِّمُ</div>
+
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">آيات أساسية</div></div>
+    <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">بعبارة "الدين القيم" الحرفية</div></div>
+    <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">أبعاد تعريفية مستنبطة</div></div>
+    <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">تفاسير قورنت</div></div>
+    <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">مقترحات بحثية</div></div>
+  </div>
+
+  <h3>النتائج الرئيسية</h3>
+
+  <div class="finding-card">
+    <h4><span class="finding-number">1</span> الدين القيم هو الفطرة الإلهية الأصيلة</h4>
+    <div class="arabic-verse">فِطْرَتَ اللَّهِ الَّتِي فَطَرَ النَّاسَ عَلَيْهَا ۚ لَا تَبْدِيلَ لِخَلْقِ اللَّهِ ۚ <span class="highlight">ذَٰلِكَ الدِّينُ الْقَيِّمُ</span></div>
+    <p class="verse-ref-sm">الروم 30:30 — القيِّمية مشتقة من عدم التبديل = رسوخ أزلي في خِلقة الإنسان</p>
+  </div>
+
+  <div class="finding-card">
+    <h4><span class="finding-number">2</span> الدين القيم هو النظام الكوني منذ بدء الخلق</h4>
+    <div class="arabic-verse">إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ يَوْمَ خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ ۚ <span class="highlight">ذَٰلِكَ الدِّينُ الْقَيِّمُ</span></div>
+    <p class="verse-ref-sm">التوبة 9:36 — الدين القيم سابق للإنسان، متجذر في بنية الكون</p>
+  </div>
+
+  <div class="finding-card">
+    <h4><span class="finding-number">3</span> الدين القيم هو التوحيد الخالص — الحكم لله وحده</h4>
+    <div class="arabic-verse">إِنِ الْحُكْمُ إِلَّا لِلَّهِ ۚ أَمَرَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ ۚ <span class="highlight">ذَٰلِكَ الدِّينُ الْقَيِّمُ</span></div>
+    <p class="verse-ref-sm">يوسف 12:40 — جوهر الدين القيم العقدي: إفراد الله بالحكم والعبادة</p>
+  </div>
+
+  <div class="finding-card">
+    <h4><span class="finding-number">4</span> الدين القيم هو ملة إبراهيم الحنيفية = الصراط المستقيم</h4>
+    <div class="arabic-verse">هَدَانِي رَبِّي إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ <span class="highlight">دِينًا قِيَمًا</span> مِّلَّةَ إِبْرَاهِيمَ حَنِيفًا</div>
+    <p class="verse-ref-sm">الأنعام 6:161 — معادلة ثلاثية: الصراط المستقيم = الدين القيم = ملة إبراهيم</p>
+  </div>
+
+  <div class="finding-card">
+    <h4><span class="finding-number">5</span> الدين القيم = الإخلاص + الصلاة + الزكاة</h4>
+    <div class="arabic-verse">وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ حُنَفَاءَ وَيُقِيمُوا الصَّلَاةَ وَيُؤْتُوا الزَّكَاةَ ۚ <span class="highlight">وَذَٰلِكَ دِينُ الْقَيِّمَةِ</span></div>
+    <p class="verse-ref-sm">البيِّنة 98:5 — أوضح تعريف إجرائي قرآني: العبادة الخالصة + الصلاة + الزكاة</p>
+  </div>
+
+  <h3>مقارنة الفهم التقليدي بالمستنبط قرآنيًا</h3>
+  <table>
+    <tr>
+      <th>الجانب</th>
+      <th>الفهم التقليدي</th>
+      <th>الفهم القرآني المستنبط</th>
+    </tr>
+    <tr>
+      <td>معنى "القيِّم"</td>
+      <td>المستقيم، القويم</td>
+      <td>فَيْعِل: استقامة راسخة مبالغ فيها، لا تحتاج تصحيحًا</td>
+    </tr>
+    <tr>
+      <td>طبيعة الدين القيم</td>
+      <td>تشريع ديني صحيح</td>
+      <td>نظام كوني سابق للخلق وفطرة مغروسة في الإنسان</td>
+    </tr>
+    <tr>
+      <td>علاقته بالفطرة</td>
+      <td>مذكورة لكن غير محكمة</td>
+      <td>الفطرة والدين القيم مفهوم واحد (اسم الإشارة "ذلك" يُثبته)</td>
+    </tr>
+    <tr>
+      <td>البُعد الكوني</td>
+      <td>لم يُدرَس</td>
+      <td>النظام الكوني تأسَّس "يوم خلق السماوات والأرض" = دين قيم كوني</td>
+    </tr>
+    <tr>
+      <td>التحليل الصرفي</td>
+      <td>غائب</td>
+      <td>فَيْعِل يفوق "مستقيم" و"قائم" في الدلالة على الرسوخ</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ========================================
+     SECTION 2: MORPHOLOGY
+======================================== -->
+<div class="section" id="morphology">
+  <div class="section-header">
+    <span class="section-icon">🔤</span>
+    <h2>الصرف والاشتقاق</h2>
+  </div>
+
+  <h3>جذر (ق و م) — الصيغ الواردة في القرآن ذات الصلة</h3>
+  <table>
+    <tr>
+      <th>الصيغة</th>
+      <th>الوزن</th>
+      <th>معنى الوزن</th>
+      <th>المعنى القرآني</th>
+      <th>الآيات</th>
+    </tr>
+    <tr class="morph-row-main">
+      <td class="arabic">القَيِّم / قَيِّم</td>
+      <td class="wazn">فَيْعِل</td>
+      <td>مبالغة وثبوت مستمر</td>
+      <td>الدين الراسخ في الفطرة والكون</td>
+      <td>30:30، 9:36، 12:40، 30:43</td>
+    </tr>
+    <tr class="morph-row-main">
+      <td class="arabic">القَيِّمَة</td>
+      <td class="wazn">فَيْعِلَة</td>
+      <td>مبالغة مؤنثة</td>
+      <td>دين القيمة: الحقائق الراسخة الكاملة</td>
+      <td>98:5</td>
+    </tr>
+    <tr class="morph-row-main">
+      <td class="arabic">قِيَمًا</td>
+      <td class="wazn">فِعَل</td>
+      <td>جمع أو مصدر</td>
+      <td>وصف الدين بالراسخية الجوهرية</td>
+      <td>6:161</td>
+    </tr>
+    <tr class="morph-row-divine">
+      <td class="arabic">القَيُّوم</td>
+      <td class="wazn">فَيْعُول</td>
+      <td>مبالغة قصوى — دوام</td>
+      <td>صفة إلهية خالصة (لله وحده)</td>
+      <td>2:255، 3:2، 20:111</td>
+    </tr>
+    <tr>
+      <td class="arabic">أَقْوَم</td>
+      <td class="wazn">أَفْعَل</td>
+      <td>اسم تفضيل</td>
+      <td>القرآن يهدي للأشد استقامة</td>
+      <td>17:9</td>
+    </tr>
+    <tr>
+      <td class="arabic">المستقيم</td>
+      <td class="wazn">مُسْتَفْعِل</td>
+      <td>طالب الاستقامة</td>
+      <td>الصراط المستقيم = مرادف الدين القيم</td>
+      <td>1:6، 6:161، 6:153…</td>
+    </tr>
+  </table>
+
+  <div class="key-insight">
+    <h4>فارق الأوزان — لماذا "القيِّم" وليس "المستقيم"؟</h4>
+    <p>وزن <strong class="wazn">فَيْعِل</strong> يُفيد الرسوخ والثبوت بصورة أشد من "مُسْتَفْعِل". القرآن لم يقل "الدين المستقيم" بل "الدين القيِّم" — لأن القيِّمية أعمق من الاستقامة؛ هي استقامة متجذرة في الفطرة والكون لا تحتاج تصحيحًا ولا تقبل تبديلًا.</p>
+    <p style="margin-top: 8px;"><strong>القيُّوم (فَيْعُول)</strong> محفوظة لله وحده — تدل على القيام الأزلي الذاتي والإقامة المطلقة. الاشتراك في الجذر لا يعني التطابق في المعنى.</p>
+  </div>
+</div>
+
+<!-- ========================================
+     SECTION 3: VERSES
+======================================== -->
+<div class="section" id="verses">
+  <div class="section-header">
+    <span class="section-icon">📖</span>
+    <h2>الآيات القرآنية — النص الكامل</h2>
+  </div>
+
+  <h3>الآيات الست الأساسية</h3>
+
+  <table>
+    <tr><th>الآية</th><th>النص الكامل</th><th>المشار إليه بـ"ذلك"</th></tr>
+    <tr>
+      <td style="white-space:nowrap; font-weight:bold;">30:30</td>
+      <td class="arabic" style="font-size:1.05rem;">فَأَقِمْ وَجْهَكَ لِلدِّينِ حَنِيفًا ۚ فِطْرَتَ اللَّهِ الَّتِي فَطَرَ النَّاسَ عَلَيْهَا ۚ لَا تَبْدِيلَ لِخَلْقِ اللَّهِ ۚ <strong>ذَٰلِكَ الدِّينُ الْقَيِّمُ</strong> وَلَٰكِنَّ أَكْثَرَ النَّاسِ لَا يَعْلَمُونَ</td>
+      <td>الفطرة + لا تبديل</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap; font-weight:bold;">9:36</td>
+      <td class="arabic" style="font-size:1.05rem;">إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ يَوْمَ خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ مِنْهَا أَرْبَعَةٌ حُرُمٌ ۚ <strong>ذَٰلِكَ الدِّينُ الْقَيِّمُ</strong></td>
+      <td>النظام الكوني يوم الخلق</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap; font-weight:bold;">12:40</td>
+      <td class="arabic" style="font-size:1.05rem;">مَا تَعْبُدُونَ مِن دُونِهِ إِلَّا أَسْمَاءً سَمَّيْتُمُوهَا ۚ إِنِ الْحُكْمُ إِلَّا لِلَّهِ ۚ أَمَرَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ ۚ <strong>ذَٰلِكَ الدِّينُ الْقَيِّمُ</strong> وَلَٰكِنَّ أَكْثَرَ النَّاسِ لَا يَعْلَمُونَ</td>
+      <td>التوحيد + الحكم لله</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap; font-weight:bold;">30:43</td>
+      <td class="arabic" style="font-size:1.05rem;">فَأَقِمْ وَجْهَكَ <strong>لِلدِّينِ الْقَيِّمِ</strong> مِن قَبْلِ أَن يَأْتِيَ يَوْمٌ لَّا مَرَدَّ لَهُ مِنَ اللَّهِ ۖ يَوْمَئِذٍ يَصَّدَّعُونَ</td>
+      <td>أمر بالالتزام قبل يوم القيامة</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap; font-weight:bold;">6:161</td>
+      <td class="arabic" style="font-size:1.05rem;">قُلْ إِنَّنِي هَدَانِي رَبِّي إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ <strong>دِينًا قِيَمًا</strong> مِّلَّةَ إِبْرَاهِيمَ حَنِيفًا ۚ وَمَا كَانَ مِنَ الْمُشْرِكِينَ</td>
+      <td>= الصراط المستقيم = ملة إبراهيم</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap; font-weight:bold;">98:5</td>
+      <td class="arabic" style="font-size:1.05rem;">وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ حُنَفَاءَ وَيُقِيمُوا الصَّلَاةَ وَيُؤْتُوا الزَّكَاةَ ۚ <strong>وَذَٰلِكَ دِينُ الْقَيِّمَةِ</strong></td>
+      <td>الإخلاص + الصلاة + الزكاة</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ========================================
+     SECTION 4: ANALYSIS
+======================================== -->
+<div class="section" id="analysis">
+  <div class="section-header">
+    <span class="section-icon">🔍</span>
+    <h2>التحليل السياقي</h2>
+  </div>
+
+  <h3>نمط "ذَٰلِكَ الدِّينُ الْقَيِّمُ" — تعريف بالإشارة</h3>
+  <div class="key-insight">
+    <h4>الاكتشاف المحوري</h4>
+    <p>في كل آية يرد فيها "ذلك الدين القيم"، اسم الإشارة "ذلك" يعود على ما سبقه من حقيقة. القرآن لا يُعرِّف الدين القيم بتعريف اسمي مباشر، بل يُشير إليه بالإشارة إلى مضمونه — مما يعني أن كل آية تُضيف طبقة جديدة لا غنى عنها.</p>
+  </div>
+
+  <h3>الكلمات المقرونة الدائمة</h3>
+  <table>
+    <tr><th>الكلمة</th><th>الآيات</th><th>نسبة التكرار</th><th>الدلالة</th></tr>
+    <tr><td class="arabic">حنيفًا / حنفاء</td><td>30:30، 6:161، 98:5</td><td>50%</td><td>الانحياز الكامل لله — عمود الدين القيم</td></tr>
+    <tr><td class="arabic">المشركون / الشرك</td><td>9:36، 6:161، 98:5</td><td>50%</td><td>الشرك النقيض الدائم للدين القيم</td></tr>
+    <tr><td class="arabic">أكثر الناس لا يعلمون</td><td>30:30، 12:40</td><td>33%</td><td>جهل الناس بالفطرة رغم بداهتها</td></tr>
+    <tr><td class="arabic">فأقم وجهك</td><td>30:30، 30:43</td><td>33%</td><td>الأمر بالاستقامة الفاعلة</td></tr>
+  </table>
+
+  <h3>المتضادات</h3>
+  <table>
+    <tr><th>المتضاد</th><th>الآية</th><th>وجه التضاد</th></tr>
+    <tr><td class="arabic">تبديل الفطرة</td><td>30:30</td><td>القيِّمية = عدم القابلية للتبديل</td></tr>
+    <tr><td class="arabic">الشرك / المشركون</td><td>9:36، 6:161، 98:5</td><td>الشرك نقيض التوحيد الذي هو جوهر الدين القيم</td></tr>
+    <tr><td class="arabic">عبادة الأسماء</td><td>12:40</td><td>ما لم ينزل الله به سلطانًا ≠ الدين القيم</td></tr>
+    <tr><td class="arabic">السبل (الجمع)</td><td>6:153 (سياق)</td><td>الدين القيم = الصراط الواحد ↔ السبل المتعددة</td></tr>
+  </table>
+
+  <div class="analysis-box">
+    <h4>معادلة 6:161 — البنية التوازية الكبرى</h4>
+    <div class="arabic-verse" style="font-size:1.3rem;">صِرَاطٍ مُّسْتَقِيمٍ = دِينًا قِيَمًا = مِّلَّةَ إِبْرَاهِيمَ حَنِيفًا</div>
+    <p>ثلاثة أوصاف على مُوصَف واحد — "عطف البيان": الدين القيم في جوهره ملة إبراهيم الحنيف = الصراط المستقيم.</p>
+  </div>
+</div>
+
+<!-- ========================================
+     SECTION 5: DISCOVERIES
+======================================== -->
+<div class="section" id="discoveries">
+  <div class="section-header">
+    <span class="section-icon">💡</span>
+    <h2>الاكتشافات والبحوث المستقبلية</h2>
+  </div>
+
+  <p>مصطلحات اكتُشفت خلال البحث تستحق دراسة قرآنية مستقلة، مرتبة حسب الأولوية:</p>
+
+  <div class="discovery-item">
+    <h5>⭐⭐⭐ <span class="type-badge type-coupled">مقرونة محورية</span> الحنيفية (ح ن ف)</h5>
+    <p>تظهر مع الدين القيم في 50% من الآيات. السؤال: هل الحنيفية شرط في الدين القيم أم وصف له؟ ما الذي يميزها عن الإسلام والإيمان؟</p>
+  </div>
+
+  <div class="discovery-item">
+    <h5>⭐⭐⭐ <span class="type-badge type-definition">تعريف قرآني</span> إن الحكم إلا لله (ح ك م)</h5>
+    <p>أوضح تعريف عقدي للدين القيم. الحكم (القضاء والتشريع) لله وحده = جوهر التوحيد في الدين القيم.</p>
+  </div>
+
+  <div class="discovery-item">
+    <h5>⭐⭐ <span class="type-badge type-synonym">ترادف ظاهري</span> الفطرة (ف ط ر)</h5>
+    <p>متطابقة مع الدين القيم في 30:30 لكن هل هما مفهوم واحد أم يتمايزان في سياقات أخرى؟</p>
+  </div>
+
+  <div class="discovery-item">
+    <h5>⭐⭐ <span class="type-badge type-synonym">ترادف ظاهري</span> الدين الحق (ح ق ق)</h5>
+    <p>الحق = المطابقة للواقع، القيِّم = الرسوخ والثبات. هل هذا هو الفرق القرآني؟</p>
+  </div>
+
+  <div class="discovery-item">
+    <h5>⭐ <span class="type-badge type-causal">علاقة سببية</span> يَصَّدَّعُون — نتيجة ترك الدين القيم</h5>
+    <p>من لم يستمسك بالدين القيم يصَّدَّع يوم القيامة (30:43). جذر (ص د ع) يستحق بحثًا مستقلًا.</p>
+  </div>
+</div>
+
+<!-- ========================================
+     SECTION 6: TAFSIR
+======================================== -->
+<div class="section" id="tafsir">
+  <div class="section-header">
+    <span class="section-icon">📚</span>
+    <h2>مقارنة التفاسير</h2>
+  </div>
+
+  <h3>نتائج مقارنة تفاسير القرطبي وابن كثير والميسر</h3>
+
+  <table>
+    <tr>
+      <th>الجانب</th>
+      <th>القرطبي</th>
+      <th>ابن كثير</th>
+      <th>الميسر</th>
+      <th>الفهم القرآني</th>
+    </tr>
+    <tr>
+      <td>معنى "القيِّم"</td>
+      <td>المستقيم</td>
+      <td>المستقيم</td>
+      <td>المستقيم</td>
+      <td>فَيْعِل: رسوخ وثبوت يفوق الاستقامة</td>
+    </tr>
+    <tr>
+      <td>البُعد الفطري</td>
+      <td><span class="verdict verdict-partial">جزئي</span></td>
+      <td><span class="verdict verdict-partial">جزئي</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td>الفطرة = الدين القيم بعينه (30:30)</td>
+    </tr>
+    <tr>
+      <td>البُعد الكوني</td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td>النظام الكوني منذ الخلق (9:36)</td>
+    </tr>
+    <tr>
+      <td>البُعد العقدي</td>
+      <td><span class="verdict verdict-good">جيد</span></td>
+      <td><span class="verdict verdict-good">جيد</span></td>
+      <td><span class="verdict verdict-partial">مقبول</span></td>
+      <td>التوحيد = الحكم لله وحده (12:40)</td>
+    </tr>
+    <tr>
+      <td>التحليل الصرفي</td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td>وزن فَيْعِل يحمل مبالغة الرسوخ</td>
+    </tr>
+    <tr>
+      <td>وحدة المفهوم عبر الآيات</td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td><span class="verdict verdict-miss">غائب</span></td>
+      <td>5 أبعاد متكاملة من 6 آيات</td>
+    </tr>
+  </table>
+
+  <div class="key-insight" style="margin-top: 24px;">
+    <h4>الخلاصة النقدية</h4>
+    <p>التفاسير الثلاثة مشتركة في نقطتَي قوة: فهم البُعد العقدي (12:40) والبُعد العملي (98:5). لكنها تُغفل جميعًا: التحليل الصرفي لوزن فَيْعِل، البُعد الكوني السابق للخلق، وتكامل المعنى عبر الآيات الست. <strong>أفضل المصادر: ابن كثير (7/10)، القرطبي (6/10)، الميسر (4/10).</strong></p>
+  </div>
+</div>
+
+<!-- ===== DISCLAIMER BOTTOM ===== -->
+<div class="disclaimer">
+  ⚠️ <strong>تنبيه:</strong> هذا التقرير صادر عن وكيل بحث قرآني آلي مستند إلى النص القرآني الكامل. وإن كانت النتائج تسعى إلى الاستيعاب الشامل، إلا أنها لا يمكن ضمانها وينبغي عدم تداولها بوصفها مرجعًا قاطعًا.
+</div>
+
+<!-- ===== SOURCE LINKS ===== -->
+<div class="source-links" id="sources">
+  <h3>🔗 ملفات المصادر للدراسة المعمقة</h3>
+  <ul>
+    <li><a href="sources/00_SUMMARY.html">📋 00_SUMMARY.html — الملخص والنتائج الرئيسية</a></li>
+    <li><a href="sources/01_MORPHOLOGY.html">🔤 01_MORPHOLOGY.html — جداول الصرف والاشتقاق</a></li>
+    <li><a href="sources/02_VERSES.html">📖 02_VERSES.html — الآيات كاملة مع التحليل</a></li>
+    <li><a href="sources/03_ANALYSIS.html">🔍 03_ANALYSIS.html — الأنماط السياقية والبنى المتوازية</a></li>
+    <li><a href="sources/04_DISCOVERIES.html">💡 04_DISCOVERIES.html — قائمة البحوث المستقبلية</a></li>
+    <li><a href="sources/05_TAFSIR_COMPARISON.html">📚 05_TAFSIR_COMPARISON.html — مقارنة التفاسير التفصيلية</a></li>
+  </ul>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p><strong>بحث قرآني — الدين القيم</strong></p>
+  <p>منهج: قرآني خالص | اللغة: العربية | التفاسير للمقارنة فقط</p>
+  <p style="margin-top: 12px; font-size: 0.8rem; opacity: 0.6;">هذا التقرير آلي — لا يُتخذ مرجعًا قاطعًا</p>
+</div>
+
+</body>
+</html>
